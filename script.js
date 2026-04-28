@@ -163,36 +163,58 @@ document.getElementById('backToTop').addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-/* -------- CONTACT FORM -------- */
+/* -------- CONTACT FORM (FORM SPREE INTEGRATION) -------- */
 const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+    
+    // UI Feedback: Show loading
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
 
-    const name = contactForm.name.value.trim();
-    const email = contactForm.email.value.trim();
-    const message = contactForm.message.value.trim();
+    // Get Data
+    const formData = new FormData(contactForm);
 
-    if (!name || !email || !message) {
-      formStatus.textContent = 'Please fill in all required fields.';
+    // Send using Fetch API (Directly to Formspree)
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        // Success
+        formStatus.textContent = '✓ Your message has been sent successfully!';
+        formStatus.style.color = '#22c55e';
+        contactForm.reset();
+      } else {
+        // Error response
+        const data = await response.json();
+        formStatus.textContent = data.errors ? data.errors.map(error => error.message).join(", ") : 'Oops! There was a problem submitting your form.';
+        formStatus.style.color = '#f87171';
+      }
+    } catch (error) {
+      // Network error
+      formStatus.textContent = 'Oops! Something went wrong. Please check your internet.';
       formStatus.style.color = '#f87171';
-      return;
+    } finally {
+      // Restore Button
+      submitBtn.innerHTML = originalBtnText;
+      submitBtn.disabled = false;
+      
+      // Clear status after 5 seconds
+      setTimeout(() => {
+        formStatus.textContent = '';
+      }, 5000);
     }
-
-    // Build mailto link (no backend needed)
-    const subject = encodeURIComponent(contactForm.subject.value || `Message from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    window.location.href = `mailto:yehiaadel515@gmail.com?subject=${subject}&body=${body}`;
-
-    formStatus.textContent = '✓ Opening your email client...';
-    formStatus.style.color = '#22c55e';
-
-    setTimeout(() => {
-      contactForm.reset();
-      formStatus.textContent = '';
-    }, 3000);
   });
 }
 
@@ -210,7 +232,6 @@ document.querySelectorAll('.service-card, .project-card, .why-card').forEach(car
 });
 
 /* -------- LOGO FALLBACK -------- */
-// If loge.jpeg doesn't exist, show text logo
 const logoImg = document.querySelector('.logo-img');
 const logoFallback = document.querySelector('.logo-fallback');
 if (logoImg) {
