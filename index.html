@@ -3,33 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Yahya.DEV — Front-End Developer | Portfolio</title>
-  <meta name="description" content="Yahya.DEV - Professional Front-End Developer portfolio of Yehia Adel. Specializing in modern, responsive web design and high-performance user experiences.">
-  <meta name="keywords" content="Yahya Adel, Yahya.DEV, Front-end Developer, Web Design, Responsive Portfolio, HTML, CSS, JavaScript, Freelance Developer Egypt, Web Development Evolution">
-  <meta name="author" content="Yehia Adel">
-  
-  <meta property="og:title" content="Yahya.DEV — Front-End Developer">
-  <meta property="og:description" content="Building fast, modern, and responsive web experiences. Check out my latest work.">
+
+  <title>Yahya Al-sulami — Full-Stack Developer & UI/UX Architect | Yahya.DEV</title>
+  <meta name="description" content="Yahya Al-sulami (Yahya.DEV) — Full-Stack Developer & UI/UX Architect. Laravel, PHP, SQL, cinematic front-end experiences. Performance-driven. Zero Compromise.">
+  <meta name="keywords" content="Yahya Al-sulami, Yahya.DEV, Full-Stack Developer, Laravel Developer, PHP Developer, UI UX Architect, Web Design, Immersive UI, High-Performance Web, HTML, CSS, JavaScript, SQL, MySQL, Freelance Developer">
+  <meta name="author" content="Yahya Al-sulami">
+
+  <meta property="og:title" content="Yahya Al-sulami — Yahya.DEV | Full-Stack Developer & UI/UX Architect">
+  <meta property="og:description" content="Crafting cinematic digital excellence. Laravel. PHP. SQL. Performance-driven architecture. Immersive UI. Zero compromise.">
   <meta property="og:image" content="PIC/my.png">
   <meta property="og:url" content="https://yehiahwary0-oss.github.io/my-portfolio/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="google-site-verification" content="TcELr9g-P4pDHwM1AW909htxJzRYOVtSJI5cZAtxyQg" />
-  
-  <link rel="icon" type="image/jpeg" href="loge.jpeg">
 
+  <link rel="icon" type="image/jpeg" href="loge.jpeg">
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
+  <!-- MOUSE GLOW ORBS -->
+  <div class="mouse-glow mouse-glow-1" id="glowOrb1"></div>
+  <div class="mouse-glow mouse-glow-2" id="glowOrb2"></div>
+
+  <!-- LOADER -->
   <div id="loader">
     <div class="loader-inner">
       <span class="loader-logo">Yahya<span>.DEV</span></span>
+      <p class="loader-sub">Full-Stack Developer & UI/UX Architect</p>
       <div class="loader-bar"><div class="loader-fill"></div></div>
     </div>
   </div>
 
+  <!-- NAVBAR -->
   <nav id="navbar">
     <div class="nav-container">
       <a href="#hero" class="nav-logo">
@@ -40,7 +48,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="projects.html">Work</a></li>
         <li><a href="#contact" class="nav-cta">Hire Me</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -49,34 +57,38 @@
     </div>
   </nav>
 
+  <!-- HERO -->
   <section id="hero">
     <div class="hero-bg">
       <div class="grid-overlay"></div>
       <div class="glow glow-1"></div>
       <div class="glow glow-2"></div>
+      <div class="glow glow-3"></div>
     </div>
     <div class="hero-content">
-      <p class="hero-tag"><span class="dot"></span> Available for freelance work</p>
-      <h1 class="hero-title">Yahya<span class="accent">.DEV</span></h1>
-      <h2 class="hero-role">
-        <span class="static-text">I'm a </span>
+      <p class="hero-tag" data-aos><span class="dot"></span> Available for elite projects</p>
+      <h1 class="hero-title" data-aos>Yahya<span class="accent">.DEV</span></h1>
+      <p class="hero-name" data-aos>Yahya Al-sulami</p>
+      <h2 class="hero-role" data-aos>
+        <span class="static-text">I build </span>
         <span class="typing-text" id="typing"></span><span class="cursor-blink">|</span>
       </h2>
-      <p class="hero-desc">
-        I build <strong>fast, modern, and responsive</strong> web experiences<br />
-        that help businesses grow and convert visitors into customers.
+      <p class="hero-desc" data-aos>
+        Engineering <strong>full-stack systems & cinematic UI experiences</strong><br />
+        that convert visitors into loyal clients — at the speed of thought.
       </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">
-          <i class="fas fa-eye"></i> View My Work
+      <div class="hero-buttons" data-aos>
+        <a href="projects.html" class="btn btn-primary">
+          <i class="fas fa-eye"></i> Explore My Work
         </a>
         <a href="#contact" class="btn btn-outline">
-          <i class="fas fa-paper-plane"></i> Contact Me
+          <i class="fas fa-paper-plane"></i> Start a Project
         </a>
       </div>
-      <div class="hero-socials">
-        <a href="mailto:yehiaadel515@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <div class="hero-socials" data-aos>
+        <a href="mailto:yehiahwary515@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
         <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@yahya.dev8" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
         <a href="https://github.com/yehiahwary0-oss" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
       </div>
     </div>
@@ -86,43 +98,50 @@
     </div>
   </section>
 
+  <!-- STATS -->
   <section id="stats">
     <div class="container">
       <div class="stats-grid">
         <div class="stat-card" data-aos>
           <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
-          <p class="stat-label">Projects Completed</p>
+          <p class="stat-label">Projects Delivered</p>
         </div>
         <div class="stat-card" data-aos>
-          <span class="stat-number" data-target="48">0</span><span class="stat-plus">h</span>
-          <p class="stat-label">Fast Delivery</p>
-        </div>
-        <div class="stat-card" data-aos>
-          <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
-          <p class="stat-label">Responsive Design</p>
+          <span class="stat-number" data-target="3">0</span><span class="stat-plus"></span>
+          <p class="stat-label">Tech Stacks Mastered</p>
         </div>
         <div class="stat-card" data-aos>
           <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
-          <p class="stat-label">Client Satisfaction</p>
+          <p class="stat-label">Bulletproof Responsive</p>
+        </div>
+        <div class="stat-card" data-aos>
+          <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
+          <p class="stat-label">Client Excellence</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section id="about">
     <div class="container">
       <div class="section-header" data-aos>
-        <span class="section-tag">About Me</span>
-        <h2>Crafting Digital<br /><span class="accent">Experiences</span></h2>
+        <span class="section-tag">The Architect</span>
+        <h2>Crafting Digital<br /><span class="accent">Excellence</span></h2>
+        <p class="section-desc">Where full-stack precision meets cinematic design sensibility</p>
       </div>
       <div class="about-grid">
         <div class="about-visual" data-aos>
           <div class="about-card-visual">
             <div class="av-inner">
-              <i class="fas fa-code av-icon"></i>
-              <span class="av-label">Front-End Developer</span>
+              <i class="fas fa-layer-group av-icon"></i>
+              <span class="av-label">Full-Stack Developer</span>
+              <span class="av-sublabel">& UI/UX Architect</span>
             </div>
             <div class="av-badges">
+              <span><i class="fab fa-php"></i> PHP</span>
+              <span><i class="fas fa-server"></i> Laravel</span>
+              <span><i class="fas fa-database"></i> MySQL</span>
               <span><i class="fab fa-html5"></i> HTML5</span>
               <span><i class="fab fa-css3-alt"></i> CSS3</span>
               <span><i class="fab fa-js"></i> JavaScript</span>
@@ -133,296 +152,370 @@
         </div>
         <div class="about-text" data-aos>
           <p>
-            Hi, I'm <strong>Yehia Adel</strong> — a passionate Front-End Developer who specialises in
-            building clean, performant, and visually compelling web experiences.
+            I'm <strong>Yahya Al-sulami</strong> — a Full-Stack Developer & UI/UX Architect who transforms
+            complex visions into seamless, high-performance digital realities.
           </p>
           <p>
-            I combine strong fundamentals in <strong>HTML, CSS, and JavaScript</strong> with
-            a sharp eye for design to deliver websites that not only look great,
-            but load fast and work flawlessly on every device.
+            My work spans the full spectrum: from <strong>Laravel & PHP back-end systems</strong> and 
+            database architecture to <strong>cinematic, immersive front-end experiences</strong> that 
+            captivate and convert.
           </p>
           <p>
-            Whether you need a landing page, a full portfolio, or a business website —
-            I deliver high-quality results quickly, with <strong>zero compromise on detail.</strong>
+            Every line of code is intentional. Every pixel, deliberate. Every system,
+            built to <strong>scale elegantly and inspire action.</strong>
           </p>
           <div class="about-highlights">
-            <div class="highlight-item"><i class="fas fa-bolt"></i><span>Fast Delivery</span></div>
+            <div class="highlight-item"><i class="fas fa-server"></i><span>Back-End Systems</span></div>
             <div class="highlight-item"><i class="fas fa-mobile-alt"></i><span>Mobile-First</span></div>
-            <div class="highlight-item"><i class="fas fa-tachometer-alt"></i><span>Optimized Performance</span></div>
-            <div class="highlight-item"><i class="fas fa-gem"></i><span>Clean Code</span></div>
+            <div class="highlight-item"><i class="fas fa-tachometer-alt"></i><span>Peak Performance</span></div>
+            <div class="highlight-item"><i class="fas fa-gem"></i><span>Surgical Code</span></div>
           </div>
-          <a href="mailto:yehiaadel515@gmail.com" class="btn btn-primary">
-            <i class="fas fa-download"></i> Get In Touch
+          <a href="mailto:yehiahwary515@gmail.com" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Initiate Collaboration
           </a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- SKILLS — 3-COLUMN ARCHITECTURE -->
   <section id="skills">
     <div class="container">
       <div class="section-header" data-aos>
-        <span class="section-tag">My Skills</span>
-        <h2>Tools & <span class="accent">Technologies</span></h2>
+        <span class="section-tag">Technical Arsenal</span>
+        <h2>Full-Stack <span class="accent">Architecture</span></h2>
+        <p class="section-desc">A precision-tuned stack built for elite digital outcomes across the entire web ecosystem</p>
       </div>
-      <div class="skills-grid">
-        <div class="skills-bars" data-aos>
-          <h3>Core Skills</h3>
+
+      <div class="skills-architecture">
+
+        <!-- BLOCK 1: FRONT-END & MOTION -->
+        <div class="skill-block frontend-block" data-aos>
+          <div class="skill-block-header">
+            <div class="skill-block-icon"><i class="fas fa-palette"></i></div>
+            <div>
+              <div class="skill-block-title">Front-End & Motion</div>
+              <span class="skill-block-sub">UI · Animation · Responsive</span>
+            </div>
+          </div>
 
           <div class="skill-item">
             <div class="skill-top">
-              <span><i class="fab fa-html5"></i> HTML5</span>
-              <span>95%</span>
+              <span><i class="fab fa-html5"></i> HTML5 Semantics</span>
+              <span class="skill-pct">95%</span>
             </div>
             <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
           </div>
-
           <div class="skill-item">
             <div class="skill-top">
-              <span><i class="fab fa-css3-alt"></i> CSS3 / Animations</span>
-              <span>90%</span>
+              <span><i class="fab fa-css3-alt"></i> Advanced CSS3</span>
+              <span class="skill-pct">92%</span>
             </div>
-            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fab fa-js"></i> JavaScript ES6+</span>
+              <span class="skill-pct">84%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="84"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fas fa-wind"></i> Tailwind CSS</span>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fas fa-magic"></i> GSAP Animations</span>
+              <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fas fa-mobile-alt"></i> Responsive Engineering</span>
+              <span class="skill-pct">96%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="96"></div></div>
+          </div>
+        </div>
+
+        <!-- BLOCK 2: BACK-END -->
+        <div class="skill-block backend-block" data-aos>
+          <div class="skill-block-header">
+            <div class="skill-block-icon"><i class="fas fa-server"></i></div>
+            <div>
+              <div class="skill-block-title">Back-End Engineering</div>
+              <span class="skill-block-sub">PHP · Laravel · APIs</span>
+            </div>
           </div>
 
           <div class="skill-item">
             <div class="skill-top">
-              <span><i class="fab fa-js"></i> JavaScript (ES6+)</span>
-              <span>75%</span>
+              <span><i class="fab fa-php"></i> PHP</span>
+              <span class="skill-pct">82%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fas fa-rocket"></i> Laravel Framework</span>
+              <span class="skill-pct">78%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fas fa-code-branch"></i> RESTful APIs</span>
+              <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fas fa-shield-alt"></i> Authentication Systems</span>
+              <span class="skill-pct">75%</span>
             </div>
             <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
           </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fas fa-tachometer-alt"></i> Performance Optimization</span>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fas fa-search"></i> SEO Architecture</span>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+        </div>
+
+        <!-- BLOCK 3: DATABASES & SYSTEMS -->
+        <div class="skill-block db-block" data-aos>
+          <div class="skill-block-header">
+            <div class="skill-block-icon"><i class="fas fa-database"></i></div>
+            <div>
+              <div class="skill-block-title">Databases & Systems</div>
+              <span class="skill-block-sub">SQL · MySQL · Linux</span>
+            </div>
+          </div>
 
           <div class="skill-item">
             <div class="skill-top">
-              <span><i class="fas fa-mobile-alt"></i> Responsive Design</span>
-              <span>95%</span>
+              <span><i class="fas fa-database"></i> SQL</span>
+              <span class="skill-pct">82%</span>
             </div>
-            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fas fa-table"></i> MySQL</span>
+              <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fas fa-project-diagram"></i> Database Architecture</span>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fab fa-linux"></i> Linux (Ubuntu Server)</span>
+              <span class="skill-pct">78%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fab fa-git-alt"></i> Git & Version Control</span>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top">
+              <span><i class="fas fa-terminal"></i> CLI / Bash</span>
+              <span class="skill-pct">76%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="76"></div></div>
           </div>
         </div>
 
-        <div class="skills-extras" data-aos>
-          <h3>Also Know</h3>
-          <div class="extras-grid">
-            <div class="extra-card">
-              <i class="fab fa-linux"></i>
-              <span>Linux</span>
-              <p>CLI navigation, file management, server basics</p>
-            </div>
-            <div class="extra-card">
-              <i class="fas fa-terminal"></i>
-              <span>Bash</span>
-              <p>Shell scripting and automation workflows</p>
-            </div>
-            <div class="extra-card">
-              <i class="fab fa-python"></i>
-              <span>Python</span>
-              <p>Scripting and basic automation tasks</p>
-            </div>
-            <div class="extra-card">
-              <i class="fas fa-tachometer-alt"></i>
-              <span>Performance</span>
-              <p>Core Web Vitals, lazy loading, optimization</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
+  <!-- SERVICES -->
   <section id="services">
     <div class="container">
       <div class="section-header" data-aos>
-        <span class="section-tag">What I Do</span>
-        <h2>Services I <span class="accent">Offer</span></h2>
+        <span class="section-tag">Service Suite</span>
+        <h2>Immersive <span class="accent">Deliverables</span></h2>
+        <p class="section-desc">Bespoke full-stack solutions engineered to command markets and scale with your vision</p>
       </div>
       <div class="services-grid">
-
         <div class="service-card" data-aos>
-          <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-          <h3>Web Design</h3>
-          <p>Modern, visually stunning websites tailored to your brand. Every pixel is intentional — from typography to colour palette and layout.</p>
+          <div class="service-icon"><i class="fas fa-server"></i></div>
+          <h3>Full-Stack Web Applications</h3>
+          <p>Complete systems from database architecture to cinematic front-end — Laravel, PHP, MySQL, beautifully delivered.</p>
           <ul class="service-list">
-            <li><i class="fas fa-check"></i> Custom UI/UX Design</li>
-            <li><i class="fas fa-check"></i> Brand-aligned aesthetics</li>
-            <li><i class="fas fa-check"></i> Clean & modern layouts</li>
+            <li><i class="fas fa-check"></i> Laravel & PHP back-end systems</li>
+            <li><i class="fas fa-check"></i> Database design & optimization</li>
+            <li><i class="fas fa-check"></i> API development & integration</li>
           </ul>
         </div>
-
-        <div class="service-card featured" data-aos>
-          <div class="service-badge">Most Popular</div>
-          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-          <h3>Responsive Design</h3>
-          <p>Websites that look and feel perfect on every screen — mobile, tablet, and desktop — with fluid layouts and seamless interactions.</p>
-          <ul class="service-list">
-            <li><i class="fas fa-check"></i> Mobile-first approach</li>
-            <li><i class="fas fa-check"></i> Cross-browser compatibility</li>
-            <li><i class="fas fa-check"></i> Flexible grid systems</li>
-          </ul>
-        </div>
-
         <div class="service-card" data-aos>
-          <div class="service-icon"><i class="fas fa-rocket"></i></div>
-          <h3>Performance Optimization</h3>
-          <p>Blazing-fast load times and smooth experiences. I audit and optimise your site to score high on Core Web Vitals and SEO performance.</p>
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Cinematic Landing Pages</h3>
+          <p>High-conversion, visually commanding pages engineered to captivate and convert at the highest level.</p>
           <ul class="service-list">
-            <li><i class="fas fa-check"></i> Fast load times</li>
-            <li><i class="fas fa-check"></i> Core Web Vitals tuning</li>
-            <li><i class="fas fa-check"></i> Asset & code optimization</li>
+            <li><i class="fas fa-check"></i> Immersive visual hierarchy</li>
+            <li><i class="fas fa-check"></i> Conversion-optimised layout</li>
+            <li><i class="fas fa-check"></i> Sub-3s load performance</li>
           </ul>
         </div>
-
+        <div class="service-card" data-aos>
+          <div class="service-icon"><i class="fas fa-store"></i></div>
+          <h3>Business Platform Design</h3>
+          <p>Professional digital storefronts with SEO architecture that establish authority and accelerate growth.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Trust-building architecture</li>
+            <li><i class="fas fa-check"></i> Google Ads & SEO readiness</li>
+            <li><i class="fas fa-check"></i> Multi-device perfection</li>
+          </ul>
+        </div>
+        <div class="service-card" data-aos>
+          <div class="service-icon"><i class="fas fa-code"></i></div>
+          <h3>UI/UX Architecture & Consulting</h3>
+          <p>Expert analysis and redesign of your existing system — identifying bottlenecks and unlocking latent potential.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Deep code & UX audit</li>
+            <li><i class="fas fa-check"></i> Performance uplift</li>
+            <li><i class="fas fa-check"></i> Responsive debt resolution</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- PROJECTS PREMIUM CTA -->
   <section id="projects">
     <div class="container">
       <div class="section-header" data-aos>
-        <span class="section-tag">Portfolio</span>
-        <h2>Featured <span class="accent">Projects</span></h2>
-        <p class="section-desc">Real work. Real results. Click to explore each project.</p>
+        <span class="section-tag">Selected Work</span>
+        <h2>The <span class="accent">Portfolio</span></h2>
+        <p class="section-desc">A curated collection of full-stack systems and cinematic digital experiences</p>
       </div>
 
-      <div class="projects-grid">
-
-        <div class="project-card" data-aos>
-          <div class="project-img-wrap">
-            <img src="images/project1.jpg" alt="Business Landing Page" class="project-img"
-              onerror="this.parentElement.classList.add('no-img')" />
-            <div class="project-overlay">
-              <span class="project-type">Web Design</span>
+      <div class="projects-cta-box" data-aos>
+        <div class="pcta-bg">
+          <div class="pcta-glow pcta-glow-1"></div>
+          <div class="pcta-glow pcta-glow-2"></div>
+          <div class="pcta-grid"></div>
+        </div>
+        <div class="pcta-content">
+          <div class="pcta-eyebrow">
+            <span class="pcta-dot"></span>
+            <span>Live Case Studies</span>
+          </div>
+          <h2 class="pcta-headline">
+            Where Engineering<br />
+            <em>Meets Cinema</em>
+          </h2>
+          <p class="pcta-sub">
+            From full-stack trading platforms to cinematic brand activations —
+            each project is a testament to the marriage of precision systems and visual artistry.
+          </p>
+          <div class="pcta-preview">
+            <div class="pcta-preview-item">
+              <div class="pcta-thumb schweppes-thumb">
+                <img src="PIC/sh.png" alt="Schweppes Gold" onerror="this.parentElement.classList.add('thumb-fallback')">
+                <div class="pcta-thumb-overlay">
+                  <span>Schweppes Gold</span>
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+              <span class="pcta-project-label">Featured · Cinematic Experience</span>
+            </div>
+            <div class="pcta-preview-item">
+              <div class="pcta-thumb vortex-thumb">
+                <img src="PIC/vortex.png" alt="Vortex Trader_Y" onerror="this.parentElement.classList.add('thumb-fallback-vortex')">
+                <div class="pcta-thumb-overlay">
+                  <span>Vortex Trader_Y</span>
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+              <span class="pcta-project-label">Featured · Full-Stack Platform</span>
             </div>
           </div>
-          <div class="project-info">
-            <h3 class="project-title">Business Landing Page</h3>
-            <p class="project-desc">A modern, conversion-focused landing page built for a local business. Fully responsive with smooth animations and fast load times.</p>
-            <div class="project-tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span>
-            </div>
-            <div class="project-buttons">
-              <a href="#" target="_blank" class="proj-btn btn-demo">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-              <a href="https://github.com/yehiahwary0-oss" target="_blank" class="proj-btn btn-github">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-              <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" class="proj-btn btn-instagram">
-                <i class="fab fa-instagram"></i> Watch Video
-              </a>
-            </div>
+          <div class="pcta-actions">
+            <a href="projects.html" class="btn btn-primary">
+              <i class="fas fa-eye"></i> Enter the Gallery
+            </a>
+            <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" class="btn btn-outline">
+              <i class="fab fa-instagram"></i> Instagram Previews
+            </a>
           </div>
         </div>
-
-        <div class="project-card" data-aos>
-          <div class="project-img-wrap">
-            <img src="PIC/my.png" alt="Yahya Personal Portfolio V1" class="project-img"
-              onerror="this.parentElement.classList.add('no-img')" />
-            <div class="project-overlay">
-              <span class="project-type">Project Evolution</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Personal Portfolio V1 (Legacy)</h3>
-            <p class="project-desc">
-                يمثل هذا المشروع انطلاقتي الأولى، قمت ببنائه لاستعراض المهارات الأساسية في التصميم المتجاوب. أحتفظ به كشاهد على رحلة التطور التقني والفرق الشاسع في جودة الأداء والتصميم بين بداياتي وما وصلت إليه الآن.
-            </p>
-            <div class="project-tags">
-              <span>Foundation</span><span>HTML5</span><span>CSS3</span><span>Legacy</span>
-            </div>
-            <div class="project-buttons">
-              <a href="https://yehiahwary0-oss.github.io/yahya.github.io/" target="_blank" class="proj-btn btn-demo">
-                <i class="fas fa-external-link-alt"></i> Preview Site
-              </a>
-              <a href="https://github.com/yehiahwary0-oss/yahya.github.io" target="_blank" class="proj-btn btn-github">
-                <i class="fab fa-github"></i> Repository
-              </a>
-              <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTIxOTMzMjY1MzEzOTYw?story_media_id=3881992830415536540&igsh=OWV4cTdzYmNzNjg0" target="_blank" class="proj-btn btn-instagram">
-                <i class="fab fa-instagram"></i> Evolution Video
-              </a>
-            </div>
-            <p class="insta-note"><i class="fab fa-instagram"></i> شاهد عرض المشروع على إنستجرام</p>
-          </div>
-        </div>
-
-        <div class="project-card" data-aos>
-          <div class="project-img-wrap">
-            <img src="images/project3.jpg" alt="Project 3" class="project-img"
-              onerror="this.parentElement.classList.add('no-img')" />
-            <div class="project-overlay">
-              <span class="project-type">Performance</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">E-commerce Store Front</h3>
-            <p class="project-desc">A product showcase page optimised for speed and conversions. Clean grid layout, filter system, and smooth UX throughout.</p>
-            <div class="project-tags">
-              <span>HTML</span><span>CSS Grid</span><span>JS</span>
-            </div>
-            <div class="project-buttons">
-              <a href="#" target="_blank" class="proj-btn btn-demo">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-              <a href="https://github.com/yehiahwary0-oss" target="_blank" class="proj-btn btn-github">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="projects-cta" data-aos>
-        <p>Want to see more? Follow me on Instagram for project previews.</p>
-        <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" class="btn btn-instagram-main">
-          <i class="fab fa-instagram"></i> View All on Instagram
-        </a>
       </div>
 
     </div>
   </section>
 
+  <!-- WHY -->
   <section id="why">
     <div class="container">
       <div class="section-header" data-aos>
-        <span class="section-tag">Why Me?</span>
-        <h2>Why Choose <span class="accent">Yahya.DEV</span></h2>
+        <span class="section-tag">The Standard</span>
+        <h2>Why <span class="accent">Yahya.DEV</span></h2>
+        <p class="section-desc">Three pillars that define every project I touch</p>
       </div>
       <div class="why-grid">
         <div class="why-card" data-aos>
-          <div class="why-icon"><i class="fas fa-code"></i></div>
-          <h3>Clean Code</h3>
-          <p>Every project is built with well-structured, readable, and maintainable code — easy to scale and hand off.</p>
+          <div class="why-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Full-Stack Ownership</h3>
+          <p>One developer. Complete responsibility. From server configuration and database design to the pixel-perfect final interface — I own the entire stack.</p>
         </div>
         <div class="why-card" data-aos>
           <div class="why-icon"><i class="fas fa-bolt"></i></div>
-          <h3>Fast Delivery</h3>
-          <p>Deadlines matter. I work efficiently and communicate clearly so your project ships on time, every time.</p>
+          <h3>Decisive Execution</h3>
+          <p>Deadlines are sacred. I operate with surgical efficiency and clear communication so your project ships on time, without compromise.</p>
         </div>
         <div class="why-card" data-aos>
-          <div class="why-icon"><i class="fas fa-search"></i></div>
-          <h3>Attention to Detail</h3>
-          <p>From pixel-perfect spacing to smooth micro-interactions — the details are what separate good from great.</p>
+          <div class="why-icon"><i class="fas fa-gem"></i></div>
+          <h3>Obsessive Detail</h3>
+          <p>From pixel-perfect typography to fluid micro-interactions — the invisible details are what separate the exceptional from the ordinary.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <div class="section-header" data-aos>
-        <span class="section-tag">Get In Touch</span>
-        <h2>Let's <span class="accent">Work Together</span></h2>
+        <span class="section-tag">Initiate Collaboration</span>
+        <h2>Let's Build Something <span class="accent">Extraordinary</span></h2>
+        <p class="section-desc">Share your vision. I'll engineer the reality.</p>
       </div>
       <div class="contact-grid">
         <div class="contact-info" data-aos>
-          <h3>Contact Details</h3>
+          <h3>Direct Channels</h3>
           <div class="contact-item">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
             <div>
               <p class="ci-label">Email</p>
-              <a href="mailto:yehiaadel515@gmail.com">yehiaadel515@gmail.com</a>
+              <a href="mailto:yehiahwary515@gmail.com">yehiahwary515@gmail.com</a>
             </div>
           </div>
           <div class="contact-item">
@@ -432,33 +525,38 @@
               <a href="https://www.instagram.com/yahya_alsulami515" target="_blank">@yahya_alsulami515</a>
             </div>
           </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <p class="ci-label">GitHub</p>
+              <a href="https://github.com/yehiahwary0-oss" target="_blank">yehiahwary0-oss</a>
+            </div>
+          </div>
           <div class="availability-badge">
-            <span class="avail-dot"></span> Currently available for new projects
+            <span class="avail-dot"></span> Available for immediate engagement
           </div>
         </div>
 
         <form class="contact-form" action="https://formspree.io/f/xzdywegn" method="POST" id="contactForm" data-aos>
           <div class="form-group">
             <label for="fname">Your Name</label>
-            <input type="text" id="fname" name="name" placeholder="John Smith" required />
+            <input type="text" id="fname" name="name" placeholder="Alexandra Chen" required />
           </div>
           <div class="form-group">
             <label for="femail">Your Email</label>
-            <input type="email" id="femail" name="_replyto" placeholder="john@example.com" required />
+            <input type="email" id="femail" name="_replyto" placeholder="alex@company.com" required />
           </div>
           <div class="form-group">
-            <label for="fsubject">Subject</label>
-            <input type="text" id="fsubject" name="subject" placeholder="Project Inquiry" required />
+            <label for="fsubject">Project Type</label>
+            <input type="text" id="fsubject" name="subject" placeholder="Full-Stack App / Landing Page / Consultation" required />
           </div>
           <div class="form-group">
-            <label for="fmessage">Message</label>
-            <textarea id="fmessage" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            <label for="fmessage">Vision Brief</label>
+            <textarea id="fmessage" name="message" rows="5" placeholder="Describe your project vision, goals, and timeline..." required></textarea>
           </div>
-          
           <input type="text" name="_gotcha" style="display:none" />
-
           <button type="submit" class="btn btn-primary full-width">
-            <i class="fas fa-paper-plane"></i> Send Message
+            <i class="fas fa-paper-plane"></i> Send Brief
           </button>
           <p class="form-note" id="formStatus"></p>
         </form>
@@ -466,19 +564,22 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer id="footer">
     <div class="container">
       <div class="footer-top">
         <a href="#hero" class="footer-logo">Yahya<span>.DEV</span></a>
-        <p>Building the web, one line at a time.</p>
+        <p class="footer-identity">Yahya Al-sulami — Full-Stack Developer & UI/UX Architect</p>
+        <p>Engineering digital excellence, one system at a time.</p>
         <div class="footer-socials">
-          <a href="mailto:yehiaadel515@gmail.com"><i class="fas fa-envelope"></i></a>
-          <a href="https://www.instagram.com/yahya_alsulami515" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://github.com/yehiahwary0-oss" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="mailto:yehiahwary515@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@yahya.dev8" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://github.com/yehiahwary0-oss" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>©️ 2025 <strong>Yahya.DEV</strong> — Designed & Built by Yehia Adel</p>
+        <p>© 2025 <strong>Yahya.DEV</strong> — Designed & Architected by <strong>Yahya Al-sulami</strong></p>
       </div>
     </div>
   </footer>

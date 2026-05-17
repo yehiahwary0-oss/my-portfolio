@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Work — Yahya Al-sulami | Yahya.DEV</title>
+  <meta name="description" content="Selected works by Yahya Al-sulami (Yahya.DEV) — Full-stack systems, cinematic digital experiences, and performance-driven architectures.">
+  <meta name="keywords" content="Yahya Al-sulami, Yahya.DEV, Portfolio Projects, Vortex Trader, Elite Care Ambulance, Schweppes Gold, Full-Stack Work, Laravel Projects, Web Design Cases">
+  <meta name="author" content="Yahya Al-sulami">
+
+  <meta property="og:title" content="The Work — Yahya Al-sulami | Yahya.DEV">
+  <meta property="og:description" content="Full-stack systems and cinematic digital experiences by Yahya Al-sulami.">
+  <meta property="og:image" content="PIC/vortex.png">
+  <meta property="og:url" content="https://yehiahwary0-oss.github.io/my-portfolio/projects.html">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/jpeg" href="loge.jpeg">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="projects-page">
+
+  <!-- MOUSE GLOW ORBS -->
+  <div class="mouse-glow mouse-glow-1" id="glowOrb1"></div>
+  <div class="mouse-glow mouse-glow-2" id="glowOrb2"></div>
+
+  <div id="loader">
+    <div class="loader-inner">
+      <span class="loader-logo">Yahya<span>.DEV</span></span>
+      <p class="loader-sub">Selected Work</p>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="loge.jpeg" alt="Yahya.DEV Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <span class="logo-fallback">Yahya<span>.DEV</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="projects.html" class="active">Work</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Hire Me</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="projects-hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+    </div>
+    <div class="projects-hero-content">
+      <a href="index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Studio
+      </a>
+      <div class="ph-eyebrow" data-aos>
+        <span class="section-tag">Selected Work</span>
+      </div>
+      <h1 class="ph-title" data-aos>
+        The <span class="accent">Gallery</span>
+      </h1>
+      <p class="ph-desc" data-aos>
+        Full-stack systems, cinematic experiences, and precision-engineered platforms —<br />
+        each one a case study in performance, artistry, and craft.
+      </p>
+    </div>
+  </section>
+
+  <section class="projects-gallery">
+    <div class="container">
+
+      <!-- FILTER TABS -->
+      <div class="pg-filter-bar" data-aos>
+        <button class="pg-filter-btn active" data-filter="all">
+          <i class="fas fa-th"></i> All Projects
+        </button>
+        <button class="pg-filter-btn" data-filter="fullstack">
+          <i class="fas fa-server"></i> Full-Stack Apps
+        </button>
+        <button class="pg-filter-btn" data-filter="frontend">
+          <i class="fas fa-palette"></i> Creative Front-End
+        </button>
+      </div>
+
+      <!-- =============================================
+           PROJECT 1: VORTEX TRADER_Y
+           ============================================= -->
+      <article class="pg-card" data-cat="fullstack" data-aos>
+        <div class="pg-badge">Featured Project</div>
+        <div class="pg-badge badge-dev" style="left:auto; right:1.5rem;">⚡ Back-End Under Development</div>
+        <div class="pg-inner">
+          <div class="pg-visual">
+            <div class="pg-img-wrap">
+              <img src="PIC/vortex.png" alt="Vortex Trader_Y Platform" class="pg-img"
+                onerror="this.parentElement.classList.add('pg-no-img')" />
+              <div class="pg-img-overlay">
+                <div class="pg-overlay-content">
+                  <span class="pg-overlay-label">Live Platform</span>
+                  <a href="https://vortex-trader-y.vercel.app/" target="_blank" class="pg-overlay-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pg-info">
+            <div class="pg-category">Full-Stack App · Web Application Architecture</div>
+            <h2 class="pg-title">Vortex<br /><span class="accent">Trader_Y</span></h2>
+            <p class="pg-desc">
+              A highly sophisticated trading platform featuring live market analysis, real-time dynamic dashboards, an interactive demo-trading simulator, and an integrated crypto/forex learning course system.
+            </p>
+            <div class="pg-tags">
+              <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span><span>GSAP</span><span>Laravel</span><span>WebSockets</span>
+            </div>
+            <div class="pg-action-bar">
+              <a href="https://vortex-trader-y.vercel.app/" target="_blank" class="pg-action-btn live">
+                <i class="fas fa-external-link-alt"></i> View Live
+              </a>
+              <a href="https://vt.tiktok.com/ZSxYvWe5R/" target="_blank" class="pg-action-btn tiktok-btn">
+                <i class="fab fa-tiktok"></i> TikTok
+              </a>
+              <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUyOTkzMTQyNjY5NDYw?story_media_id=3899102142338210602&igsh=MWFnejhyZHc3bWlrcA==" target="_blank" class="pg-action-btn insta-btn">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- =============================================
+           PROJECT 2: ELITE CARE AMBULANCE
+           ============================================= -->
+      <article class="pg-card" data-cat="fullstack" data-aos>
+        <div class="pg-badge">Client Project</div>
+        <div class="pg-inner pg-inner-reverse">
+          <div class="pg-visual">
+            <div class="pg-img-wrap">
+              <img src="PIC/elite.png" alt="Elite Care Ambulance Platform" class="pg-img"
+                onerror="this.parentElement.classList.add('pg-no-img')" />
+              <div class="pg-img-overlay">
+                <div class="pg-overlay-content">
+                  <span class="pg-overlay-label">Live Platform</span>
+                  <a href="https://www.elite-ambulance.online/" target="_blank" class="pg-overlay-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pg-info">
+            <div class="pg-category">Full-Stack Web Development · SEO Optimization</div>
+            <h2 class="pg-title">Elite Care<br /><span class="accent">Ambulance</span></h2>
+            <p class="pg-desc">
+              A fully-realized commercial emergency ambulance service platform, completely optimized for Google Ads campaigns, speed performance, and local search visibility. Delivered live to client.
+            </p>
+            <div class="pg-tags">
+              <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span><span>SEO</span><span>Google Ads</span>
+            </div>
+            <div class="pg-action-bar">
+              <a href="https://www.elite-ambulance.online/" target="_blank" class="pg-action-btn live">
+                <i class="fas fa-external-link-alt"></i> View Live
+              </a>
+              <a href="https://vt.tiktok.com/ZSxYnQvsc/" target="_blank" class="pg-action-btn tiktok-btn">
+                <i class="fab fa-tiktok"></i> TikTok
+              </a>
+              <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUyOTkzMTQyNjY5NDYw?story_media_id=3897948511303931612&igsh=MWFnejhyZHc3bWlrcA==" target="_blank" class="pg-action-btn insta-btn">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="pg-divider" data-aos>
+        <span class="pd-line"></span>
+        <span class="pd-label"><i class="fas fa-palette"></i> Creative Front-End</span>
+        <span class="pd-line"></span>
+      </div>
+
+      <!-- =============================================
+           PROJECT 3: SCHWEPPES GOLD
+           ============================================= -->
+      <article class="pg-card" data-cat="frontend" data-aos>
+        <div class="pg-badge">Featured Project</div>
+        <div class="pg-inner">
+          <div class="pg-visual">
+            <div class="pg-img-wrap">
+              <img src="PIC/sh.png" alt="Schweppes Gold Cinematic Experience" class="pg-img"
+                onerror="this.parentElement.classList.add('pg-no-img')" />
+              <div class="pg-img-overlay">
+                <div class="pg-overlay-content">
+                  <span class="pg-overlay-label">Live Experience</span>
+                  <a href="https://yehiahwary0-oss.github.io/Schweppes/" target="_blank" class="pg-overlay-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pg-info">
+            <div class="pg-category">Brand Activation · Creative Front-End & Motion Design</div>
+            <h2 class="pg-title">Schweppes Gold<br /><span class="accent">Cinematic Experience</span></h2>
+            <p class="pg-desc">
+              High-end, luxury interactive product showcase featuring advanced scroll-driven storytelling, custom GSAP animations, and premium fluid layouts. A full-scale immersive brand activation.
+            </p>
+            <div class="pg-tags">
+              <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>GSAP</span>
+            </div>
+            <div class="pg-action-bar">
+              <a href="https://yehiahwary0-oss.github.io/Schweppes/" target="_blank" class="pg-action-btn live">
+                <i class="fas fa-external-link-alt"></i> View Live
+              </a>
+              <a href="https://vt.tiktok.com/ZSxYc3tU6/" target="_blank" class="pg-action-btn tiktok-btn">
+                <i class="fab fa-tiktok"></i> TikTok
+              </a>
+              <a href="https://www.instagram.com/reel/DX5SrPFoK2V/" target="_blank" class="pg-action-btn insta-btn">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="pg-divider" data-aos>
+        <span class="pd-line"></span>
+        <span class="pd-label"><i class="fas fa-history"></i> Technical Evolution</span>
+        <span class="pd-line"></span>
+      </div>
+
+      <!-- =============================================
+           PROJECT 4: PORTFOLIO V1
+           ============================================= -->
+      <article class="pg-card" data-cat="frontend" data-aos>
+        <div class="pg-badge legacy-badge">Origin Point</div>
+        <div class="pg-inner pg-inner-reverse">
+          <div class="pg-visual">
+            <div class="pg-img-wrap">
+              <img src="PIC/my.png" alt="Portfolio V1 - The Origin" class="pg-img"
+                onerror="this.style.display='none'; this.parentElement.classList.add('pg-no-img')">
+              <div class="pg-img-overlay">
+                <div class="pg-overlay-content">
+                  <span class="pg-overlay-label">View Origin</span>
+                  <a href="https://yehiahwary0-oss.github.io/yahya.github.io/" target="_blank" class="pg-overlay-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="pg-visual-accent">
+              <span class="va-tag"><i class="fas fa-clock"></i> 2024 Archive</span>
+            </div>
+          </div>
+          <div class="pg-info">
+            <div class="pg-category">Personal Portfolio · Front-End Evolution</div>
+            <h2 class="pg-title">Personal Portfolio <span class="accent">V1</span><br /><span class="pg-subtitle">The Origin Story</span></h2>
+            <p class="pg-desc">
+              Retained as an archive to showcase the developmental progression and timeline of my design and layout capabilities. A foundational study in responsive design and structured CSS.
+            </p>
+            <div class="pg-evolution">
+              <div class="pge-label">Evolution Arc</div>
+              <div class="pge-timeline">
+                <div class="pge-point"><span class="pge-marker past"></span><span>V1 · 2024</span></div>
+                <div class="pge-connector"></div>
+                <div class="pge-point"><span class="pge-marker present"></span><span>V2 · Now</span></div>
+              </div>
+            </div>
+            <div class="pg-tags">
+              <span>HTML5</span><span>CSS3</span><span>Responsive</span>
+            </div>
+            <div class="pg-action-bar">
+              <a href="https://yehiahwary0-oss.github.io/yahya.github.io/" target="_blank" class="pg-action-btn archive-btn">
+                <i class="fas fa-external-link-alt"></i> View Origin
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- COMING SOON -->
+      <div class="pg-incoming" data-aos>
+        <div class="pgi-inner">
+          <span class="section-tag">In Production</span>
+          <h3>More Case Studies<br /><span class="accent">Coming Soon</span></h3>
+          <p>VORTEX TRADER_Y back-end systems and new client projects are in active development. Follow the journey for exclusive previews.</p>
+          <div class="pgi-actions">
+            <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" class="btn btn-instagram-main">
+              <i class="fab fa-instagram"></i> Follow Journey
+            </a>
+            <a href="index.html#contact" class="btn btn-outline">
+              <i class="fas fa-paper-plane"></i> Start a Project
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="footer-logo">Yahya<span>.DEV</span></a>
+        <p class="footer-identity">Yahya Al-sulami — Full-Stack Developer & UI/UX Architect</p>
+        <p>© 2025 <strong>Yahya.DEV</strong> — Designed by <strong>Yahya Al-sulami</strong></p>
+        <div class="footer-socials">
+          <a href="mailto:yehiahwary515@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@yahya.dev8" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://github.com/yehiahwary0-oss" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="script.js"></script>
+</body>
+</html>
