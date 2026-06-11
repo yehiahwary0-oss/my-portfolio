@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 — Page Not Found | Yahya.DEV</title>
+  <meta name="description" content="Page not found — Yahya Al-Sulami portfolio. Navigate back to the main site."/>
+  <meta name="robots" content="noindex, follow"/>
+  <meta name="theme-color" content="#020208"/>
+  <link rel="icon" href="PIC/logo.webp" type="image/webp"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <style>
+    :root {
+      --bg:      #020208;
+      --indigo:  #6366f1;
+      --indigo-l:#818cf8;
+      --cyan:    #06b6d4;
+      --cyan-l:  #22d3ee;
+      --purple:  #a855f7;
+      --white:   #f1f5f9;
+      --muted:   #475569;
+      --font-d:  'Syne', sans-serif;
+      --font-b:  'DM Sans', sans-serif;
+      --font-m:  'JetBrains Mono', monospace;
+      --ease:    cubic-bezier(0.16,1,0.3,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      background: var(--bg); color: var(--white);
+      font-family: var(--font-b);
+      overflow: hidden; cursor: none;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #cursor-dot {
+      position:fixed;top:0;left:0;width:6px;height:6px;
+      background:var(--cyan);border-radius:50%;
+      pointer-events:none;z-index:9999;
+      transform:translate(-50%,-50%);
+    }
+    #cursor-ring {
+      position:fixed;top:0;left:0;width:32px;height:32px;
+      border:1.5px solid rgba(99,102,241,.5);border-radius:50%;
+      pointer-events:none;z-index:9998;
+      transform:translate(-50%,-50%);
+      transition:width .3s var(--ease),height .3s var(--ease),border-color .3s;
+    }
+    body:has(a:hover) #cursor-ring { width:50px;height:50px;border-color:var(--cyan); }
+
+    #three-canvas { position:fixed;inset:0;z-index:0;pointer-events:none; }
+
+    /* Noise */
+    body::before {
+      content:'';position:fixed;inset:0;z-index:1;pointer-events:none;
+      opacity:.025;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Grid */
+    body::after {
+      content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+      background-image:
+        linear-gradient(rgba(99,102,241,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,102,241,.03) 1px, transparent 1px);
+      background-size:60px 60px;
+      mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+    }
+
+    .content {
+      position:relative;z-index:2;
+      text-align:center;
+      padding:2rem var(--space-pad, 24px);
+      animation:fadeUp .9s var(--ease) forwards;
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(40px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    .error-label {
+      display:inline-flex;align-items:center;gap:12px;
+      font-family:var(--font-m);font-size:.65rem;
+      letter-spacing:.3em;text-transform:uppercase;
+      color:var(--cyan);margin-bottom:1.5rem;
+    }
+    .error-label::before, .error-label::after {
+      content:'';width:24px;height:1px;
+      background:linear-gradient(90deg,transparent,var(--cyan));
+    }
+    .error-label::after { transform:scaleX(-1); }
+
+    .error-num {
+      font-family:var(--font-d);
+      font-size:clamp(7rem,18vw,14rem);
+      font-weight:800;letter-spacing:-.04em;
+      line-height:1;
+      background:linear-gradient(135deg,var(--indigo-l),var(--cyan-l),var(--purple));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      background-clip:text;
+      background-size:200% 200%;
+      animation:grad 4s ease infinite;
+      display:block;margin-bottom:.5rem;
+    }
+    @keyframes grad {
+      0%,100%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+    }
+
+    .error-title {
+      font-family:var(--font-d);
+      font-size:clamp(1.2rem,2.5vw,1.8rem);
+      font-weight:700;color:var(--white);
+      margin-bottom:.75rem;letter-spacing:-.01em;
+    }
+    .error-desc {
+      font-size:.95rem;color:var(--muted);
+      max-width:420px;margin:0 auto 2.5rem;
+      line-height:1.85;
+    }
+
+    .error-links { display:flex;gap:1rem;justify-content:center;flex-wrap:wrap; }
+
+    .btn-home {
+      display:inline-flex;align-items:center;gap:8px;
+      padding:13px 30px;
+      background:linear-gradient(135deg,var(--indigo),#4f46e5);
+      color:#fff;font-family:var(--font-b);
+      font-size:.85rem;font-weight:500;
+      letter-spacing:.06em;
+      text-decoration:none;border-radius:8px;
+      transition:transform .3s var(--ease),box-shadow .3s;
+      cursor:none;
+      box-shadow:0 4px 20px rgba(99,102,241,.3);
+    }
+    .btn-home:hover { transform:translateY(-3px);box-shadow:0 8px 32px rgba(99,102,241,.5); }
+
+    .btn-projects {
+      display:inline-flex;align-items:center;gap:8px;
+      padding:12px 30px;
+      background:transparent;
+      color:var(--white);font-family:var(--font-b);
+      font-size:.85rem;font-weight:500;
+      letter-spacing:.06em;
+      text-decoration:none;border-radius:8px;
+      border:1px solid rgba(99,102,241,.3);
+      transition:border-color .3s,background .3s,transform .3s;
+      cursor:none;
+    }
+    .btn-projects:hover { border-color:var(--cyan);background:rgba(6,182,212,.07);transform:translateY(-3px); }
+
+    .redirect-note {
+      margin-top:2.5rem;
+      font-family:var(--font-m);font-size:.62rem;
+      letter-spacing:.15em;color:var(--muted);
+    }
+    .redirect-note span { color:var(--indigo-l); }
+  </style>
+</head>
+<body>
+<div id="cursor-dot"  aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+<canvas id="three-canvas" aria-hidden="true"></canvas>
+
+<div class="content" role="main" aria-label="404 Error Page">
+  <div class="error-label">Signal Lost</div>
+  <span class="error-num" aria-label="404">404</span>
+  <h1 class="error-title">Page Not Found</h1>
+  <p class="error-desc">
+    This page drifted into the void. It might have been moved,
+    deleted, or never existed in this dimension.
+  </p>
+  <div class="error-links">
+    <a href="index.html"    class="btn-home">← Back to Home</a>
+    <a href="projects.html" class="btn-projects">View Projects</a>
+  </div>
+  <p class="redirect-note">Auto-redirecting in <span id="cd">10</span>s</p>
+</div>
+
+<script>
+// Cursor
+const dot=document.getElementById('cursor-dot'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+(function a(){dot.style.left=mx+'px';dot.style.top=my+'px';rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+
+// Countdown
+let c=10;const cd=document.getElementById('cd');
+setInterval(()=>{c--;cd.textContent=c;if(c<=0)window.location.href='index.html';},1000);
+</script>
+
+<script>
+window.addEventListener('load',()=>{
+  if(typeof THREE==='undefined')return;
+  const canvas=document.getElementById('three-canvas');
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.5));
+  renderer.setSize(window.innerWidth,window.innerHeight);
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,.1,1000);
+  camera.position.z=5;
+  const geo=new THREE.BufferGeometry();
+  const n=1600,pos=new Float32Array(n*3),col=new Float32Array(n*3);
+  for(let i=0;i<n*3;i+=3){
+    pos[i]=(Math.random()-.5)*60;pos[i+1]=(Math.random()-.5)*60;pos[i+2]=(Math.random()-.5)*60;
+    const t=Math.random();
+    if(t<.45){col[i]=.39;col[i+1]=.40;col[i+2]=.95;}
+    else if(t<.7){col[i]=.024;col[i+1]=.714;col[i+2]=.831;}
+    else{col[i]=.66;col[i+1]=.33;col[i+2]=.97;}
+  }
+  geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  geo.setAttribute('color',new THREE.BufferAttribute(col,3));
+  scene.add(new THREE.Points(geo,new THREE.PointsMaterial({size:.05,vertexColors:true,transparent:true,opacity:.6})));
+  let mx2=0,my2=0,t=0;
+  document.addEventListener('mousemove',e=>{mx2=(e.clientX/window.innerWidth-.5)*2;my2=(e.clientY/window.innerHeight-.5)*2;});
+  window.addEventListener('resize',()=>{renderer.setSize(window.innerWidth,window.innerHeight);camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();});
+  (function animate(){requestAnimationFrame(animate);t+=.003;scene.rotation.y=mx2*.04+t*.04;scene.rotation.x=my2*.025;renderer.render(scene,camera);})();
+});
+</script>
+</body>
+</html>

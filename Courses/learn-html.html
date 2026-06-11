@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تعلم HTML5 — Yahya.DEV | دليل شامل لتعلم HTML من الصفر</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="دليل HTML5 الشامل بقلم Yahya Al-sulami (Yahya.DEV) — تعلم HTML من الصفر حتى الاحتراف، شرح كامل مع أمثلة تطبيقية لكل عنصر في HTML5 بأحدث إصدار." />
+  <meta name="keywords" content="تعلم HTML, HTML5, شرح HTML بالعربي, Yahya.DEV, Yahya Al-sulami, كورس HTML مجاني, HTML للمبتدئين, تعلم برمجة, HTML tutorial Arabic" />
+  <meta name="author" content="Yahya Al-sulami — Yahya.DEV" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="Arabic" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="تعلم HTML5 من الصفر — Yahya.DEV" />
+  <meta property="og:description" content="دليل HTML5 الشامل بقلم Yahya.DEV — شرح كامل مع أمثلة تطبيقية لكل عنصر في HTML5" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://yehiahwary0-oss.github.io/my-portfolio/html-guide.html" />
+  <meta property="og:site_name" content="Yahya.DEV" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="تعلم HTML5 — Yahya.DEV" />
+  <meta name="twitter:description" content="دليل HTML5 الشامل — تعلم HTML من الصفر حتى الاحتراف" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://yehiahwary0-oss.github.io/my-portfolio/html-guide.html" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "تعلم HTML5 من الصفر حتى الاحتراف",
+    "author": {
+      "@type": "Person",
+      "name": "Yahya Al-sulami",
+      "url": "https://yehiahwary0-oss.github.io/my-portfolio/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Yahya.DEV"
+    },
+    "inLanguage": "ar",
+    "articleSection": "Web Development",
+    "keywords": "HTML5, تعلم HTML, برمجة"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #030507;
+      --surface: #0a0d12;
+      --surface2: #0f1318;
+      --border: rgba(255,255,255,0.06);
+      --border-hover: rgba(231,76,24,0.4);
+      --accent: #e74c18;
+      --accent2: #ff6b35;
+      --accent-glow: rgba(231,76,24,0.15);
+      --text: #e8eaed;
+      --text-muted: #7a8394;
+      --text-dim: #4a5568;
+      --code-bg: #080b0f;
+      --code-border: rgba(231,76,24,0.2);
+      --tag-orange: #e74c18;
+      --tag-blue: #3b82f6;
+      --tag-green: #10b981;
+      --tag-purple: #8b5cf6;
+      --tag-yellow: #f59e0b;
+      --font-ar: 'Cairo', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      --font-display: 'Bebas Neue', cursive;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-ar);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE TEXTURE ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(3,5,7,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-logo span { color: var(--text); }
+
+    .nav-search {
+      flex: 1;
+      max-width: 460px;
+      position: relative;
+    }
+
+    .nav-search input {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 1rem 0.5rem 2.8rem;
+      color: var(--text);
+      font-family: var(--font-ar);
+      font-size: 0.875rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      direction: rtl;
+    }
+
+    .nav-search input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .nav-search input::placeholder { color: var(--text-dim); }
+
+    .search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .search-results {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      display: none;
+      max-height: 360px;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      z-index: 999;
+    }
+
+    .search-results.open { display: block; }
+
+    .search-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .search-item:hover { background: var(--surface2); }
+    .search-item:last-child { border-bottom: none; }
+
+    .search-item-tag {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      background: var(--accent-glow);
+      color: var(--accent);
+      font-family: var(--font-mono);
+      white-space: nowrap;
+    }
+
+    .search-item-title { font-size: 0.875rem; font-weight: 600; }
+    .search-item-desc { font-size: 0.75rem; color: var(--text-muted); }
+
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-family: var(--font-ar);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-back:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(231,76,24,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(231,76,24,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(231,76,24,0.12) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 860px; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.2rem;
+      border: 1px solid var(--border-hover);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      background: var(--accent-glow);
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 12vw, 9rem);
+      line-height: 0.9;
+      letter-spacing: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 .line1 { color: var(--text); display: block; }
+    .hero h1 .line2 {
+      color: var(--accent);
+      display: block;
+      -webkit-text-stroke: 1px var(--accent);
+      text-shadow: 0 0 60px rgba(231,76,24,0.5);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin: 1.5rem 0 2.5rem;
+      max-width: 580px;
+      margin-inline: auto;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+
+    .hero-stat { text-align: center; }
+
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .hero-stat-label { font-size: 0.75rem; color: var(--text-dim); letter-spacing: 1px; margin-top: 0.25rem; }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 100vh;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+      gap: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .page-wrap { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 80px;
+      height: calc(100vh - 100px);
+      overflow-y: auto;
+      padding: 1rem 0;
+    }
+
+    .sidebar::-webkit-scrollbar { width: 2px; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); }
+
+    .sidebar-title {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0 1rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.75rem;
+    }
+
+    .sidebar-group { margin-bottom: 0.5rem; }
+
+    .sidebar-group-title {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+      padding: 0.5rem 1rem 0.25rem;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.15s;
+      border-right: 2px solid transparent;
+    }
+
+    .sidebar-link:hover,
+    .sidebar-link.active {
+      color: var(--accent);
+      background: var(--accent-glow);
+      border-right-color: var(--accent);
+    }
+
+    .sidebar-link .dot {
+      width: 5px; height: 5px;
+      background: currentColor;
+      border-radius: 50%;
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    /* ── MAIN CONTENT ── */
+    .main-content { min-width: 0; }
+
+    /* ── SECTION ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .section:hover { border-color: rgba(231,76,24,0.15); }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle at top right, rgba(231,76,24,0.05), transparent 70%);
+      pointer-events: none;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      line-height: 1;
+      color: rgba(231,76,24,0.15);
+      flex-shrink: 0;
+      margin-top: -0.3rem;
+    }
+
+    .section-meta { flex: 1; }
+
+    .section-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    .tag-orange { background: rgba(231,76,24,0.15); color: var(--tag-orange); }
+    .tag-blue   { background: rgba(59,130,246,0.15); color: var(--tag-blue); }
+    .tag-green  { background: rgba(16,185,129,0.15); color: var(--tag-green); }
+    .tag-purple { background: rgba(139,92,246,0.15); color: var(--tag-purple); }
+    .tag-yellow { background: rgba(245,158,11,0.15); color: var(--tag-yellow); }
+
+    .section h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+
+    .section-desc { color: var(--text-muted); font-size: 0.9rem; }
+
+    /* ── TEXT CONTENT ── */
+    .prose p { margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.9; color: var(--text-muted); }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose strong { color: var(--text); font-weight: 700; }
+    .prose em { color: var(--accent); font-style: normal; font-weight: 600; }
+
+    /* ── CODE BLOCK ── */
+    .code-block {
+      background: var(--code-bg);
+      border: 1px solid var(--code-border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 1.25rem 0;
+      font-size: 0.85rem;
+    }
+
+    .code-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1rem;
+      background: rgba(231,76,24,0.06);
+      border-bottom: 1px solid var(--code-border);
+    }
+
+    .code-dots { display: flex; gap: 6px; }
+    .code-dots span { width: 10px; height: 10px; border-radius: 50%; }
+    .code-dots span:nth-child(1) { background: #ff5f57; }
+    .code-dots span:nth-child(2) { background: #febc2e; }
+    .code-dots span:nth-child(3) { background: #28c840; }
+
+    .code-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+
+    .copy-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .copy-btn.copied { border-color: #10b981; color: #10b981; }
+
+    .code-body {
+      padding: 1.25rem 1.25rem 1.25rem;
+      overflow-x: auto;
+      direction: ltr;
+    }
+
+    .code-body pre {
+      font-family: var(--font-mono);
+      line-height: 1.7;
+      white-space: pre;
+    }
+
+    /* Syntax highlighting */
+    .t { color: var(--text-muted); }
+    .tag { color: #e06c75; }
+    .attr { color: #d19a66; }
+    .val { color: #98c379; }
+    .com { color: #5c6370; font-style: italic; }
+    .txt { color: var(--text); }
+    .kw  { color: #c678dd; }
+    .str { color: #98c379; }
+    .num { color: #d19a66; }
+
+    /* ── RESULT PREVIEW ── */
+    .result-preview {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 0.75rem;
+    }
+
+    .result-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(16,185,129,0.06);
+      border-bottom: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: #10b981;
+    }
+
+    .result-body {
+      padding: 1.25rem;
+      background: #fff;
+      color: #1a1a1a;
+      font-family: Georgia, serif;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      direction: ltr;
+    }
+
+    /* ── INFO BOX ── */
+    .info-box {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      font-size: 0.875rem;
+    }
+
+    .info-box.tip    { background: rgba(16,185,129,0.08); border-right: 3px solid #10b981; }
+    .info-box.warn   { background: rgba(245,158,11,0.08); border-right: 3px solid #f59e0b; }
+    .info-box.info   { background: rgba(59,130,246,0.08); border-right: 3px solid #3b82f6; }
+    .info-box.danger { background: rgba(231,76,24,0.08);  border-right: 3px solid var(--accent); }
+
+    .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+    .info-content strong { display: block; margin-bottom: 0.25rem; color: var(--text); }
+    .info-content p { margin: 0; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── ELEMENTS TABLE ── */
+    .elements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin: 1.25rem 0;
+    }
+
+    .element-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      transition: all 0.2s;
+    }
+
+    .element-card:hover {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
+    .element-tag {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .element-desc { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* ── ATTRIBUTES TABLE ── */
+    .attr-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
+    .attr-table th {
+      background: var(--surface2);
+      padding: 0.65rem 1rem;
+      text-align: right;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      border-bottom: 2px solid var(--accent);
+      font-weight: 700;
+    }
+    .attr-table td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+    .attr-table tr:hover td { background: var(--surface2); }
+    .attr-table code {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      background: var(--accent-glow);
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+    }
+
+    /* ── PROGRESS BAR ── */
+    .progress-section {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .progress-title {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      letter-spacing: 1px;
+      margin-bottom: 0.75rem;
+    }
+
+    .progress-bar-wrap { background: var(--bg); border-radius: 100px; height: 6px; overflow: hidden; margin-bottom: 0.35rem; }
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .progress-label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-dim); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      letter-spacing: 1px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── TASK BAR / FOOTER ── */
+    .taskbar {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-top: 4rem;
+      position: relative;
+    }
+
+    .taskbar-inner { max-width: 900px; margin: 0 auto; }
+
+    .taskbar-logo {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--accent);
+      letter-spacing: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    .taskbar-logo span { color: var(--text); }
+
+    .taskbar-tagline {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .taskbar-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .taskbar-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-family: var(--font-ar);
+      transition: all 0.25s;
+    }
+
+    .taskbar-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-glow);
+    }
+
+    .taskbar-link svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .taskbar-divider { width: 1px; height: 20px; background: var(--border); }
+
+    .taskbar-bottom {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .taskbar-bottom a { color: var(--accent); text-decoration: none; }
+
+    /* ── BACK TO TOP ── */
+    .back-top {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      width: 44px; height: 44px;
+      background: var(--accent);
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(231,76,24,0.4);
+      transition: all 0.2s;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 500;
+    }
+
+    .back-top.show { opacity: 1; pointer-events: all; }
+    .back-top:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(231,76,24,0.5); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section { animation: fadeUp 0.5s ease both; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 640px) {
+      .navbar { padding: 0 1rem; gap: 0.5rem; }
+      .nav-back span { display: none; }
+      .hero { min-height: 80vh; padding: 6rem 1.5rem 3rem; }
+      .section { padding: 1.5rem; }
+      .hero-stats { gap: 1.5rem; }
+    }
+
+    /* ── LANG TABS ── */
+    .lang-page { display: none; }
+    .lang-page.active-page { display: block; }
+
+    /* ── HIGHLIGHT SEARCH ── */
+    mark.search-hl {
+      background: rgba(231,76,24,0.25);
+      color: var(--accent);
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="https://yehiahwary0-oss.github.io/my-portfolio/" class="nav-logo">YAHYA<span>.DEV</span></a>
+
+  <div class="nav-search">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="ابحث في الدرس... (مثال: div، form، meta)" autocomplete="off" />
+    <div class="search-results" id="searchResults"></div>
+  </div>
+
+  <a href="https://yehiahwary0-oss.github.io/my-portfolio/" class="nav-back">
+    ← <span>العودة للموقع</span>
+  </a>
+</nav>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="أعلى الصفحة">↑</button>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge">HTML5 · LATEST STANDARD · FULL GUIDE</div>
+    <h1>
+      <span class="line1">تعلم</span>
+      <span class="line2">HTML5</span>
+    </h1>
+    <p class="hero-sub">
+      الدليل الشامل لتعلم HTML5 من الصفر حتى الاحتراف — شرح كامل لكل عنصر مع أمثلة تطبيقية حقيقية تغنيك عن أي كورس
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">100+</div><div class="hero-stat-label">عنصر HTML</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">30+</div><div class="hero-stat-label">درس تطبيقي</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">HTML5</div><div class="hero-stat-label">أحدث إصدار</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE WRAP -->
+<div class="page-wrap">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-title">// محتويات الدرس</div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">المقدمة</div>
+      <a href="#s01" class="sidebar-link"><span class="dot"></span>ما هي HTML؟</a>
+      <a href="#s02" class="sidebar-link"><span class="dot"></span>البنية الأساسية</a>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">النصوص والعناوين</div>
+      <a href="#s03" class="sidebar-link"><span class="dot"></span>العناوين h1–h6</a>
+      <a href="#s04" class="sidebar-link"><span class="dot"></span>الفقرات والنص</a>
+      <a href="#s05" class="sidebar-link"><span class="dot"></span>تنسيق النص</a>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">الروابط والصور</div>
+      <a href="#s06" class="sidebar-link"><span class="dot"></span>الروابط &lt;a&gt;</a>
+      <a href="#s07" class="sidebar-link"><span class="dot"></span>الصور &lt;img&gt;</a>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">القوائم</div>
+      <a href="#s08" class="sidebar-link"><span class="dot"></span>القوائم المرتبة</a>
+      <a href="#s09" class="sidebar-link"><span class="dot"></span>القوائم غير المرتبة</a>
+      <a href="#s10" class="sidebar-link"><span class="dot"></span>قوائم التعريف</a>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">الجداول</div>
+      <a href="#s11" class="sidebar-link"><span class="dot"></span>إنشاء جدول</a>
+      <a href="#s12" class="sidebar-link"><span class="dot"></span>دمج الخلايا</a>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">النماذج (Forms)</div>
+      <a href="#s13" class="sidebar-link"><span class="dot"></span>بنية النموذج</a>
+      <a href="#s14" class="sidebar-link"><span class="dot"></span>حقول الإدخال</a>
+      <a href="#s15" class="sidebar-link"><span class="dot"></span>أنواع Input</a>
+      <a href="#s16" class="sidebar-link"><span class="dot"></span>Select & Textarea</a>
+      <a href="#s17" class="sidebar-link"><span class="dot"></span>التحقق من البيانات</a>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">البنية الدلالية</div>
+      <a href="#s18" class="sidebar-link"><span class="dot"></span>Semantic HTML5</a>
+      <a href="#s19" class="sidebar-link"><span class="dot"></span>Header & Nav</a>
+      <a href="#s20" class="sidebar-link"><span class="dot"></span>Main, Article, Section</a>
+      <a href="#s21" class="sidebar-link"><span class="dot"></span>Aside & Footer</a>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">الوسائط</div>
+      <a href="#s22" class="sidebar-link"><span class="dot"></span>الفيديو &lt;video&gt;</a>
+      <a href="#s23" class="sidebar-link"><span class="dot"></span>الصوت &lt;audio&gt;</a>
+      <a href="#s24" class="sidebar-link"><span class="dot"></span>iframe</a>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">Meta & SEO</div>
+      <a href="#s25" class="sidebar-link"><span class="dot"></span>الـ Meta Tags</a>
+      <a href="#s26" class="sidebar-link"><span class="dot"></span>Open Graph</a>
+      <a href="#s27" class="sidebar-link"><span class="dot"></span>Structured Data</a>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">خصائص عامة</div>
+      <a href="#s28" class="sidebar-link"><span class="dot"></span>Global Attributes</a>
+      <a href="#s29" class="sidebar-link"><span class="dot"></span>Data Attributes</a>
+      <a href="#s30" class="sidebar-link"><span class="dot"></span>Accessibility (ARIA)</a>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-group-title">عناصر متقدمة</div>
+      <a href="#s31" class="sidebar-link"><span class="dot"></span>Canvas</a>
+      <a href="#s32" class="sidebar-link"><span class="dot"></span>Details & Summary</a>
+      <a href="#s33" class="sidebar-link"><span class="dot"></span>Dialog</a>
+      <a href="#s34" class="sidebar-link"><span class="dot"></span>Template & Slot</a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- PROGRESS -->
+    <div class="progress-section">
+      <div class="progress-title">// تقدم الدرس</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="readProgress" style="width:0%"></div></div>
+      <div class="progress-label"><span id="progressLabel">بداية الدرس</span><span id="progressPct">0%</span></div>
+    </div>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S01: ما هي HTML -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s01">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <div class="section-meta">
+          <span class="section-tag tag-orange">// FOUNDATION</span>
+          <h2>ما هي HTML؟</h2>
+          <p class="section-desc">أساس كل صفحة ويب على الإنترنت</p>
+        </div>
+      </div>
+      <div class="prose">
+        <p><strong>HTML</strong> تعني <em>HyperText Markup Language</em> — وهي ليست لغة برمجة، بل لغة <strong>ترميز</strong> تُخبر المتصفح بكيفية عرض المحتوى.</p>
+        <p>كل موقع ويب تراه على الإنترنت مبني في أساسه على HTML. إنها الهيكل العظمي للصفحة، مثل الهيكل الخرساني للمبنى — CSS هي الديكور، JavaScript هي الحياة.</p>
+        <p><strong>HTML5</strong> هو أحدث إصدار رسمي (2014 معتمد من W3C) وهو المعيار المستخدم اليوم بشكل كامل في جميع المتصفحات.</p>
+      </div>
+      <div class="info-box info">
+        <div class="info-icon">ℹ️</div>
+        <div class="info-content">
+          <strong>ملاحظة مهمة</strong>
+          <p>HTML ليست لغة برمجة — لا تحتوي على متغيرات أو شروط أو حلقات. هي فقط تحدد <strong>هيكل</strong> المحتوى.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S02: البنية الأساسية -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s02">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <div class="section-meta">
+          <span class="section-tag tag-blue">// STRUCTURE</span>
+          <h2>البنية الأساسية لأي صفحة HTML</h2>
+          <p class="section-desc">هيكل كل صفحة ويب بدون استثناء</p>
+        </div>
+      </div>
+      <div class="prose">
+        <p>كل صفحة HTML تبدأ بهذه البنية الجوهرية. <strong>احفظها جيداً</strong> — كل ما ستكتبه في حياتك كمطور يعتمد عليها.</p>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">index.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="com">&lt;!-- إعلان نوع المستند - دائماً في أول السطر --&gt;</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+
+<span class="com">&lt;!-- العنصر الجذر للصفحة - lang تحدد لغة الصفحة --&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="val">"ar"</span> <span class="attr">dir</span>=<span class="val">"rtl"</span><span class="tag">&gt;</span>
+
+<span class="tag">&lt;head&gt;</span>
+  <span class="com">&lt;!-- ترميز النصوص - يجب أن يكون أول شيء --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="val">"UTF-8"</span> <span class="tag">/&gt;</span>
+
+  <span class="com">&lt;!-- التوافق مع الشاشات المختلفة --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"viewport"</span> <span class="attr">content</span>=<span class="val">"width=device-width, initial-scale=1.0"</span> <span class="tag">/&gt;</span>
+
+  <span class="com">&lt;!-- عنوان الصفحة يظهر في تبويب المتصفح --&gt;</span>
+  <span class="tag">&lt;title&gt;</span><span class="txt">اسم صفحتي | Yahya.DEV</span><span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+
+<span class="tag">&lt;body&gt;</span>
+  <span class="com">&lt;!-- كل المحتوى الظاهر للمستخدم يأتي هنا --&gt;</span>
+  <span class="tag">&lt;h1&gt;</span><span class="txt">مرحباً بالعالم!</span><span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+
+<span class="tag">&lt;/html&gt;</span></pre></div>
+      </div>
+      <div class="result-preview">
+        <div class="result-header">▶ النتيجة في المتصفح</div>
+        <div class="result-body"><h1>مرحباً بالعالم!</h1></div>
+      </div>
+      <div class="divider">شرح العناصر</div>
+      <table class="attr-table">
+        <thead><tr><th>العنصر</th><th>الوظيفة</th></tr></thead>
+        <tbody>
+          <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>يخبر المتصفح أن هذه صفحة HTML5</td></tr>
+          <tr><td><code>&lt;html&gt;</code></td><td>العنصر الجذر الذي يحتوي كل شيء</td></tr>
+          <tr><td><code>&lt;head&gt;</code></td><td>معلومات الصفحة — لا تظهر للمستخدم</td></tr>
+          <tr><td><code>&lt;body&gt;</code></td><td>كل المحتوى الظاهر للمستخدم</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S03: العناوين -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s03">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <div class="section-meta">
+          <span class="section-tag tag-green">// HEADINGS</span>
+          <h2>العناوين h1 — h6</h2>
+          <p class="section-desc">تنظيم التسلسل الهرمي للمحتوى</p>
+        </div>
+      </div>
+      <div class="prose">
+        <p>HTML تمتلك <strong>6 مستويات للعناوين</strong>. h1 هو الأكبر والأهم، h6 هو الأصغر. استخدمها بترتيب منطقي — هذا يؤثر بشكل مباشر على <em>SEO</em> ووضوح محتواك.</p>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">headings.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="tag">&lt;h1&gt;</span><span class="txt">عنوان الصفحة الرئيسي (مرة واحدة فقط)</span><span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;h2&gt;</span><span class="txt">عنوان القسم الرئيسي</span><span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;h3&gt;</span><span class="txt">عنوان القسم الفرعي</span><span class="tag">&lt;/h3&gt;</span>
+<span class="tag">&lt;h4&gt;</span><span class="txt">عنوان أصغر</span><span class="tag">&lt;/h4&gt;</span>
+<span class="tag">&lt;h5&gt;</span><span class="txt">عنوان أصغر</span><span class="tag">&lt;/h5&gt;</span>
+<span class="tag">&lt;h6&gt;</span><span class="txt">أصغر عنوان</span><span class="tag">&lt;/h6&gt;</span></pre></div>
+      </div>
+      <div class="result-preview">
+        <div class="result-header">▶ النتيجة</div>
+        <div class="result-body">
+          <h1 style="margin:0 0 4px;font-size:2em">عنوان الصفحة الرئيسي</h1>
+          <h2 style="margin:0 0 4px;font-size:1.5em">عنوان القسم الرئيسي</h2>
+          <h3 style="margin:0 0 4px;font-size:1.2em">عنوان القسم الفرعي</h3>
+          <h4 style="margin:0 0 4px;font-size:1em">عنوان أصغر</h4>
+          <h5 style="margin:0 0 4px;font-size:.85em">عنوان أصغر</h5>
+          <h6 style="margin:0;font-size:.75em">أصغر عنوان</h6>
+        </div>
+      </div>
+      <div class="info-box tip">
+        <div class="info-icon">✅</div>
+        <div class="info-content">
+          <strong>قاعدة SEO ذهبية</strong>
+          <p>استخدم &lt;h1&gt; <strong>مرة واحدة فقط</strong> في الصفحة — وتأكد أنها تحتوي الكلمة المفتاحية الرئيسية. هذا من أقوى إشارات Google.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S04: الفقرات -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s04">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <div class="section-meta">
+          <span class="section-tag tag-orange">// TEXT</span>
+          <h2>الفقرات والنص</h2>
+          <p class="section-desc">عناصر المحتوى النصي الأساسية</p>
+        </div>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">text.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="com">&lt;!-- الفقرة --&gt;</span>
+<span class="tag">&lt;p&gt;</span><span class="txt">هذه فقرة نصية عادية. تُضيف المتصفح مسافة فوقها وتحتها تلقائياً.</span><span class="tag">&lt;/p&gt;</span>
+
+<span class="com">&lt;!-- سطر أفقي فاصل --&gt;</span>
+<span class="tag">&lt;hr /&gt;</span>
+
+<span class="com">&lt;!-- كسر السطر (سطر جديد داخل نفس الفقرة) --&gt;</span>
+<span class="tag">&lt;p&gt;</span>
+  <span class="txt">السطر الأول</span><span class="tag">&lt;br /&gt;</span>
+  <span class="txt">السطر الثاني في نفس الفقرة</span>
+<span class="tag">&lt;/p&gt;</span>
+
+<span class="com">&lt;!-- نص محجوب (Preformatted) يحافظ على المسافات --&gt;</span>
+<span class="tag">&lt;pre&gt;</span><span class="txt">
+  أول: item
+  ثاني: item
+</span><span class="tag">&lt;/pre&gt;</span>
+
+<span class="com">&lt;!-- اقتباس طويل --&gt;</span>
+<span class="tag">&lt;blockquote</span> <span class="attr">cite</span>=<span class="val">"https://example.com"</span><span class="tag">&gt;</span>
+  <span class="txt">الكود الجيد يشرح نفسه بنفسه.</span>
+<span class="tag">&lt;/blockquote&gt;</span>
+
+<span class="com">&lt;!-- اقتباس قصير --&gt;</span>
+<span class="tag">&lt;p&gt;</span><span class="txt">قال الحكيم: </span><span class="tag">&lt;q&gt;</span><span class="txt">العلم نور</span><span class="tag">&lt;/q&gt;</span><span class="tag">&lt;/p&gt;</span>
+
+<span class="com">&lt;!-- علامة خاصة / highlight --&gt;</span>
+<span class="tag">&lt;p&gt;</span><span class="txt">هذه </span><span class="tag">&lt;mark&gt;</span><span class="txt">الكلمة مميزة</span><span class="tag">&lt;/mark&gt;</span><span class="txt"> بالأصفر.</span><span class="tag">&lt;/p&gt;</span></pre></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S05: تنسيق النص -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s05">
+      <div class="section-header">
+        <div class="section-num">05</div>
+        <div class="section-meta">
+          <span class="section-tag tag-purple">// FORMATTING</span>
+          <h2>تنسيق النص — Inline Elements</h2>
+          <p class="section-desc">عناصر تنسيق النص داخل السطر</p>
+        </div>
+      </div>
+      <div class="elements-grid">
+        <div class="element-card"><span class="element-tag">&lt;strong&gt;</span><div class="element-desc">نص <strong>غليظ</strong> — مهم دلالياً لـ SEO</div></div>
+        <div class="element-card"><span class="element-tag">&lt;em&gt;</span><div class="element-desc">نص <em>مائل</em> — يعني تأكيداً</div></div>
+        <div class="element-card"><span class="element-tag">&lt;b&gt;</span><div class="element-desc">نص <b>غليظ</b> — بصري فقط بلا دلالة</div></div>
+        <div class="element-card"><span class="element-tag">&lt;i&gt;</span><div class="element-desc">نص <i>مائل</i> — بصري فقط</div></div>
+        <div class="element-card"><span class="element-tag">&lt;u&gt;</span><div class="element-desc">نص <u>مسطّر</u></div></div>
+        <div class="element-card"><span class="element-tag">&lt;s&gt;</span><div class="element-desc">نص <s>محذوف</s> بخط</div></div>
+        <div class="element-card"><span class="element-tag">&lt;sub&gt;</span><div class="element-desc">H<sub>2</sub>O — نص أسفل</div></div>
+        <div class="element-card"><span class="element-tag">&lt;sup&gt;</span><div class="element-desc">X<sup>2</sup> — نص أعلى</div></div>
+        <div class="element-card"><span class="element-tag">&lt;code&gt;</span><div class="element-desc">كود مثل <code>console.log()</code></div></div>
+        <div class="element-card"><span class="element-tag">&lt;abbr&gt;</span><div class="element-desc">اختصار مثل HTML</div></div>
+        <div class="element-card"><span class="element-tag">&lt;small&gt;</span><div class="element-desc"><small>نص أصغر</small> للتفاصيل</div></div>
+        <div class="element-card"><span class="element-tag">&lt;span&gt;</span><div class="element-desc">حاوية inline بلا دلالة</div></div>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">inline-elements.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="tag">&lt;p&gt;</span>
+  <span class="txt">كلمة </span><span class="tag">&lt;strong&gt;</span><span class="txt">مهمة جداً</span><span class="tag">&lt;/strong&gt;</span><span class="txt"> و </span>
+  <span class="tag">&lt;em&gt;</span><span class="txt">مؤكَّدة</span><span class="tag">&lt;/em&gt;</span><span class="txt"> للقارئ.</span>
+<span class="tag">&lt;/p&gt;</span>
+
+<span class="tag">&lt;p&gt;</span>
+  <span class="txt">الصيغة الكيميائية للماء: H</span><span class="tag">&lt;sub&gt;</span><span class="txt">2</span><span class="tag">&lt;/sub&gt;</span><span class="txt">O
+  وx تربيع: x</span><span class="tag">&lt;sup&gt;</span><span class="txt">2</span><span class="tag">&lt;/sup&gt;</span>
+<span class="tag">&lt;/p&gt;</span>
+
+<span class="tag">&lt;p&gt;</span>
+  <span class="txt">استخدم الدالة </span>
+  <span class="tag">&lt;code&gt;</span><span class="txt">console.log("hello")</span><span class="tag">&lt;/code&gt;</span>
+  <span class="txt"> لطباعة النص.</span>
+<span class="tag">&lt;/p&gt;</span>
+
+<span class="tag">&lt;abbr</span> <span class="attr">title</span>=<span class="val">"HyperText Markup Language"</span><span class="tag">&gt;</span><span class="txt">HTML</span><span class="tag">&lt;/abbr&gt;</span></pre></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S06: الروابط -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s06">
+      <div class="section-header">
+        <div class="section-num">06</div>
+        <div class="section-meta">
+          <span class="section-tag tag-blue">// LINKS</span>
+          <h2>الروابط &lt;a&gt;</h2>
+          <p class="section-desc">العنصر الأكثر استخداماً في الويب</p>
+        </div>
+      </div>
+      <div class="prose">
+        <p>عنصر <em>&lt;a&gt;</em> (Anchor) هو جوهر الويب — إنه ما يربط الصفحات ببعضها. بدونه لا يوجد إنترنت بالمعنى الحقيقي.</p>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">links.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="com">&lt;!-- رابط خارجي - يفتح في تبويب جديد --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://yahya.dev"</span>
+   <span class="attr">target</span>=<span class="val">"_blank"</span>
+   <span class="attr">rel</span>=<span class="val">"noopener noreferrer"</span><span class="tag">&gt;</span>
+  <span class="txt">زيارة موقعي</span>
+<span class="tag">&lt;/a&gt;</span>
+
+<span class="com">&lt;!-- رابط داخلي (نفس الموقع) --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"/about.html"</span><span class="tag">&gt;</span><span class="txt">عن الموقع</span><span class="tag">&lt;/a&gt;</span>
+
+<span class="com">&lt;!-- رابط للانتقال لقسم في نفس الصفحة --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"#contact"</span><span class="tag">&gt;</span><span class="txt">اذهب للتواصل</span><span class="tag">&lt;/a&gt;</span>
+
+<span class="com">&lt;!-- رابط بريد إلكتروني --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"mailto:yehiahwary515@gmail.com"</span><span class="tag">&gt;</span>
+  <span class="txt">راسلني</span>
+<span class="tag">&lt;/a&gt;</span>
+
+<span class="com">&lt;!-- رابط هاتف --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"tel:+966XXXXXXXXX"</span><span class="tag">&gt;</span><span class="txt">اتصل بي</span><span class="tag">&lt;/a&gt;</span>
+
+<span class="com">&lt;!-- رابط تنزيل ملف --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"/cv.pdf"</span> <span class="attr">download</span>=<span class="val">"yahya-cv"</span><span class="tag">&gt;</span>
+  <span class="txt">تنزيل السيرة الذاتية</span>
+<span class="tag">&lt;/a&gt;</span></pre></div>
+      </div>
+      <table class="attr-table">
+        <thead><tr><th>الخاصية</th><th>القيم</th><th>الوظيفة</th></tr></thead>
+        <tbody>
+          <tr><td><code>href</code></td><td>URL / #id / mailto: / tel:</td><td>وجهة الرابط</td></tr>
+          <tr><td><code>target</code></td><td>_blank / _self / _parent</td><td>أين يفتح الرابط</td></tr>
+          <tr><td><code>rel</code></td><td>noopener / noreferrer / nofollow</td><td>العلاقة مع الصفحة المُشار إليها</td></tr>
+          <tr><td><code>download</code></td><td>اسم الملف</td><td>تنزيل بدل الفتح</td></tr>
+          <tr><td><code>title</code></td><td>نص</td><td>تلميح يظهر عند التمرير</td></tr>
+        </tbody>
+      </table>
+      <div class="info-box warn">
+        <div class="info-icon">⚠️</div>
+        <div class="info-content">
+          <strong>أمان مهم</strong>
+          <p>دائماً أضف <code>rel="noopener noreferrer"</code> مع target="_blank" — هذا يمنع هجوم Tab-Napping الذي يسمح للصفحة المفتوحة بالتحكم في صفحتك.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S07: الصور -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s07">
+      <div class="section-header">
+        <div class="section-num">07</div>
+        <div class="section-meta">
+          <span class="section-tag tag-green">// IMAGES</span>
+          <h2>الصور &lt;img&gt;</h2>
+          <p class="section-desc">إضافة الصور وتحسينها للأداء والـ SEO</p>
+        </div>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">images.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="com">&lt;!-- صورة بسيطة - alt إلزامي لـ SEO والإتاحة --&gt;</span>
+<span class="tag">&lt;img</span>
+  <span class="attr">src</span>=<span class="val">"profile.jpg"</span>
+  <span class="attr">alt</span>=<span class="val">"صورة Yahya Al-sulami مطور Full Stack"</span>
+  <span class="attr">width</span>=<span class="val">"400"</span>
+  <span class="attr">height</span>=<span class="val">"400"</span>
+<span class="tag">/&gt;</span>
+
+<span class="com">&lt;!-- صورة محسّنة للأداء --&gt;</span>
+<span class="tag">&lt;img</span>
+  <span class="attr">src</span>=<span class="val">"hero.webp"</span>
+  <span class="attr">alt</span>=<span class="val">"Hero Section"</span>
+  <span class="attr">loading</span>=<span class="val">"lazy"</span>
+  <span class="attr">decoding</span>=<span class="val">"async"</span>
+  <span class="attr">fetchpriority</span>=<span class="val">"high"</span>
+<span class="tag">/&gt;</span>
+
+<span class="com">&lt;!-- صورة متجاوبة مع شاشات مختلفة --&gt;</span>
+<span class="tag">&lt;picture&gt;</span>
+  <span class="tag">&lt;source</span>
+    <span class="attr">media</span>=<span class="val">"(max-width: 768px)"</span>
+    <span class="attr">srcset</span>=<span class="val">"small.webp"</span>
+  <span class="tag">/&gt;</span>
+  <span class="tag">&lt;source</span>
+    <span class="attr">media</span>=<span class="val">"(max-width: 1200px)"</span>
+    <span class="attr">srcset</span>=<span class="val">"medium.webp"</span>
+  <span class="tag">/&gt;</span>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"large.jpg"</span> <span class="attr">alt</span>=<span class="val">"صورة متجاوبة"</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;/picture&gt;</span>
+
+<span class="com">&lt;!-- صورة مع تسمية (figure + figcaption) --&gt;</span>
+<span class="tag">&lt;figure&gt;</span>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"project.jpg"</span> <span class="attr">alt</span>=<span class="val">"مشروع Vortex Trader"</span> <span class="tag">/&gt;</span>
+  <span class="tag">&lt;figcaption&gt;</span><span class="txt">مشروع Vortex Trader — منصة تداول متكاملة</span><span class="tag">&lt;/figcaption&gt;</span>
+<span class="tag">&lt;/figure&gt;</span></pre></div>
+      </div>
+      <div class="info-box tip">
+        <div class="info-icon">🚀</div>
+        <div class="info-content">
+          <strong>تحسين الأداء</strong>
+          <p>استخدم صيغة <strong>WebP</strong> بدل JPEG/PNG — أصغر بـ 30% مع نفس الجودة. وأضف <code>loading="lazy"</code> لكل الصور خارج منطقة العرض الأولية.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S08-10: القوائم -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s08">
+      <div class="section-header">
+        <div class="section-num">08</div>
+        <div class="section-meta">
+          <span class="section-tag tag-yellow">// LISTS</span>
+          <h2>القوائم — Lists</h2>
+          <p class="section-desc">القوائم المرتبة وغير المرتبة وقوائم التعريف</p>
+        </div>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">lists.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="com">&lt;!-- قائمة غير مرتبة (نقاط) --&gt;</span>
+<span class="tag">&lt;ul&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="txt">HTML</span><span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="txt">CSS</span><span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="txt">JavaScript</span><span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span>
+
+<span class="com">&lt;!-- قائمة مرتبة (أرقام) --&gt;</span>
+<span class="tag">&lt;ol&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="txt">تعلم HTML</span><span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="txt">تعلم CSS</span><span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="txt">تعلم JavaScript</span><span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ol&gt;</span>
+
+<span class="com">&lt;!-- قائمة مرتبة بحروف هجائية --&gt;</span>
+<span class="tag">&lt;ol</span> <span class="attr">type</span>=<span class="val">"A"</span> <span class="attr">start</span>=<span class="val">"1"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="txt">المرحلة الأولى</span><span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="txt">المرحلة الثانية</span><span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ol&gt;</span>
+
+<span class="com">&lt;!-- قائمة تعريف --&gt;</span>
+<span class="tag">&lt;dl&gt;</span>
+  <span class="tag">&lt;dt&gt;</span><span class="txt">HTML</span><span class="tag">&lt;/dt&gt;</span>
+  <span class="tag">&lt;dd&gt;</span><span class="txt">لغة ترميز لإنشاء صفحات الويب</span><span class="tag">&lt;/dd&gt;</span>
+
+  <span class="tag">&lt;dt&gt;</span><span class="txt">CSS</span><span class="tag">&lt;/dt&gt;</span>
+  <span class="tag">&lt;dd&gt;</span><span class="txt">لغة تنسيق تحدد مظهر الصفحة</span><span class="tag">&lt;/dd&gt;</span>
+<span class="tag">&lt;/dl&gt;</span>
+
+<span class="com">&lt;!-- قائمة متداخلة --&gt;</span>
+<span class="tag">&lt;ul&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="txt">Front-End</span>
+    <span class="tag">&lt;ul&gt;</span>
+      <span class="tag">&lt;li&gt;</span><span class="txt">HTML</span><span class="tag">&lt;/li&gt;</span>
+      <span class="tag">&lt;li&gt;</span><span class="txt">CSS</span><span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;/ul&gt;</span>
+  <span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span><span class="txt">Back-End</span><span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></pre></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S11-12: الجداول -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s11">
+      <div class="section-header">
+        <div class="section-num">11</div>
+        <div class="section-meta">
+          <span class="section-tag tag-blue">// TABLES</span>
+          <h2>الجداول &lt;table&gt;</h2>
+          <p class="section-desc">لعرض البيانات الجدولية — ليس للتخطيط!</p>
+        </div>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">table.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="tag">&lt;table&gt;</span>
+  <span class="com">&lt;!-- تسمية اختيارية للجدول --&gt;</span>
+  <span class="tag">&lt;caption&gt;</span><span class="txt">مهارات Yahya.DEV</span><span class="tag">&lt;/caption&gt;</span>
+
+  <span class="com">&lt;!-- رأس الجدول --&gt;</span>
+  <span class="tag">&lt;thead&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;th</span> <span class="attr">scope</span>=<span class="val">"col"</span><span class="tag">&gt;</span><span class="txt">التقنية</span><span class="tag">&lt;/th&gt;</span>
+      <span class="tag">&lt;th</span> <span class="attr">scope</span>=<span class="val">"col"</span><span class="tag">&gt;</span><span class="txt">المستوى</span><span class="tag">&lt;/th&gt;</span>
+      <span class="tag">&lt;th</span> <span class="attr">scope</span>=<span class="val">"col"</span><span class="tag">&gt;</span><span class="txt">سنوات الخبرة</span><span class="tag">&lt;/th&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+  <span class="tag">&lt;/thead&gt;</span>
+
+  <span class="com">&lt;!-- جسم الجدول --&gt;</span>
+  <span class="tag">&lt;tbody&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;td&gt;</span><span class="txt">HTML5</span><span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span><span class="txt">خبير</span><span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span><span class="txt">4</span><span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;td&gt;</span><span class="txt">Laravel</span><span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span><span class="txt">متقدم</span><span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span><span class="txt">3</span><span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+  <span class="tag">&lt;/tbody&gt;</span>
+
+  <span class="com">&lt;!-- تذييل الجدول --&gt;</span>
+  <span class="tag">&lt;tfoot&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="com">&lt;!-- colspan لدمج خلايا أفقياً --&gt;</span>
+      <span class="tag">&lt;td</span> <span class="attr">colspan</span>=<span class="val">"3"</span><span class="tag">&gt;</span><span class="txt">Full-Stack Developer</span><span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+  <span class="tag">&lt;/tfoot&gt;</span>
+<span class="tag">&lt;/table&gt;</span></pre></div>
+      </div>
+      <div class="info-box danger">
+        <div class="info-icon">🚫</div>
+        <div class="info-content">
+          <strong>لا تستخدم الجداول للتخطيط!</strong>
+          <p>الجداول فقط لعرض البيانات الجدولية. استخدم CSS Flexbox أو Grid للتخطيط — هذا معيار 2026.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S13-17: النماذج -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s13">
+      <div class="section-header">
+        <div class="section-num">13</div>
+        <div class="section-meta">
+          <span class="section-tag tag-orange">// FORMS</span>
+          <h2>النماذج &lt;form&gt;</h2>
+          <p class="section-desc">جمع البيانات من المستخدم — أهم عنصر تفاعلي</p>
+        </div>
+      </div>
+      <div class="prose">
+        <p>النماذج هي الطريقة الأساسية لجمع المدخلات من المستخدم — تسجيل دخول، نماذج تواصل، بحث، شراء. إتقانها ضروري لأي مطور.</p>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">form-complete.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="com">&lt;!--
+  action: رابط السيرفر الذي يستقبل البيانات
+  method: GET (في الـ URL) أو POST (مخفي في الـ Body)
+  enctype: مطلوب لرفع الملفات
+--&gt;</span>
+<span class="tag">&lt;form</span>
+  <span class="attr">action</span>=<span class="val">"/submit"</span>
+  <span class="attr">method</span>=<span class="val">"POST"</span>
+  <span class="attr">enctype</span>=<span class="val">"multipart/form-data"</span>
+  <span class="attr">novalidate</span>
+<span class="tag">&gt;</span>
+
+  <span class="com">&lt;!-- fieldset لتجميع حقول مرتبطة --&gt;</span>
+  <span class="tag">&lt;fieldset&gt;</span>
+    <span class="tag">&lt;legend&gt;</span><span class="txt">معلومات شخصية</span><span class="tag">&lt;/legend&gt;</span>
+
+    <span class="com">&lt;!-- label مرتبط بـ input عبر for/id --&gt;</span>
+    <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"name"</span><span class="tag">&gt;</span><span class="txt">الاسم الكامل</span><span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span>
+      <span class="attr">type</span>=<span class="val">"text"</span>
+      <span class="attr">id</span>=<span class="val">"name"</span>
+      <span class="attr">name</span>=<span class="val">"full_name"</span>
+      <span class="attr">placeholder</span>=<span class="val">"Yahya Al-sulami"</span>
+      <span class="attr">required</span>
+      <span class="attr">autocomplete</span>=<span class="val">"name"</span>
+    <span class="tag">/&gt;</span>
+
+    <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"email"</span><span class="tag">&gt;</span><span class="txt">البريد الإلكتروني</span><span class="tag">&lt;/label&gt;</span>
+    <span class="tag">&lt;input</span>
+      <span class="attr">type</span>=<span class="val">"email"</span>
+      <span class="attr">id</span>=<span class="val">"email"</span>
+      <span class="attr">name</span>=<span class="val">"email"</span>
+      <span class="attr">required</span>
+      <span class="attr">autocomplete</span>=<span class="val">"email"</span>
+    <span class="tag">/&gt;</span>
+  <span class="tag">&lt;/fieldset&gt;</span>
+
+  <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="val">"submit"</span><span class="tag">&gt;</span><span class="txt">إرسال</span><span class="tag">&lt;/button&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="val">"reset"</span><span class="tag">&gt;</span><span class="txt">مسح</span><span class="tag">&lt;/button&gt;</span>
+
+<span class="tag">&lt;/form&gt;</span></pre></div>
+      </div>
+
+      <div class="divider" id="s15">جميع أنواع Input</div>
+
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">input-types.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="com">&lt;!-- ===== النصوص ===== --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"text"</span>     <span class="attr">placeholder</span>=<span class="val">"نص عادي"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"email"</span>    <span class="attr">placeholder</span>=<span class="val">"البريد"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"password"</span> <span class="attr">placeholder</span>=<span class="val">"كلمة المرور"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"search"</span>   <span class="attr">placeholder</span>=<span class="val">"بحث..."</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"url"</span>      <span class="attr">placeholder</span>=<span class="val">"https://"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"tel"</span>      <span class="attr">placeholder</span>=<span class="val">"رقم الهاتف"</span><span class="tag">/&gt;</span>
+
+<span class="com">&lt;!-- ===== الأرقام ===== --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"number"</span> <span class="attr">min</span>=<span class="val">"0"</span> <span class="attr">max</span>=<span class="val">"100"</span> <span class="attr">step</span>=<span class="val">"5"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"range"</span>  <span class="attr">min</span>=<span class="val">"0"</span> <span class="attr">max</span>=<span class="val">"100"</span> <span class="attr">value</span>=<span class="val">"50"</span><span class="tag">/&gt;</span>
+
+<span class="com">&lt;!-- ===== التاريخ والوقت ===== --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"date"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"time"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"datetime-local"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"month"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"week"</span><span class="tag">/&gt;</span>
+
+<span class="com">&lt;!-- ===== الاختيار ===== --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"checkbox"</span> <span class="attr">id</span>=<span class="val">"agree"</span> <span class="attr">name</span>=<span class="val">"agree"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"agree"</span><span class="tag">&gt;</span><span class="txt">أوافق على الشروط</span><span class="tag">&lt;/label&gt;</span>
+
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"radio"</span> <span class="attr">name</span>=<span class="val">"gender"</span> <span class="attr">value</span>=<span class="val">"male"</span>  <span class="attr">id</span>=<span class="val">"m"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"m"</span><span class="tag">&gt;</span><span class="txt">ذكر</span><span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"radio"</span> <span class="attr">name</span>=<span class="val">"gender"</span> <span class="attr">value</span>=<span class="val">"female"</span><span class="attr">id</span>=<span class="val">"f"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"f"</span><span class="tag">&gt;</span><span class="txt">أنثى</span><span class="tag">&lt;/label&gt;</span>
+
+<span class="com">&lt;!-- ===== الملفات واللون ===== --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"file"</span>   <span class="attr">accept</span>=<span class="val">".pdf,.docx,image/*"</span> <span class="attr">multiple</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"color"</span>  <span class="attr">value</span>=<span class="val">"#e74c18"</span><span class="tag">/&gt;</span>
+
+<span class="com">&lt;!-- ===== مخفي ===== --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"hidden"</span> <span class="attr">name</span>=<span class="val">"csrf_token"</span> <span class="attr">value</span>=<span class="val">"abc123"</span><span class="tag">/&gt;</span></pre></div>
+      </div>
+
+      <div class="divider" id="s16">Select, Textarea, Datalist</div>
+
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">select-textarea.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="com">&lt;!-- قائمة منسدلة --&gt;</span>
+<span class="tag">&lt;select</span> <span class="attr">name</span>=<span class="val">"language"</span> <span class="attr">multiple</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;optgroup</span> <span class="attr">label</span>=<span class="val">"Front-End"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="val">"html"</span> <span class="attr">selected</span><span class="tag">&gt;</span><span class="txt">HTML</span><span class="tag">&lt;/option&gt;</span>
+    <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="val">"css"</span><span class="tag">&gt;</span><span class="txt">CSS</span><span class="tag">&lt;/option&gt;</span>
+  <span class="tag">&lt;/optgroup&gt;</span>
+  <span class="tag">&lt;optgroup</span> <span class="attr">label</span>=<span class="val">"Back-End"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="val">"php"</span><span class="tag">&gt;</span><span class="txt">PHP</span><span class="tag">&lt;/option&gt;</span>
+  <span class="tag">&lt;/optgroup&gt;</span>
+<span class="tag">&lt;/select&gt;</span>
+
+<span class="com">&lt;!-- منطقة نص متعدد الأسطر --&gt;</span>
+<span class="tag">&lt;textarea</span>
+  <span class="attr">name</span>=<span class="val">"message"</span>
+  <span class="attr">rows</span>=<span class="val">"5"</span>
+  <span class="attr">cols</span>=<span class="val">"40"</span>
+  <span class="attr">placeholder</span>=<span class="val">"اكتب رسالتك هنا..."</span>
+  <span class="attr">maxlength</span>=<span class="val">"1000"</span>
+  <span class="attr">resize</span>=<span class="val">"vertical"</span>
+<span class="tag">&gt;&lt;/textarea&gt;</span>
+
+<span class="com">&lt;!-- datalist لاقتراحات بحث --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">list</span>=<span class="val">"techs"</span> <span class="attr">placeholder</span>=<span class="val">"اختر تقنية..."</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;datalist</span> <span class="attr">id</span>=<span class="val">"techs"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="val">"HTML5"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="val">"CSS3"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="val">"Laravel"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/datalist&gt;</span>
+
+<span class="com">&lt;!-- progress و meter --&gt;</span>
+<span class="tag">&lt;progress</span> <span class="attr">value</span>=<span class="val">"75"</span> <span class="attr">max</span>=<span class="val">"100"</span><span class="tag">&gt;</span><span class="txt">75%</span><span class="tag">&lt;/progress&gt;</span>
+<span class="tag">&lt;meter</span> <span class="attr">value</span>=<span class="val">"0.8"</span> <span class="attr">min</span>=<span class="val">"0"</span> <span class="attr">max</span>=<span class="val">"1"</span> <span class="attr">low</span>=<span class="val">"0.3"</span> <span class="attr">high</span>=<span class="val">"0.7"</span><span class="tag">&gt;</span><span class="txt">80%</span><span class="tag">&lt;/meter&gt;</span></pre></div>
+      </div>
+
+      <div class="divider" id="s17">التحقق من البيانات</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">validation.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="tag">&lt;input</span>
+  <span class="attr">type</span>=<span class="val">"text"</span>
+  <span class="attr">required</span>                      <span class="com">/* حقل إلزامي */</span>
+  <span class="attr">minlength</span>=<span class="val">"3"</span>               <span class="com">/* الحد الأدنى للأحرف */</span>
+  <span class="attr">maxlength</span>=<span class="val">"50"</span>              <span class="com">/* الحد الأقصى للأحرف */</span>
+  <span class="attr">pattern</span>=<span class="val">"[A-Za-z]{3,}"</span>      <span class="com">/* نمط RegEx */</span>
+  <span class="attr">title</span>=<span class="val">"أحرف إنجليزية فقط، 3 أحرف على الأقل"</span>
+<span class="tag">/&gt;</span>
+
+<span class="tag">&lt;input</span>
+  <span class="attr">type</span>=<span class="val">"number"</span>
+  <span class="attr">min</span>=<span class="val">"18"</span>   <span class="com">/* لا يقبل أقل من 18 */</span>
+  <span class="attr">max</span>=<span class="val">"99"</span>
+  <span class="attr">step</span>=<span class="val">"1"</span>
+<span class="tag">/&gt;</span>
+
+<span class="com">&lt;!-- تعطيل حقل --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">disabled</span> <span class="attr">value</span>=<span class="val">"لا يمكن تعديله"</span><span class="tag">/&gt;</span>
+
+<span class="com">&lt;!-- حقل للقراءة فقط --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">readonly</span> <span class="attr">value</span>=<span class="val">"قراءة فقط"</span><span class="tag">/&gt;</span>
+
+<span class="com">&lt;!-- autofocus - يحصل على التركيز تلقائياً --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">autofocus</span> <span class="attr">placeholder</span>=<span class="val">"هذا الحقل يُحدَّد تلقائياً"</span><span class="tag">/&gt;</span></pre></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S18: Semantic HTML5 -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s18">
+      <div class="section-header">
+        <div class="section-num">18</div>
+        <div class="section-meta">
+          <span class="section-tag tag-green">// SEMANTIC HTML5</span>
+          <h2>البنية الدلالية — Semantic HTML5</h2>
+          <p class="section-desc">الفرق بين مطور عادي ومطور محترف</p>
+        </div>
+      </div>
+      <div class="prose">
+        <p>HTML الدلالي يعني استخدام <strong>العنصر الصحيح للمحتوى الصحيح</strong>. بدلاً من &lt;div&gt; لكل شيء، HTML5 قدم عناصر تصف <em>معنى</em> المحتوى.</p>
+        <p>هذا يؤثر على: SEO، إمكانية الوصول (Accessibility)، وسهولة قراءة الكود.</p>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">semantic-layout.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="tag">&lt;body&gt;</span>
+
+  <span class="com">&lt;!-- رأس الموقع --&gt;</span>
+  <span class="tag">&lt;header&gt;</span>
+    <span class="tag">&lt;nav&gt;</span>
+      <span class="tag">&lt;ul&gt;</span>
+        <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="val">"/"</span><span class="tag">&gt;</span><span class="txt">الرئيسية</span><span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="tag">&lt;/ul&gt;</span>
+    <span class="tag">&lt;/nav&gt;</span>
+  <span class="tag">&lt;/header&gt;</span>
+
+  <span class="com">&lt;!-- المحتوى الرئيسي للصفحة --&gt;</span>
+  <span class="tag">&lt;main&gt;</span>
+
+    <span class="com">&lt;!-- قسم من الصفحة له عنوان --&gt;</span>
+    <span class="tag">&lt;section&gt;</span>
+      <span class="tag">&lt;h2&gt;</span><span class="txt">أحدث المقالات</span><span class="tag">&lt;/h2&gt;</span>
+
+      <span class="com">&lt;!-- محتوى مستقل قابل للنشر منفرداً --&gt;</span>
+      <span class="tag">&lt;article&gt;</span>
+        <span class="tag">&lt;header&gt;</span>
+          <span class="tag">&lt;h3&gt;</span><span class="txt">تعلم HTML5</span><span class="tag">&lt;/h3&gt;</span>
+          <span class="tag">&lt;time</span> <span class="attr">datetime</span>=<span class="val">"2026-01-01"</span><span class="tag">&gt;</span><span class="txt">1 يناير 2026</span><span class="tag">&lt;/time&gt;</span>
+        <span class="tag">&lt;/header&gt;</span>
+        <span class="tag">&lt;p&gt;</span><span class="txt">محتوى المقال...</span><span class="tag">&lt;/p&gt;</span>
+        <span class="tag">&lt;footer&gt;</span>
+          <span class="tag">&lt;address&gt;</span><span class="txt">بقلم: Yahya Al-sulami</span><span class="tag">&lt;/address&gt;</span>
+        <span class="tag">&lt;/footer&gt;</span>
+      <span class="tag">&lt;/article&gt;</span>
+
+    <span class="tag">&lt;/section&gt;</span>
+
+    <span class="com">&lt;!-- محتوى جانبي (Sidebar) --&gt;</span>
+    <span class="tag">&lt;aside&gt;</span>
+      <span class="tag">&lt;h3&gt;</span><span class="txt">مواضيع ذات صلة</span><span class="tag">&lt;/h3&gt;</span>
+    <span class="tag">&lt;/aside&gt;</span>
+
+  <span class="tag">&lt;/main&gt;</span>
+
+  <span class="com">&lt;!-- تذييل الموقع --&gt;</span>
+  <span class="tag">&lt;footer&gt;</span>
+    <span class="tag">&lt;p&gt;</span><span class="txt">© 2026 Yahya.DEV</span><span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/footer&gt;</span>
+
+<span class="tag">&lt;/body&gt;</span></pre></div>
+      </div>
+
+      <div class="elements-grid" style="margin-top:1.25rem">
+        <div class="element-card"><span class="element-tag">&lt;header&gt;</span><div class="element-desc">رأس الموقع أو القسم</div></div>
+        <div class="element-card"><span class="element-tag">&lt;nav&gt;</span><div class="element-desc">قائمة التنقل الرئيسية</div></div>
+        <div class="element-card"><span class="element-tag">&lt;main&gt;</span><div class="element-desc">المحتوى الرئيسي — مرة واحدة</div></div>
+        <div class="element-card"><span class="element-tag">&lt;section&gt;</span><div class="element-desc">قسم له موضوع وعنوان</div></div>
+        <div class="element-card"><span class="element-tag">&lt;article&gt;</span><div class="element-desc">محتوى مستقل قابل للنشر</div></div>
+        <div class="element-card"><span class="element-tag">&lt;aside&gt;</span><div class="element-desc">محتوى جانبي مرتبط</div></div>
+        <div class="element-card"><span class="element-tag">&lt;footer&gt;</span><div class="element-desc">تذييل الموقع أو القسم</div></div>
+        <div class="element-card"><span class="element-tag">&lt;address&gt;</span><div class="element-desc">معلومات التواصل</div></div>
+        <div class="element-card"><span class="element-tag">&lt;time&gt;</span><div class="element-desc">تاريخ أو وقت دلالي</div></div>
+        <div class="element-card"><span class="element-tag">&lt;figure&gt;</span><div class="element-desc">صورة مع تسمية</div></div>
+        <div class="element-card"><span class="element-tag">&lt;figcaption&gt;</span><div class="element-desc">تسمية الصورة</div></div>
+        <div class="element-card"><span class="element-tag">&lt;hgroup&gt;</span><div class="element-desc">تجميع العناوين</div></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S22-24: الوسائط -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s22">
+      <div class="section-header">
+        <div class="section-num">22</div>
+        <div class="section-meta">
+          <span class="section-tag tag-purple">// MEDIA</span>
+          <h2>الوسائط — Video, Audio, iFrame</h2>
+          <p class="section-desc">تضمين الفيديو والصوت ومحتوى خارجي</p>
+        </div>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">media.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="com">&lt;!-- ===== فيديو ===== --&gt;</span>
+<span class="tag">&lt;video</span>
+  <span class="attr">controls</span>          <span class="com">/* يظهر أزرار التحكم */</span>
+  <span class="attr">autoplay</span>          <span class="com">/* يشتغل تلقائياً */</span>
+  <span class="attr">muted</span>             <span class="com">/* صامت (مطلوب مع autoplay) */</span>
+  <span class="attr">loop</span>              <span class="com">/* يعيد التشغيل */</span>
+  <span class="attr">poster</span>=<span class="val">"thumbnail.jpg"</span>
+  <span class="attr">width</span>=<span class="val">"800"</span>
+  <span class="attr">preload</span>=<span class="val">"metadata"</span>
+<span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="val">"video.mp4"</span>  <span class="attr">type</span>=<span class="val">"video/mp4"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="val">"video.webm"</span> <span class="attr">type</span>=<span class="val">"video/webm"</span><span class="tag">/&gt;</span>
+  <span class="com">&lt;!-- نص بديل للمتصفحات القديمة --&gt;</span>
+  <span class="txt">متصفحك لا يدعم الفيديو.</span>
+<span class="tag">&lt;/video&gt;</span>
+
+<span class="com">&lt;!-- ترجمات الفيديو --&gt;</span>
+<span class="tag">&lt;track</span>
+  <span class="attr">kind</span>=<span class="val">"subtitles"</span>
+  <span class="attr">src</span>=<span class="val">"ar.vtt"</span>
+  <span class="attr">srclang</span>=<span class="val">"ar"</span>
+  <span class="attr">label</span>=<span class="val">"العربية"</span>
+  <span class="attr">default</span>
+<span class="tag">/&gt;</span>
+
+<span class="com">&lt;!-- ===== صوت ===== --&gt;</span>
+<span class="tag">&lt;audio</span> <span class="attr">controls</span> <span class="attr">preload</span>=<span class="val">"none"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="val">"audio.mp3"</span>  <span class="attr">type</span>=<span class="val">"audio/mpeg"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="val">"audio.ogg"</span>  <span class="attr">type</span>=<span class="val">"audio/ogg"</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/audio&gt;</span>
+
+<span class="com">&lt;!-- ===== iframe ===== --&gt;</span>
+<span class="com">&lt;!-- تضمين فيديو يوتيوب --&gt;</span>
+<span class="tag">&lt;iframe</span>
+  <span class="attr">src</span>=<span class="val">"https://www.youtube.com/embed/VIDEO_ID"</span>
+  <span class="attr">title</span>=<span class="val">"عنوان الفيديو"</span>
+  <span class="attr">width</span>=<span class="val">"560"</span>
+  <span class="attr">height</span>=<span class="val">"315"</span>
+  <span class="attr">allowfullscreen</span>
+  <span class="attr">loading</span>=<span class="val">"lazy"</span>
+  <span class="attr">allow</span>=<span class="val">"accelerometer; autoplay; encrypted-media"</span>
+<span class="tag">&gt;&lt;/iframe&gt;</span>
+
+<span class="com">&lt;!-- تضمين خريطة Google Maps --&gt;</span>
+<span class="tag">&lt;iframe</span>
+  <span class="attr">src</span>=<span class="val">"https://maps.google.com/maps?q=Riyadh&amp;output=embed"</span>
+  <span class="attr">width</span>=<span class="val">"100%"</span>
+  <span class="attr">height</span>=<span class="val">"400"</span>
+  <span class="attr">style</span>=<span class="val">"border:0"</span>
+  <span class="attr">loading</span>=<span class="val">"lazy"</span>
+  <span class="attr">referrerpolicy</span>=<span class="val">"no-referrer-when-downgrade"</span>
+<span class="tag">&gt;&lt;/iframe&gt;</span></pre></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S25-27: Meta & SEO -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s25">
+      <div class="section-header">
+        <div class="section-num">25</div>
+        <div class="section-meta">
+          <span class="section-tag tag-yellow">// SEO & META</span>
+          <h2>الـ Meta Tags وتحسين SEO</h2>
+          <p class="section-desc">كيف تجعل Google تحب صفحتك</p>
+        </div>
+      </div>
+      <div class="prose">
+        <p>الـ Meta Tags لا تظهر للمستخدم لكنها <strong>تتحدث مع Google ومحركات البحث</strong> ومع منصات التواصل الاجتماعي عند مشاركة رابطك.</p>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">seo-meta.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="tag">&lt;head&gt;</span>
+  <span class="com">&lt;!-- ===== أساسيات ===== --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="val">"UTF-8"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"viewport"</span> <span class="attr">content</span>=<span class="val">"width=device-width, initial-scale=1.0"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;title&gt;</span><span class="txt">تعلم HTML5 | Yahya.DEV — دليل شامل</span><span class="tag">&lt;/title&gt;</span>
+
+  <span class="com">&lt;!-- ===== SEO الأساسي ===== --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"description"</span>
+    <span class="attr">content</span>=<span class="val">"دليل HTML5 الشامل بقلم Yahya.DEV - تعلم HTML من الصفر مع أمثلة حقيقية"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"keywords"</span>
+    <span class="attr">content</span>=<span class="val">"تعلم HTML, HTML5, Yahya.DEV, برمجة"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"author"</span> <span class="attr">content</span>=<span class="val">"Yahya Al-sulami"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"robots"</span> <span class="attr">content</span>=<span class="val">"index, follow"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"canonical"</span> <span class="attr">href</span>=<span class="val">"https://yahya.dev/html-guide"</span><span class="tag">/&gt;</span>
+
+  <span class="com">&lt;!-- ===== Open Graph (Facebook/LinkedIn) ===== --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="val">"og:type"</span>        <span class="attr">content</span>=<span class="val">"article"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="val">"og:title"</span>       <span class="attr">content</span>=<span class="val">"تعلم HTML5 — Yahya.DEV"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="val">"og:description"</span>  <span class="attr">content</span>=<span class="val">"دليل HTML5 الشامل"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="val">"og:image"</span>       <span class="attr">content</span>=<span class="val">"https://yahya.dev/og-html.jpg"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="val">"og:url"</span>         <span class="attr">content</span>=<span class="val">"https://yahya.dev/html-guide"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="val">"og:site_name"</span>   <span class="attr">content</span>=<span class="val">"Yahya.DEV"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="val">"og:locale"</span>      <span class="attr">content</span>=<span class="val">"ar_SA"</span><span class="tag">/&gt;</span>
+
+  <span class="com">&lt;!-- ===== Twitter Card ===== --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"twitter:card"</span>        <span class="attr">content</span>=<span class="val">"summary_large_image"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"twitter:title"</span>       <span class="attr">content</span>=<span class="val">"تعلم HTML5 — Yahya.DEV"</span><span class="tag">/&gt;</span>
+  <span class="tag">&meta</span> <span class="attr">name</span>=<span class="val">"twitter:image"</span>       <span class="attr">content</span>=<span class="val">"https://yahya.dev/og-html.jpg"</span><span class="tag">/&gt;</span>
+
+  <span class="com">&lt;!-- ===== أيقونة الموقع ===== --&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"icon"</span>             <span class="attr">href</span>=<span class="val">"/favicon.ico"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"apple-touch-icon"</span> <span class="attr">href</span>=<span class="val">"/apple-icon.png"</span><span class="tag">/&gt;</span>
+
+  <span class="com">&lt;!-- ===== CSS و Fonts ===== --&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"preconnect"</span> <span class="attr">href</span>=<span class="val">"https://fonts.googleapis.com"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"stylesheet"</span> <span class="attr">href</span>=<span class="val">"style.css"</span><span class="tag">/&gt;</span>
+
+  <span class="com">&lt;!-- ===== JavaScript ===== --&gt;</span>
+  <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"app.js"</span> <span class="attr">defer</span><span class="tag">&gt;&lt;/script&gt;</span>
+
+<span class="tag">&lt;/head&gt;</span></pre></div>
+      </div>
+
+      <div class="divider" id="s27">Structured Data (Schema.org)</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">structured-data.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="com">&lt;!-- هذا يظهر نتائج غنية (Rich Results) في Google --&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">type</span>=<span class="val">"application/ld+json"</span><span class="tag">&gt;</span>
+<span class="str">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "تعلم HTML5 من الصفر",
+  "author": {
+    "@type": "Person",
+    "name": "Yahya Al-sulami",
+    "url": "https://yehiahwary0-oss.github.io/my-portfolio/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Yahya.DEV"
+  },
+  "datePublished": "2026-01-01",
+  "inLanguage": "ar",
+  "keywords": "HTML5, تعلم HTML",
+  "teaches": "HTML5 Web Development"
+}</span>
+<span class="tag">&lt;/script&gt;</span></pre></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S28: Global Attributes -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s28">
+      <div class="section-header">
+        <div class="section-num">28</div>
+        <div class="section-meta">
+          <span class="section-tag tag-blue">// ATTRIBUTES</span>
+          <h2>الخصائص العامة — Global Attributes</h2>
+          <p class="section-desc">خصائص تعمل مع أي عنصر HTML</p>
+        </div>
+      </div>
+      <table class="attr-table">
+        <thead><tr><th>الخاصية</th><th>مثال</th><th>الوظيفة</th></tr></thead>
+        <tbody>
+          <tr><td><code>id</code></td><td><code>id="hero"</code></td><td>معرف فريد للعنصر — للـ CSS وJS والروابط</td></tr>
+          <tr><td><code>class</code></td><td><code>class="btn primary"</code></td><td>فئات CSS — يمكن تعداد أكثر من فئة</td></tr>
+          <tr><td><code>style</code></td><td><code>style="color:red"</code></td><td>CSS مباشرة — تجنبه قدر الإمكان</td></tr>
+          <tr><td><code>title</code></td><td><code>title="تلميح"</code></td><td>نص يظهر عند التمرير فوق العنصر</td></tr>
+          <tr><td><code>lang</code></td><td><code>lang="ar"</code></td><td>لغة محتوى العنصر</td></tr>
+          <tr><td><code>dir</code></td><td><code>dir="rtl"</code></td><td>اتجاه النص (ltr / rtl)</td></tr>
+          <tr><td><code>hidden</code></td><td><code>hidden</code></td><td>إخفاء العنصر (display:none)</td></tr>
+          <tr><td><code>tabindex</code></td><td><code>tabindex="0"</code></td><td>ترتيب التنقل بـ Tab</td></tr>
+          <tr><td><code>contenteditable</code></td><td><code>contenteditable="true"</code></td><td>جعل العنصر قابلاً للتحرير</td></tr>
+          <tr><td><code>draggable</code></td><td><code>draggable="true"</code></td><td>جعل العنصر قابلاً للسحب</td></tr>
+          <tr><td><code>spellcheck</code></td><td><code>spellcheck="true"</code></td><td>تفعيل التدقيق الإملائي</td></tr>
+          <tr><td><code>translate</code></td><td><code>translate="no"</code></td><td>منع الترجمة التلقائية</td></tr>
+        </tbody>
+      </table>
+
+      <div class="divider" id="s29">Data Attributes</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">data-attributes.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="com">&lt;!-- تخزين بيانات مخصصة في HTML لاستخدامها بـ JS --&gt;</span>
+<span class="tag">&lt;button</span>
+  <span class="attr">data-user-id</span>=<span class="val">"42"</span>
+  <span class="attr">data-action</span>=<span class="val">"delete"</span>
+  <span class="attr">data-confirm</span>=<span class="val">"هل أنت متأكد؟"</span>
+<span class="tag">&gt;</span>
+  <span class="txt">حذف المستخدم</span>
+<span class="tag">&lt;/button&gt;</span>
+
+<span class="com">/* قراءتها في JavaScript */</span>
+<span class="kw">const</span> btn = document.querySelector(<span class="str">'button'</span>);
+<span class="kw">const</span> userId = btn.dataset.userId;    <span class="com">// "42"</span>
+<span class="kw">const</span> action = btn.dataset.action;    <span class="com">// "delete"</span>
+<span class="kw">const</span> confirm = btn.dataset.confirm;  <span class="com">// "هل أنت متأكد؟"</span></pre></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S30: Accessibility -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s30">
+      <div class="section-header">
+        <div class="section-num">30</div>
+        <div class="section-meta">
+          <span class="section-tag tag-green">// ACCESSIBILITY</span>
+          <h2>إمكانية الوصول — ARIA</h2>
+          <p class="section-desc">اجعل موقعك قابلاً للاستخدام للجميع</p>
+        </div>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">accessibility.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="com">&lt;!-- تسميات ARIA لعناصر بدون نص واضح --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attr">aria-label</span>=<span class="val">"إغلاق القائمة"</span><span class="tag">&gt;</span><span class="txt">✕</span><span class="tag">&lt;/button&gt;</span>
+
+<span class="com">&lt;!-- الربط بين العنصر ووصفه --&gt;</span>
+<span class="tag">&lt;input</span>
+  <span class="attr">type</span>=<span class="val">"password"</span>
+  <span class="attr">aria-describedby</span>=<span class="val">"pwd-hint"</span>
+<span class="tag">/&gt;</span>
+<span class="tag">&lt;small</span> <span class="attr">id</span>=<span class="val">"pwd-hint"</span><span class="tag">&gt;</span><span class="txt">8 أحرف على الأقل</span><span class="tag">&lt;/small&gt;</span>
+
+<span class="com">&lt;!-- حالة العنصر --&gt;</span>
+<span class="tag">&lt;button</span>
+  <span class="attr">aria-expanded</span>=<span class="val">"false"</span>
+  <span class="attr">aria-controls</span>=<span class="val">"menu"</span>
+<span class="tag">&gt;</span>
+  <span class="txt">القائمة</span>
+<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;nav</span> <span class="attr">id</span>=<span class="val">"menu"</span> <span class="attr">aria-hidden</span>=<span class="val">"true"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/nav&gt;</span>
+
+<span class="com">&lt;!-- أدوار ARIA --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">role</span>=<span class="val">"alert"</span><span class="tag">&gt;</span><span class="txt">تم حفظ البيانات بنجاح!</span><span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">role</span>=<span class="val">"dialog"</span> <span class="attr">aria-modal</span>=<span class="val">"true"</span> <span class="attr">aria-labelledby</span>=<span class="val">"dlg-title"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h2</span> <span class="attr">id</span>=<span class="val">"dlg-title"</span><span class="tag">&gt;</span><span class="txt">تأكيد الحذف</span><span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="com">&lt;!-- Skip Navigation لمستخدمي لوحة المفاتيح --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"#main"</span> <span class="attr">class</span>=<span class="val">"skip-link"</span><span class="tag">&gt;</span>
+  <span class="txt">تخطي للمحتوى الرئيسي</span>
+<span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;main</span> <span class="attr">id</span>=<span class="val">"main"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/main&gt;</span></pre></div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────── -->
+    <!-- S31-34: عناصر متقدمة -->
+    <!-- ─────────────────────────────────────────── -->
+    <section class="section" id="s31">
+      <div class="section-header">
+        <div class="section-num">31</div>
+        <div class="section-meta">
+          <span class="section-tag tag-orange">// ADVANCED</span>
+          <h2>عناصر HTML5 المتقدمة</h2>
+          <p class="section-desc">Canvas, Details, Dialog, Template</p>
+        </div>
+      </div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-label">advanced.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <div class="code-body"><pre><span class="com">&lt;!-- ===== Canvas (الرسم بـ JavaScript) ===== --&gt;</span>
+<span class="tag">&lt;canvas</span>
+  <span class="attr">id</span>=<span class="val">"myCanvas"</span>
+  <span class="attr">width</span>=<span class="val">"600"</span>
+  <span class="attr">height</span>=<span class="val">"400"</span>
+  <span class="attr">aria-label</span>=<span class="val">"لوحة رسم تفاعلية"</span>
+<span class="tag">&gt;</span>
+  <span class="txt">متصفحك لا يدعم Canvas</span>
+<span class="tag">&lt;/canvas&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+<span class="kw">const</span> canvas = document.getElementById(<span class="str">'myCanvas'</span>);
+<span class="kw">const</span> ctx = canvas.getContext(<span class="str">'2d'</span>);
+ctx.fillStyle = <span class="str">'#e74c18'</span>;
+ctx.fillRect(<span class="num">10</span>, <span class="num">10</span>, <span class="num">200</span>, <span class="num">100</span>);
+<span class="tag">&lt;/script&gt;</span>
+
+<span class="com">&lt;!-- ===== Details & Summary (Accordion) ===== --&gt;</span>
+<span class="tag">&lt;details</span> <span class="attr">open</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;summary&gt;</span><span class="txt">ما هو HTML5؟ (اضغط للتوسيع)</span><span class="tag">&lt;/summary&gt;</span>
+  <span class="tag">&lt;p&gt;</span><span class="txt">HTML5 هو أحدث إصدار من لغة ترميز صفحات الويب...</span><span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/details&gt;</span>
+
+<span class="com">&lt;!-- ===== Dialog (Modal) ===== --&gt;</span>
+<span class="tag">&lt;dialog</span> <span class="attr">id</span>=<span class="val">"myDialog"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h2&gt;</span><span class="txt">عنوان النافذة</span><span class="tag">&lt;/h2&gt;</span>
+  <span class="tag">&lt;p&gt;</span><span class="txt">محتوى النافذة المنبثقة</span><span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">onclick</span>=<span class="val">"document.getElementById('myDialog').close()"</span><span class="tag">&gt;</span>
+    <span class="txt">إغلاق</span>
+  <span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/dialog&gt;</span>
+
+<span class="tag">&lt;button</span> <span class="attr">onclick</span>=<span class="val">"document.getElementById('myDialog').showModal()"</span><span class="tag">&gt;</span>
+  <span class="txt">فتح النافذة</span>
+<span class="tag">&lt;/button&gt;</span>
+
+<span class="com">&lt;!-- ===== Template (قوالب HTML) ===== --&gt;</span>
+<span class="tag">&lt;template</span> <span class="attr">id</span>=<span class="val">"card-template"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h3</span> <span class="attr">class</span>=<span class="val">"card-title"</span><span class="tag">&gt;&lt;/h3&gt;</span>
+    <span class="tag">&lt;p</span>  <span class="attr">class</span>=<span class="val">"card-body"</span><span class="tag">&gt;&lt;/p&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/template&gt;</span>
+
+<span class="com">/* استخدام Template في JavaScript */</span>
+<span class="kw">const</span> tmpl = document.getElementById(<span class="str">'card-template'</span>);
+<span class="kw">const</span> clone = tmpl.content.cloneNode(<span class="num">true</span>);
+clone.querySelector(<span class="str">'.card-title'</span>).textContent = <span class="str">'HTML5'</span>;
+document.body.appendChild(clone);</pre></div>
+      </div>
+
+      <div class="info-box tip">
+        <div class="info-icon">💡</div>
+        <div class="info-content">
+          <strong>نصيحة نهائية</strong>
+          <p>أفضل طريقة لتعلم HTML هي <strong>البناء الفعلي</strong>. ابدأ بصفحة بسيطة وأضف إليها تدريجياً. لا تنتظر "الإتقان الكامل" — ابنِ ثم تعلم.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ─────────────────────────────────────────── -->
+<!-- TASKBAR / FOOTER -->
+<!-- ─────────────────────────────────────────── -->
+<footer class="taskbar">
+  <div class="taskbar-inner">
+    <div class="taskbar-logo">YAHYA<span>.DEV</span></div>
+    <p class="taskbar-tagline">Yahya Al-sulami — Full-Stack Developer & UI/UX Architect</p>
+
+    <div class="taskbar-links">
+      <a href="mailto:yehiahwary515@gmail.com" class="taskbar-link">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        البريد الإلكتروني
+      </a>
+
+      <div class="taskbar-divider"></div>
+
+      <a href="https://www.tiktok.com/@yahya.dev8?_r=1&_t=ZS-96l0vQMsaWL" target="_blank" rel="noopener noreferrer" class="taskbar-link">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.27 8.27 0 0 0 4.83 1.54V6.79a4.85 4.85 0 0 1-1.06-.1z"/></svg>
+        TikTok
+      </a>
+
+      <div class="taskbar-divider"></div>
+
+      <a href="https://www.instagram.com/yahya_alsulami515?igsh=MWY4enBuMXNpaTRycA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="taskbar-link">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+
+      <div class="taskbar-divider"></div>
+
+      <a href="https://yehiahwary0-oss.github.io/my-portfolio/" class="taskbar-link">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        الموقع الشخصي
+      </a>
+    </div>
+
+    <div class="taskbar-bottom">
+      © 2026 <a href="https://yehiahwary0-oss.github.io/my-portfolio/">Yahya.DEV</a> — صُمِّمَت بعناية بقلم <strong>Yahya Al-sulami</strong> · Full-Stack Developer & UI/UX Architect
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── SEARCH ── */
+  const searchData = [
+    { tag: "s01", label: "INTRO",     title: "ما هي HTML؟",               desc: "مقدمة وتعريف HTML5" },
+    { tag: "s02", label: "STRUCT",    title: "البنية الأساسية",            desc: "DOCTYPE, html, head, body" },
+    { tag: "s03", label: "HEADINGS",  title: "العناوين h1-h6",             desc: "تسلسل هرمي للعناوين" },
+    { tag: "s04", label: "TEXT",      title: "الفقرات والنص",              desc: "p, br, hr, blockquote, pre" },
+    { tag: "s05", label: "FORMAT",    title: "تنسيق النص",                 desc: "strong, em, code, mark..." },
+    { tag: "s06", label: "LINKS",     title: "الروابط <a>",                desc: "href, target, download..." },
+    { tag: "s07", label: "IMAGES",    title: "الصور <img>",                desc: "alt, lazy, picture, figure" },
+    { tag: "s08", label: "LISTS",     title: "القوائم",                    desc: "ul, ol, dl, li" },
+    { tag: "s11", label: "TABLES",    title: "الجداول",                    desc: "table, thead, tbody, colspan" },
+    { tag: "s13", label: "FORMS",     title: "النماذج <form>",             desc: "action, method, fieldset" },
+    { tag: "s15", label: "INPUT",     title: "أنواع Input",                desc: "text, email, date, file..." },
+    { tag: "s16", label: "SELECT",    title: "Select & Textarea",          desc: "select, option, datalist" },
+    { tag: "s17", label: "VALID",     title: "التحقق من البيانات",          desc: "required, pattern, minlength" },
+    { tag: "s18", label: "SEMANTIC",  title: "Semantic HTML5",             desc: "header, main, section, article" },
+    { tag: "s22", label: "MEDIA",     title: "الوسائط",                    desc: "video, audio, iframe" },
+    { tag: "s25", label: "META",      title: "Meta Tags & SEO",            desc: "description, og:, twitter:" },
+    { tag: "s27", label: "SCHEMA",    title: "Structured Data",            desc: "JSON-LD, Schema.org" },
+    { tag: "s28", label: "ATTRS",     title: "Global Attributes",          desc: "id, class, tabindex, hidden" },
+    { tag: "s29", label: "DATA",      title: "Data Attributes",            desc: "data-*, dataset" },
+    { tag: "s30", label: "A11Y",      title: "Accessibility (ARIA)",       desc: "aria-label, role, aria-hidden" },
+    { tag: "s31", label: "ADV",       title: "عناصر متقدمة",               desc: "canvas, details, dialog, template" },
+  ];
+
+  const input = document.getElementById('searchInput');
+  const results = document.getElementById('searchResults');
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    results.innerHTML = '';
+    if (!q) { results.classList.remove('open'); return; }
+
+    const matches = searchData.filter(d =>
+      d.title.toLowerCase().includes(q) ||
+      d.desc.toLowerCase().includes(q) ||
+      d.label.toLowerCase().includes(q)
+    );
+
+    if (!matches.length) {
+      results.innerHTML = '<div class="search-item" style="justify-content:center;color:var(--text-dim)">لا توجد نتائج</div>';
+    } else {
+      matches.forEach(m => {
+        const a = document.createElement('a');
+        a.className = 'search-item';
+        a.href = '#' + m.tag;
+        a.innerHTML = `<span class="search-item-tag">${m.label}</span>
+          <div><div class="search-item-title">${m.title}</div>
+          <div class="search-item-desc">${m.desc}</div></div>`;
+        a.onclick = () => { results.classList.remove('open'); input.value = ''; };
+        results.appendChild(a);
+      });
+    }
+    results.classList.add('open');
+  });
+
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-search')) results.classList.remove('open');
+  });
+
+  /* ── COPY BUTTON ── */
+  function copyCode(btn) {
+    const pre = btn.closest('.code-block').querySelector('pre');
+    const text = pre.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = '✓ تم النسخ';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'نسخ'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  /* ── SCROLL PROGRESS ── */
+  const bar = document.getElementById('readProgress');
+  const pct = document.getElementById('progressPct');
+  const lbl = document.getElementById('progressLabel');
+  const backTop = document.getElementById('backTop');
+
+  const sections = document.querySelectorAll('.section');
+  const sectionNames = ['ما هي HTML؟','البنية الأساسية','العناوين','الفقرات',
+    'تنسيق النص','الروابط','الصور','القوائم','القوائم المرتبة','قوائم التعريف',
+    'الجداول','دمج الخلايا','النماذج','حقول الإدخال','أنواع Input',
+    'Select & Textarea','التحقق','Semantic HTML5','Header & Nav','Main & Article',
+    'Aside & Footer','الفيديو','الصوت','iFrame','Meta Tags','Open Graph',
+    'Structured Data','Global Attributes','Data Attributes','Accessibility',
+    'عناصر متقدمة'];
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.body.scrollHeight - window.innerHeight;
+    const p = Math.round((scrolled / total) * 100);
+    bar.style.width = p + '%';
+    pct.textContent = p + '%';
+
+    backTop.classList.toggle('show', scrolled > 400);
+
+    let current = 0;
+    sections.forEach((s, i) => {
+      if (window.scrollY >= s.offsetTop - 200) current = i;
+    });
+    lbl.textContent = sectionNames[current] || 'بداية الدرس';
+
+    /* Sidebar active */
+    document.querySelectorAll('.sidebar-link').forEach(link => link.classList.remove('active'));
+    const activeSection = sections[current];
+    if (activeSection) {
+      const match = document.querySelector(`.sidebar-link[href="#${activeSection.id}"]`);
+      if (match) match.classList.add('active');
+    }
+  });
+</script>
+</body>
+</html>

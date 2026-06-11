@@ -1,329 +1,707 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Work — Yahya Al-sulami | Yahya.DEV</title>
-  <meta name="description" content="Selected works by Yahya Al-sulami (Yahya.DEV) — Full-stack systems, cinematic digital experiences, and performance-driven architectures.">
-  <meta name="keywords" content="Yahya Al-sulami, Yahya.DEV, Portfolio Projects, Vortex Trader, Elite Care Ambulance, Schweppes Gold, Full-Stack Work, Laravel Projects, Web Design Cases">
-  <meta name="author" content="Yahya Al-sulami">
+  <!-- ═══ SEO ═══ -->
+  <title>Projects — Yahya Al-Sulami | Full-Stack Developer Portfolio | Yahya.DEV</title>
+  <meta name="description" content="Real-world projects by Yahya Al-Sulami (Yahya.DEV) — Full-Stack trading platforms, cinematic UI websites, real client projects, and SaaS systems. Built with PHP, Laravel, Node.js, Next.js, React, PostgreSQL."/>
+  <meta name="keywords" content="Yahya Al-Sulami projects, Yahya.DEV portfolio, Full-Stack projects, Vortex TraderY, Schweppes Gold, Elite Care Ambulance, SaaS projects, web development portfolio"/>
+  <meta name="author" content="Yahya Al-Sulami — Yahya.DEV"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="theme-color" content="#020208"/>
+  <link rel="canonical" href="https://yehiahwary0-oss.github.io/my-portfolio/projects.html"/>
 
-  <meta property="og:title" content="The Work — Yahya Al-sulami | Yahya.DEV">
-  <meta property="og:description" content="Full-stack systems and cinematic digital experiences by Yahya Al-sulami.">
-  <meta property="og:image" content="PIC/vortex.png">
-  <meta property="og:url" content="https://yehiahwary0-oss.github.io/my-portfolio/projects.html">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Projects — Yahya Al-Sulami | Yahya.DEV"/>
+  <meta property="og:description" content="Real-world Full-Stack projects, SaaS systems, and cinematic UI experiences by Yahya Al-Sulami."/>
+  <meta property="og:image" content="https://yehiahwary0-oss.github.io/my-portfolio/PIC/YAH.webp"/>
+  <meta property="og:url" content="https://yehiahwary0-oss.github.io/my-portfolio/projects.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Projects — Yahya Al-Sulami | Yahya.DEV"/>
+  <meta name="twitter:image" content="https://yehiahwary0-oss.github.io/my-portfolio/PIC/YAH.webp"/>
 
-  <link rel="icon" type="image/jpeg" href="loge.jpeg">
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Projects by Yahya Al-Sulami",
+    "url":"https://yehiahwary0-oss.github.io/my-portfolio/projects.html",
+    "author":{"@type":"Person","name":"Yahya Al-Sulami","url":"https://yehiahwary0-oss.github.io/my-portfolio/"},
+    "description":"A collection of real-world Full-Stack, SaaS, and cinematic UI projects by Yahya Al-Sulami."
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="PIC/logo.webp" type="image/webp"/>
+  <link rel="apple-touch-icon" href="PIC/logo.webp"/>
+
+  <link rel="stylesheet" href="assets/css/core.css"/>
+  <link rel="stylesheet" href="assets/css/components.css"/>
+  <link rel="stylesheet" href="assets/css/animations.css"/>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
+
+  <style>
+  body.no-scroll { overflow: hidden; }
+  #three-canvas { position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%; }
+
+  /* ══ PAGE HERO ══ */
+  .page-hero {
+    min-height: 52vh;
+    padding-top: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: var(--z-base);
+    overflow: hidden;
+    padding-left: var(--container-pad);
+    padding-right: var(--container-pad);
+  }
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 160px;
+    background: linear-gradient(to bottom, transparent, var(--bg-base));
+    z-index: 1;
+  }
+  .page-hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: var(--space-4);
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .page-hero-tag::before {
+    content: '';
+    width: 28px; height: 1px;
+    background: linear-gradient(90deg, var(--cyan), transparent);
+  }
+  .page-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 7vw, 7rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .page-hero-sub {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    line-height: 1.85;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  /* ══ FILTER BAR ══ */
+  .filter-section {
+    position: relative; z-index: var(--z-base);
+    padding: var(--space-6) var(--container-pad) var(--space-7);
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+  .filter-btn {
+    padding: 9px 22px;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    color: var(--text-muted);
+    cursor: none;
+    transition: all var(--dur-base);
+  }
+  .filter-btn.active, .filter-btn:hover {
+    border-color: var(--indigo);
+    color: var(--text-primary);
+    background: rgba(99,102,241,0.1);
+  }
+  .filter-btn[data-filter="all"].active {
+    border-color: var(--cyan);
+    background: rgba(6,182,212,0.08);
+    color: var(--cyan-l);
+    box-shadow: 0 0 16px rgba(6,182,212,0.15);
+  }
+
+  /* ══ PROJECTS GRID ══ */
+  #projects-grid {
+    position: relative; z-index: var(--z-base);
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--container-pad) var(--space-10);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: var(--space-6);
+  }
+
+  /* ══ PROJECT CARD ══ */
+  .p-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: border-color var(--dur-base),
+                box-shadow var(--dur-slow),
+                transform var(--dur-base) var(--ease-out);
+    animation: fadeUp 0.6s var(--ease-out) both;
+  }
+  .p-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 32px 80px rgba(0,0,0,0.7), var(--glow-indigo);
+    transform: translateY(-6px);
+  }
+  .p-card.hidden { display: none; }
+
+  /* Featured spans 2 cols */
+  .p-card.featured { grid-column: span 2; }
+  .p-card.featured .p-img { height: 340px; }
+
+  .p-img {
+    position: relative;
+    overflow: hidden;
+    height: 260px;
+    background: var(--bg-surface);
+  }
+  .p-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform var(--dur-xl) var(--ease-out),
+                filter var(--dur-slow);
+    filter: brightness(0.8) saturate(0.85);
+  }
+  .p-card:hover .p-img img {
+    transform: scale(1.07);
+    filter: brightness(0.95) saturate(1.05);
+  }
+  .p-img-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(2,2,8,0.97) 0%, transparent 55%);
+  }
+  .p-img-shine {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(99,102,241,0.06) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity var(--dur-base);
+  }
+  .p-card:hover .p-img-shine { opacity: 1; }
+
+  .p-badges {
+    position: absolute;
+    top: var(--space-4); left: var(--space-4);
+    display: flex; gap: var(--space-2); flex-wrap: wrap;
+  }
+
+  .p-body { padding: var(--space-6) var(--space-7); }
+  .p-num {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    color: var(--text-muted);
+    margin-bottom: var(--space-2);
+  }
+  .p-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.015em;
+  }
+  .p-desc {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-5);
+  }
+
+  .p-features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+  }
+  .p-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: 0.83rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .p-feature::before {
+    content: '▸';
+    color: var(--indigo-l);
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-size: 0.7rem;
+  }
+
+  .p-tags {
+    display: flex; flex-wrap: wrap; gap: var(--space-2);
+    margin-bottom: var(--space-5);
+  }
+  .p-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    background: rgba(99,102,241,0.07);
+    border: 1px solid rgba(99,102,241,0.15);
+    color: var(--indigo-l);
+  }
+
+  .p-links {
+    display: flex; gap: var(--space-3); flex-wrap: wrap;
+  }
+  .p-link {
+    flex: 1; min-width: 110px;
+    padding: 11px 16px;
+    display: flex; align-items: center; justify-content: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    transition: all var(--dur-base);
+  }
+  .p-link-live {
+    background: rgba(99,102,241,0.1);
+    border: 1px solid rgba(99,102,241,0.25);
+    color: var(--indigo-l);
+  }
+  .p-link-live:hover { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+  .p-link-demo {
+    background: rgba(6,182,212,0.07);
+    border: 1px solid rgba(6,182,212,0.2);
+    color: var(--cyan-l);
+  }
+  .p-link-demo:hover { background: var(--cyan-d); color: #fff; border-color: var(--cyan); }
+
+  /* ══ CTA STRIP ══ */
+  .cta-strip {
+    position: relative; z-index: var(--z-base);
+    max-width: var(--container);
+    margin: 0 auto var(--space-10);
+    padding: 0 var(--container-pad);
+  }
+  .cta-strip-inner {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8) var(--space-9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-strip-inner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--indigo), var(--cyan), transparent);
+  }
+  .cta-strip-inner::after {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99,102,241,0.1), transparent 70%);
+    pointer-events: none;
+  }
+  .cta-text h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.015em;
+  }
+  .cta-text p { font-size: 0.95rem; color: var(--text-secondary); max-width: 480px; line-height: 1.8; }
+
+  /* ══ RESPONSIVE ══ */
+  @media (max-width: 900px) {
+    #projects-grid { grid-template-columns: 1fr; }
+    .p-card.featured { grid-column: span 1; }
+    .p-card.featured .p-img { height: 260px; }
+  }
+  @media (max-width: 540px) {
+    #projects-grid { padding: 0 var(--space-4) var(--space-8); gap: var(--space-4); }
+    .p-body { padding: var(--space-5); }
+    .cta-strip-inner { padding: var(--space-6); }
+  }
+  </style>
 </head>
-<body class="projects-page">
+<body>
 
-  <!-- MOUSE GLOW ORBS -->
-  <div class="mouse-glow mouse-glow-1" id="glowOrb1"></div>
-  <div class="mouse-glow mouse-glow-2" id="glowOrb2"></div>
+<div id="preloader" role="status" aria-label="Loading">
+  <div class="preloader-logo">Yahya<span>.</span>DEV</div>
+  <div class="preloader-bar-track"><div class="preloader-bar-fill"></div></div>
+  <div class="preloader-count">0%</div>
+</div>
+<div id="page-transition" class="page-transition-overlay" aria-hidden="true"></div>
+<div id="cursor-dot"  aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+<div id="scroll-progress" role="progressbar" aria-hidden="true"></div>
+<div class="noise-overlay" aria-hidden="true"></div>
+<canvas id="three-canvas" aria-hidden="true"></canvas>
 
-  <div id="loader">
-    <div class="loader-inner">
-      <span class="loader-logo">Yahya<span>.DEV</span></span>
-      <p class="loader-sub">Selected Work</p>
-      <div class="loader-bar"><div class="loader-fill"></div></div>
-    </div>
-  </div>
-
-  <nav id="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="loge.jpeg" alt="Yahya.DEV Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-        <span class="logo-fallback">Yahya<span>.DEV</span></span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#skills">Skills</a></li>
-        <li><a href="index.html#services">Services</a></li>
-        <li><a href="projects.html" class="active">Work</a></li>
-        <li><a href="index.html#contact" class="nav-cta">Hire Me</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+<!-- NAV -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Yahya.DEV — Home">
+      <div class="nav-logo-img-wrap">
+        <img src="PIC/logo.webp" alt="Yahya Al-Sulami" class="nav-logo-img" width="40" height="40" loading="eager"/>
+        <div class="nav-logo-ring" aria-hidden="true"></div>
+      </div>
+      <span class="nav-logo-text">Yahya<span class="dot">.</span><span class="dev">DEV</span></span>
+      <div class="logo-popup" role="dialog" aria-label="Yahya Al-Sulami profile">
+        <div class="logo-popup-card">
+          <div class="logo-popup-cover">
+            <div class="logo-popup-cover-grid" aria-hidden="true"></div>
+            <div class="logo-popup-avatar-wrap">
+              <div class="logo-popup-avatar-ring" aria-hidden="true"></div>
+              <img src="PIC/logo.webp" alt="Yahya Al-Sulami" class="logo-popup-avatar" width="52" height="52" loading="lazy"/>
+            </div>
+          </div>
+          <div class="logo-popup-body">
+            <div class="logo-popup-name">Yahya Al-Sulami</div>
+            <div class="logo-popup-handle">@yahya.dev</div>
+            <p class="logo-popup-bio">Full-Stack Developer &amp; UI Architect. Building systems that perform and interfaces that captivate.</p>
+            <div class="logo-popup-stats">
+              <div class="logo-popup-stat">
+                <div class="logo-popup-stat-num">4+</div>
+                <div class="logo-popup-stat-label">Projects</div>
+              </div>
+              <div class="logo-popup-stat">
+                <div class="logo-popup-stat-num">6+</div>
+                <div class="logo-popup-stat-label">Courses</div>
+              </div>
+              <div class="logo-popup-stat">
+                <div class="logo-popup-stat-num">3+</div>
+                <div class="logo-popup-stat-label">Years</div>
+              </div>
+            </div>
+            <div class="logo-popup-socials">
+              <a href="https://github.com/yehiahwary0-oss" target="_blank" rel="noopener" class="logo-popup-link gh" aria-label="GitHub">GH</a>
+              <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" rel="noopener" class="logo-popup-link ig" aria-label="Instagram">IG</a>
+              <a href="https://www.tiktok.com/@yahya.dev8" target="_blank" rel="noopener" class="logo-popup-link tk" aria-label="TikTok">TK</a>
+              <a href="mailto:yehiahwary515@gmail.com" class="logo-popup-link em" aria-label="Email">✉</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#about"    class="nav-link">About</a>
+      <a href="index.html#skills"   class="nav-link">Skills</a>
+      <a href="projects.html"       class="nav-link active">Projects</a>
+      <a href="courses.html"        class="nav-link">Courses</a>
+      <a href="index.html#contact"  class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang-btn="en">EN</button>
+        <button class="lang-btn"        data-lang-btn="ar">AR</button>
+      </div>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
+        <span data-theme-icon>☀</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <section class="projects-hero">
-    <div class="hero-bg">
-      <div class="grid-overlay"></div>
-      <div class="glow glow-1"></div>
-      <div class="glow glow-2"></div>
-    </div>
-    <div class="projects-hero-content">
-      <a href="index.html" class="back-link">
-        <i class="fas fa-arrow-left"></i> Back to Studio
-      </a>
-      <div class="ph-eyebrow" data-aos>
-        <span class="section-tag">Selected Work</span>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="index.html#about"   class="nav-link">About</a>
+  <a href="index.html#skills"  class="nav-link">Skills</a>
+  <a href="projects.html"      class="nav-link active">Projects</a>
+  <a href="courses.html"       class="nav-link">Courses</a>
+  <a href="index.html#contact" class="nav-link">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<header class="page-hero" aria-label="Projects page header">
+  <div class="bg-grid bg-grid-fade" aria-hidden="true"></div>
+  <div class="bg-spotlight" aria-hidden="true"></div>
+  <div class="page-hero-tag" id="phTag">Real Work. Real Impact.</div>
+  <h1 class="page-hero-title" id="phTitle">
+    My <span class="text-gradient">Projects</span>
+  </h1>
+  <p class="page-hero-sub" id="phSub"
+     data-en="Every project here is live, real, and built with precision. From SaaS platforms to cinematic UI — this is what I do."
+     data-ar="كل مشروع هنا حي وحقيقي ومبني بدقة. من منصات SaaS إلى واجهات سينمائية.">
+    Every project here is live, real, and built with precision.
+    From SaaS platforms to cinematic UI — this is what I do.
+  </p>
+</header>
+
+<!-- FILTER BAR -->
+<div class="filter-section reveal" role="toolbar" aria-label="Filter projects">
+  <button class="filter-btn active" data-filter="all"       data-en="All"        data-ar="الكل">All</button>
+  <button class="filter-btn"        data-filter="fullstack" data-en="Full-Stack" data-ar="فول ستاك">Full-Stack</button>
+  <button class="filter-btn"        data-filter="ui"        data-en="Cinematic UI" data-ar="واجهات سينمائية">Cinematic UI</button>
+  <button class="filter-btn"        data-filter="client"    data-en="Real Client" data-ar="عملاء حقيقيون">Real Client</button>
+  <button class="filter-btn"        data-filter="portfolio" data-en="Portfolio"  data-ar="بورتفوليو">Portfolio</button>
+</div>
+
+<!-- PROJECTS GRID -->
+<main id="projects-grid" aria-label="Projects list">
+
+  <!-- 001 Vortex TraderY — Featured -->
+  <article class="p-card featured reveal" data-cat="fullstack"
+           data-tilt data-tilt-max="4" data-tilt-speed="500" data-tilt-glare data-tilt-max-glare="0.06"
+           style="animation-delay:.05s">
+    <div class="p-img">
+      <img src="PIC/vortex.png" alt="Vortex TraderY — Full-Stack Trading Platform by Yahya Al-Sulami" loading="eager" width="900" height="500"/>
+      <div class="p-img-overlay" aria-hidden="true"></div>
+      <div class="p-img-shine"   aria-hidden="true"></div>
+      <div class="p-badges">
+        <span class="tag tag-indigo">Full-Stack · SaaS</span>
+        <span class="tag tag-green tag-live">Live</span>
       </div>
-      <h1 class="ph-title" data-aos>
-        The <span class="accent">Gallery</span>
-      </h1>
-      <p class="ph-desc" data-aos>
-        Full-stack systems, cinematic experiences, and precision-engineered platforms —<br />
-        each one a case study in performance, artistry, and craft.
+    </div>
+    <div class="p-body">
+      <div class="p-num">Project / 001</div>
+      <h2 class="p-title">Vortex TraderY</h2>
+      <p class="p-desc">A production-grade full-stack trading platform engineered for real financial markets. Next.js frontend, Node.js backend, real-time data pipelines, and advanced auth flows.</p>
+      <div class="p-features">
+        <div class="p-feature">Real-time market data with secure WebSocket connections</div>
+        <div class="p-feature">JWT-based authentication with role management and session security</div>
+        <div class="p-feature">PostgreSQL database with optimized queries via Prisma ORM</div>
+        <div class="p-feature">Deployed on Vercel with CI/CD pipeline and environment isolation</div>
+      </div>
+      <div class="p-tags">
+        <span class="p-tag">Next.js 14</span>
+        <span class="p-tag">Node.js</span>
+        <span class="p-tag">Express</span>
+        <span class="p-tag">PostgreSQL</span>
+        <span class="p-tag">Prisma</span>
+        <span class="p-tag">TypeScript</span>
+        <span class="p-tag">JWT Auth</span>
+        <span class="p-tag">Vercel</span>
+      </div>
+      <div class="p-links">
+        <a href="https://vortex-trader-y.vercel.app/" target="_blank" rel="noopener" class="p-link p-link-live">↗ Live Platform</a>
+        <a href="https://vt.tiktok.com/ZSxYvWe5R/"   target="_blank" rel="noopener" class="p-link p-link-demo">▶ TikTok Demo</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- 002 Schweppes Gold -->
+  <article class="p-card reveal reveal-d1" data-cat="ui"
+           data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.08"
+           style="animation-delay:.1s">
+    <div class="p-img">
+      <img src="PIC/sh.png" alt="Schweppes Gold — Cinematic UI Website by Yahya Al-Sulami" loading="lazy" width="600" height="340"/>
+      <div class="p-img-overlay" aria-hidden="true"></div>
+      <div class="p-img-shine"   aria-hidden="true"></div>
+      <div class="p-badges">
+        <span class="tag tag-purple">Cinematic UI</span>
+        <span class="tag tag-green tag-live">Live</span>
+      </div>
+    </div>
+    <div class="p-body">
+      <div class="p-num">Project / 002</div>
+      <h2 class="p-title">Schweppes Gold</h2>
+      <p class="p-desc">A luxury cinematic product website that blurs the line between web and film. Immersive scroll-driven animations, particle systems, and premium visual storytelling.</p>
+      <div class="p-features">
+        <div class="p-feature">GSAP ScrollTrigger — chapter-by-chapter narrative animations</div>
+        <div class="p-feature">Custom particle canvas systems per scene section</div>
+        <div class="p-feature">Zero-dependency — lightweight yet visually rich</div>
+      </div>
+      <div class="p-tags">
+        <span class="p-tag">HTML5</span>
+        <span class="p-tag">CSS3</span>
+        <span class="p-tag">JavaScript</span>
+        <span class="p-tag">GSAP</span>
+        <span class="p-tag">Canvas API</span>
+        <span class="p-tag">ScrollTrigger</span>
+      </div>
+      <div class="p-links">
+        <a href="https://yehiahwary0-oss.github.io/Schweppes/" target="_blank" rel="noopener" class="p-link p-link-live">↗ Live Site</a>
+        <a href="https://vt.tiktok.com/ZSxYc3tU6/"            target="_blank" rel="noopener" class="p-link p-link-demo">▶ TikTok Demo</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- 003 Elite Care Ambulance -->
+  <article class="p-card reveal reveal-d2" data-cat="client"
+           data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.08"
+           style="animation-delay:.15s">
+    <div class="p-img">
+      <img src="PIC/elite.png" alt="Elite Care Ambulance — Real Client Medical Website by Yahya Al-Sulami" loading="lazy" width="600" height="340"/>
+      <div class="p-img-overlay" aria-hidden="true"></div>
+      <div class="p-img-shine"   aria-hidden="true"></div>
+      <div class="p-badges">
+        <span class="tag tag-cyan">Real Client</span>
+        <span class="tag tag-amber">Medical</span>
+        <span class="tag tag-green tag-live">Live</span>
+      </div>
+    </div>
+    <div class="p-body">
+      <div class="p-num">Project / 003</div>
+      <h2 class="p-title">Elite Care Ambulance</h2>
+      <p class="p-desc">A real-world production website for a medical ambulance service. Built with a focus on credibility, performance, and technical SEO dominance. Live in full operation.</p>
+      <div class="p-features">
+        <div class="p-feature">Full technical SEO — structured data, meta, sitemap, Schema.org</div>
+        <div class="p-feature">Performance-first — optimized for Core Web Vitals</div>
+        <div class="p-feature">Conversion-focused layout with professional credibility design</div>
+      </div>
+      <div class="p-tags">
+        <span class="p-tag">HTML5</span>
+        <span class="p-tag">CSS3</span>
+        <span class="p-tag">JavaScript</span>
+        <span class="p-tag">SEO</span>
+        <span class="p-tag">Core Web Vitals</span>
+        <span class="p-tag">Schema.org</span>
+      </div>
+      <div class="p-links">
+        <a href="https://www.elite-ambulance.online/" target="_blank" rel="noopener" class="p-link p-link-live">↗ Live Site</a>
+        <a href="https://vt.tiktok.com/ZSxYnQvsc/"   target="_blank" rel="noopener" class="p-link p-link-demo">▶ TikTok Demo</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- 004 Portfolio V1 -->
+  <article class="p-card reveal reveal-d3" data-cat="portfolio"
+           data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.08"
+           style="animation-delay:.2s">
+    <div class="p-img">
+      <img src="PIC/my.png" alt="Portfolio V1 — First Developer Portfolio by Yahya Al-Sulami" loading="lazy" width="600" height="340"/>
+      <div class="p-img-overlay" aria-hidden="true"></div>
+      <div class="p-img-shine"   aria-hidden="true"></div>
+      <div class="p-badges">
+        <span class="tag tag-indigo">Portfolio · V1</span>
+        <span class="tag tag-green tag-live">Live</span>
+      </div>
+    </div>
+    <div class="p-body">
+      <div class="p-num">Project / 004</div>
+      <h2 class="p-title">Portfolio V1</h2>
+      <p class="p-desc">The first iteration of my personal developer portfolio. A cinematic dark-themed showcase of early-stage UI/UX design and full-stack development. The foundation of where I am today.</p>
+      <div class="p-features">
+        <div class="p-feature">Dark cinematic design with animated particle systems</div>
+        <div class="p-feature">Full SEO implementation with Open Graph and structured data</div>
+        <div class="p-feature">Multi-language course integration — HTML, CSS, JS, PHP</div>
+      </div>
+      <div class="p-tags">
+        <span class="p-tag">HTML5</span>
+        <span class="p-tag">CSS3</span>
+        <span class="p-tag">JavaScript</span>
+        <span class="p-tag">SEO</span>
+        <span class="p-tag">Formspree</span>
+        <span class="p-tag">GitHub Pages</span>
+      </div>
+      <div class="p-links">
+        <a href="https://yehiahwary0-oss.github.io/yahya.github.io/" target="_blank" rel="noopener" class="p-link p-link-live">↗ Live Site</a>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<!-- CTA STRIP -->
+<div class="cta-strip reveal">
+  <div class="cta-strip-inner">
+    <div class="cta-text">
+      <h3 data-en="Have a project in mind?" data-ar="هل لديك مشروع في ذهنك؟">Have a project in mind?</h3>
+      <p data-en="Let's build something powerful together. Available for freelance work, collaborations, and full-time opportunities."
+         data-ar="لنبني شيئاً قوياً معاً. متاح للعمل الحر والتعاون والفرص بدوام كامل.">
+        Let's build something powerful together. Available for freelance work,
+        collaborations, and full-time opportunities.
       </p>
     </div>
-  </section>
+    <a href="index.html#contact" class="btn btn-primary btn-lg">
+      <span data-en="Start a Conversation" data-ar="ابدأ محادثة">Start a Conversation</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</div>
 
-  <section class="projects-gallery">
-    <div class="container">
-
-      <!-- FILTER TABS -->
-      <div class="pg-filter-bar" data-aos>
-        <button class="pg-filter-btn active" data-filter="all">
-          <i class="fas fa-th"></i> All Projects
-        </button>
-        <button class="pg-filter-btn" data-filter="fullstack">
-          <i class="fas fa-server"></i> Full-Stack Apps
-        </button>
-        <button class="pg-filter-btn" data-filter="frontend">
-          <i class="fas fa-palette"></i> Creative Front-End
-        </button>
-      </div>
-
-      <!-- =============================================
-           PROJECT 1: VORTEX TRADER_Y
-           ============================================= -->
-      <article class="pg-card" data-cat="fullstack" data-aos>
-        <div class="pg-badge">Featured Project</div>
-        <div class="pg-badge badge-dev" style="left:auto; right:1.5rem;">⚡ Back-End Under Development</div>
-        <div class="pg-inner">
-          <div class="pg-visual">
-            <div class="pg-img-wrap">
-              <img src="PIC/vortex.png" alt="Vortex Trader_Y Platform" class="pg-img"
-                onerror="this.parentElement.classList.add('pg-no-img')" />
-              <div class="pg-img-overlay">
-                <div class="pg-overlay-content">
-                  <span class="pg-overlay-label">Live Platform</span>
-                  <a href="https://vortex-trader-y.vercel.app/" target="_blank" class="pg-overlay-btn">
-                    <i class="fas fa-external-link-alt"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pg-info">
-            <div class="pg-category">Full-Stack App · Web Application Architecture</div>
-            <h2 class="pg-title">Vortex<br /><span class="accent">Trader_Y</span></h2>
-            <p class="pg-desc">
-              A highly sophisticated trading platform featuring live market analysis, real-time dynamic dashboards, an interactive demo-trading simulator, and an integrated crypto/forex learning course system.
-            </p>
-            <div class="pg-tags">
-              <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span><span>GSAP</span><span>Laravel</span><span>WebSockets</span>
-            </div>
-            <div class="pg-action-bar">
-              <a href="https://vortex-trader-y.vercel.app/" target="_blank" class="pg-action-btn live">
-                <i class="fas fa-external-link-alt"></i> View Live
-              </a>
-              <a href="https://vt.tiktok.com/ZSxYvWe5R/" target="_blank" class="pg-action-btn tiktok-btn">
-                <i class="fab fa-tiktok"></i> TikTok
-              </a>
-              <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUyOTkzMTQyNjY5NDYw?story_media_id=3899102142338210602&igsh=MWFnejhyZHc3bWlrcA==" target="_blank" class="pg-action-btn insta-btn">
-                <i class="fab fa-instagram"></i> Instagram
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- =============================================
-           PROJECT 2: ELITE CARE AMBULANCE
-           ============================================= -->
-      <article class="pg-card" data-cat="fullstack" data-aos>
-        <div class="pg-badge">Client Project</div>
-        <div class="pg-inner pg-inner-reverse">
-          <div class="pg-visual">
-            <div class="pg-img-wrap">
-              <img src="PIC/elite.png" alt="Elite Care Ambulance Platform" class="pg-img"
-                onerror="this.parentElement.classList.add('pg-no-img')" />
-              <div class="pg-img-overlay">
-                <div class="pg-overlay-content">
-                  <span class="pg-overlay-label">Live Platform</span>
-                  <a href="https://www.elite-ambulance.online/" target="_blank" class="pg-overlay-btn">
-                    <i class="fas fa-external-link-alt"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pg-info">
-            <div class="pg-category">Full-Stack Web Development · SEO Optimization</div>
-            <h2 class="pg-title">Elite Care<br /><span class="accent">Ambulance</span></h2>
-            <p class="pg-desc">
-              A fully-realized commercial emergency ambulance service platform, completely optimized for Google Ads campaigns, speed performance, and local search visibility. Delivered live to client.
-            </p>
-            <div class="pg-tags">
-              <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span><span>SEO</span><span>Google Ads</span>
-            </div>
-            <div class="pg-action-bar">
-              <a href="https://www.elite-ambulance.online/" target="_blank" class="pg-action-btn live">
-                <i class="fas fa-external-link-alt"></i> View Live
-              </a>
-              <a href="https://vt.tiktok.com/ZSxYnQvsc/" target="_blank" class="pg-action-btn tiktok-btn">
-                <i class="fab fa-tiktok"></i> TikTok
-              </a>
-              <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3ODUyOTkzMTQyNjY5NDYw?story_media_id=3897948511303931612&igsh=MWFnejhyZHc3bWlrcA==" target="_blank" class="pg-action-btn insta-btn">
-                <i class="fab fa-instagram"></i> Instagram
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <div class="pg-divider" data-aos>
-        <span class="pd-line"></span>
-        <span class="pd-label"><i class="fas fa-palette"></i> Creative Front-End</span>
-        <span class="pd-line"></span>
-      </div>
-
-      <!-- =============================================
-           PROJECT 3: SCHWEPPES GOLD
-           ============================================= -->
-      <article class="pg-card" data-cat="frontend" data-aos>
-        <div class="pg-badge">Featured Project</div>
-        <div class="pg-inner">
-          <div class="pg-visual">
-            <div class="pg-img-wrap">
-              <img src="PIC/sh.png" alt="Schweppes Gold Cinematic Experience" class="pg-img"
-                onerror="this.parentElement.classList.add('pg-no-img')" />
-              <div class="pg-img-overlay">
-                <div class="pg-overlay-content">
-                  <span class="pg-overlay-label">Live Experience</span>
-                  <a href="https://yehiahwary0-oss.github.io/Schweppes/" target="_blank" class="pg-overlay-btn">
-                    <i class="fas fa-external-link-alt"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pg-info">
-            <div class="pg-category">Brand Activation · Creative Front-End & Motion Design</div>
-            <h2 class="pg-title">Schweppes Gold<br /><span class="accent">Cinematic Experience</span></h2>
-            <p class="pg-desc">
-              High-end, luxury interactive product showcase featuring advanced scroll-driven storytelling, custom GSAP animations, and premium fluid layouts. A full-scale immersive brand activation.
-            </p>
-            <div class="pg-tags">
-              <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>GSAP</span>
-            </div>
-            <div class="pg-action-bar">
-              <a href="https://yehiahwary0-oss.github.io/Schweppes/" target="_blank" class="pg-action-btn live">
-                <i class="fas fa-external-link-alt"></i> View Live
-              </a>
-              <a href="https://vt.tiktok.com/ZSxYc3tU6/" target="_blank" class="pg-action-btn tiktok-btn">
-                <i class="fab fa-tiktok"></i> TikTok
-              </a>
-              <a href="https://www.instagram.com/reel/DX5SrPFoK2V/" target="_blank" class="pg-action-btn insta-btn">
-                <i class="fab fa-instagram"></i> Instagram
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <div class="pg-divider" data-aos>
-        <span class="pd-line"></span>
-        <span class="pd-label"><i class="fas fa-history"></i> Technical Evolution</span>
-        <span class="pd-line"></span>
-      </div>
-
-      <!-- =============================================
-           PROJECT 4: PORTFOLIO V1
-           ============================================= -->
-      <article class="pg-card" data-cat="frontend" data-aos>
-        <div class="pg-badge legacy-badge">Origin Point</div>
-        <div class="pg-inner pg-inner-reverse">
-          <div class="pg-visual">
-            <div class="pg-img-wrap">
-              <img src="PIC/my.png" alt="Portfolio V1 - The Origin" class="pg-img"
-                onerror="this.style.display='none'; this.parentElement.classList.add('pg-no-img')">
-              <div class="pg-img-overlay">
-                <div class="pg-overlay-content">
-                  <span class="pg-overlay-label">View Origin</span>
-                  <a href="https://yehiahwary0-oss.github.io/yahya.github.io/" target="_blank" class="pg-overlay-btn">
-                    <i class="fas fa-external-link-alt"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="pg-visual-accent">
-              <span class="va-tag"><i class="fas fa-clock"></i> 2024 Archive</span>
-            </div>
-          </div>
-          <div class="pg-info">
-            <div class="pg-category">Personal Portfolio · Front-End Evolution</div>
-            <h2 class="pg-title">Personal Portfolio <span class="accent">V1</span><br /><span class="pg-subtitle">The Origin Story</span></h2>
-            <p class="pg-desc">
-              Retained as an archive to showcase the developmental progression and timeline of my design and layout capabilities. A foundational study in responsive design and structured CSS.
-            </p>
-            <div class="pg-evolution">
-              <div class="pge-label">Evolution Arc</div>
-              <div class="pge-timeline">
-                <div class="pge-point"><span class="pge-marker past"></span><span>V1 · 2024</span></div>
-                <div class="pge-connector"></div>
-                <div class="pge-point"><span class="pge-marker present"></span><span>V2 · Now</span></div>
-              </div>
-            </div>
-            <div class="pg-tags">
-              <span>HTML5</span><span>CSS3</span><span>Responsive</span>
-            </div>
-            <div class="pg-action-bar">
-              <a href="https://yehiahwary0-oss.github.io/yahya.github.io/" target="_blank" class="pg-action-btn archive-btn">
-                <i class="fas fa-external-link-alt"></i> View Origin
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- COMING SOON -->
-      <div class="pg-incoming" data-aos>
-        <div class="pgi-inner">
-          <span class="section-tag">In Production</span>
-          <h3>More Case Studies<br /><span class="accent">Coming Soon</span></h3>
-          <p>VORTEX TRADER_Y back-end systems and new client projects are in active development. Follow the journey for exclusive previews.</p>
-          <div class="pgi-actions">
-            <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" class="btn btn-instagram-main">
-              <i class="fab fa-instagram"></i> Follow Journey
-            </a>
-            <a href="index.html#contact" class="btn btn-outline">
-              <i class="fas fa-paper-plane"></i> Start a Project
-            </a>
-          </div>
-        </div>
-      </div>
-
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Yahya<span class="dot">.</span><span class="dev">DEV</span></div>
+    <p class="footer-copy">© 2025 Yahya Al-Sulami. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="https://github.com/yehiahwary0-oss" target="_blank" rel="noopener" class="footer-social" aria-label="GitHub">GH</a>
+      <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">IG</a>
+      <a href="https://www.tiktok.com/@yahya.dev8" target="_blank" rel="noopener" class="footer-social" aria-label="TikTok">TK</a>
+      <a href="mailto:yehiahwary515@gmail.com" class="footer-social" aria-label="Email">✉</a>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <footer id="footer">
-    <div class="container">
-      <div class="footer-top">
-        <a href="index.html" class="footer-logo">Yahya<span>.DEV</span></a>
-        <p class="footer-identity">Yahya Al-sulami — Full-Stack Developer & UI/UX Architect</p>
-        <p>© 2025 <strong>Yahya.DEV</strong> — Designed by <strong>Yahya Al-sulami</strong></p>
-        <div class="footer-socials">
-          <a href="mailto:yehiahwary515@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.tiktok.com/@yahya.dev8" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="https://github.com/yehiahwary0-oss" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        </div>
-      </div>
-    </div>
-  </footer>
+<script src="assets/js/core.js" defer></script>
+<script src="assets/js/three-bg.js" defer></script>
+<script src="assets/js/gsap-init.js" defer></script>
 
-  <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+<script>
+// Hero entrance
+window.addEventListener('DOMContentLoaded', () => {
+  function tryHero() {
+    if (typeof gsap === 'undefined') { setTimeout(tryHero, 100); return; }
+    gsap.to('#phTag',   { opacity:1, y:0, duration:.7, delay:.2, ease:'power3.out' });
+    gsap.to('#phTitle', { opacity:1, y:0, duration:.9, delay:.4, ease:'power3.out' });
+    gsap.to('#phSub',   { opacity:1, y:0, duration:.7, delay:.7, ease:'power3.out' });
+  }
+  tryHero();
+});
 
-  <script src="script.js"></script>
+// Filter
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.p-card').forEach(card => {
+      const show = f === 'all' || card.dataset.cat === f;
+      card.classList.toggle('hidden', !show);
+    });
+    if (typeof VanillaTilt !== 'undefined') {
+      setTimeout(() => {
+        VanillaTilt.init(document.querySelectorAll('.p-card:not(.hidden)[data-tilt]'), {
+          max:6, speed:400, glare:true, 'max-glare':.08
+        });
+      }, 50);
+    }
+  });
+});
+</script>
+
 </body>
 </html>

@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تعلم PHP من الصفر حتى الاحتراف | Yahya.DEV</title>
+<meta name="description" content="دليل شامل لتعلم لغة PHP من الصفر — متغيرات، دوال، OOP، قواعد البيانات، الأمان. كتبه Yahya Al-sulami مطوّر Full-Stack. يغني عن أي كورس.">
+<meta name="keywords" content="تعلم PHP, PHP بالعربي, شرح PHP, PHP للمبتدئين, لغة PHP, PHP OOP, PHP Laravel, Yahya.DEV, Yahya Al-sulami, Full-Stack PHP, تعلم البرمجة بالعربي">
+<meta name="author" content="Yahya Al-sulami — Yahya.DEV">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://yehiahwary0-oss.github.io/my-portfolio/learn-php.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="تعلم PHP من الصفر | Yahya.DEV">
+<meta property="og:description" content="دليل PHP الأشمل بالعربي — يغني عن أي كورس. كتبه Yahya Al-sulami.">
+<meta property="og:url" content="https://yehiahwary0-oss.github.io/my-portfolio/learn-php.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="تعلم PHP من الصفر | Yahya.DEV">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"تعلم PHP من الصفر حتى الاحتراف","description":"دليل شامل لتعلم PHP يغني عن أي كورس","author":{"@type":"Person","name":"Yahya Al-sulami","url":"https://yehiahwary0-oss.github.io/my-portfolio/"},"programmingLanguage":"PHP","inLanguage":"ar"}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg0:#03060f;--bg1:#080d1a;--bg2:#0d1426;--bg3:#111c33;
+  --surf:#141e35;--card:#192240;--bdr:#1e2d50;--bdr2:#2a3f6e;
+  --php:#8892bf;--phpl:#aab3d4;--phpd:rgba(136,146,191,.12);--phpg:rgba(136,146,191,.06);
+  --elc:#4fc3f7;--elcd:rgba(79,195,247,.1);
+  --grn:#43e97b;--grnd:rgba(67,233,123,.1);
+  --org:#ff9a3c;--red:#ff5c5c;--yel:#ffe066;
+  --t1:#eef2ff;--t2:#a8b4d8;--t3:#5a6a90;--t4:#3a4a6a;
+  --sk:#c792ea;--sf:#82aaff;--ss:#c3e88d;--sn:#f78c6c;
+  --sv:#89ddff;--sc:#465678;--scl:#ffcb6b;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg0);color:var(--t1);font-family:'Cairo',sans-serif;font-size:15px;line-height:1.75;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg1)}::-webkit-scrollbar-thumb{background:var(--php);border-radius:3px}
+.sb{position:fixed;right:0;top:0;width:252px;height:100vh;background:rgba(8,13,26,.97);backdrop-filter:blur(20px);border-left:1px solid var(--bdr);z-index:100;display:flex;flex-direction:column;overflow:hidden}
+.sb-top{padding:20px 17px 17px;border-bottom:1px solid var(--bdr)}
+.sb-top a{display:flex;align-items:center;gap:10px;text-decoration:none}
+.lm{width:37px;height:37px;border-radius:10px;background:linear-gradient(135deg,var(--php),#5c6bc0);display:flex;align-items:center;justify-content:center;font-family:'Fira Code',monospace;font-size:14px;font-weight:800;color:#fff;flex-shrink:0}
+.bn-n{font-size:14px;font-weight:800;color:var(--t1)}.bn-s{font-size:10px;color:var(--t3);font-family:'Fira Code',monospace}
+.sb-prog{padding:10px 17px;border-bottom:1px solid var(--bdr)}
+.sp-lbl{font-size:10px;color:var(--t3);display:flex;justify-content:space-between;margin-bottom:5px}
+.sp-bar{height:3px;background:var(--bg3);border-radius:2px;overflow:hidden}
+.sp-fill{height:100%;background:linear-gradient(90deg,var(--php),var(--elc));width:0%;transition:width .3s}
+.sb-nav{flex:1;overflow-y:auto;padding:6px 0}.sb-nav::-webkit-scrollbar{width:3px}.sb-nav::-webkit-scrollbar-thumb{background:var(--bdr2)}
+.sbl{font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--t4);padding:11px 17px 3px;text-transform:uppercase}
+.sb-nav a{display:flex;align-items:center;gap:8px;padding:8px 17px;color:var(--t3);text-decoration:none;font-size:12.5px;font-weight:600;border-right:3px solid transparent;transition:all .18s;white-space:nowrap}
+.sb-nav a:hover,.sb-nav a.act{color:var(--phpl);background:var(--phpd);border-right-color:var(--php)}
+.sb-nav a .n{font-family:'Fira Code',monospace;font-size:10px;background:var(--bg3);color:var(--t4);padding:1px 6px;border-radius:4px;flex-shrink:0;min-width:25px;text-align:center}
+.sb-nav a.act .n{background:var(--php);color:#fff}
+.main{margin-right:252px;min-height:100vh;padding-bottom:80px}
+.hero{position:relative;background:linear-gradient(160deg,#0a0f22,#030608 60%,#080d1a);border-bottom:1px solid var(--bdr);padding:74px 58px 66px;overflow:hidden}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(136,146,191,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(136,146,191,.04) 1px,transparent 1px);background-size:40px 40px}
+.hglow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(136,146,191,.07),transparent 70%);top:-200px;left:-80px;pointer-events:none}
+.hc{position:relative;z-index:2;max-width:740px}
+.hauth{position:absolute;top:26px;left:58px;display:flex;align-items:center;gap:11px}
+.hav{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--php),var(--elc));display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff;font-family:'Fira Code',monospace;flex-shrink:0}
+.han{font-size:13px;font-weight:700;color:var(--t1)}.har{font-size:11px;color:var(--t3);font-family:'Fira Code',monospace}
+.hey{display:inline-flex;align-items:center;gap:9px;background:rgba(136,146,191,.08);border:1px solid rgba(136,146,191,.2);color:var(--phpl);font-size:11px;font-weight:700;font-family:'Fira Code',monospace;padding:5px 14px;border-radius:20px;margin-bottom:20px;letter-spacing:1.5px;text-transform:uppercase}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--php);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero h1{font-size:clamp(32px,5vw,54px);font-weight:900;line-height:1.1;margin-bottom:17px}
+.hw{color:var(--t1)}.hp{background:linear-gradient(135deg,var(--php),var(--elc));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hdesc{font-size:15.5px;color:var(--t2);line-height:1.9;margin-bottom:30px;max-width:590px}
+.hbadges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.badge{display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--bdr2);color:var(--t2);font-size:12px;font-weight:600;padding:5px 13px;border-radius:20px}
+.badge .bi{color:var(--php)}
+.hstats{display:flex;gap:34px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column;gap:2px}
+.sv2{font-size:28px;font-weight:900;font-family:'Fira Code',monospace;color:var(--php)}.sl{font-size:11px;color:var(--t3)}
+.content{padding:44px 58px 54px}
+.section{margin-bottom:74px;scroll-margin-top:20px}
+.sh{display:flex;align-items:flex-start;gap:16px;margin-bottom:10px;padding-bottom:17px;border-bottom:1px solid var(--bdr)}
+.sn2{background:linear-gradient(135deg,var(--php),#5c6bc0);color:#fff;font-family:'Fira Code',monospace;font-size:12px;font-weight:700;min-width:39px;height:39px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 17px rgba(136,146,191,.25);margin-top:3px}
+.si h2{font-size:24px;font-weight:800;color:var(--t1);line-height:1.2}
+.si .en{font-family:'Fira Code',monospace;font-size:11px;color:var(--php);background:var(--phpd);border:1px solid rgba(136,146,191,.2);padding:2px 9px;border-radius:5px;display:inline-block;margin-top:4px}
+.intro{margin-bottom:24px;padding:15px 19px;background:linear-gradient(135deg,rgba(136,146,191,.05),rgba(79,195,247,.03));border:1px solid var(--bdr);border-right:3px solid var(--php);border-radius:12px;font-size:14px;color:var(--t2);line-height:1.9}
+.intro strong{color:var(--t1)}.intro em{color:var(--phpl);font-style:normal;font-weight:700}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.g1{display:grid;grid-template-columns:1fr;gap:17px}
+.s2{grid-column:span 2}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:13px;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s}
+.card:hover{border-color:rgba(136,146,191,.3);transform:translateY(-2px);box-shadow:0 8px 26px rgba(0,0,0,.35)}
+.ch{display:flex;align-items:center;justify-content:space-between;padding:12px 17px;background:var(--surf);border-bottom:1px solid var(--bdr)}
+.ch h3{font-size:13.5px;font-weight:700;color:var(--yel);display:flex;align-items:center;gap:8px}
+.ch h3::before{content:'';display:block;width:7px;height:7px;border-radius:50%;background:var(--php);flex-shrink:0}
+.ctag{font-family:'Fira Code',monospace;font-size:10px;padding:2px 8px;border-radius:4px;background:var(--bg2);color:var(--t3);border:1px solid var(--bdr)}
+.def{padding:13px 17px;background:rgba(136,146,191,.03);border-bottom:1px solid var(--bdr);font-size:13px;color:var(--t2);line-height:1.85}
+.def strong{color:var(--t1)}.def em{color:var(--elc);font-style:normal;font-weight:700}
+.def code{font-family:'Fira Code',monospace;font-size:11.5px;background:var(--bg0);padding:1px 5px;border-radius:3px;color:var(--sv);border:1px solid var(--bdr)}
+pre{background:#020510;padding:20px;overflow-x:auto;margin:0;border-top:1px solid var(--bdr)}
+pre::-webkit-scrollbar{height:4px}pre::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:2px}
+code{font-family:'Fira Code',monospace;font-size:12.5px;line-height:2;display:block}
+.kw{color:#c792ea}.fn{color:#82aaff}.str{color:#c3e88d}.num{color:#f78c6c}
+.var{color:#89ddff}.cm{color:#465678;font-style:italic}.cl{color:#ffcb6b}.op{color:#89ddff}
+.hl{display:block;margin:0 -20px;padding:0 18px 0 20px;background:rgba(136,146,191,.08);border-right:3px solid var(--php)}
+.out{border-top:1px dashed var(--bdr2);background:rgba(2,5,16,.9);padding:11px 20px}
+.out::before{content:'▶ OUTPUT';display:block;font-family:'Fira Code',monospace;font-size:10px;color:#43e97b;letter-spacing:1.5px;margin-bottom:3px}
+.ov{font-family:'Fira Code',monospace;font-size:12.5px;color:var(--t2);line-height:1.7}
+.tw{border:1px solid var(--bdr);border-radius:12px;overflow:hidden;background:var(--card)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{background:var(--surf);padding:11px 15px;text-align:right;color:var(--phpl);font-weight:700;font-size:11px;border-bottom:1px solid var(--bdr2)}
+.tbl td{padding:10px 15px;border-bottom:1px solid var(--bdr);vertical-align:middle;color:var(--t2)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:var(--phpg)}
+.tbl code{display:inline;background:#020510;padding:1px 6px;border-radius:3px;color:var(--elc);font-size:11.5px;border:1px solid var(--bdr);font-family:'Fira Code',monospace}
+.tip,.note,.warn{display:flex;gap:12px;align-items:flex-start;padding:14px 18px;border-radius:11px;font-size:13.5px;line-height:1.85;margin-bottom:17px}
+.tip{background:var(--grnd);border:1px solid rgba(67,233,123,.2);color:#43e97b}
+.note{background:var(--elcd);border:1px solid rgba(79,195,247,.2);color:var(--elc)}
+.warn{background:rgba(255,154,60,.08);border:1px solid rgba(255,154,60,.2);color:var(--org)}
+.tip strong,.note strong,.warn strong{display:block;margin-bottom:2px}
+.ico{font-size:19px;flex-shrink:0;margin-top:1px}
+.steps{display:flex;flex-direction:column;gap:13px}
+.step{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:16px}
+.step-n{background:linear-gradient(135deg,var(--php),#5c6bc0);color:#fff;font-family:'Fira Code',monospace;font-size:13px;font-weight:700;min-width:33px;height:33px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step h4{font-size:14px;font-weight:700;color:var(--t1);margin-bottom:3px}
+.step p{font-size:13px;color:var(--t2);line-height:1.8}
+.step code{font-family:'Fira Code',monospace;font-size:11.5px;background:var(--bg0);padding:1px 5px;border-radius:3px;color:var(--sv);border:1px solid var(--bdr)}
+.taskbar{position:fixed;bottom:0;left:0;right:252px;height:53px;background:rgba(8,13,26,.97);backdrop-filter:blur(20px);border-top:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between;padding:0 58px;z-index:90}
+.tb-brand{font-size:12.5px;font-weight:700;color:var(--t3)}.tb-brand span{color:var(--phpl)}
+.tb-links{display:flex;align-items:center;gap:3px}
+.tb-links a{display:flex;align-items:center;gap:7px;padding:7px 12px;border-radius:8px;text-decoration:none;font-size:12px;font-weight:700;color:var(--t3);border:1px solid transparent;transition:all .2s}
+.tb-links a:hover{color:var(--t1);background:var(--bg3);border-color:var(--bdr2)}
+.tb-links a svg{width:15px;height:15px;flex-shrink:0}
+.a-port:hover{color:var(--phpl)!important}.a-email:hover{color:#ea4335!important}
+.a-insta:hover{color:#e1306c!important}.a-tiktok:hover{color:#69c9d0!important}
+.tb-php{font-family:'Fira Code',monospace;font-size:11px;color:var(--t4)}
+.pf{background:var(--bg1);border-top:1px solid var(--bdr);padding:34px 58px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:17px}
+.pf h3{font-size:18px;font-weight:900;color:var(--t1);margin-bottom:3px}
+.pf p{font-size:12px;color:var(--t3)}
+.pf a{color:var(--phpl);text-decoration:none;font-size:12px}
+.pf a:hover{color:var(--elc)}
+@media(max-width:900px){.sb{width:0;overflow:hidden}.main,.taskbar{margin-right:0}.content,.hero,.pf{padding-left:20px;padding-right:20px}.taskbar{left:0;right:0;padding:0 16px}.g2{grid-template-columns:1fr}.s2{grid-column:span 1}.hero{padding:56px 20px 46px}}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sb">
+  <div class="sb-top">
+    <a href="https://yehiahwary0-oss.github.io/my-portfolio/">
+      <div class="lm">Y.</div>
+      <div><div class="bn-n">Yahya.DEV</div><div class="bn-s">PHP · Full-Stack Guide</div></div>
+    </a>
+  </div>
+  <div class="sb-prog">
+    <div class="sp-lbl"><span>تقدمك في القراءة</span><span id="pct">0%</span></div>
+    <div class="sp-bar"><div class="sp-fill" id="prog"></div></div>
+  </div>
+  <nav class="sb-nav">
+    <div class="sbl">البداية</div>
+    <a href="#intro"><span class="n">00</span>ما هي PHP؟</a>
+    <a href="#setup"><span class="n">01</span>البيئة والإعداد</a>
+    <div class="sbl">الأساسيات</div>
+    <a href="#syntax"><span class="n">02</span>بناء الجملة</a>
+    <a href="#vars"><span class="n">03</span>المتغيرات والأنواع</a>
+    <a href="#ops"><span class="n">04</span>العوامل والمقارنة</a>
+    <a href="#conds"><span class="n">05</span>الشروط</a>
+    <a href="#loops"><span class="n">06</span>الحلقات</a>
+    <div class="sbl">المتوسط</div>
+    <a href="#funcs"><span class="n">07</span>الدوال</a>
+    <a href="#arrays"><span class="n">08</span>المصفوفات</a>
+    <a href="#strings"><span class="n">09</span>النصوص</a>
+    <a href="#forms"><span class="n">10</span>الفورمز والجلسة</a>
+    <div class="sbl">المتقدم</div>
+    <a href="#oop"><span class="n">11</span>OOP كائنية التوجه</a>
+    <a href="#db"><span class="n">12</span>قواعد البيانات PDO</a>
+    <a href="#files"><span class="n">13</span>الملفات</a>
+    <a href="#security"><span class="n">14</span>الأمان</a>
+    <a href="#errors"><span class="n">15</span>معالجة الأخطاء</a>
+    <a href="#modern"><span class="n">16</span>PHP 8 الحديثة</a>
+    <div class="sbl">مرجع</div>
+    <a href="#ref"><span class="n">★</span>مرجع سريع</a>
+  </nav>
+</aside>
+
+<div class="main">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hgrid"></div><div class="hglow"></div>
+  <div class="hauth">
+    <div class="hav">Y.</div>
+    <div><div class="han">Yahya Al-sulami</div><div class="har">Full-Stack Developer &amp; UI/UX Architect</div></div>
+  </div>
+  <div class="hc">
+    <div class="hey"><span class="dot"></span>PHP 8.3 · الدليل الشامل بالعربي · Yahya.DEV</div>
+    <h1><span class="hw">تعلّم لغة</span> <span class="hp">PHP</span><br><span class="hw">من الصفر للاحتراف</span></h1>
+    <p class="hdesc">دليل شامل ومفصّل بناءً على خبرتي الفعلية كمطوّر Full-Stack. ستتعلم كل شيء من الـ Syntax الأساسي لـ OOP وقواعد البيانات والأمان — بأمثلة واقعية يغنيك عن أي كورس مدفوع.</p>
+    <div class="hbadges">
+      <span class="badge"><span class="bi">⚡</span>PHP 8.3</span>
+      <span class="badge"><span class="bi">📖</span>للمبتدئين والمتوسطين</span>
+      <span class="badge"><span class="bi">🔥</span>أمثلة واقعية</span>
+      <span class="badge"><span class="bi">🛡️</span>أمان وـ Best Practices</span>
+      <span class="badge"><span class="bi">🗄️</span>PDO وقواعد البيانات</span>
+    </div>
+    <div class="hstats">
+      <div class="stat"><span class="sv2">16</span><span class="sl">قسم رئيسي</span></div>
+      <div class="stat"><span class="sv2">100+</span><span class="sl">مثال بكود</span></div>
+      <div class="stat"><span class="sv2">مجاناً</span><span class="sl">بلا تكلفة</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+<!-- 00 -->
+<section class="section" id="intro">
+<div class="sh"><div class="sn2">00</div><div class="si"><h2>ما هي PHP ولماذا تتعلمها؟</h2><span class="en">What is PHP &amp; Why?</span></div></div>
+<div class="intro"><strong>PHP: Hypertext Preprocessor</strong> لغة مفتوحة المصدر لبناء <em>مواقع الويب الديناميكية</em>. الكود يشتغل على السيرفر وينتج HTML للمتصفح. بُني بها <strong>WordPress (43% من الإنترنت)</strong> وFacebook وWikipedia. أنا أستخدمها يومياً مع <em>Laravel</em>.</div>
+<div class="g2">
+<div class="card"><div class="ch"><h3>لماذا PHP؟</h3></div>
+<div class="def"><strong>5 أسباب:</strong><br><em>①</em> سهلة للمبتدئين<br><em>②</em> سوق عمل ضخم — Laravel مطلوب<br><em>③</em> تكامل ممتاز مع MySQL<br><em>④</em> Frameworks: Laravel، Symfony<br><em>⑤</em> Hosting رخيص في كل مكان</div>
+<pre><code><span class="kw">&lt;?php</span>
+  <span class="var">$name</span> = <span class="str">"Yahya"</span>;
+  <span class="fn">echo</span> <span class="str">"مرحباً، <span class="var">$name</span>!"</span>;
+<span class="kw">?&gt;</span></code></pre>
+<div class="out"><div class="ov">مرحباً، Yahya!</div></div></div>
+<div class="card"><div class="ch"><h3>كيف تعمل PHP؟</h3></div>
+<div class="def">المستخدم يطلب الصفحة ← السيرفر يشغّل PHP ← ينتج HTML ← يُرسَل للمتصفح. <em>المتصفح لا يرى كود PHP أبداً.</em></div>
+<pre><code><span class="kw">&lt;?php</span>
+<span class="var">$hour</span> = (<span class="kw">int</span>)<span class="fn">date</span>(<span class="str">"H"</span>);
+<span class="var">$greet</span> = <span class="kw">match</span>(<span class="kw">true</span>) {
+  <span class="var">$hour</span> &lt; <span class="num">12</span> =&gt; <span class="str">"صباح الخير"</span>,
+  <span class="var">$hour</span> &lt; <span class="num">18</span> =&gt; <span class="str">"مساء الخير"</span>,
+  <span class="kw">default</span>    =&gt; <span class="str">"مساء النور"</span>,
+};
+<span class="fn">echo</span> <span class="str">"&lt;h1&gt;<span class="var">$greet</span>!&lt;/h1&gt;"</span>;
+<span class="kw">?&gt;</span></code></pre></div>
+</div></section>
+
+<!-- 01 -->
+<section class="section" id="setup">
+<div class="sh"><div class="sn2">01</div><div class="si"><h2>إعداد بيئة التطوير</h2><span class="en">Environment Setup</span></div></div>
+<div class="intro">قبل كتابة أي كود تحتاج <em>Web Server</em> يشغّل PHP. الأسهل: <em>XAMPP</em> أو <em>Laragon</em> — يثبّتان Apache + PHP + MySQL في خطوة واحدة.</div>
+<div class="steps">
+<div class="step"><div class="step-n">1</div><div><h4>حمّل XAMPP أو Laragon</h4><p>XAMPP من <code>apachefriends.org</code> لكل الأنظمة. Laragon من <code>laragon.org</code> لـ Windows — أسرع وأبسط.</p></div></div>
+<div class="step"><div class="step-n">2</div><div><h4>ضع الملفات في المجلد الصحيح</h4><p>XAMPP: <code>C:\xampp\htdocs\myproject\</code> — Laragon: <code>C:\laragon\www\myproject\</code></p></div></div>
+<div class="step"><div class="step-n">3</div><div><h4>شغّل السيرفر وافتح المتصفح</h4><p>افتح XAMPP/Laragon ← شغّل Apache ← اكتب <code>http://localhost/myproject/</code></p></div></div>
+<div class="step"><div class="step-n">4</div><div><h4>VS Code + PHP Intelephense</h4><p>أفضل محرر: VS Code مع Extension <code>PHP Intelephense</code> — autocomplete وكشف أخطاء فوري.</p></div></div>
+</div>
+<div style="margin-top:17px"><div class="tip"><span class="ico">💡</span><div><strong>نصيحة:</strong> Laragon أسرع بكثير من XAMPP ويدعم Virtual Hosts تلقائياً.</div></div></div>
+</section>
+
+<!-- 02 -->
+<section class="section" id="syntax">
+<div class="sh"><div class="sn2">02</div><div class="si"><h2>بناء الجملة الأساسي</h2><span class="en">Basic Syntax</span></div></div>
+<div class="intro">كل كود PHP يُكتب بين <em>&lt;?php</em> و <em>?&gt;</em>، كل جملة تنتهي بـ <em>;</em>، والتعليقات بـ <em>//</em> أو <em>/* */</em>.</div>
+<div class="g2">
+<div class="card"><div class="ch"><h3>التاجات وـ echo</h3></div>
+<pre><code><span class="cm">&lt;?php   بداية كود PHP</span>
+<span class="cm">?&gt;      نهاية (اختياري)</span>
+
+<span class="cm">// طباعة نص</span>
+<span class="fn">echo</span> <span class="str">"Hello Yahya.DEV!"</span>;
+<span class="fn">echo</span> <span class="str">"A"</span>, <span class="str">"B"</span>, <span class="str">"C"</span>;  <span class="cm">// متعدد</span>
+<span class="fn">print</span> <span class="str">"Hello"</span>;        <span class="cm">// يرجع 1</span>
+
+<span class="cm">// debug</span>
+<span class="fn">var_dump</span>(<span class="num">42</span>);       <span class="cm">// int(42)</span>
+<span class="fn">print_r</span>([<span class="num">1</span>,<span class="num">2</span>,<span class="num">3</span>]);   <span class="cm">// Array([0]=&gt;1)</span>
+<span class="fn">phpinfo</span>();          <span class="cm">// معلومات السيرفر</span></code></pre></div>
+<div class="card"><div class="ch"><h3>التعليقات</h3></div>
+<pre><code><span class="cm">// تعليق سطر واحد</span>
+<span class="cm"># تعليق Shell</span>
+<span class="cm">/*
+  تعليق
+  متعدد الأسطر
+*/</span>
+
+<span class="cm">// PHP مع HTML</span>
+<span class="kw">?&gt;</span>
+<span class="cm">&lt;h2&gt;HTML هنا&lt;/h2&gt;</span>
+<span class="kw">&lt;?php</span>
+<span class="fn">echo</span> <span class="str">"عودة لـ PHP"</span>;
+
+<span class="cm">// ملف PHP صرف — لا تضع ?&gt; في النهاية</span></code></pre></div>
+</div></section>
+
+<!-- 03 -->
+<section class="section" id="vars">
+<div class="sh"><div class="sn2">03</div><div class="si"><h2>المتغيرات وأنواع البيانات</h2><span class="en">Variables &amp; Data Types</span></div></div>
+<div class="intro"><strong>المتغير</strong> صندوق يحفظ قيمة. في PHP كل متغير يبدأ بـ <em>$</em>. PHP لغة <em>Loosely Typed</em> — تحدد النوع تلقائياً. PHP 7+ تتيح Type Hints للأمان.</div>
+<div class="g2">
+<div class="card"><div class="ch"><h3>أنواع البيانات الـ 8</h3></div>
+<pre><code><span class="cm">// string — نص</span>
+<span class="var">$name</span>  = <span class="str">"Yahya Al-sulami"</span>;
+
+<span class="cm">// int — رقم صحيح</span>
+<span class="var">$age</span>   = <span class="num">25</span>;
+<span class="var">$big</span>   = <span class="num">1_000_000</span>;  <span class="cm">// PHP 7.4+</span>
+
+<span class="cm">// float — رقم عشري</span>
+<span class="var">$price</span> = <span class="num">99.99</span>;
+
+<span class="cm">// bool — صح أو غلط</span>
+<span class="var">$login</span> = <span class="kw">true</span>;
+
+<span class="cm">// null — لا قيمة</span>
+<span class="var">$data</span>  = <span class="kw">null</span>;
+
+<span class="cm">// array — مصفوفة</span>
+<span class="var">$tags</span>  = [<span class="str">"php"</span>, <span class="str">"laravel"</span>];
+
+<span class="cm">// object — كائن</span>
+<span class="var">$dt</span>    = <span class="kw">new</span> <span class="cl">DateTime</span>();
+
+<span class="cm">// resource — ملف/DB مفتوح</span>
+<span class="var">$fp</span>    = <span class="fn">fopen</span>(<span class="str">"f.txt"</span>, <span class="str">"r"</span>);</code></pre></div>
+<div class="card"><div class="ch"><h3>فحص وتحويل الأنواع</h3></div>
+<pre><code><span class="var">$val</span> = <span class="str">"42"</span>;
+
+<span class="fn">gettype</span>(<span class="var">$val</span>);        <span class="cm">// "string"</span>
+<span class="fn">is_string</span>(<span class="var">$val</span>);      <span class="cm">// true</span>
+<span class="fn">is_int</span>(<span class="var">$val</span>);          <span class="cm">// false</span>
+<span class="fn">is_numeric</span>(<span class="var">$val</span>);     <span class="cm">// true</span>
+<span class="fn">var_dump</span>(<span class="var">$val</span>);        <span class="cm">// string(2) "42"</span>
+
+<span class="cm">// Casting</span>
+<span class="var">$i</span> = (<span class="kw">int</span>)   <span class="var">$val</span>;   <span class="cm">// 42</span>
+<span class="var">$f</span> = (<span class="kw">float</span>) <span class="var">$val</span>;   <span class="cm">// 42.0</span>
+<span class="var">$b</span> = (<span class="kw">bool</span>)  <span class="var">$val</span>;   <span class="cm">// true</span>
+<span class="var">$s</span> = (<span class="kw">string</span>)<span class="num">123</span>;    <span class="cm">// "123"</span>
+
+<span class="fn">intval</span>(<span class="str">"15px"</span>);    <span class="cm">// 15</span>
+<span class="fn">floatval</span>(<span class="str">"3.5m"</span>);  <span class="cm">// 3.5</span></code></pre></div>
+<div class="card"><div class="ch"><h3>الثوابت Constants</h3></div>
+<div class="def"><strong>الثابت</strong> قيمته لا تتغير — يُكتب بـ <em>CAPITALS</em>.</div>
+<pre><code><span class="fn">define</span>(<span class="str">"SITE_NAME"</span>,  <span class="str">"Yahya.DEV"</span>);
+<span class="fn">define</span>(<span class="str">"MAX_UPLOAD"</span>, <span class="num">5242880</span>);
+<span class="kw">const</span> <span class="cl">API_VER</span> = <span class="str">"v2.5"</span>;
+
+<span class="fn">echo</span> <span class="cl">SITE_NAME</span>;  <span class="cm">// Yahya.DEV</span>
+<span class="fn">echo</span> <span class="cl">API_VER</span>;    <span class="cm">// v2.5</span>
+
+<span class="cm">// ثوابت PHP المدمجة</span>
+<span class="fn">echo</span> <span class="cl">PHP_VERSION</span>; <span class="cm">// 8.3.x</span>
+<span class="fn">echo</span> <span class="cl">PHP_INT_MAX</span>; <span class="cm">// 9223372036854775807</span>
+<span class="fn">echo</span> <span class="cl">PHP_EOL</span>;     <span class="cm">// سطر جديد</span>
+<span class="fn">echo</span> <span class="cl">__FILE__</span>;    <span class="cm">// مسار الملف</span>
+<span class="fn">echo</span> <span class="cl">__DIR__</span>;     <span class="cm">// مجلد الملف</span></code></pre></div>
+<div class="card"><div class="ch"><h3>نطاق المتغيرات Scope</h3></div>
+<div class="def">المتغير الـ <em>global</em> غير مرئي داخل الدوال تلقائياً — يجب تمريره كـ parameter.</div>
+<pre><code><span class="var">$site</span> = <span class="str">"yahya.dev"</span>;  <span class="cm">// global</span>
+
+<span class="kw">function</span> <span class="fn">bad</span>() {
+  <span class="fn">echo</span> <span class="var">$site</span>; <span class="cm">// غير موجود!</span>
+}
+
+<span class="cm">// الافضل: parameter</span>
+<span class="kw">function</span> <span class="fn">show</span>(<span class="kw">string</span> <span class="var">$url</span>): <span class="kw">void</span> {
+  <span class="fn">echo</span> <span class="var">$url</span>;
+}
+<span class="fn">show</span>(<span class="var">$site</span>);
+
+<span class="cm">// static — يتذكر قيمته</span>
+<span class="kw">function</span> <span class="fn">counter</span>(): <span class="kw">int</span> {
+  <span class="kw">static</span> <span class="var">$n</span> = <span class="num">0</span>;
+  <span class="kw">return</span> ++<span class="var">$n</span>;
+}
+<span class="fn">echo</span> <span class="fn">counter</span>(); <span class="cm">// 1</span>
+<span class="fn">echo</span> <span class="fn">counter</span>(); <span class="cm">// 2</span></code></pre></div>
+</div></section>
+
+<!-- 04 -->
+<section class="section" id="ops">
+<div class="sh"><div class="sn2">04</div><div class="si"><h2>العوامل والمقارنة</h2><span class="en">Operators &amp; Comparison</span></div></div>
+<div class="intro">أهم فرق في PHP: <em>== (قيمة فقط)</em> مقابل <em>=== (قيمة + نوع)</em> — مصدر كثير من الأخطاء. دائماً استخدم <em>===</em>.</div>
+<div class="g2">
+<div class="card"><div class="ch"><h3>حسابية + اختصارات</h3></div>
+<pre><code><span class="var">$a</span> = <span class="num">15</span>; <span class="var">$b</span> = <span class="num">4</span>;
+<span class="fn">echo</span> <span class="var">$a</span> + <span class="var">$b</span>;   <span class="cm">// 19 جمع</span>
+<span class="fn">echo</span> <span class="var">$a</span> - <span class="var">$b</span>;   <span class="cm">// 11 طرح</span>
+<span class="fn">echo</span> <span class="var">$a</span> * <span class="var">$b</span>;   <span class="cm">// 60 ضرب</span>
+<span class="fn">echo</span> <span class="var">$a</span> / <span class="var">$b</span>;   <span class="cm">// 3.75 قسمة</span>
+<span class="fn">echo</span> <span class="var">$a</span> % <span class="var">$b</span>;   <span class="cm">// 3 باقي</span>
+<span class="fn">echo</span> <span class="var">$a</span> ** <span class="var">$b</span>;  <span class="cm">// 50625 اس</span>
+
+<span class="var">$x</span>  = <span class="num">10</span>;
+<span class="var">$x</span> += <span class="num">5</span>;  <span class="cm">// 15</span>
+<span class="var">$x</span> -= <span class="num">3</span>;  <span class="cm">// 12</span>
+<span class="var">$x</span> *= <span class="num">2</span>;  <span class="cm">// 24</span>
+<span class="var">$x</span> /= <span class="num">6</span>;  <span class="cm">// 4</span>
+<span class="var">$x</span>++;     <span class="cm">// post++</span>
+++<span class="var">$x</span>;     <span class="cm">// ++pre</span></code></pre></div>
+<div class="card"><div class="ch"><h3>المقارنة == vs ===</h3></div>
+<pre><code><span class="cm">// == قيمة فقط — خطير!</span>
+<span class="num">5</span>  ==  <span class="str">"5"</span>   <span class="cm">// true  - خطر</span>
+<span class="num">0</span>  ==  <span class="kw">false</span>  <span class="cm">// true  - خطر</span>
+<span class="num">0</span>  ==  <span class="str">"foo"</span>  <span class="cm">// true  - خطر!</span>
+
+<span class="cm">// === قيمة + نوع - صحيح</span>
+<span class="num">5</span>  === <span class="str">"5"</span>   <span class="cm">// false - int vs string</span>
+<span class="num">5</span>  === <span class="num">5</span>    <span class="cm">// true  - صحيح</span>
+<span class="num">0</span>  === <span class="kw">false</span>  <span class="cm">// false - int vs bool</span>
+
+<span class="cm">// Spaceship (PHP 7+)</span>
+<span class="num">1</span> &lt;=&gt; <span class="num">2</span>      <span class="cm">// -1 اقل</span>
+<span class="num">2</span> &lt;=&gt; <span class="num">2</span>      <span class="cm">// 0  متساوٍ</span>
+<span class="num">3</span> &lt;=&gt; <span class="num">2</span>      <span class="cm">// 1  اكبر</span></code></pre></div>
+<div class="card"><div class="ch"><h3>منطقية + نصوص</h3></div>
+<pre><code><span class="kw">true</span>  &amp;&amp; <span class="kw">true</span>   <span class="cm">// true  AND</span>
+<span class="kw">true</span>  || <span class="kw">false</span>  <span class="cm">// true  OR</span>
+!<span class="kw">true</span>            <span class="cm">// false NOT</span>
+
+<span class="cm">// دمج نصوص بـ .</span>
+<span class="var">$fn</span>   = <span class="str">"Yahya"</span>;
+<span class="var">$full</span> = <span class="var">$fn</span> . <span class="str">" Alsulami"</span>;
+<span class="fn">echo</span> <span class="var">$full</span>; <span class="cm">// Yahya Alsulami</span>
+
+<span class="var">$t</span>  = <span class="str">"Yahya.DEV"</span>;
+<span class="var">$t</span> .= <span class="str">" Full-Stack"</span>;
+<span class="fn">echo</span> <span class="var">$t</span>;</code></pre></div>
+<div class="card"><div class="ch"><h3>Null Coalescing و Ternary</h3></div>
+<pre><code><span class="cm">// Ternary ?:</span>
+<span class="var">$s</span> = (<span class="var">$age</span> &gt;= <span class="num">18</span>) ? <span class="str">"بالغ"</span> : <span class="str">"قاصر"</span>;
+
+<span class="cm">// ?? Null Coalescing (PHP 7+)</span>
+<span class="var">$name</span> = <span class="var">$_GET</span>[<span class="str">'name'</span>] ?? <span class="str">"زائر"</span>;
+<span class="var">$port</span> = <span class="var">$cfg</span>[<span class="str">'port'</span>]  ?? <span class="num">3306</span>;
+
+<span class="cm">// ??= تعيين لو null (PHP 7.4+)</span>
+<span class="var">$cache</span> ??= <span class="str">"default"</span>;
+
+<span class="cm">// سلسلة</span>
+<span class="var">$v</span> = <span class="var">$a</span> ?? <span class="var">$b</span> ?? <span class="str">"fallback"</span>;
+
+<span class="cm">// ?: Elvis</span>
+<span class="var">$role</span> = <span class="var">$user</span>-&gt;<span class="var">role</span> ?: <span class="str">"guest"</span>;</code></pre></div>
+</div></section>
+<!-- 05 -->
+<section class="section" id="conds">
+<div class="sh"><div class="sn2">05</div><div class="si"><h2>الشروط</h2><span class="en">Conditions</span></div></div>
+<div class="intro"><strong>الشروط</strong> تتحكم في مسار التنفيذ. PHP عندها <em>if / switch / match</em> — كل واحد لحالته.</div>
+<div class="g2">
+<div class="card s2"><div class="ch"><h3>if / elseif / else</h3></div>
+<pre><code><span class="var">$score</span> = <span class="num">73</span>;
+<span class="kw">if</span> (<span class="var">$score</span> &gt;= <span class="num">90</span>) {
+    <span class="fn">echo</span> <span class="str">"A — ممتاز"</span>;
+} <span class="kw">elseif</span> (<span class="var">$score</span> &gt;= <span class="num">80</span>) {
+    <span class="fn">echo</span> <span class="str">"B — جيد جداً"</span>;
+} <span class="kw">elseif</span> (<span class="var">$score</span> &gt;= <span class="num">65</span>) {
+    <span class="hl">    <span class="fn">echo</span> <span class="str">"C — جيد"</span>;  <span class="cm">// هذا ينفذ لان 73 &gt;= 65</span></span>
+} <span class="kw">else</span> {
+    <span class="fn">echo</span> <span class="str">"F — راسب"</span>;
+}
+
+<span class="cm">// مثال صلاحيات</span>
+<span class="var">$role</span> = <span class="str">"editor"</span>;
+<span class="kw">if</span> (<span class="var">$role</span> === <span class="str">"admin"</span>) {
+    <span class="fn">echo</span> <span class="str">"وصول كامل"</span>;
+} <span class="kw">elseif</span> (<span class="fn">in_array</span>(<span class="var">$role</span>, [<span class="str">"editor"</span>, <span class="str">"author"</span>])) {
+    <span class="fn">echo</span> <span class="str">"وصول للكتابة"</span>;
+} <span class="kw">else</span> {
+    <span class="fn">echo</span> <span class="str">"قراءة فقط"</span>;
+}</code></pre></div>
+<div class="card"><div class="ch"><h3>switch</h3></div>
+<div class="def"><em>break</em> ضروري — بدونه يكمل للـ case التالية!</div>
+<pre><code><span class="var">$method</span> = <span class="str">"POST"</span>;
+<span class="kw">switch</span> (<span class="var">$method</span>) {
+    <span class="kw">case</span> <span class="str">"GET"</span>:
+        <span class="fn">echo</span> <span class="str">"جلب بيانات"</span>;
+        <span class="kw">break</span>;
+    <span class="kw">case</span> <span class="str">"POST"</span>:
+        <span class="hl">        <span class="fn">echo</span> <span class="str">"ارسال"</span>;</span>
+        <span class="kw">break</span>;
+    <span class="kw">case</span> <span class="str">"PUT"</span>:
+    <span class="kw">case</span> <span class="str">"PATCH"</span>:
+        <span class="fn">echo</span> <span class="str">"تحديث"</span>;
+        <span class="kw">break</span>;
+    <span class="kw">default</span>:
+        <span class="fn">echo</span> <span class="str">"غير معروف"</span>;
+}</code></pre></div>
+<div class="card"><div class="ch"><h3>match — PHP 8</h3></div>
+<div class="def">يستخدم <code>===</code> تلقائياً، لا يحتاج break، يرجع قيمة مباشرة.</div>
+<pre><code><span class="var">$code</span> = <span class="num">404</span>;
+<span class="var">$msg</span> = <span class="kw">match</span>(<span class="var">$code</span>) {
+    <span class="num">200</span>, <span class="num">201</span> =&gt; <span class="str">"نجاح"</span>,
+    <span class="num">400</span>       =&gt; <span class="str">"طلب خاطئ"</span>,
+    <span class="hl">    <span class="num">404</span>       =&gt; <span class="str">"غير موجود"</span>,</span>
+    <span class="num">500</span>       =&gt; <span class="str">"خطأ سيرفر"</span>,
+    <span class="kw">default</span>   =&gt; <span class="str">"مجهول"</span>,
+};
+<span class="fn">echo</span> <span class="var">$msg</span>; <span class="cm">// غير موجود</span>
+
+<span class="cm">// match مع شرط بولياني</span>
+<span class="var">$disc</span> = <span class="kw">match</span>(<span class="kw">true</span>) {
+    <span class="var">$qty</span> &gt;= <span class="num">100</span> =&gt; <span class="num">0.20</span>,
+    <span class="var">$qty</span> &gt;= <span class="num">50</span>  =&gt; <span class="num">0.10</span>,
+    <span class="kw">default</span>     =&gt; <span class="num">0.00</span>,
+};</code></pre></div>
+</div></section>
+
+<!-- 06 -->
+<section class="section" id="loops">
+<div class="sh"><div class="sn2">06</div><div class="si"><h2>الحلقات</h2><span class="en">Loops</span></div></div>
+<div class="intro"><em>for</em> لعدد محدد، <em>while</em> لشرط، <em>foreach</em> للمصفوفات — الاكثر استخداماً.</div>
+<div class="g2">
+<div class="card"><div class="ch"><h3>for</h3></div>
+<pre><code><span class="kw">for</span> (<span class="var">$i</span>=<span class="num">1</span>; <span class="var">$i</span>&lt;=<span class="num">5</span>; <span class="var">$i</span>++) {
+    <span class="fn">echo</span> <span class="var">$i</span> . <span class="str">" "</span>;
+}
+<span class="cm">// 1 2 3 4 5</span>
+
+<span class="cm">// عكسي</span>
+<span class="kw">for</span> (<span class="var">$i</span>=<span class="num">5</span>; <span class="var">$i</span>&gt;=<span class="num">1</span>; <span class="var">$i</span>--) {
+    <span class="fn">echo</span> <span class="var">$i</span> . <span class="str">" "</span>;
+}
+<span class="cm">// 5 4 3 2 1</span>
+
+<span class="cm">// متداخلتان</span>
+<span class="kw">for</span> (<span class="var">$r</span>=<span class="num">1</span>; <span class="var">$r</span>&lt;=<span class="num">3</span>; <span class="var">$r</span>++) {
+    <span class="kw">for</span> (<span class="var">$c</span>=<span class="num">1</span>; <span class="var">$c</span>&lt;=<span class="num">3</span>; <span class="var">$c</span>++) {
+        <span class="fn">echo</span> <span class="var">$r</span>*<span class="var">$c</span> . <span class="str">"\t"</span>;
+    }
+    <span class="fn">echo</span> <span class="str">"\n"</span>;
+}</code></pre></div>
+<div class="card"><div class="ch"><h3>while و do-while</h3></div>
+<pre><code><span class="cm">// while — يفحص اولاً</span>
+<span class="var">$p</span> = <span class="num">1</span>;
+<span class="kw">while</span> (<span class="var">$p</span> &lt;= <span class="num">5</span>) {
+    <span class="fn">echo</span> <span class="str">"صفحة "</span> . <span class="var">$p</span>++ . <span class="str">"\n"</span>;
+}
+
+<span class="cm">// do-while — ينفذ مرة اولاً</span>
+<span class="var">$tries</span> = <span class="num">0</span>;
+<span class="kw">do</span> {
+    <span class="fn">echo</span> <span class="str">"محاولة اتصال\n"</span>;
+    <span class="var">$ok</span> = <span class="fn">rand</span>(<span class="num">0</span>,<span class="num">1</span>);
+    <span class="var">$tries</span>++;
+} <span class="kw">while</span> (!<span class="var">$ok</span> &amp;&amp; <span class="var">$tries</span>&lt;<span class="num">3</span>);
+
+<span class="fn">echo</span> <span class="var">$ok</span> ? <span class="str">"متصل"</span> : <span class="str">"فشل"</span>;</code></pre></div>
+<div class="card"><div class="ch"><h3>foreach — الاكثر استخداماً</h3></div>
+<pre><code><span class="var">$skills</span> = [<span class="str">"PHP"</span>,<span class="str">"Laravel"</span>,<span class="str">"MySQL"</span>];
+
+<span class="cm">// قيمة فقط</span>
+<span class="kw">foreach</span> (<span class="var">$skills</span> <span class="kw">as</span> <span class="var">$s</span>) {
+    <span class="fn">echo</span> <span class="str">"- <span class="var">$s</span>\n"</span>;
+}
+
+<span class="cm">// مع index</span>
+<span class="kw">foreach</span> (<span class="var">$skills</span> <span class="kw">as</span> <span class="var">$i</span> =&gt; <span class="var">$s</span>) {
+    <span class="fn">echo</span> (<span class="var">$i</span>+<span class="num">1</span>).<span class="str">". <span class="var">$s</span>\n"</span>;
+}
+
+<span class="cm">// Associative</span>
+<span class="var">$me</span> = [<span class="str">"name"</span>=&gt;<span class="str">"Yahya"</span>,<span class="str">"role"</span>=&gt;<span class="str">"Dev"</span>];
+<span class="kw">foreach</span> (<span class="var">$me</span> <span class="kw">as</span> <span class="var">$k</span> =&gt; <span class="var">$v</span>) {
+    <span class="fn">echo</span> <span class="str">"<span class="var">$k</span>: <span class="var">$v</span>\n"</span>;
+}</code></pre></div>
+<div class="card"><div class="ch"><h3>break و continue</h3></div>
+<pre><code><span class="cm">// continue — تخطي</span>
+<span class="kw">for</span> (<span class="var">$i</span>=<span class="num">1</span>; <span class="var">$i</span>&lt;=<span class="num">10</span>; <span class="var">$i</span>++) {
+    <span class="kw">if</span> (<span class="var">$i</span>%<span class="num">2</span>===<span class="num">0</span>) <span class="kw">continue</span>;
+    <span class="fn">echo</span> <span class="var">$i</span>.<span class="str">" "</span>;
+}
+<span class="cm">// 1 3 5 7 9</span>
+
+<span class="cm">// break — إيقاف</span>
+<span class="kw">foreach</span> (<span class="var">$users</span> <span class="kw">as</span> <span class="var">$u</span>) {
+    <span class="kw">if</span> (<span class="var">$u</span>[<span class="str">"role"</span>]===<span class="str">"admin"</span>) {
+        <span class="var">$admin</span> = <span class="var">$u</span>; <span class="kw">break</span>;
+    }
+}
+
+<span class="cm">// break 2 — خروج من حلقتين</span>
+<span class="kw">foreach</span> (<span class="var">$rows</span> <span class="kw">as</span> <span class="var">$row</span>) {
+    <span class="kw">foreach</span> (<span class="var">$row</span> <span class="kw">as</span> <span class="var">$cell</span>) {
+        <span class="kw">if</span> (<span class="var">$cell</span>===<span class="kw">null</span>) <span class="kw">break</span> <span class="num">2</span>;
+    }
+}</code></pre></div>
+</div></section>
+
+<!-- 07 -->
+<section class="section" id="funcs">
+<div class="sh"><div class="sn2">07</div><div class="si"><h2>الدوال</h2><span class="en">Functions</span></div></div>
+<div class="intro"><strong>الدالة</strong> كتلة كود معاد الاستخدام. مبدأ <em>DRY</em>: لا تكرر الكود — اجعله دالة. اللبنة الاساسية لأي كود نظيف.</div>
+<div class="g2">
+<div class="card"><div class="ch"><h3>تعريف واستدعاء</h3></div>
+<pre><code><span class="kw">function</span> <span class="fn">formatPrice</span>(<span class="var">$p</span>, <span class="var">$c</span>=<span class="str">"ج.م"</span>) {
+    <span class="kw">return</span> <span class="fn">number_format</span>(<span class="var">$p</span>,<span class="num">2</span>).<span class="str">" ".</span><span class="var">$c</span>;
+}
+<span class="fn">echo</span> <span class="fn">formatPrice</span>(<span class="num">15000</span>);
+<span class="cm">// 15,000.00 ج.م</span>
+<span class="fn">echo</span> <span class="fn">formatPrice</span>(<span class="num">250</span>, <span class="str">"USD"</span>);
+<span class="cm">// 250.00 USD</span>
+
+<span class="cm">// إرجاع متعدد</span>
+<span class="kw">function</span> <span class="fn">minMax</span>(<span class="kw">array</span> <span class="var">$nums</span>): <span class="kw">array</span> {
+    <span class="kw">return</span> [<span class="fn">min</span>(<span class="var">$nums</span>), <span class="fn">max</span>(<span class="var">$nums</span>)];
+}
+[<span class="var">$min</span>, <span class="var">$max</span>] = <span class="fn">minMax</span>([<span class="num">5</span>,<span class="num">2</span>,<span class="num">9</span>,<span class="num">1</span>]);
+<span class="fn">echo</span> <span class="str">"Min:<span class="var">$min</span> Max:<span class="var">$max</span>"</span>; <span class="cm">// Min:1 Max:9</span></code></pre></div>
+<div class="card"><div class="ch"><h3>Type Hints (PHP 7+/8+)</h3></div>
+<div class="def">تحديد انواع المدخلات والمخرجات — يمنع الاخطاء. <em>Best Practice دائماً.</em></div>
+<pre><code><span class="kw">function</span> <span class="fn">add</span>(<span class="kw">int</span> <span class="var">$a</span>, <span class="kw">int</span> <span class="var">$b</span>): <span class="kw">int</span> {
+    <span class="kw">return</span> <span class="var">$a</span> + <span class="var">$b</span>;
+}
+
+<span class="cm">// Nullable — قد يكون null</span>
+<span class="kw">function</span> <span class="fn">find</span>(<span class="kw">int</span> <span class="var">$id</span>): ?<span class="kw">string</span> {
+    <span class="kw">return</span> <span class="var">$id</span>&gt;<span class="num">0</span> ? <span class="str">"User#"</span>.<span class="var">$id</span> : <span class="kw">null</span>;
+}
+
+<span class="cm">// void — لا ترجع شيئاً</span>
+<span class="kw">function</span> <span class="fn">log</span>(<span class="kw">string</span> <span class="var">$msg</span>): <span class="kw">void</span> {
+    <span class="fn">error_log</span>(<span class="fn">date</span>(<span class="str">"Y-m-d"</span>).<span class="str">": ".</span><span class="var">$msg</span>);
+}
+
+<span class="cm">// PHP 8: Union Types</span>
+<span class="kw">function</span> <span class="fn">process</span>(<span class="kw">int</span>|<span class="kw">string</span> <span class="var">$v</span>): <span class="kw">string</span> {
+    <span class="kw">return</span> (<span class="kw">string</span>)<span class="var">$v</span>;
+}</code></pre></div>
+<div class="card"><div class="ch"><h3>Arrow Functions و Closures</h3></div>
+<pre><code><span class="cm">// Closure — دالة مجهولة</span>
+<span class="var">$double</span> = <span class="kw">function</span>(<span class="kw">int</span> <span class="var">$n</span>): <span class="kw">int</span> {
+    <span class="kw">return</span> <span class="var">$n</span> * <span class="num">2</span>;
+};
+<span class="fn">echo</span> <span class="var">$double</span>(<span class="num">7</span>); <span class="cm">// 14</span>
+
+<span class="cm">// use — جلب متغير خارجي</span>
+<span class="var">$tax</span>  = <span class="num">0.14</span>;
+<span class="var">$calc</span> = <span class="kw">function</span>(<span class="kw">float</span> <span class="var">$p</span>) <span class="kw">use</span>(<span class="var">$tax</span>): <span class="kw">float</span> {
+    <span class="kw">return</span> <span class="var">$p</span> * (<span class="num">1</span> + <span class="var">$tax</span>);
+};
+<span class="fn">echo</span> <span class="var">$calc</span>(<span class="num">100</span>); <span class="cm">// 114.0</span>
+
+<span class="cm">// Arrow fn (PHP 7.4+) — ترث تلقائياً</span>
+<span class="var">$triple</span> = <span class="kw">fn</span>(<span class="kw">int</span> <span class="var">$n</span>) =&gt; <span class="var">$n</span> * <span class="num">3</span>;
+<span class="fn">echo</span> <span class="var">$triple</span>(<span class="num">5</span>); <span class="cm">// 15</span>
+
+<span class="var">$addVAT</span> = <span class="kw">fn</span>(<span class="var">$p</span>) =&gt; <span class="var">$p</span> + <span class="var">$p</span>*<span class="var">$tax</span>;
+<span class="fn">echo</span> <span class="var">$addVAT</span>(<span class="num">200</span>); <span class="cm">// 228</span></code></pre></div>
+<div class="card"><div class="ch"><h3>Variadic و Spread</h3></div>
+<pre><code><span class="cm">// ... يجمع كل المعاملات</span>
+<span class="kw">function</span> <span class="fn">sumAll</span>(<span class="kw">int</span> ...<span class="var">$nums</span>): <span class="kw">int</span> {
+    <span class="kw">return</span> <span class="fn">array_sum</span>(<span class="var">$nums</span>);
+}
+<span class="fn">echo</span> <span class="fn">sumAll</span>(<span class="num">1</span>,<span class="num">2</span>,<span class="num">3</span>,<span class="num">4</span>,<span class="num">5</span>); <span class="cm">// 15</span>
+
+<span class="cm">// Spread — فرد مصفوفة</span>
+<span class="var">$nums</span> = [<span class="num">10</span>,<span class="num">20</span>,<span class="num">30</span>];
+<span class="fn">echo</span> <span class="fn">sumAll</span>(...<span class="var">$nums</span>); <span class="cm">// 60</span>
+
+<span class="cm">// First-Class Callables (PHP 8.1)</span>
+<span class="var">$words</span> = [<span class="str">"php"</span>,<span class="str">"laravel"</span>];
+<span class="var">$upper</span> = <span class="fn">array_map</span>(<span class="fn">strtoupper</span>(...), <span class="var">$words</span>);
+<span class="cm">// ["PHP","LARAVEL"]</span></code></pre></div>
+</div></section>
+
+<!-- 08 -->
+<section class="section" id="arrays">
+<div class="sh"><div class="sn2">08</div><div class="si"><h2>المصفوفات</h2><span class="en">Arrays</span></div></div>
+<div class="intro"><strong>المصفوفة</strong> تخزن مجموعة قيم في متغير واحد. PHP عندها 3 انواع: <em>مرقمة</em> و<em>Associative</em> و<em>متعددة الابعاد</em>. map/filter/reduce ستغيّر اسلوبك البرمجي.</div>
+<div class="g2">
+<div class="card"><div class="ch"><h3>إنشاء وعمليات</h3></div>
+<pre><code><span class="cm">// Indexed — مرقم من 0</span>
+<span class="var">$stack</span> = [<span class="str">"PHP"</span>,<span class="str">"Laravel"</span>,<span class="str">"MySQL"</span>];
+<span class="fn">echo</span> <span class="var">$stack</span>[<span class="num">0</span>]; <span class="cm">// PHP</span>
+
+<span class="cm">// Associative — مفتاح:قيمة</span>
+<span class="var">$proj</span> = [
+    <span class="str">"name"</span>  =&gt; <span class="str">"Vortex Trader"</span>,
+    <span class="str">"stack"</span> =&gt; <span class="str">"Laravel"</span>,
+    <span class="str">"live"</span>  =&gt; <span class="kw">true</span>,
+];
+<span class="fn">echo</span> <span class="var">$proj</span>[<span class="str">"name"</span>]; <span class="cm">// Vortex Trader</span>
+
+<span class="cm">// إضافة</span>
+<span class="var">$stack</span>[] = <span class="str">"Redis"</span>;
+<span class="fn">array_push</span>(<span class="var">$stack</span>, <span class="str">"Vue"</span>);
+<span class="fn">array_unshift</span>(<span class="var">$stack</span>, <span class="str">"Nginx"</span>);
+
+<span class="cm">// حذف</span>
+<span class="fn">array_pop</span>(<span class="var">$stack</span>);
+<span class="fn">array_shift</span>(<span class="var">$stack</span>);
+<span class="fn">unset</span>(<span class="var">$stack</span>[<span class="num">1</span>]);
+<span class="fn">echo</span> <span class="fn">count</span>(<span class="var">$stack</span>);</code></pre></div>
+<div class="card"><div class="ch"><h3>map / filter / reduce</h3></div>
+<div class="def">ثلاث دوال قوية لمعالجة البيانات بدون حلقات صريحة.</div>
+<pre><code><span class="var">$prices</span> = [<span class="num">100</span>,<span class="num">250</span>,<span class="num">80</span>,<span class="num">400</span>];
+
+<span class="cm">// map — دالة على كل عنصر</span>
+<span class="var">$taxed</span> = <span class="fn">array_map</span>(
+    <span class="kw">fn</span>(<span class="var">$p</span>) =&gt; <span class="fn">round</span>(<span class="var">$p</span>*<span class="num">1.14</span>,<span class="num">2</span>),
+    <span class="var">$prices</span>
+);
+<span class="cm">// [114, 285, 91.2, 456]</span>
+
+<span class="cm">// filter — فلتر بشرط</span>
+<span class="var">$exp</span> = <span class="fn">array_filter</span>(
+    <span class="var">$prices</span>, <span class="kw">fn</span>(<span class="var">$p</span>) =&gt; <span class="var">$p</span>&gt;<span class="num">150</span>
+);
+<span class="cm">// [250, 400]</span>
+
+<span class="cm">// reduce — قيمة واحدة</span>
+<span class="var">$total</span> = <span class="fn">array_reduce</span>(
+    <span class="var">$prices</span>,
+    <span class="kw">fn</span>(<span class="var">$c</span>,<span class="var">$p</span>) =&gt; <span class="var">$c</span>+<span class="var">$p</span>, <span class="num">0</span>
+);
+<span class="cm">// 830</span></code></pre></div>
+<div class="card"><div class="ch"><h3>متعددة الابعاد</h3></div>
+<pre><code><span class="var">$projects</span> = [
+    [
+        <span class="str">"name"</span>  =&gt; <span class="str">"Vortex Trader"</span>,
+        <span class="str">"stack"</span> =&gt; [<span class="str">"Laravel"</span>,<span class="str">"Vue"</span>],
+        <span class="str">"live"</span>  =&gt; <span class="kw">true</span>,
+    ],
+    [
+        <span class="str">"name"</span>  =&gt; <span class="str">"Schweppes Gold"</span>,
+        <span class="str">"stack"</span> =&gt; [<span class="str">"HTML"</span>,<span class="str">"GSAP"</span>],
+        <span class="str">"live"</span>  =&gt; <span class="kw">true</span>,
+    ],
+];
+
+<span class="fn">echo</span> <span class="var">$projects</span>[<span class="num">0</span>][<span class="str">"name"</span>];
+<span class="cm">// Vortex Trader</span>
+<span class="fn">echo</span> <span class="var">$projects</span>[<span class="num">0</span>][<span class="str">"stack"</span>][<span class="num">0</span>];
+<span class="cm">// Laravel</span>
+
+<span class="kw">foreach</span> (<span class="var">$projects</span> <span class="kw">as</span> <span class="var">$p</span>) {
+    <span class="fn">echo</span> <span class="var">$p</span>[<span class="str">"name"</span>].<span class="str">"\n"</span>;
+}</code></pre></div>
+<div class="card"><div class="ch"><h3>دوال مفيدة</h3></div>
+<pre><code><span class="var">$a</span>=[<span class="num">3</span>,<span class="num">1</span>,<span class="num">4</span>,<span class="num">1</span>,<span class="num">5</span>];
+
+<span class="cm">// بحث</span>
+<span class="fn">in_array</span>(<span class="num">4</span>,<span class="var">$a</span>);       <span class="cm">// true</span>
+<span class="fn">array_search</span>(<span class="num">4</span>,<span class="var">$a</span>);  <span class="cm">// 2 (index)</span>
+
+<span class="cm">// ترتيب</span>
+<span class="fn">sort</span>(<span class="var">$a</span>);             <span class="cm">// تصاعدي</span>
+<span class="fn">rsort</span>(<span class="var">$a</span>);            <span class="cm">// تنازلي</span>
+<span class="fn">usort</span>(<span class="var">$a</span>, <span class="kw">fn</span>(<span class="var">$x</span>,<span class="var">$y</span>)=&gt;<span class="var">$x</span>&lt;=&gt;<span class="var">$y</span>);
+
+<span class="cm">// دمج وتحويل</span>
+<span class="fn">array_merge</span>(<span class="var">$a</span>,<span class="var">$b</span>);    <span class="cm">// دمج</span>
+<span class="fn">array_unique</span>(<span class="var">$a</span>);      <span class="cm">// بدون تكرار</span>
+<span class="fn">array_reverse</span>(<span class="var">$a</span>);     <span class="cm">// عكس</span>
+<span class="fn">array_chunk</span>(<span class="var">$a</span>,<span class="num">2</span>);     <span class="cm">// تقسيم</span>
+<span class="fn">array_column</span>(<span class="var">$users</span>,<span class="str">"name"</span>); <span class="cm">// عمود</span>
+<span class="fn">array_sum</span>(<span class="var">$a</span>); <span class="fn">max</span>(<span class="var">$a</span>); <span class="fn">min</span>(<span class="var">$a</span>);</code></pre></div>
+</div></section>
+<!-- 09 -->
+<section class="section" id="strings">
+<div class="sh"><div class="sn2">09</div><div class="si"><h2>النصوص</h2><span class="en">Strings</span></div></div>
+<div class="intro">PHP قوية جداً في التعامل مع النصوص. اهم الدوال: <em>str_contains</em> و<em>explode/implode</em> و<em>sprintf</em>.</div>
+<div class="g2">
+<div class="card"><div class="ch"><h3>طرق كتابة النصوص</h3></div>
+<pre><code><span class="var">$dev</span>  = <span class="str">"Yahya"</span>;
+<span class="var">$role</span> = <span class="str">"Full-Stack"</span>;
+
+<span class="cm">// Double quotes — تفسر المتغيرات</span>
+<span class="fn">echo</span> <span class="str">"انا <span class="var">$dev</span> مطور <span class="var">$role</span>"</span>;
+<span class="fn">echo</span> <span class="str">"المشروع: {<span class="var">$proj</span>['name']}"</span>;
+
+<span class="cm">// Single quotes — لا تفسر</span>
+<span class="fn">echo</span> <span class="str">'اهلاً $dev'</span>; <span class="cm">// اهلاً $dev</span>
+
+<span class="cm">// Heredoc — نص طويل</span>
+<span class="var">$html</span> = &lt;&lt;&lt;HTML
+    &lt;div&gt;
+        &lt;h2&gt;<span class="var">$dev</span>&lt;/h2&gt;
+    &lt;/div&gt;
+HTML;</code></pre></div>
+<div class="card"><div class="ch"><h3>دوال اساسية</h3></div>
+<pre><code><span class="var">$s</span> = <span class="str">"  Hello World PHP  "</span>;
+
+<span class="fn">strlen</span>(<span class="var">$s</span>);           <span class="cm">// الطول</span>
+<span class="fn">trim</span>(<span class="var">$s</span>);             <span class="cm">// بدون فراغات</span>
+<span class="fn">strtolower</span>(<span class="var">$s</span>);      <span class="cm">// كل صغير</span>
+<span class="fn">strtoupper</span>(<span class="var">$s</span>);      <span class="cm">// كل كبير</span>
+<span class="fn">ucfirst</span>(<span class="str">"hello"</span>);    <span class="cm">// Hello</span>
+<span class="fn">ucwords</span>(<span class="str">"hi there"</span>); <span class="cm">// Hi There</span>
+<span class="fn">str_repeat</span>(<span class="str">"=-"</span>,<span class="num">4</span>);  <span class="cm">// "=-=-=-=-"</span>
+<span class="fn">str_pad</span>(<span class="str">"5"</span>,<span class="num">4</span>,<span class="str">"0"</span>,<span class="cl">STR_PAD_LEFT</span>);
+<span class="cm">// "0005"</span>
+
+<span class="cm">// PHP 8</span>
+<span class="fn">str_contains</span>(<span class="var">$s</span>,<span class="str">"PHP"</span>);     <span class="cm">// true</span>
+<span class="fn">str_starts_with</span>(<span class="var">$s</span>,<span class="str">"Hello"</span>); <span class="cm">// true</span>
+<span class="fn">str_ends_with</span>(<span class="var">$s</span>,<span class="str">"PHP"</span>);     <span class="cm">// true</span></code></pre></div>
+<div class="card"><div class="ch"><h3>بحث واستبدال</h3></div>
+<pre><code><span class="var">$bio</span> = <span class="str">"Yahya builds PHP apps"</span>;
+
+<span class="fn">strpos</span>(<span class="var">$bio</span>,<span class="str">"PHP"</span>);      <span class="cm">// 13</span>
+<span class="fn">strrpos</span>(<span class="var">$bio</span>,<span class="str">"PHP"</span>);     <span class="cm">// آخر ظهور</span>
+<span class="fn">substr_count</span>(<span class="var">$bio</span>,<span class="str">"PHP"</span>); <span class="cm">// عدد</span>
+
+<span class="fn">substr</span>(<span class="var">$bio</span>,<span class="num">0</span>,<span class="num">5</span>);  <span class="cm">// "Yahya"</span>
+<span class="fn">substr</span>(<span class="var">$bio</span>,-<span class="num">4</span>);   <span class="cm">// "apps"</span>
+
+<span class="fn">str_replace</span>(<span class="str">"PHP"</span>,<span class="str">"&lt;b&gt;PHP&lt;/b&gt;"</span>,<span class="var">$bio</span>);
+
+<span class="cm">// Regex</span>
+<span class="fn">preg_match</span>(<span class="str">'/PHP/i'</span>,<span class="var">$bio</span>);     <span class="cm">// 1</span>
+<span class="fn">preg_match_all</span>(<span class="str">'/\d+/'</span>,<span class="var">$bio</span>); <span class="cm">// الارقام</span>
+<span class="fn">preg_replace</span>(<span class="str">'/PHP/'</span>,<span class="str">"X"</span>,<span class="var">$bio</span>);</code></pre></div>
+<div class="card"><div class="ch"><h3>تقسيم ودمج وتنسيق</h3></div>
+<pre><code><span class="cm">// explode — نص لمصفوفة</span>
+<span class="var">$csv</span> = <span class="str">"php,laravel,mysql"</span>;
+<span class="var">$arr</span> = <span class="fn">explode</span>(<span class="str">","</span>, <span class="var">$csv</span>);
+<span class="cm">// ["php","laravel","mysql"]</span>
+
+<span class="cm">// implode — مصفوفة لنص</span>
+<span class="fn">echo</span> <span class="fn">implode</span>(<span class="str">" · "</span>, <span class="var">$arr</span>);
+<span class="cm">// php · laravel · mysql</span>
+
+<span class="cm">// sprintf — تنسيق</span>
+<span class="var">$p</span> = <span class="fn">sprintf</span>(<span class="str">"%.2f ج.م"</span>, <span class="num">15999.999</span>);
+<span class="cm">// "16,000.00 ج.م"</span>
+
+<span class="var">$c</span> = <span class="fn">sprintf</span>(<span class="str">"%06d"</span>, <span class="num">42</span>); <span class="cm">// "000042"</span>
+
+<span class="cm">// number_format</span>
+<span class="fn">number_format</span>(<span class="num">1234567.89</span>,<span class="num">2</span>,<span class="str">"."</span>,<span class="str">","</span>);
+<span class="cm">// "1,234,567.89"</span></code></pre></div>
+</div></section>
+
+<!-- 10 -->
+<section class="section" id="forms">
+<div class="sh"><div class="sn2">10</div><div class="si"><h2>الفورمز والجلسة</h2><span class="en">Forms, Sessions &amp; Superglobals</span></div></div>
+<div class="intro"><strong>Superglobals</strong> متغيرات PHP متاحة في كل مكان. <em>القاعدة الذهبية: لا تثق ابداً في اي إدخال من المستخدم</em> — دائماً تحقق ونظّف.</div>
+<div class="g2">
+<div class="card"><div class="ch"><h3>GET و POST</h3></div>
+<pre><code><span class="cm">// GET — بيانات من URL</span>
+<span class="cm">// URL: site.com?q=php&amp;page=2</span>
+<span class="var">$q</span>    = <span class="var">$_GET</span>[<span class="str">'q'</span>]    ?? <span class="str">''</span>;
+<span class="var">$page</span> = (<span class="kw">int</span>)(<span class="var">$_GET</span>[<span class="str">'page'</span>] ?? <span class="num">1</span>);
+
+<span class="cm">// POST — معالجة فورم</span>
+<span class="kw">if</span> (<span class="var">$_SERVER</span>[<span class="str">'REQUEST_METHOD'</span>]===<span class="str">'POST'</span>) {
+    <span class="var">$name</span>  = <span class="fn">trim</span>(<span class="var">$_POST</span>[<span class="str">'name'</span>]  ?? <span class="str">''</span>);
+    <span class="var">$email</span> = <span class="fn">trim</span>(<span class="var">$_POST</span>[<span class="str">'email'</span>] ?? <span class="str">''</span>);
+
+    <span class="var">$errors</span> = [];
+    <span class="kw">if</span> (<span class="fn">empty</span>(<span class="var">$name</span>))
+        <span class="var">$errors</span>[] = <span class="str">"الاسم مطلوب"</span>;
+    <span class="kw">if</span> (!<span class="fn">filter_var</span>(<span class="var">$email</span>,<span class="cl">FILTER_VALIDATE_EMAIL</span>))
+        <span class="var">$errors</span>[] = <span class="str">"إيميل خاطئ"</span>;
+
+    <span class="kw">if</span> (<span class="fn">empty</span>(<span class="var">$errors</span>))
+        <span class="fn">echo</span> <span class="str">"شكراً "</span>.<span class="fn">htmlspecialchars</span>(<span class="var">$name</span>);
+}</code></pre></div>
+<div class="card"><div class="ch"><h3>SESSION و COOKIE</h3></div>
+<pre><code><span class="cm">// SESSION — اول سطر في الصفحة</span>
+<span class="fn">session_start</span>();
+
+<span class="cm">// حفظ بعد تسجيل الدخول</span>
+<span class="var">$_SESSION</span>[<span class="str">'user_id'</span>]  = <span class="num">42</span>;
+<span class="var">$_SESSION</span>[<span class="str">'username'</span>] = <span class="str">"Yahya"</span>;
+<span class="var">$_SESSION</span>[<span class="str">'role'</span>]     = <span class="str">"admin"</span>;
+
+<span class="cm">// فحص في الصفحات المحمية</span>
+<span class="kw">if</span> (!<span class="fn">isset</span>(<span class="var">$_SESSION</span>[<span class="str">'user_id'</span>])) {
+    <span class="fn">header</span>(<span class="str">"Location: /login"</span>);
+    <span class="kw">exit</span>;
+}
+<span class="fn">echo</span> <span class="str">"مرحباً "</span>.<span class="var">$_SESSION</span>[<span class="str">'username'</span>];
+
+<span class="cm">// تسجيل خروج</span>
+<span class="var">$_SESSION</span> = [];
+<span class="fn">session_destroy</span>();
+<span class="fn">header</span>(<span class="str">"Location: /login"</span>); <span class="kw">exit</span>;
+
+<span class="cm">// COOKIE — "تذكرني"</span>
+<span class="var">$exp</span> = <span class="fn">time</span>()+ <span class="num">30</span>*<span class="num">24</span>*<span class="num">3600</span>;
+<span class="fn">setcookie</span>(<span class="str">"token"</span>,<span class="str">"abc"</span>,<span class="var">$exp</span>,<span class="str">"/"</span>,<span class="str">""</span>,<span class="kw">true</span>,<span class="kw">true</span>);</code></pre></div>
+</div></section>
+
+<!-- 11 -->
+<section class="section" id="oop">
+<div class="sh"><div class="sn2">11</div><div class="si"><h2>البرمجة كائنية التوجه</h2><span class="en">OOP</span></div></div>
+<div class="intro"><strong>OOP</strong> طريقة تنظيم الكود. Laravel كله مبني عليها — لا يمكن استخدام اي Framework حديث بدون فهمها.</div>
+<div class="g2">
+<div class="card s2"><div class="ch"><h3>Class كامل — Constructor Promotion + Method Chaining</h3></div>
+<pre><code><span class="kw">class</span> <span class="cl">Project</span> {
+    <span class="kw">private</span>       <span class="kw">string</span> <span class="var">$status</span> = <span class="str">"draft"</span>;
+    <span class="kw">protected</span>     <span class="kw">array</span>  <span class="var">$stack</span>  = [];
+    <span class="kw">public static</span> <span class="kw">int</span>    <span class="var">$count</span>  = <span class="num">0</span>;
+
+    <span class="cm">// Constructor Promotion (PHP 8)</span>
+    <span class="kw">public function</span> <span class="fn">__construct</span>(
+        <span class="kw">public readonly</span> <span class="kw">string</span> <span class="var">$id</span>     = '',
+        <span class="kw">public</span>          <span class="kw">string</span> <span class="var">$name</span>   = '',
+        <span class="kw">public</span>          <span class="kw">string</span> <span class="var">$client</span> = <span class="str">"Personal"</span>,
+    ) {
+        <span class="kw">self</span>::<span class="var">$count</span>++;
+    }
+
+    <span class="kw">public function</span> <span class="fn">addTech</span>(<span class="kw">string</span> ...<span class="var">$t</span>): <span class="kw">static</span> {
+        <span class="fn">array_push</span>(<span class="var">$this</span>-&gt;<span class="var">stack</span>, ...<span class="var">$t</span>);
+        <span class="kw">return</span> <span class="var">$this</span>;  <span class="cm">// Method Chaining</span>
+    }
+    <span class="kw">public function</span> <span class="fn">launch</span>(): <span class="kw">void</span> { <span class="var">$this</span>-&gt;<span class="var">status</span> = <span class="str">"live"</span>; }
+    <span class="kw">public function</span> <span class="fn">getStack</span>(): <span class="kw">array</span> { <span class="kw">return</span> <span class="var">$this</span>-&gt;<span class="var">stack</span>; }
+    <span class="kw">public static function</span> <span class="fn">getCount</span>(): <span class="kw">int</span> { <span class="kw">return</span> <span class="kw">self</span>::<span class="var">$count</span>; }
+    <span class="kw">public function</span> <span class="fn">__toString</span>(): <span class="kw">string</span> {
+        <span class="kw">return</span> <span class="str">"{$this->name} [{$this->status}]"</span>;
+    }
+}
+
+<span class="var">$p</span> = <span class="kw">new</span> <span class="cl">Project</span>(<span class="str">"p1"</span>, <span class="str">"Vortex Trader"</span>, <span class="str">"Yahya.DEV"</span>);
+<span class="var">$p</span>-&gt;<span class="fn">addTech</span>(<span class="str">"Laravel"</span>, <span class="str">"Vue"</span>, <span class="str">"MySQL"</span>)-&gt;<span class="fn">launch</span>();
+<span class="fn">echo</span> <span class="var">$p</span>;                              <span class="cm">// Vortex Trader [live]</span>
+<span class="fn">echo</span> <span class="fn">implode</span>(<span class="str">"+"</span>, <span class="var">$p</span>-&gt;<span class="fn">getStack</span>());   <span class="cm">// Laravel+Vue+MySQL</span>
+<span class="fn">echo</span> <span class="cl">Project</span>::<span class="fn">getCount</span>();            <span class="cm">// 1</span></code></pre></div>
+<div class="card"><div class="ch"><h3>Inheritance</h3></div>
+<pre><code><span class="kw">class</span> <span class="cl">User</span> {
+    <span class="kw">public function</span> <span class="fn">__construct</span>(
+        <span class="kw">protected</span> <span class="kw">string</span> <span class="var">$name</span>,
+        <span class="kw">protected</span> <span class="kw">string</span> <span class="var">$email</span>,
+    ) {}
+    <span class="kw">public function</span> <span class="fn">greet</span>(): <span class="kw">string</span> {
+        <span class="kw">return</span> <span class="str">"مرحباً {$this->name}"</span>;
+    }
+    <span class="kw">public function</span> <span class="fn">perms</span>(): <span class="kw">array</span> {
+        <span class="kw">return</span> [<span class="str">"read"</span>];
+    }
+}
+
+<span class="kw">class</span> <span class="cl">Admin</span> <span class="kw">extends</span> <span class="cl">User</span> {
+    <span class="kw">public function</span> <span class="fn">__construct</span>(
+        <span class="kw">string</span> <span class="var">$name</span>, <span class="kw">string</span> <span class="var">$email</span>,
+        <span class="kw">private</span> <span class="kw">string</span> <span class="var">$dept</span>,
+    ) { <span class="kw">parent</span>::<span class="fn">__construct</span>(<span class="var">$name</span>, <span class="var">$email</span>); }
+
+    <span class="kw">public function</span> <span class="fn">greet</span>(): <span class="kw">string</span> {
+        <span class="kw">return</span> <span class="kw">parent</span>::<span class="fn">greet</span>() . <span class="str">" (Admin)"</span>;
+    }
+    <span class="kw">public function</span> <span class="fn">perms</span>(): <span class="kw">array</span> {
+        <span class="kw">return</span> [<span class="str">"read"</span>,<span class="str">"write"</span>,<span class="str">"delete"</span>];
+    }
+}
+
+<span class="var">$a</span> = <span class="kw">new</span> <span class="cl">Admin</span>(<span class="str">"Yahya"</span>,<span class="str">"y@d.com"</span>,<span class="str">"Tech"</span>);
+<span class="fn">echo</span> <span class="var">$a</span>-&gt;<span class="fn">greet</span>();  <span class="cm">// مرحباً Yahya (Admin)</span>
+<span class="fn">echo</span> <span class="var">$a</span> <span class="kw">instanceof</span> <span class="cl">User</span>; <span class="cm">// true</span></code></pre></div>
+<div class="card"><div class="ch"><h3>Interface و Abstract</h3></div>
+<pre><code><span class="kw">interface</span> <span class="cl">Renderable</span> {
+    <span class="kw">public function</span> <span class="fn">render</span>(): <span class="kw">string</span>;
+}
+<span class="kw">interface</span> <span class="cl">Cacheable</span> {
+    <span class="kw">public function</span> <span class="fn">getCacheKey</span>(): <span class="kw">string</span>;
+}
+
+<span class="kw">abstract class</span> <span class="cl">BaseWidget</span>
+    <span class="kw">implements</span> <span class="cl">Renderable</span>, <span class="cl">Cacheable</span>
+{
+    <span class="kw">abstract public function</span> <span class="fn">render</span>(): <span class="kw">string</span>;
+    <span class="kw">public function</span> <span class="fn">getCacheKey</span>(): <span class="kw">string</span> {
+        <span class="kw">return</span> <span class="kw">static</span>::<span class="kw">class</span>.<span class="str">"_v1"</span>;
+    }
+    <span class="kw">public function</span> <span class="fn">output</span>(): <span class="kw">void</span> {
+        <span class="fn">echo</span> <span class="var">$this</span>-&gt;<span class="fn">render</span>();
+    }
+}
+
+<span class="kw">class</span> <span class="cl">StatsWidget</span> <span class="kw">extends</span> <span class="cl">BaseWidget</span> {
+    <span class="kw">public function</span> <span class="fn">render</span>(): <span class="kw">string</span> {
+        <span class="kw">return</span> <span class="str">"&lt;div&gt;Stats&lt;/div&gt;"</span>;
+    }
+}
+<span class="var">$w</span> = <span class="kw">new</span> <span class="cl">StatsWidget</span>();
+<span class="var">$w</span>-&gt;<span class="fn">output</span>();</code></pre></div>
+<div class="card"><div class="ch"><h3>Traits</h3></div>
+<pre><code><span class="kw">trait</span> <span class="cl">HasTimestamps</span> {
+    <span class="kw">private</span> ?<span class="kw">string</span> <span class="var">$createdAt</span> = <span class="kw">null</span>;
+    <span class="kw">public function</span> <span class="fn">touch</span>(): <span class="kw">void</span> {
+        <span class="var">$this</span>-&gt;<span class="var">createdAt</span> ??= <span class="fn">date</span>(<span class="str">"Y-m-d H:i:s"</span>);
+    }
+    <span class="kw">public function</span> <span class="fn">getCreatedAt</span>(): ?<span class="kw">string</span> {
+        <span class="kw">return</span> <span class="var">$this</span>-&gt;<span class="var">createdAt</span>;
+    }
+}
+<span class="kw">trait</span> <span class="cl">HasSoftDelete</span> {
+    <span class="kw">private</span> <span class="kw">bool</span> <span class="var">$deleted</span> = <span class="kw">false</span>;
+    <span class="kw">public function</span> <span class="fn">delete</span>(): <span class="kw">void</span>   { <span class="var">$this</span>-&gt;<span class="var">deleted</span>=<span class="kw">true</span>; }
+    <span class="kw">public function</span> <span class="fn">isDeleted</span>(): <span class="kw">bool</span> { <span class="kw">return</span> <span class="var">$this</span>-&gt;<span class="var">deleted</span>; }
+}
+
+<span class="kw">class</span> <span class="cl">Post</span> {
+    <span class="kw">use</span> <span class="cl">HasTimestamps</span>, <span class="cl">HasSoftDelete</span>;
+    <span class="kw">public function</span> <span class="fn">__construct</span>(
+        <span class="kw">public</span> <span class="kw">string</span> <span class="var">$title</span>
+    ) { <span class="var">$this</span>-&gt;<span class="fn">touch</span>(); }
+}
+<span class="var">$post</span> = <span class="kw">new</span> <span class="cl">Post</span>(<span class="str">"Learn PHP"</span>);
+<span class="fn">echo</span> <span class="var">$post</span>-&gt;<span class="fn">getCreatedAt</span>(); <span class="cm">// 2024-01-19</span></code></pre></div>
+</div></section>
+<!-- 12 -->
+<section class="section" id="db">
+<div class="sh"><div class="sn2">12</div><div class="si"><h2>قواعد البيانات — PDO</h2><span class="en">Database — PDO &amp; MySQL</span></div></div>
+<div class="intro"><strong>PDO</strong> الطريقة الصحيحة والآمنة للتواصل مع قواعد البيانات. <em>لا تستخدم mysql_* ابداً.</em> PDO تحمي من SQL Injection عبر Prepared Statements.</div>
+<div class="g2">
+<div class="card s2"><div class="ch"><h3>اتصال + CRUD كامل</h3></div>
+<pre><code><span class="cm">// الاتصال</span>
+<span class="kw">try</span> {
+    <span class="var">$pdo</span> = <span class="kw">new</span> <span class="cl">PDO</span>(
+        <span class="str">"mysql:host=localhost;dbname=mydb;charset=utf8mb4"</span>,
+        <span class="str">"root"</span>, <span class="str">""</span>,
+        [
+            <span class="cl">PDO</span>::<span class="cl">ATTR_ERRMODE</span>            =&gt; <span class="cl">PDO</span>::<span class="cl">ERRMODE_EXCEPTION</span>,
+            <span class="cl">PDO</span>::<span class="cl">ATTR_DEFAULT_FETCH_MODE</span> =&gt; <span class="cl">PDO</span>::<span class="cl">FETCH_ASSOC</span>,
+        ]
+    );
+} <span class="kw">catch</span> (<span class="cl">PDOException</span> <span class="var">$e</span>) {
+    <span class="kw">die</span>(<span class="str">"فشل: "</span>.<span class="var">$e</span>-&gt;<span class="fn">getMessage</span>());
+}
+
+<span class="cm">// SELECT — Prepared Statement (آمن)</span>
+<span class="var">$stmt</span> = <span class="var">$pdo</span>-&gt;<span class="fn">prepare</span>(<span class="str">"SELECT * FROM users WHERE role=? AND active=?"</span>);
+<span class="var">$stmt</span>-&gt;<span class="fn">execute</span>([<span class="str">"admin"</span>, <span class="num">1</span>]);
+<span class="var">$admins</span> = <span class="var">$stmt</span>-&gt;<span class="fn">fetchAll</span>();
+
+<span class="cm">// Named Parameters — اوضح</span>
+<span class="var">$stmt</span> = <span class="var">$pdo</span>-&gt;<span class="fn">prepare</span>(<span class="str">"SELECT * FROM users WHERE id=:id"</span>);
+<span class="var">$stmt</span>-&gt;<span class="fn">execute</span>([<span class="str">"id"</span>=&gt;<span class="num">42</span>]);
+<span class="var">$user</span> = <span class="var">$stmt</span>-&gt;<span class="fn">fetch</span>();
+
+<span class="cm">// INSERT</span>
+<span class="var">$stmt</span> = <span class="var">$pdo</span>-&gt;<span class="fn">prepare</span>(<span class="str">"INSERT INTO users(name,email,password) VALUES(:n,:e,:p)"</span>);
+<span class="var">$stmt</span>-&gt;<span class="fn">execute</span>([
+    <span class="str">"n"</span>=&gt;<span class="str">"Yahya"</span>, <span class="str">"e"</span>=&gt;<span class="str">"y@dev.com"</span>,
+    <span class="str">"p"</span>=&gt;<span class="fn">password_hash</span>(<span class="str">"secret"</span>,<span class="cl">PASSWORD_DEFAULT</span>)
+]);
+<span class="var">$newId</span> = <span class="var">$pdo</span>-&gt;<span class="fn">lastInsertId</span>();
+
+<span class="cm">// UPDATE</span>
+<span class="var">$stmt</span> = <span class="var">$pdo</span>-&gt;<span class="fn">prepare</span>(<span class="str">"UPDATE users SET role=? WHERE id=?"</span>);
+<span class="var">$stmt</span>-&gt;<span class="fn">execute</span>([<span class="str">"editor"</span>, <span class="num">42</span>]);
+<span class="fn">echo</span> <span class="var">$stmt</span>-&gt;<span class="fn">rowCount</span>(); <span class="cm">// صفوف متاثرة</span>
+
+<span class="cm">// DELETE</span>
+<span class="var">$pdo</span>-&gt;<span class="fn">prepare</span>(<span class="str">"DELETE FROM users WHERE id=?"</span>)-&gt;<span class="fn">execute</span>([<span class="num">42</span>]);
+
+<span class="cm">// Transaction — الكل او لا شيء</span>
+<span class="kw">try</span> {
+    <span class="var">$pdo</span>-&gt;<span class="fn">beginTransaction</span>();
+    <span class="var">$pdo</span>-&gt;<span class="fn">exec</span>(<span class="str">"UPDATE accounts SET balance=balance-500 WHERE id=1"</span>);
+    <span class="var">$pdo</span>-&gt;<span class="fn">exec</span>(<span class="str">"UPDATE accounts SET balance=balance+500 WHERE id=2"</span>);
+    <span class="var">$pdo</span>-&gt;<span class="fn">commit</span>();
+} <span class="kw">catch</span> (<span class="cl">Exception</span> <span class="var">$e</span>) {
+    <span class="var">$pdo</span>-&gt;<span class="fn">rollBack</span>(); <span class="kw">throw</span> <span class="var">$e</span>;
+}</code></pre></div>
+</div></section>
+
+<!-- 13 -->
+<section class="section" id="files">
+<div class="sh"><div class="sn2">13</div><div class="si"><h2>التعامل مع الملفات</h2><span class="en">File System</span></div></div>
+<div class="g2">
+<div class="card"><div class="ch"><h3>قراءة وكتابة</h3></div>
+<pre><code><span class="cm">// كتابة</span>
+<span class="fn">file_put_contents</span>(<span class="str">"log.txt"</span>,<span class="str">"سطر"</span>);
+<span class="fn">file_put_contents</span>(<span class="str">"log.txt"</span>,<span class="str">"\nجديد"</span>,<span class="cl">FILE_APPEND</span>);
+
+<span class="cm">// قراءة</span>
+<span class="var">$c</span> = <span class="fn">file_get_contents</span>(<span class="str">"log.txt"</span>);
+<span class="var">$lines</span> = <span class="fn">file</span>(<span class="str">"log.txt"</span>,<span class="cl">FILE_IGNORE_NEW_LINES</span>);
+
+<span class="cm">// fopen — تحكم كامل</span>
+<span class="var">$fp</span> = <span class="fn">fopen</span>(<span class="str">"data.csv"</span>,<span class="str">"r"</span>);
+<span class="kw">while</span>((<span class="var">$row</span>=<span class="fn">fgetcsv</span>(<span class="var">$fp</span>))!==<span class="kw">false</span>){
+    <span class="fn">echo</span> <span class="fn">implode</span>(<span class="str">"|"</span>,<span class="var">$row</span>)."\n";
+}
+<span class="fn">fclose</span>(<span class="var">$fp</span>);</code></pre></div>
+<div class="card"><div class="ch"><h3>فحص وإدارة</h3></div>
+<pre><code><span class="fn">file_exists</span>(<span class="str">"f.txt"</span>);  <span class="cm">// موجود؟</span>
+<span class="fn">is_file</span>(<span class="str">"f.txt"</span>);       <span class="cm">// ملف؟</span>
+<span class="fn">is_dir</span>(<span class="str">"uploads"</span>);      <span class="cm">// مجلد؟</span>
+<span class="fn">filesize</span>(<span class="str">"img.jpg"</span>);    <span class="cm">// الحجم</span>
+
+<span class="fn">basename</span>(<span class="str">"dir/f.php"</span>);  <span class="cm">// "f.php"</span>
+<span class="fn">dirname</span>(<span class="str">"dir/f.php"</span>);   <span class="cm">// "dir"</span>
+<span class="fn">pathinfo</span>(<span class="str">"dir/f.php"</span>);  <span class="cm">// array</span>
+
+<span class="fn">rename</span>(<span class="str">"old.txt"</span>,<span class="str">"new.txt"</span>);
+<span class="fn">copy</span>(<span class="str">"src.txt"</span>,<span class="str">"bak.txt"</span>);
+<span class="fn">unlink</span>(<span class="str">"temp.txt"</span>);
+<span class="fn">mkdir</span>(<span class="str">"new_dir"</span>,<span class="num">0755</span>,<span class="kw">true</span>);
+
+<span class="kw">foreach</span>(<span class="fn">glob</span>(<span class="str">"uploads/*.jpg"</span>) <span class="kw">as</span> <span class="var">$f</span>)
+    <span class="fn">echo</span> <span class="fn">basename</span>(<span class="var">$f</span>)."\n";</code></pre></div>
+</div></section>
+
+<!-- 14 -->
+<section class="section" id="security">
+<div class="sh"><div class="sn2">14</div><div class="si"><h2>الامان</h2><span class="en">Security</span></div></div>
+<div class="intro"><em>الامان ليس اختيارياً.</em> اكبر ثغرات PHP: <strong>XSS</strong> و<strong>SQL Injection</strong> وكلمات مرور غير مشفرة. الحل: <em>htmlspecialchars + Prepared Statements + password_hash</em>.</div>
+<div class="g2">
+<div class="card s2"><div class="ch"><h3>الحماية من اشهر الثغرات</h3></div>
+<pre><code><span class="cm">// XSS Protection</span>
+<span class="var">$in</span> = <span class="str">'&lt;script&gt;alert("hack")&lt;/script&gt;'</span>;
+<span class="cm">// لا تستخدم مباشرة — استخدم:</span>
+<span class="fn">echo</span> <span class="fn">htmlspecialchars</span>(<span class="var">$in</span>, <span class="cl">ENT_QUOTES</span>, <span class="str">"UTF-8"</span>);
+
+<span class="cm">// دالة مساعدة</span>
+<span class="kw">function</span> <span class="fn">e</span>(<span class="kw">string</span> <span class="var">$s</span>): <span class="kw">string</span> {
+    <span class="kw">return</span> <span class="fn">htmlspecialchars</span>(<span class="var">$s</span>, <span class="cl">ENT_QUOTES</span>, <span class="str">"UTF-8"</span>);
+}
+
+<span class="cm">// SQL Injection — Prepared Statement</span>
+<span class="cm">// خطر:</span>
+<span class="var">$id</span> = <span class="var">$_GET</span>[<span class="str">"id"</span>];
+<span class="var">$sql</span> = <span class="str">"SELECT * FROM users WHERE id = <span class="var">$id</span>"</span>; <span class="cm">// id = "1 OR 1=1"!</span>
+<span class="cm">// آمن:</span>
+<span class="var">$stmt</span> = <span class="var">$pdo</span>-&gt;<span class="fn">prepare</span>(<span class="str">"SELECT * FROM users WHERE id=?"</span>);
+<span class="var">$stmt</span>-&gt;<span class="fn">execute</span>([(<span class="kw">int</span>)<span class="var">$_GET</span>[<span class="str">"id"</span>]]);
+
+<span class="cm">// Password Hashing</span>
+<span class="var">$pass</span> = <span class="str">"mySecret123"</span>;
+<span class="var">$hash</span> = <span class="fn">password_hash</span>(<span class="var">$pass</span>, <span class="cl">PASSWORD_DEFAULT</span>);
+<span class="kw">if</span> (<span class="fn">password_verify</span>(<span class="var">$pass</span>, <span class="var">$hash</span>)) {
+    <span class="fn">echo</span> <span class="str">"كلمة المرور صحيحة"</span>;
+}
+
+<span class="cm">// CSRF Token</span>
+<span class="fn">session_start</span>();
+<span class="var">$_SESSION</span>[<span class="str">"csrf"</span>] ??= <span class="fn">bin2hex</span>(<span class="fn">random_bytes</span>(<span class="num">32</span>));
+<span class="fn">echo</span> <span class="str">'&lt;input name="csrf" value="'</span>.<span class="var">$_SESSION</span>[<span class="str">"csrf"</span>].<span class="str">'"&gt;'</span>;
+
+<span class="kw">if</span> (!<span class="fn">hash_equals</span>(<span class="var">$_SESSION</span>[<span class="str">"csrf"</span>], <span class="var">$_POST</span>[<span class="str">"csrf"</span>]??<span class="str">""</span>)) {
+    <span class="kw">die</span>(<span class="str">"CSRF detected!"</span>);
+}
+
+<span class="cm">// Validation</span>
+<span class="fn">filter_var</span>(<span class="var">$email</span>, <span class="cl">FILTER_VALIDATE_EMAIL</span>);  <span class="cm">// إيميل</span>
+<span class="fn">filter_var</span>(<span class="var">$url</span>,   <span class="cl">FILTER_VALIDATE_URL</span>);    <span class="cm">// رابط</span>
+<span class="fn">strip_tags</span>(<span class="var">$input</span>);  <span class="cm">// حذف HTML tags</span></code></pre></div>
+</div></section>
+
+<!-- 15 -->
+<section class="section" id="errors">
+<div class="sh"><div class="sn2">15</div><div class="si"><h2>معالجة الاخطاء</h2><span class="en">Error Handling</span></div></div>
+<div class="g2">
+<div class="card s2"><div class="ch"><h3>try / catch / finally + Custom Exceptions</h3></div>
+<pre><code><span class="kw">class</span> <span class="cl">NotFoundException</span>     <span class="kw">extends</span> <span class="cl">RuntimeException</span> {}
+<span class="kw">class</span> <span class="cl">UnauthorizedException</span> <span class="kw">extends</span> <span class="cl">RuntimeException</span> {}
+
+<span class="kw">function</span> <span class="fn">getPost</span>(<span class="kw">int</span> <span class="var">$id</span>, <span class="kw">int</span> <span class="var">$uid</span>): <span class="kw">array</span> {
+    <span class="var">$post</span> = <span class="fn">fetchFromDB</span>(<span class="var">$id</span>);
+    <span class="kw">if</span> (!<span class="var">$post</span>)
+        <span class="kw">throw new</span> <span class="cl">NotFoundException</span>(<span class="str">"المقال #<span class="var">$id</span> غير موجود"</span>, <span class="num">404</span>);
+    <span class="kw">if</span> (<span class="var">$post</span>[<span class="str">"user_id"</span>] !== <span class="var">$uid</span>)
+        <span class="kw">throw new</span> <span class="cl">UnauthorizedException</span>(<span class="str">"ليس لديك صلاحية"</span>, <span class="num">403</span>);
+    <span class="kw">return</span> <span class="var">$post</span>;
+}
+
+<span class="kw">try</span> {
+    <span class="var">$post</span> = <span class="fn">getPost</span>(<span class="num">42</span>, <span class="num">1</span>);
+    <span class="fn">echo</span> <span class="var">$post</span>[<span class="str">"title"</span>];
+} <span class="kw">catch</span> (<span class="cl">NotFoundException</span> <span class="var">$e</span>) {
+    <span class="fn">http_response_code</span>(<span class="num">404</span>);
+    <span class="fn">echo</span> <span class="var">$e</span>-&gt;<span class="fn">getMessage</span>();
+} <span class="kw">catch</span> (<span class="cl">UnauthorizedException</span> <span class="var">$e</span>) {
+    <span class="fn">http_response_code</span>(<span class="num">403</span>);
+    <span class="fn">echo</span> <span class="var">$e</span>-&gt;<span class="fn">getMessage</span>();
+} <span class="kw">catch</span> (<span class="cl">Throwable</span> <span class="var">$e</span>) {
+    <span class="fn">http_response_code</span>(<span class="num">500</span>);
+    <span class="fn">error_log</span>(<span class="var">$e</span>-&gt;<span class="fn">getTraceAsString</span>());
+    <span class="fn">echo</span> <span class="str">"خطأ في السيرفر"</span>;
+} <span class="kw">finally</span> {
+    <span class="fn">echo</span> <span class="str">"انتهى الطلب."</span>; <span class="cm">// يشتغل دائماً</span>
+}</code></pre></div>
+</div></section>
+
+<!-- 16 -->
+<section class="section" id="modern">
+<div class="sh"><div class="sn2">16</div><div class="si"><h2>PHP 8 الحديثة</h2><span class="en">Modern PHP 8.x</span></div></div>
+<div class="intro">PHP 8 جاءت بميزات رائعة — <em>match، Named Args، Enums، Readonly، Fibers</em>. هذه الميزات موجودة في Laravel 10+ وتستخدمها يومياً.</div>
+<div class="g2">
+<div class="card"><div class="ch"><h3>Named Arguments (PHP 8)</h3></div>
+<pre><code><span class="cm">// بدون Named — الترتيب مهم</span>
+<span class="fn">array_slice</span>(<span class="var">$arr</span>, <span class="num">1</span>, <span class="num">3</span>, <span class="kw">true</span>);
+
+<span class="cm">// مع Named — اوضح</span>
+<span class="fn">array_slice</span>(
+    <span class="var">array</span>:         <span class="var">$arr</span>,
+    <span class="var">offset</span>:        <span class="num">1</span>,
+    <span class="var">length</span>:        <span class="num">3</span>,
+    <span class="var">preserve_keys</span>: <span class="kw">true</span>,
+);
+
+<span class="kw">function</span> <span class="fn">createUser</span>(
+    <span class="kw">string</span> <span class="var">$name</span>,
+    <span class="kw">string</span> <span class="var">$email</span>,
+    <span class="kw">string</span> <span class="var">$role</span> = <span class="str">"user"</span>,
+): <span class="kw">array</span> { <span class="kw">return</span> []; }
+
+<span class="fn">createUser</span>(
+    <span class="var">email</span>: <span class="str">"y@dev.com"</span>,
+    <span class="var">name</span>:  <span class="str">"Yahya"</span>,
+    <span class="var">role</span>:  <span class="str">"admin"</span>,
+);</code></pre></div>
+<div class="card"><div class="ch"><h3>Enums (PHP 8.1)</h3></div>
+<pre><code><span class="kw">enum</span> <span class="cl">Role</span>: <span class="kw">string</span> {
+    <span class="kw">case</span> Admin  = <span class="str">"admin"</span>;
+    <span class="kw">case</span> Editor = <span class="str">"editor"</span>;
+    <span class="kw">case</span> User   = <span class="str">"user"</span>;
+
+    <span class="kw">public function</span> <span class="fn">label</span>(): <span class="kw">string</span> {
+        <span class="kw">return</span> <span class="kw">match</span>(<span class="var">$this</span>) {
+            <span class="kw">self</span>::Admin  =&gt; <span class="str">"مدير"</span>,
+            <span class="kw">self</span>::Editor =&gt; <span class="str">"محرر"</span>,
+            <span class="kw">self</span>::User   =&gt; <span class="str">"مستخدم"</span>,
+        };
+    }
+    <span class="kw">public function</span> <span class="fn">canDelete</span>(): <span class="kw">bool</span> {
+        <span class="kw">return</span> <span class="var">$this</span> === <span class="kw">self</span>::Admin;
+    }
+}
+
+<span class="var">$r</span> = <span class="cl">Role</span>::Admin;
+<span class="fn">echo</span> <span class="var">$r</span>-&gt;<span class="var">value</span>;       <span class="cm">// "admin"</span>
+<span class="fn">echo</span> <span class="var">$r</span>-&gt;<span class="fn">label</span>();      <span class="cm">// "مدير"</span>
+<span class="fn">echo</span> <span class="var">$r</span>-&gt;<span class="fn">canDelete</span>(); <span class="cm">// true</span>
+
+<span class="var">$r2</span> = <span class="cl">Role</span>::<span class="fn">from</span>(<span class="str">"editor"</span>);
+<span class="fn">echo</span> <span class="var">$r2</span>-&gt;<span class="fn">label</span>();     <span class="cm">// "محرر"</span></code></pre></div>
+<div class="card"><div class="ch"><h3>Readonly (PHP 8.1+)</h3></div>
+<pre><code><span class="kw">class</span> <span class="cl">Config</span> {
+    <span class="kw">public function</span> <span class="fn">__construct</span>(
+        <span class="kw">public readonly</span> <span class="kw">string</span> <span class="var">$dsn</span>,
+        <span class="kw">public readonly</span> <span class="kw">string</span> <span class="var">$prefix</span>,
+        <span class="kw">public readonly</span> <span class="kw">int</span>    <span class="var">$maxConn</span> = <span class="num">10</span>,
+    ) {}
+}
+
+<span class="var">$c</span>    = <span class="kw">new</span> <span class="cl">Config</span>(<span class="str">"mysql:..."</span>, <span class="str">"app_"</span>);
+<span class="fn">echo</span> <span class="var">$c</span>-&gt;<span class="var">dsn</span>;    <span class="cm">// mysql:...</span>
+<span class="var">$c</span>-&gt;<span class="var">dsn</span> = <span class="str">"x"</span>; <span class="cm">// Error!</span>
+
+<span class="cm">// Readonly Class (PHP 8.2)</span>
+<span class="kw">readonly class</span> <span class="cl">Point</span> {
+    <span class="kw">public function</span> <span class="fn">__construct</span>(
+        <span class="kw">public</span> <span class="kw">float</span> <span class="var">$x</span>,
+        <span class="kw">public</span> <span class="kw">float</span> <span class="var">$y</span>,
+    ) {}
+}
+
+<span class="cm">// Typed Constants (PHP 8.3)</span>
+<span class="kw">class</span> <span class="cl">App</span> {
+    <span class="kw">const</span> <span class="kw">string</span> <span class="cl">VERSION</span>   = <span class="str">"3.0.0"</span>;
+    <span class="kw">const</span> <span class="kw">int</span>    <span class="cl">MAX_RETRY</span> = <span class="num">3</span>;
+}</code></pre></div>
+<div class="card"><div class="ch"><h3>Fibers (PHP 8.1)</h3></div>
+<div class="def">كـ Coroutines — توقف التنفيذ وتستانفه. اساس الـ async في PHP.</div>
+<pre><code><span class="var">$fiber</span> = <span class="kw">new</span> <span class="cl">Fiber</span>(<span class="kw">function</span>(): <span class="kw">void</span> {
+    <span class="var">$v</span> = <span class="cl">Fiber</span>::<span class="fn">suspend</span>(<span class="str">"اول إيقاف"</span>);
+    <span class="fn">echo</span> <span class="str">"استانف بـ: <span class="var">$v</span>\n"</span>;
+    <span class="cl">Fiber</span>::<span class="fn">suspend</span>(<span class="str">"ثاني إيقاف"</span>);
+    <span class="fn">echo</span> <span class="str">"انتهى\n"</span>;
+});
+
+<span class="var">$v1</span> = <span class="var">$fiber</span>-&gt;<span class="fn">start</span>();
+<span class="var">$v2</span> = <span class="var">$fiber</span>-&gt;<span class="fn">resume</span>(<span class="str">"A"</span>);
+<span class="var">$fiber</span>-&gt;<span class="fn">resume</span>();</code></pre></div>
+</div></section>
+<!-- REF -->
+<section class="section" id="ref">
+<div class="sh"><div class="sn2">*</div><div class="si"><h2>المرجع السريع الشامل</h2><span class="en">Quick Reference</span></div></div>
+<div class="tw">
+<table class="tbl">
+<thead><tr><th>الفئة</th><th>الدالة</th><th>الاستخدام</th><th>مثال</th></tr></thead>
+<tbody>
+<tr><td>📅 وقت</td><td><code>date("Y-m-d")</code></td><td>التاريخ الحالي</td><td>2024-01-19</td></tr>
+<tr><td>📅 وقت</td><td><code>time()</code></td><td>Unix timestamp</td><td>1705622400</td></tr>
+<tr><td>📅 وقت</td><td><code>strtotime('+1 week')</code></td><td>نص لـ timestamp</td><td>timestamp بعد أسبوع</td></tr>
+<tr><td>📅 وقت</td><td><code>new DateTime()</code></td><td>كائن تاريخ OOP</td><td>أنظف وأقوى</td></tr>
+<tr><td>🔢 رياضيات</td><td><code>round($n, 2)</code></td><td>تقريب</td><td>round(3.456,2) = 3.46</td></tr>
+<tr><td>🔢 رياضيات</td><td><code>rand(1, 100)</code></td><td>عشوائي</td><td>رقم بين 1 و100</td></tr>
+<tr><td>🔢 رياضيات</td><td><code>abs(-5)</code></td><td>القيمة المطلقة</td><td>5</td></tr>
+<tr><td>🔢 رياضيات</td><td><code>ceil() / floor()</code></td><td>تقريب أعلى/أسفل</td><td>ceil(4.1) = 5</td></tr>
+<tr><td>🔢 رياضيات</td><td><code>intdiv(7, 2)</code></td><td>قسمة صحيحة</td><td>3</td></tr>
+<tr><td>✅ تحقق</td><td><code>isset($var)</code></td><td>موجود وليس null?</td><td>isset($_GET['id'])</td></tr>
+<tr><td>✅ تحقق</td><td><code>empty($var)</code></td><td>فاضي؟ 0/""/[]/null</td><td>!empty($name)</td></tr>
+<tr><td>✅ تحقق</td><td><code>filter_var($e, FILTER_VALIDATE_EMAIL)</code></td><td>إيميل صحيح؟</td><td>true/false</td></tr>
+<tr><td>✅ تحقق</td><td><code>is_numeric("42")</code></td><td>رقم؟</td><td>true</td></tr>
+<tr><td>🗄️ JSON</td><td><code>json_encode($arr, JSON_UNESCAPED_UNICODE)</code></td><td>مصفوفة لـ JSON</td><td>{"name":"يحيى"}</td></tr>
+<tr><td>🗄️ JSON</td><td><code>json_decode($json, true)</code></td><td>JSON لمصفوفة</td><td>['name'=>'يحيى']</td></tr>
+<tr><td>🔒 أمان</td><td><code>htmlspecialchars($s, ENT_QUOTES)</code></td><td>حماية XSS</td><td>دائماً عند الطباعة</td></tr>
+<tr><td>🔒 أمان</td><td><code>password_hash($p, PASSWORD_DEFAULT)</code></td><td>تشفير كلمة مرور</td><td>bcrypt آمن</td></tr>
+<tr><td>🔒 أمان</td><td><code>password_verify($p, $hash)</code></td><td>مقارنة</td><td>true/false</td></tr>
+<tr><td>🔒 أمان</td><td><code>random_bytes(32)</code></td><td>bytes عشوائي آمن</td><td>للـ tokens والـ CSRF</td></tr>
+<tr><td>🔀 أخرى</td><td><code>header("Location: /page")</code></td><td>إعادة توجيه</td><td>ثم exit;</td></tr>
+<tr><td>🔀 أخرى</td><td><code>uniqid("pre_", true)</code></td><td>ID فريد</td><td>"pre_65a3..."</td></tr>
+<tr><td>🔀 أخرى</td><td><code>var_dump($x)</code></td><td>debug — نوع وقيمة</td><td>string(5) "hello"</td></tr>
+<tr><td>🔀 أخرى</td><td><code>die() / exit()</code></td><td>وقف التنفيذ</td><td>die("403");</td></tr>
+<tr><td>🔀 أخرى</td><td><code>ob_start() / ob_get_clean()</code></td><td>التقاط output</td><td>مفيد في Templates</td></tr>
+</tbody>
+</table>
+</div>
+<div style="margin-top:20px">
+<div class="tip"><span class="ico">💡</span><div><strong>خارطة طريق المراجعة:</strong> المتغيرات ← العوامل ← الشروط ← الحلقات ← الدوال ← المصفوفات ← النصوص ← OOP ← PDO ← الأمان. اقرأ، أغلق، اكتب من الذاكرة. هذا هو التعلم الحقيقي.</div></div>
+<div class="note"><span class="ico">📌</span><div><strong>الخطوة التالية: Laravel</strong> — بعد إتقان PHP، Laravel يبسّط كل ما تعلمته: Routing، Eloquent ORM، Blade، Auth. أنا أستخدمه يومياً في كل مشاريعي.</div></div>
+</div>
+</section>
+
+</div><!-- content -->
+
+<!-- FOOTER -->
+<footer class="pf">
+  <div>
+    <h3>Yahya.DEV · PHP Complete Guide</h3>
+    <p>كتبه Yahya Al-sulami — Full-Stack Developer &amp; UI/UX Architect · PHP 8.3 · 2025</p>
+  </div>
+  <div>
+    <a href="https://yehiahwary0-oss.github.io/my-portfolio/">yehiahwary0-oss.github.io/my-portfolio</a>
+  </div>
+</footer>
+
+</div><!-- main -->
+
+<!-- TASKBAR -->
+<div class="taskbar">
+  <div class="tb-brand"><span>Yahya.DEV</span> &nbsp;·&nbsp; Full-Stack Developer</div>
+  <div class="tb-links">
+    <a href="https://yehiahwary0-oss.github.io/my-portfolio/" class="a-port" title="Portfolio">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93V4.07C7.06 4.56 4 8.03 4 12s3.06 7.44 7 7.93zm2 0C16.94 19.44 20 15.97 20 12s-3.06-7.44-7-7.93v15.86z"/></svg>
+      Portfolio
+    </a>
+    <a href="mailto:yehiahwary515@gmail.com" class="a-email" title="Email">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.7l-8 5.334L4 8.7V6.297l8 5.333 8-5.333V8.7z"/></svg>
+      Email
+    </a>
+    <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" class="a-insta" title="Instagram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 2a6 6 0 100 12A6 6 0 0012 8.163zm0 2a4 4 0 110 8 4 4 0 010-8zm6.4-3.44a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+      Instagram
+    </a>
+    <a href="https://www.tiktok.com/@yahya.dev8" target="_blank" class="a-tiktok" title="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.82 1.55V6.78a4.85 4.85 0 01-1.05-.09z"/></svg>
+      TikTok
+    </a>
+  </div>
+  <div class="tb-php">&lt;?php /* Yahya.DEV · PHP 8.3 */ ?&gt;</div>
+</div>
+
+<script>
+const prog=document.getElementById("prog"),pct=document.getElementById("pct");
+window.addEventListener("scroll",()=>{
+  const p=Math.round((window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100);
+  prog.style.width=p+"%";pct.textContent=p+"%";
+});
+const secs=document.querySelectorAll(".section"),links=document.querySelectorAll(".sb-nav a");
+secs.forEach(s=>{
+  new IntersectionObserver(e=>{
+    e.forEach(en=>{
+      if(en.isIntersecting){
+        links.forEach(l=>l.classList.remove("act"));
+        const a=document.querySelector(`.sb-nav a[href="#${en.target.id}"]`);
+        if(a)a.classList.add("act");
+      }
+    });
+  },{threshold:.15}).observe(s);
+});
+</script>
+</body>
+</html>

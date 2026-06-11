@@ -1,0 +1,2668 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>تعلم C# من الصفر للاحتراف | Yahya.DEV — دليل شامل 2026</title>
+  <meta name="description" content="دورة C# الأكثر شمولاً بالعربية — من المبتدئ إلى المحترف. تعلم C# 13 مع أمثلة عملية، شرح مفصّل للكود، وكل ما تحتاجه لإتقان لغة C# في 2026. بقلم Yahya Al-sulami — Yahya.DEV." />
+  <meta name="keywords" content="تعلم C#, شرح C# بالعربي, دورة سي شارب, C# للمبتدئين, C# 2026, دليل C#, Yahya.DEV, يحيى السلمي, برمجة C#, تعلم البرمجة, OOP C#, .NET C#, async await C#, LINQ C#" />
+  <meta name="author" content="Yahya Al-sulami — Yahya.DEV" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yehiahwary0-oss.github.io/my-portfolio/csharp-course.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="تعلم C# من الصفر للاحتراف | Yahya.DEV" />
+  <meta property="og:description" content="الدليل الشامل لتعلم C# 13 — أمثلة، شرح كود، OOP، LINQ، async/await وكل ما تحتاجه في 2026." />
+  <meta property="og:url" content="https://yehiahwary0-oss.github.io/my-portfolio/csharp-course.html" />
+  <meta property="og:image" content="https://yehiahwary0-oss.github.io/my-portfolio/PIC/my.png" />
+  <meta property="og:site_name" content="Yahya.DEV" />
+  <meta property="article:author" content="Yahya Al-sulami" />
+  <meta property="article:published_time" content="2026-05-30" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="تعلم C# من الصفر للاحتراف | Yahya.DEV" />
+  <meta name="twitter:description" content="دورة C# الأكثر شمولاً بالعربية — 2026" />
+  <meta name="twitter:image" content="https://yehiahwary0-oss.github.io/my-portfolio/PIC/my.png" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "تعلم C# من الصفر للاحتراف",
+    "description": "دورة C# شاملة بالعربية تغطي كل المستويات من المبتدئ إلى المحترف",
+    "provider": {
+      "@type": "Person",
+      "name": "Yahya Al-sulami",
+      "url": "https://yehiahwary0-oss.github.io/my-portfolio/"
+    },
+    "educationalLevel": "Beginner to Advanced",
+    "inLanguage": "ar",
+    "datePublished": "2026-05-30",
+    "url": "https://yehiahwary0-oss.github.io/my-portfolio/csharp-course.html"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   CSS VARIABLES & RESET
+   ============================================================ */
+:root {
+  --bg-void: #020408;
+  --bg-deep: #070d14;
+  --bg-surface: #0d1520;
+  --bg-card: #111b28;
+  --bg-card-hover: #162233;
+  --accent-purple: #7c3aed;
+  --accent-violet: #6d28d9;
+  --accent-cyan: #06b6d4;
+  --accent-gold: #f59e0b;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --text-primary: #f0f6ff;
+  --text-secondary: #8ba0bc;
+  --text-muted: #4a607a;
+  --border: rgba(124, 58, 237, 0.15);
+  --border-bright: rgba(124, 58, 237, 0.4);
+  --glow-purple: 0 0 40px rgba(124, 58, 237, 0.3);
+  --glow-cyan: 0 0 30px rgba(6, 182, 212, 0.25);
+  --radius: 12px;
+  --font-ar: 'Tajawal', sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+  --font-display: 'Syne', sans-serif;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-ar);
+  background: var(--bg-void);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--accent-purple); border-radius: 3px; }
+
+/* ============================================================
+   NOISE TEXTURE OVERLAY
+   ============================================================ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.4;
+}
+
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
+  z-index: 9999;
+  transition: width 0.1s;
+  box-shadow: 0 0 10px var(--accent-purple);
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 900;
+  background: rgba(2, 4, 8, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+.navbar.scrolled {
+  background: rgba(2, 4, 8, 0.97);
+  border-bottom-color: var(--border-bright);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--accent-purple); }
+.nav-badge {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+.nav-back {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+.nav-back:hover { color: var(--accent-cyan); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 120px 2rem 80px;
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(124,58,237,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,58,237,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 20s linear infinite;
+}
+@keyframes gridMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(60px); }
+}
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+.hero-orb-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(124,58,237,0.2) 0%, transparent 70%);
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  animation: orbPulse 4s ease-in-out infinite alternate;
+}
+.hero-orb-2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(6,182,212,0.12) 0%, transparent 70%);
+  bottom: 0; right: -100px;
+  animation: orbPulse 6s ease-in-out infinite alternate-reverse;
+}
+@keyframes orbPulse {
+  0% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.15); }
+}
+.hero-content { position: relative; z-index: 2; max-width: 900px; }
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(124,58,237,0.1);
+  border: 1px solid var(--border-bright);
+  color: var(--accent-cyan);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 2rem;
+  animation: fadeInDown 0.8s ease forwards;
+}
+.hero-eyebrow-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  animation: blink 1.5s ease infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.9s ease 0.2s both;
+}
+.hero-title .cs-logo {
+  display: inline-block;
+  background: linear-gradient(135deg, #9333ea 0%, #06b6d4 50%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+.hero-title .cs-logo::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
+  border-radius: 2px;
+}
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  animation: fadeInUp 1s ease 0.35s both;
+}
+.hero-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  animation: fadeInUp 1s ease 0.5s both;
+}
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.hero-meta-item .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+.dot-green { background: var(--accent-green); box-shadow: 0 0 8px var(--accent-green); }
+.dot-gold { background: var(--accent-gold); box-shadow: 0 0 8px var(--accent-gold); }
+.dot-cyan { background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan); }
+.dot-purple { background: var(--accent-purple); box-shadow: 0 0 8px var(--accent-purple); }
+
+.hero-cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease 0.6s both;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-purple), #4f46e5);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  font-family: var(--font-ar);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(124,58,237,0.4);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(124,58,237,0.6);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-bright);
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  font-family: var(--font-ar);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+.btn-secondary:hover {
+  background: rgba(124,58,237,0.1);
+  border-color: var(--accent-purple);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(30px); }
+  to { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeInDown {
+  from { opacity:0; transform:translateY(-20px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.section { padding: 80px 0; }
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+.section-desc {
+  color: var(--text-secondary);
+  max-width: 600px;
+  font-size: 1.05rem;
+  margin-bottom: 3rem;
+}
+.divider {
+  width: 60px; height: 3px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+   STICKY SEARCH + TOC SIDEBAR
+   ============================================================ */
+.course-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding-bottom: 80px;
+}
+@media (max-width: 1024px) {
+  .course-layout { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+}
+
+.sidebar {
+  position: sticky;
+  top: 80px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+.sidebar::-webkit-scrollbar { width: 3px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--accent-purple); }
+
+.search-box {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.search-box input {
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 40px 10px 12px;
+  color: var(--text-primary);
+  font-family: var(--font-ar);
+  font-size: 0.85rem;
+  outline: none;
+  transition: var(--transition);
+  direction: rtl;
+}
+.search-box input:focus {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.15);
+}
+.search-box input::placeholder { color: var(--text-muted); }
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.toc-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.toc-list { list-style: none; }
+.toc-list li { margin-bottom: 2px; }
+.toc-list a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.82rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: var(--transition);
+  border-right: 2px solid transparent;
+}
+.toc-list a:hover,
+.toc-list a.active {
+  color: var(--text-primary);
+  background: rgba(124,58,237,0.1);
+  border-right-color: var(--accent-purple);
+}
+.toc-list a .toc-num {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--accent-purple);
+  min-width: 20px;
+  font-weight: 700;
+}
+
+.toc-group-title {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  padding: 8px 10px 4px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   LEVEL BADGES
+   ============================================================ */
+.level-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.level-beginner { background: rgba(16,185,129,0.15); color: var(--accent-green); border: 1px solid rgba(16,185,129,0.3); }
+.level-intermediate { background: rgba(245,158,11,0.15); color: var(--accent-gold); border: 1px solid rgba(245,158,11,0.3); }
+.level-advanced { background: rgba(124,58,237,0.15); color: var(--accent-purple); border: 1px solid rgba(124,58,237,0.3); }
+.level-expert { background: rgba(6,182,212,0.15); color: var(--accent-cyan); border: 1px solid rgba(6,182,212,0.3); }
+
+/* ============================================================
+   LESSON CARDS
+   ============================================================ */
+.lesson-section {
+  margin-bottom: 3.5rem;
+  scroll-margin-top: 90px;
+}
+.lesson-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.lesson-num {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-purple);
+  background: rgba(124,58,237,0.1);
+  border: 1px solid var(--border-bright);
+  width: 48px; height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.lesson-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+}
+.lesson-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+.lesson-body {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+.lesson-body strong { color: var(--text-primary); }
+.lesson-body ul { padding-right: 1.2rem; margin: 0.8rem 0; }
+.lesson-body li { margin-bottom: 0.4rem; }
+.lesson-body .highlight {
+  background: rgba(124,58,237,0.1);
+  border-right: 3px solid var(--accent-purple);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   CODE BLOCKS
+   ============================================================ */
+.code-block {
+  background: #010810;
+  border: 1px solid rgba(124,58,237,0.2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 1.5rem 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(124,58,237,0.08);
+  border-bottom: 1px solid rgba(124,58,237,0.15);
+}
+.code-dots { display: flex; gap: 6px; }
+.code-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+.cd1 { background: #ef4444; }
+.cd2 { background: #f59e0b; }
+.cd3 { background: #10b981; }
+.code-lang {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.code-copy {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font-ar);
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.code-copy:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+.code-copy.copied { color: var(--accent-green); border-color: var(--accent-green); }
+
+pre {
+  padding: 1.5rem;
+  overflow-x: auto;
+  font-family: var(--font-code);
+  font-size: 0.83rem;
+  line-height: 1.7;
+  direction: ltr;
+  text-align: left;
+}
+pre::-webkit-scrollbar { height: 4px; }
+pre::-webkit-scrollbar-thumb { background: var(--accent-purple); }
+
+/* Syntax highlighting */
+.kw { color: #c084fc; font-weight: 600; }       /* keyword */
+.tp { color: #67e8f9; }                           /* type */
+.st { color: #86efac; }                           /* string */
+.nm { color: #fcd34d; }                           /* number */
+.cm { color: #4b5563; font-style: italic; }       /* comment */
+.fn { color: #93c5fd; }                           /* function */
+.cl { color: #f0abfc; }                           /* class */
+.pr { color: #fb923c; }                           /* property */
+.op { color: #94a3b8; }                           /* operator */
+.nl { color: var(--text-primary); }               /* normal */
+
+/* ============================================================
+   INFO BOXES
+   ============================================================ */
+.info-box {
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.info-box-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+.info-tip { background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25); color: #86efac; }
+.info-note { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25); color: #fcd34d; }
+.info-warn { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.25); color: #fca5a5; }
+.info-box strong { color: inherit; }
+
+/* ============================================================
+   COMPARISON TABLES
+   ============================================================ */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  direction: rtl;
+}
+th {
+  background: rgba(124,58,237,0.15);
+  color: var(--accent-cyan);
+  font-weight: 700;
+  padding: 12px 16px;
+  text-align: right;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+td {
+  padding: 11px 16px;
+  border-bottom: 1px solid rgba(124,58,237,0.08);
+  color: var(--text-secondary);
+  font-family: var(--font-code);
+  font-size: 0.82rem;
+}
+td:first-child { color: var(--accent-gold); font-weight: 600; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(124,58,237,0.05); }
+
+/* ============================================================
+   ROADMAP / LEVELS
+   ============================================================ */
+.levels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.level-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.level-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  height: 3px;
+}
+.level-card.beginner::before { background: var(--accent-green); }
+.level-card.intermediate::before { background: var(--accent-gold); }
+.level-card.advanced::before { background: var(--accent-purple); }
+.level-card.expert::before { background: var(--accent-cyan); }
+.level-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-bright);
+  box-shadow: var(--glow-purple);
+}
+.level-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.level-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.level-topics { list-style: none; }
+.level-topics li {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 3px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.level-topics li::before { content: '→'; color: var(--accent-purple); }
+
+/* ============================================================
+   OUTPUT BOX
+   ============================================================ */
+.output-box {
+  background: rgba(16,185,129,0.04);
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 1rem 1.5rem;
+  font-family: var(--font-code);
+  font-size: 0.82rem;
+  color: var(--accent-green);
+  direction: ltr;
+  text-align: left;
+}
+.output-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-code);
+}
+
+/* ============================================================
+   TAGS
+   ============================================================ */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1rem 0;
+}
+.tag {
+  background: rgba(124,58,237,0.1);
+  border: 1px solid rgba(124,58,237,0.25);
+  color: var(--accent-purple);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-family: var(--font-code);
+}
+.tag.cyan { background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.25); color: var(--accent-cyan); }
+.tag.green { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.25); color: var(--accent-green); }
+.tag.gold { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.25); color: var(--accent-gold); }
+
+/* ============================================================
+   STATS BAR
+   ============================================================ */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 3rem 0;
+}
+.stat-item {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  text-align: center;
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+
+/* ============================================================
+   TASKBAR / FOOTER
+   ============================================================ */
+.taskbar {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  margin-top: 4rem;
+}
+.taskbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.taskbar-brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.taskbar-brand span { color: var(--accent-purple); }
+.taskbar-brand small {
+  display: block;
+  font-family: var(--font-ar);
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0;
+}
+.taskbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.taskbar-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: var(--transition);
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.taskbar-link:hover { color: var(--text-primary); border-color: var(--border-bright); background: rgba(124,58,237,0.08); }
+.taskbar-link svg { width: 16px; height: 16px; }
+.taskbar-link.email:hover { color: var(--accent-gold); border-color: rgba(245,158,11,0.4); }
+.taskbar-link.tiktok:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+.taskbar-link.instagram:hover { color: #e1306c; border-color: rgba(225,48,108,0.4); }
+.taskbar-copyright {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  width: 100%;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+}
+.taskbar-copyright a { color: var(--accent-purple); text-decoration: none; }
+
+/* ============================================================
+   MOBILE SEARCH (shown on mobile)
+   ============================================================ */
+.mobile-search-bar {
+  display: none;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 64px;
+  z-index: 800;
+}
+.mobile-search-bar input {
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: var(--text-primary);
+  font-family: var(--font-ar);
+  font-size: 0.9rem;
+  outline: none;
+  direction: rtl;
+}
+.mobile-search-bar input:focus { border-color: var(--accent-purple); }
+
+@media (max-width: 1024px) {
+  .mobile-search-bar { display: block; }
+}
+
+/* ============================================================
+   SEARCH HIGHLIGHT
+   ============================================================ */
+mark {
+  background: rgba(124,58,237,0.35);
+  color: #fff;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+/* ============================================================
+   SCROLL TO TOP
+   ============================================================ */
+#scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 44px;
+  height: 44px;
+  background: var(--accent-purple);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+  z-index: 800;
+  box-shadow: 0 4px 20px rgba(124,58,237,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#scroll-top.visible { opacity: 1; pointer-events: all; }
+#scroll-top:hover { transform: translateY(-3px); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.5rem; }
+  .lesson-header { flex-direction: column; gap: 0.75rem; }
+  .stats-bar { grid-template-columns: repeat(2,1fr); }
+  pre { font-size: 0.75rem; }
+  .taskbar-inner { flex-direction: column; text-align: center; }
+  .taskbar-links { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div id="progress-bar"></div>
+
+<!-- SCROLL TO TOP -->
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="https://yehiahwary0-oss.github.io/my-portfolio/" class="nav-logo">
+    Yahya<span>.</span>DEV
+  </a>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <span class="nav-badge">C# 13 — 2026</span>
+    <a href="https://yehiahwary0-oss.github.io/my-portfolio/" class="nav-back">
+      ← الرئيسية
+    </a>
+  </div>
+</nav>
+
+<!-- MOBILE SEARCH -->
+<div class="mobile-search-bar">
+  <input type="text" id="mobile-search" placeholder="🔍  ابحث في الدرس... (مثال: كلاس، حلقة، async)" oninput="doSearch(this.value)" />
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-dot"></span>
+      الإصدار الأحدث · C# 13 · .NET 9 · 2026
+    </div>
+    <h1 class="hero-title">
+      تعلم <span class="cs-logo">C#</span><br />من الصفر للاحتراف
+    </h1>
+    <p class="hero-sub">
+      دليل شامل يغني عن الكورسات — من أول سطر كود حتى البرمجة الاحترافية.
+      بأمثلة حقيقية، شرح مفصّل، وكل ما تحتاجه في 2026.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><span class="dot dot-green"></span>محدّث 30 مايو 2026</div>
+      <div class="hero-meta-item"><span class="dot dot-gold"></span>C# 13 / .NET 9</div>
+      <div class="hero-meta-item"><span class="dot dot-cyan"></span>9 مستويات كاملة</div>
+      <div class="hero-meta-item"><span class="dot dot-purple"></span>بقلم Yahya.DEV</div>
+    </div>
+    <div class="hero-cta-group">
+      <a href="#s1" class="btn-primary">🚀 ابدأ التعلم الآن</a>
+      <a href="#roadmap" class="btn-secondary">📋 خريطة التعلم</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="container">
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">13</div><div class="stat-label">إصدار C# الحالي</div></div>
+    <div class="stat-item"><div class="stat-num">9</div><div class="stat-label">مستويات تعليمية</div></div>
+    <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label">مثال كود حقيقي</div></div>
+    <div class="stat-item"><div class="stat-num">2026</div><div class="stat-label">آخر تحديث</div></div>
+  </div>
+</div>
+
+<!-- ROADMAP SECTION -->
+<section class="section" id="roadmap">
+  <div class="container">
+    <div class="section-label">خريطة التعلم</div>
+    <h2 class="section-title">من أين تبدأ؟</h2>
+    <div class="divider"></div>
+    <p class="section-desc">الدورة مقسّمة إلى مستويات واضحة — اتبع الترتيب للحصول على أفضل نتيجة.</p>
+    <div class="levels-grid">
+      <div class="level-card beginner">
+        <span class="level-badge level-beginner">⚡ مبتدئ</span>
+        <h3>الأساسيات</h3>
+        <p>ابدأ هنا إذا كنت جديداً تماماً في البرمجة</p>
+        <ul class="level-topics">
+          <li>ما هي C# وتاريخها</li>
+          <li>البيئة وأول برنامج</li>
+          <li>المتغيرات والأنواع</li>
+          <li>العمليات والتحكم</li>
+          <li>الحلقات والمصفوفات</li>
+        </ul>
+      </div>
+      <div class="level-card intermediate">
+        <span class="level-badge level-intermediate">🔥 متوسط</span>
+        <h3>البرمجة كائنية</h3>
+        <p>الجوهر الحقيقي للغة — OOP كاملاً</p>
+        <ul class="level-topics">
+          <li>الكلاسات والكائنات</li>
+          <li>الوراثة والتغليف</li>
+          <li>الواجهات والتجريد</li>
+          <li>الـ Generics</li>
+          <li>المجموعات Collections</li>
+        </ul>
+      </div>
+      <div class="level-card advanced">
+        <span class="level-badge level-advanced">💎 متقدم</span>
+        <h3>الاحتراف</h3>
+        <p>ما يُميّز المبرمج المحترف</p>
+        <ul class="level-topics">
+          <li>LINQ بالكامل</li>
+          <li>Delegates & Events</li>
+          <li>Async / Await</li>
+          <li>معالجة الأخطاء</li>
+          <li>Design Patterns</li>
+        </ul>
+      </div>
+      <div class="level-card expert">
+        <span class="level-badge level-expert">🚀 خبير</span>
+        <h3>C# الحديثة</h3>
+        <p>أحدث ميزات C# 13 و .NET 9</p>
+        <ul class="level-topics">
+          <li>Pattern Matching</li>
+          <li>Records & Structs</li>
+          <li>Nullable Reference Types</li>
+          <li>Source Generators</li>
+          <li>Performance & Spans</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN COURSE LAYOUT -->
+<div class="container">
+  <div class="course-layout">
+
+    <!-- SIDEBAR TOC -->
+    <aside class="sidebar">
+      <div class="search-box">
+        <input type="text" id="sidebar-search" placeholder="ابحث في الدرس..." oninput="doSearch(this.value)" />
+        <span class="search-icon">🔍</span>
+      </div>
+      <div class="toc-title">محتويات الدورة</div>
+      <ul class="toc-list" id="toc">
+        <div class="toc-group-title">⚡ مبتدئ</div>
+        <li><a href="#s1"><span class="toc-num">01</span> ما هي C#؟</a></li>
+        <li><a href="#s2"><span class="toc-num">02</span> بيئة العمل وأول برنامج</a></li>
+        <li><a href="#s3"><span class="toc-num">03</span> المتغيرات والأنواع</a></li>
+        <li><a href="#s4"><span class="toc-num">04</span> العمليات والتحكم</a></li>
+        <li><a href="#s5"><span class="toc-num">05</span> الحلقات</a></li>
+        <li><a href="#s6"><span class="toc-num">06</span> المصفوفات</a></li>
+        <li><a href="#s7"><span class="toc-num">07</span> الدوال (Methods)</a></li>
+        <div class="toc-group-title">🔥 متوسط</div>
+        <li><a href="#s8"><span class="toc-num">08</span> الكلاسات والكائنات</a></li>
+        <li><a href="#s9"><span class="toc-num">09</span> الوراثة والتغليف</a></li>
+        <li><a href="#s10"><span class="toc-num">10</span> الواجهات Interface</a></li>
+        <li><a href="#s11"><span class="toc-num">11</span> Generics</a></li>
+        <li><a href="#s12"><span class="toc-num">12</span> Collections</a></li>
+        <div class="toc-group-title">💎 متقدم</div>
+        <li><a href="#s13"><span class="toc-num">13</span> LINQ</a></li>
+        <li><a href="#s14"><span class="toc-num">14</span> Delegates & Events</a></li>
+        <li><a href="#s15"><span class="toc-num">15</span> Async / Await</a></li>
+        <li><a href="#s16"><span class="toc-num">16</span> معالجة الأخطاء</a></li>
+        <div class="toc-group-title">🚀 خبير</div>
+        <li><a href="#s17"><span class="toc-num">17</span> Pattern Matching</a></li>
+        <li><a href="#s18"><span class="toc-num">18</span> Records</a></li>
+        <li><a href="#s19"><span class="toc-num">19</span> Nullable & Null Safety</a></li>
+        <li><a href="#s20"><span class="toc-num">20</span> C# 13 الجديد</a></li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+
+<!-- ===== S1: WHAT IS C# ===== -->
+<div class="lesson-section" id="s1">
+  <span class="level-badge level-beginner">⚡ مبتدئ</span>
+  <div class="lesson-header">
+    <div class="lesson-num">01</div>
+    <div>
+      <h2 class="lesson-title">ما هي لغة C#؟</h2>
+      <p class="lesson-subtitle">نظرة شاملة — التاريخ، الاستخدامات، لماذا C# في 2026؟</p>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <p><strong>C# (سي شارب)</strong> هي لغة برمجة حديثة متعددة الأغراض، طوّرتها شركة <strong>Microsoft</strong> عام 2000 بقيادة المهندس <strong>Anders Hejlsberg</strong> (مؤلف Turbo Pascal وDelphi). تعمل على إطار .NET وتُعدّ اليوم من أقوى اللغات وأكثرها توظيفاً في العالم.</p>
+    <div class="highlight">
+      "C# تجمع قوة C++ مع بساطة Java مع مرونة Python — في لغة واحدة موثوقة ومُطوَّرة باستمرار."
+    </div>
+    <strong>أبرز استخدامات C# في 2026:</strong>
+    <ul>
+      <li>🎮 <strong>تطوير الألعاب</strong> — Unity (المحرك الأشهر في العالم) يعتمد C# بالكامل</li>
+      <li>🌐 <strong>تطوير الويب</strong> — ASP.NET Core لبناء APIs وتطبيقات ويب سريعة</li>
+      <li>📱 <strong>تطبيقات الموبايل</strong> — .NET MAUI لـ iOS وAndroid</li>
+      <li>🖥️ <strong>تطبيقات سطح المكتب</strong> — WPF وWinForms وMAUI</li>
+      <li>☁️ <strong>الـ Cloud والـ Microservices</strong> — Azure-native</li>
+      <li>🤖 <strong>الذكاء الاصطناعي والـ ML</strong> — ML.NET</li>
+    </ul>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# 13 — أول برنامج</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// أول برنامج C# — Hello World (أسلوب Top-Level في C# 9+)</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"مرحباً بالعالم من Yahya.DEV! 🚀"</span>);
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"تاريخ اليوم: {DateTime.Now:dd/MM/yyyy}"</span>);
+
+<span class="cm">// أو بالأسلوب الكلاسيكي:</span>
+<span class="kw">namespace</span> <span class="cl">MyFirstApp</span>;
+
+<span class="kw">class</span> <span class="cl">Program</span>
+{
+    <span class="kw">static void</span> <span class="fn">Main</span>(<span class="tp">string</span>[] args)
+    {
+        <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"مرحباً بالعالم!"</span>);
+    }
+}</pre>
+  </div>
+  <div class="output-box">
+    <div class="output-label">// OUTPUT</div>
+    مرحباً بالعالم من Yahya.DEV! 🚀<br/>
+    تاريخ اليوم: 30/05/2026
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th>إصدار</th><th>سنة الإصدار</th><th>أبرز الميزات</th></tr>
+      <tr><td>C# 1.0</td><td>2002</td><td>البداية مع .NET Framework</td></tr>
+      <tr><td>C# 3.0</td><td>2007</td><td>LINQ, Lambda, var</td></tr>
+      <tr><td>C# 5.0</td><td>2012</td><td>async / await</td></tr>
+      <tr><td>C# 8.0</td><td>2019</td><td>Nullable, Switch Expressions</td></tr>
+      <tr><td>C# 10.0</td><td>2021</td><td>Global using, File-scoped namespace</td></tr>
+      <tr><td>C# 12.0</td><td>2023</td><td>Primary Constructors, Collection Expressions</td></tr>
+      <tr><td>C# 13.0</td><td>2024/2025</td><td>params collections, Lock type, escape sequences</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ===== S2: SETUP ===== -->
+<div class="lesson-section" id="s2">
+  <span class="level-badge level-beginner">⚡ مبتدئ</span>
+  <div class="lesson-header">
+    <div class="lesson-num">02</div>
+    <div>
+      <h2 class="lesson-title">بيئة العمل وأول برنامج</h2>
+      <p class="lesson-subtitle">Visual Studio, VS Code, .NET CLI — كيف تبدأ فوراً</p>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <strong>ثلاث طرق لبدء كتابة C#:</strong>
+    <ul>
+      <li>🔵 <strong>Visual Studio 2022</strong> — البيئة الأقوى (Windows / Mac) — مجاني للأفراد</li>
+      <li>⚡ <strong>VS Code + C# Extension</strong> — خفيف وسريع — يعمل على كل الأنظمة</li>
+      <li>🌐 <strong>dotnet.microsoft.com/fiddle</strong> — مباشرة في المتصفح بدون تثبيت</li>
+    </ul>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">Terminal — إنشاء مشروع جديد</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm"># تثبيت .NET 9 SDK أولاً من: https://dotnet.microsoft.com/download</span>
+
+<span class="cm"># إنشاء مشروع Console</span>
+dotnet new console -n MyProject
+
+<span class="cm"># الدخول للمجلد</span>
+cd MyProject
+
+<span class="cm"># تشغيل البرنامج</span>
+dotnet run</pre>
+  </div>
+  <div class="info-box info-tip">
+    <span class="info-box-icon">💡</span>
+    <div><strong>نصيحة:</strong> ابدأ بـ VS Code مع إضافة "C# Dev Kit" — أسرع للتعلم ويعمل على Windows وMac وLinux بدون مشاكل.</div>
+  </div>
+</div>
+
+<!-- ===== S3: VARIABLES & TYPES ===== -->
+<div class="lesson-section" id="s3">
+  <span class="level-badge level-beginner">⚡ مبتدئ</span>
+  <div class="lesson-header">
+    <div class="lesson-num">03</div>
+    <div>
+      <h2 class="lesson-title">المتغيرات والأنواع</h2>
+      <p class="lesson-subtitle">كل أنواع البيانات في C# — Value Types vs Reference Types</p>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <p>في C# كل متغير له <strong>نوع محدد</strong>. اللغة strongly-typed — أي المُترجم يتحقق من الأنواع قبل التشغيل.</p>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — المتغيرات والأنواع الأساسية</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// ==============================
+// 1. أنواع الأعداد الصحيحة
+// ==============================</span>
+<span class="tp">int</span>     age    = <span class="nm">25</span>;          <span class="cm">// -2.1B إلى 2.1B   (32-bit)</span>
+<span class="tp">long</span>    pop    = <span class="nm">8_000_000_000L</span>; <span class="cm">// أعداد كبيرة جداً  (64-bit)</span>
+<span class="tp">short</span>   x      = <span class="nm">1000</span>;        <span class="cm">// -32K إلى 32K      (16-bit)</span>
+<span class="tp">byte</span>    b      = <span class="nm">255</span>;         <span class="cm">// 0 إلى 255          (8-bit)</span>
+
+<span class="cm">// ==============================
+// 2. أنواع الأعداد العشرية
+// ==============================</span>
+<span class="tp">double</span>  pi     = <span class="nm">3.14159265</span>; <span class="cm">// دقة عالية          (64-bit)</span>
+<span class="tp">float</span>   temp   = <span class="nm">36.6f</span>;      <span class="cm">// دقة متوسطة         (32-bit)</span>
+<span class="tp">decimal</span> price  = <span class="nm">99.99m</span>;     <span class="cm">// للمال والدقة القصوى (128-bit)</span>
+
+<span class="cm">// ==============================
+// 3. النصوص والحروف
+// ==============================</span>
+<span class="tp">string</span>  name   = <span class="st">"Yahya"</span>;
+<span class="tp">char</span>    grade  = <span class="st">'A'</span>;        <span class="cm">// حرف واحد فقط — single quotes</span>
+
+<span class="cm">// ==============================
+// 4. المنطق Boolean
+// ==============================</span>
+<span class="tp">bool</span>    isActive = <span class="kw">true</span>;
+<span class="tp">bool</span>    isEmpty  = <span class="kw">false</span>;
+
+<span class="cm">// ==============================
+// 5. var — استنتاج النوع تلقائياً
+// ==============================</span>
+<span class="kw">var</span> city    = <span class="st">"Riyadh"</span>;   <span class="cm">// string  (يحدده المترجم)</span>
+<span class="kw">var</span> count   = <span class="nm">42</span>;         <span class="cm">// int</span>
+<span class="kw">var</span> ratio   = <span class="nm">3.14</span>;       <span class="cm">// double</span>
+
+<span class="cm">// ==============================
+// 6. الثوابت const
+// ==============================</span>
+<span class="kw">const double</span> <span class="pr">PI</span> = <span class="nm">3.14159265358979</span>;
+<span class="kw">const string</span> <span class="pr">APP_NAME</span> = <span class="st">"Yahya.DEV"</span>;
+
+<span class="cm">// ==============================
+// 7. String Interpolation (C# 6+)
+// ==============================</span>
+<span class="tp">string</span> msg = <span class="st">$"مرحباً {name}، عمرك {age} سنة"</span>;
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(msg);</pre>
+  </div>
+  <div class="output-box">
+    <div class="output-label">// OUTPUT</div>
+    مرحباً Yahya، عمرك 25 سنة
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th>النوع</th><th>الحجم</th><th>المدى</th><th>مثال</th></tr>
+      <tr><td>int</td><td>4 bytes</td><td>±2.1 مليار</td><td>int x = 42;</td></tr>
+      <tr><td>long</td><td>8 bytes</td><td>±9.2 كوينتيليون</td><td>long y = 9L;</td></tr>
+      <tr><td>double</td><td>8 bytes</td><td>±1.8×10³⁰⁸</td><td>double d = 3.14;</td></tr>
+      <tr><td>decimal</td><td>16 bytes</td><td>±7.9×10²⁸</td><td>decimal m = 9.99m;</td></tr>
+      <tr><td>bool</td><td>1 byte</td><td>true / false</td><td>bool b = true;</td></tr>
+      <tr><td>char</td><td>2 bytes</td><td>Unicode</td><td>char c = 'A';</td></tr>
+      <tr><td>string</td><td>متغير</td><td>نص غير محدود</td><td>string s = "hi";</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ===== S4: CONTROL FLOW ===== -->
+<div class="lesson-section" id="s4">
+  <span class="level-badge level-beginner">⚡ مبتدئ</span>
+  <div class="lesson-header">
+    <div class="lesson-num">04</div>
+    <div>
+      <h2 class="lesson-title">العمليات والتحكم في التدفق</h2>
+      <p class="lesson-subtitle">if, else, switch, Ternary operator</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — التحكم في التدفق</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="tp">int</span> score = <span class="nm">85</span>;
+
+<span class="cm">// ==============================
+// if / else if / else
+// ==============================</span>
+<span class="kw">if</span> (score >= <span class="nm">90</span>)
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"ممتاز 🌟"</span>);
+<span class="kw">else if</span> (score >= <span class="nm">75</span>)
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"جيد جداً 👍"</span>);
+<span class="kw">else if</span> (score >= <span class="nm">60</span>)
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"جيد"</span>);
+<span class="kw">else</span>
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"راجع المادة"</span>);
+
+<span class="cm">// ==============================
+// Ternary Operator ?: (مختصر)
+// ==============================</span>
+<span class="tp">string</span> result = score >= <span class="nm">60</span> ? <span class="st">"ناجح ✅"</span> : <span class="st">"راسب ❌"</span>;
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(result);
+
+<span class="cm">// ==============================
+// Switch Expression (C# 8+ الحديث)
+// ==============================</span>
+<span class="tp">string</span> grade = score <span class="kw">switch</span>
+{
+    >= <span class="nm">90</span> => <span class="st">"A"</span>,
+    >= <span class="nm">80</span> => <span class="st">"B"</span>,
+    >= <span class="nm">70</span> => <span class="st">"C"</span>,
+    >= <span class="nm">60</span> => <span class="st">"D"</span>,
+    _      => <span class="st">"F"</span>   <span class="cm">// _ = default</span>
+};
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"التقدير: {grade}"</span>);
+
+<span class="cm">// ==============================
+// Null Coalescing ?? و ?.
+// ==============================</span>
+<span class="tp">string</span>? userName = <span class="kw">null</span>;
+<span class="tp">string</span>  display  = userName ?? <span class="st">"زائر"</span>;       <span class="cm">// إذا null → "زائر"</span>
+<span class="tp">int</span>?    len      = userName?.<span class="pr">Length</span>;         <span class="cm">// إذا null → null (لا crash)</span></pre>
+  </div>
+  <div class="output-box">
+    <div class="output-label">// OUTPUT</div>
+    جيد جداً 👍<br/>ناجح ✅<br/>التقدير: B
+  </div>
+</div>
+
+<!-- ===== S5: LOOPS ===== -->
+<div class="lesson-section" id="s5">
+  <span class="level-badge level-beginner">⚡ مبتدئ</span>
+  <div class="lesson-header">
+    <div class="lesson-num">05</div>
+    <div>
+      <h2 class="lesson-title">الحلقات (Loops)</h2>
+      <p class="lesson-subtitle">for, while, do-while, foreach</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — الحلقات الأربعة</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// ==============================
+// 1. for — عدد معروف مسبقاً
+// ==============================</span>
+<span class="kw">for</span> (<span class="tp">int</span> i = <span class="nm">1</span>; i <= <span class="nm">5</span>; i++)
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"رقم {i}"</span>);
+
+<span class="cm">// ==============================
+// 2. while — شرط غير معروف
+// ==============================</span>
+<span class="tp">int</span> count = <span class="nm">0</span>;
+<span class="kw">while</span> (count < <span class="nm">3</span>)
+{
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"count = {count}"</span>);
+    count++;
+}
+
+<span class="cm">// ==============================
+// 3. do-while — ينفّذ مرة على الأقل
+// ==============================</span>
+<span class="tp">int</span> x = <span class="nm">10</span>;
+<span class="kw">do</span>
+{
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"x = {x}"</span>);
+    x--;
+} <span class="kw">while</span> (x > <span class="nm">8</span>);
+
+<span class="cm">// ==============================
+// 4. foreach — للمجموعات
+// ==============================</span>
+<span class="tp">string</span>[] langs = { <span class="st">"C#"</span>, <span class="st">"Python"</span>, <span class="st">"JavaScript"</span> };
+<span class="kw">foreach</span> (<span class="tp">string</span> lang <span class="kw">in</span> langs)
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"لغة: {lang}"</span>);
+
+<span class="cm">// break و continue</span>
+<span class="kw">for</span> (<span class="tp">int</span> i = <span class="nm">0</span>; i < <span class="nm">10</span>; i++)
+{
+    <span class="kw">if</span> (i == <span class="nm">3</span>) <span class="kw">continue</span>;  <span class="cm">// تخطّ 3</span>
+    <span class="kw">if</span> (i == <span class="nm">6</span>) <span class="kw">break</span>;     <span class="cm">// أوقف عند 6</span>
+    <span class="fn">Console</span>.<span class="fn">Write</span>(<span class="st">$"{i} "</span>);
+}</pre>
+  </div>
+  <div class="output-box">
+    <div class="output-label">// OUTPUT</div>
+    رقم 1 ... رقم 5<br/>count = 0, 1, 2<br/>x = 10, 9<br/>لغة: C#, Python, JavaScript<br/>0 1 2 4 5
+  </div>
+</div>
+
+<!-- ===== S6: ARRAYS ===== -->
+<div class="lesson-section" id="s6">
+  <span class="level-badge level-beginner">⚡ مبتدئ</span>
+  <div class="lesson-header">
+    <div class="lesson-num">06</div>
+    <div>
+      <h2 class="lesson-title">المصفوفات (Arrays)</h2>
+      <p class="lesson-subtitle">1D, 2D, Jagged Arrays — Collection Expressions (C# 12)</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — المصفوفات</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// ==============================
+// 1D Arrays
+// ==============================</span>
+<span class="tp">int</span>[] numbers  = { <span class="nm">10</span>, <span class="nm">20</span>, <span class="nm">30</span>, <span class="nm">40</span> };
+<span class="tp">int</span>[] zeros    = <span class="kw">new int</span>[<span class="nm">5</span>];    <span class="cm">// [0,0,0,0,0]</span>
+<span class="tp">int</span>[] nums12   = [<span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span>];    <span class="cm">// C# 12 Collection Expression</span>
+
+<span class="cm">// الوصول والتعديل</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(numbers[<span class="nm">0</span>]);   <span class="cm">// 10</span>
+numbers[<span class="nm">1</span>] = <span class="nm">99</span>;
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(numbers.<span class="pr">Length</span>); <span class="cm">// 4</span>
+
+<span class="cm">// ==============================
+// 2D Arrays
+// ==============================</span>
+<span class="tp">int</span>[,] matrix = {
+    { <span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span> },
+    { <span class="nm">4</span>, <span class="nm">5</span>, <span class="nm">6</span> }
+};
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(matrix[<span class="nm">1</span>, <span class="nm">2</span>]);  <span class="cm">// 6</span>
+
+<span class="cm">// ==============================
+// Array Methods
+// ==============================</span>
+<span class="tp">int</span>[] scores = { <span class="nm">85</span>, <span class="nm">92</span>, <span class="nm">71</span>, <span class="nm">98</span>, <span class="nm">65</span> };
+<span class="fn">Array</span>.<span class="fn">Sort</span>(scores);
+<span class="fn">Array</span>.<span class="fn">Reverse</span>(scores);
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="tp">string</span>.<span class="fn">Join</span>(<span class="st">", "</span>, scores));
+
+<span class="cm">// Index من النهاية (C# 8+)</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(scores[^<span class="nm">1</span>]);   <span class="cm">// آخر عنصر</span>
+
+<span class="cm">// Range Slicing</span>
+<span class="tp">int</span>[] slice = scores[<span class="nm">1</span>..<span class="nm">3</span>];       <span class="cm">// عناصر من 1 إلى 2</span></pre>
+  </div>
+</div>
+
+<!-- ===== S7: METHODS ===== -->
+<div class="lesson-section" id="s7">
+  <span class="level-badge level-beginner">⚡ مبتدئ</span>
+  <div class="lesson-header">
+    <div class="lesson-num">07</div>
+    <div>
+      <h2 class="lesson-title">الدوال (Methods)</h2>
+      <p class="lesson-subtitle">Parameters, Return Types, Optional, ref, out, Expression Body</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — الدوال بكل أنواعها</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// ==============================
+// دالة أساسية
+// ==============================</span>
+<span class="kw">static void</span> <span class="fn">Greet</span>(<span class="tp">string</span> name)
+{
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"أهلاً {name}!"</span>);
+}
+
+<span class="cm">// ==============================
+// دالة تُرجع قيمة
+// ==============================</span>
+<span class="kw">static</span> <span class="tp">int</span> <span class="fn">Add</span>(<span class="tp">int</span> a, <span class="tp">int</span> b) => a + b;  <span class="cm">// Expression Body (مختصر)</span>
+
+<span class="cm">// ==============================
+// قيم افتراضية (Optional Parameters)
+// ==============================</span>
+<span class="kw">static</span> <span class="tp">string</span> <span class="fn">CreateUser</span>(<span class="tp">string</span> name, <span class="tp">int</span> age = <span class="nm">18</span>, <span class="tp">string</span> role = <span class="st">"user"</span>)
+    => <span class="st">$"[{role}] {name} ({age})"</span>;
+
+<span class="cm">// ==============================
+// ref & out
+// ==============================</span>
+<span class="kw">static void</span> <span class="fn">Swap</span>(<span class="kw">ref</span> <span class="tp">int</span> a, <span class="kw">ref</span> <span class="tp">int</span> b)
+{
+    (<span class="nl">a</span>, <span class="nl">b</span>) = (<span class="nl">b</span>, <span class="nl">a</span>);  <span class="cm">// Tuple Deconstruction</span>
+}
+
+<span class="kw">static bool</span> <span class="fn">TryParse</span>(<span class="tp">string</span> input, <span class="kw">out</span> <span class="tp">int</span> result)
+{
+    <span class="kw">return</span> <span class="tp">int</span>.<span class="fn">TryParse</span>(input, <span class="kw">out</span> result);
+}
+
+<span class="cm">// ==============================
+// params — عدد متغير من الوسيط
+// ==============================</span>
+<span class="kw">static</span> <span class="tp">int</span> <span class="fn">Sum</span>(<span class="kw">params</span> <span class="tp">int</span>[] nums) => nums.<span class="fn">Sum</span>();
+
+<span class="cm">// الاستخدام</span>
+<span class="fn">Greet</span>(<span class="st">"Yahya"</span>);
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="fn">Add</span>(<span class="nm">5</span>, <span class="nm">3</span>));          <span class="cm">// 8</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="fn">CreateUser</span>(<span class="st">"Ali"</span>));   <span class="cm">// [user] Ali (18)</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="fn">Sum</span>(<span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span>, <span class="nm">4</span>, <span class="nm">5</span>)); <span class="cm">// 15</span></pre>
+  </div>
+  <div class="output-box">
+    <div class="output-label">// OUTPUT</div>
+    أهلاً Yahya!<br/>8<br/>[user] Ali (18)<br/>15
+  </div>
+</div>
+
+<!-- ===== S8: OOP - CLASSES ===== -->
+<div class="lesson-section" id="s8">
+  <span class="level-badge level-intermediate">🔥 متوسط</span>
+  <div class="lesson-header">
+    <div class="lesson-num">08</div>
+    <div>
+      <h2 class="lesson-title">الكلاسات والكائنات</h2>
+      <p class="lesson-subtitle">الأساس الحقيقي لـ C# — Class, Object, Constructor, Properties</p>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <p>البرمجة كائنية التوجه <strong>(OOP)</strong> هي قلب C#. تُنظّم الكود في وحدات (Classes) تحمل بيانات وسلوك.</p>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — Class كاملة</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// تعريف الكلاس</span>
+<span class="kw">public class</span> <span class="cl">Developer</span>
+{
+    <span class="cm">// Properties (الخصائص)</span>
+    <span class="kw">public</span> <span class="tp">string</span> <span class="pr">Name</span>    { <span class="kw">get</span>; <span class="kw">set</span>; }
+    <span class="kw">public</span> <span class="tp">string</span> <span class="pr">Brand</span>   { <span class="kw">get</span>; <span class="kw">set</span>; } = <span class="st">"Yahya.DEV"</span>;
+    <span class="kw">public</span> <span class="tp">int</span>    <span class="pr">YearsXP</span> { <span class="kw">get</span>; <span class="kw">private set</span>; }
+
+    <span class="cm">// Field</span>
+    <span class="kw">private</span> <span class="tp">string</span>[] _skills;
+
+    <span class="cm">// Constructor الأساسي</span>
+    <span class="kw">public</span> <span class="fn">Developer</span>(<span class="tp">string</span> name, <span class="tp">int</span> years, <span class="tp">string</span>[] skills)
+    {
+        <span class="pr">Name</span>    = name;
+        <span class="pr">YearsXP</span> = years;
+        _skills  = skills;
+    }
+
+    <span class="cm">// Primary Constructor (C# 12)</span>
+    <span class="cm">// public Developer(string name) => Name = name;</span>
+
+    <span class="cm">// Method</span>
+    <span class="kw">public void</span> <span class="fn">Introduce</span>()
+    {
+        <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"🚀 {Name} | {Brand}"</span>);
+        <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"   خبرة: {YearsXP} سنوات"</span>);
+        <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"   مهارات: {string.Join(", ", _skills)}"</span>);
+    }
+
+    <span class="cm">// Override ToString</span>
+    <span class="kw">public override</span> <span class="tp">string</span> <span class="fn">ToString</span>()
+        => <span class="st">$"Developer: {Name} @ {Brand}"</span>;
+
+    <span class="cm">// Static Method</span>
+    <span class="kw">public static</span> <span class="cl">Developer</span> <span class="fn">CreateJunior</span>(<span class="tp">string</span> name)
+        => <span class="kw">new</span>(name, <span class="nm">1</span>, [<span class="st">"HTML"</span>, <span class="st">"CSS"</span>]);
+}
+
+<span class="cm">// الاستخدام</span>
+<span class="kw">var</span> dev = <span class="kw">new</span> <span class="cl">Developer</span>(<span class="st">"Yahya"</span>, <span class="nm">3</span>, [<span class="st">"C#"</span>, <span class="st">"Laravel"</span>, <span class="st">"JS"</span>]);
+dev.<span class="fn">Introduce</span>();
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(dev);  <span class="cm">// ToString</span>
+
+<span class="cm">// Object Initializer Syntax</span>
+<span class="kw">var</span> dev2 = <span class="kw">new</span> <span class="cl">Developer</span>(<span class="st">"Ali"</span>, <span class="nm">2</span>, [<span class="st">"Python"</span>])
+{
+    <span class="pr">Brand</span> = <span class="st">"AliDev"</span>
+};</pre>
+  </div>
+  <div class="output-box">
+    <div class="output-label">// OUTPUT</div>
+    🚀 Yahya | Yahya.DEV<br/>   خبرة: 3 سنوات<br/>   مهارات: C#, Laravel, JS<br/>Developer: Yahya @ Yahya.DEV
+  </div>
+</div>
+
+<!-- ===== S9: INHERITANCE ===== -->
+<div class="lesson-section" id="s9">
+  <span class="level-badge level-intermediate">🔥 متوسط</span>
+  <div class="lesson-header">
+    <div class="lesson-num">09</div>
+    <div>
+      <h2 class="lesson-title">الوراثة والتغليف والتعدد</h2>
+      <p class="lesson-subtitle">Inheritance, Encapsulation, Polymorphism — ركائز OOP</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — OOP كاملاً</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// ==============================
+// الكلاس الأساسي (Base Class)
+// ==============================</span>
+<span class="kw">public abstract class</span> <span class="cl">Animal</span>
+{
+    <span class="kw">public</span> <span class="tp">string</span> <span class="pr">Name</span>   { <span class="kw">get</span>; <span class="kw">init</span>; }
+    <span class="kw">public</span> <span class="tp">int</span>    <span class="pr">Age</span>    { <span class="kw">get</span>; <span class="kw">init</span>; }
+
+    <span class="kw">protected</span> <span class="fn">Animal</span>(<span class="tp">string</span> name, <span class="tp">int</span> age)
+        => (<span class="pr">Name</span>, <span class="pr">Age</span>) = (name, age);
+
+    <span class="cm">// abstract: يجب على الـ SubClass تنفيذها</span>
+    <span class="kw">public abstract void</span> <span class="fn">Speak</span>();
+
+    <span class="cm">// virtual: يمكن للـ SubClass تجاوزها</span>
+    <span class="kw">public virtual</span> <span class="tp">string</span> <span class="fn">Describe</span>()
+        => <span class="st">$"{Name} ({Age} سنوات)"</span>;
+}
+
+<span class="cm">// ==============================
+// Sub Classes
+// ==============================</span>
+<span class="kw">public class</span> <span class="cl">Dog</span> : <span class="cl">Animal</span>
+{
+    <span class="kw">public</span> <span class="tp">string</span> <span class="pr">Breed</span> { <span class="kw">get</span>; <span class="kw">init</span>; }
+
+    <span class="kw">public</span> <span class="fn">Dog</span>(<span class="tp">string</span> name, <span class="tp">int</span> age, <span class="tp">string</span> breed)
+        : <span class="kw">base</span>(name, age) => <span class="pr">Breed</span> = breed;
+
+    <span class="kw">public override void</span> <span class="fn">Speak</span>()
+        => <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"{Name}: Woof! 🐕"</span>);
+
+    <span class="kw">public override</span> <span class="tp">string</span> <span class="fn">Describe</span>()
+        => <span class="st">$"{base.Describe()} — {Breed}"</span>;
+}
+
+<span class="kw">public class</span> <span class="cl">Cat</span> : <span class="cl">Animal</span>
+{
+    <span class="kw">public</span> <span class="fn">Cat</span>(<span class="tp">string</span> name, <span class="tp">int</span> age) : <span class="kw">base</span>(name, age) { }
+    <span class="kw">public override void</span> <span class="fn">Speak</span>()
+        => <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"{Name}: Meow! 🐈"</span>);
+}
+
+<span class="cm">// ==============================
+// Polymorphism
+// ==============================</span>
+<span class="cl">Animal</span>[] animals =
+[
+    <span class="kw">new</span> <span class="cl">Dog</span>(<span class="st">"Rex"</span>, <span class="nm">3</span>, <span class="st">"Husky"</span>),
+    <span class="kw">new</span> <span class="cl">Cat</span>(<span class="st">"Luna"</span>, <span class="nm">2</span>),
+    <span class="kw">new</span> <span class="cl">Dog</span>(<span class="st">"Buddy"</span>, <span class="nm">5</span>, <span class="st">"Lab"</span>)
+];
+
+<span class="kw">foreach</span> (<span class="kw">var</span> a <span class="kw">in</span> animals)
+{
+    a.<span class="fn">Speak</span>();
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"  ↳ {a.Describe()}"</span>);
+}</pre>
+  </div>
+  <div class="output-box">
+    <div class="output-label">// OUTPUT</div>
+    Rex: Woof! 🐕<br/>  ↳ Rex (3 سنوات) — Husky<br/>Luna: Meow! 🐈<br/>  ↳ Luna (2 سنوات)<br/>Buddy: Woof! 🐕<br/>  ↳ Buddy (5 سنوات) — Lab
+  </div>
+</div>
+
+<!-- ===== S10: INTERFACES ===== -->
+<div class="lesson-section" id="s10">
+  <span class="level-badge level-intermediate">🔥 متوسط</span>
+  <div class="lesson-header">
+    <div class="lesson-num">10</div>
+    <div>
+      <h2 class="lesson-title">الواجهات (Interfaces)</h2>
+      <p class="lesson-subtitle">عقود البرمجة — الفرق بين Interface و Abstract Class</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — Interfaces</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// Interface = عقد: "من ينفّذني يجب أن يوفّر هذه الدوال"</span>
+<span class="kw">public interface</span> <span class="cl">IPaymentGateway</span>
+{
+    <span class="tp">bool</span>  <span class="fn">ProcessPayment</span>(<span class="tp">decimal</span> amount);
+    <span class="tp">string</span> <span class="pr">Name</span> { <span class="kw">get</span>; }
+
+    <span class="cm">// Default Implementation (C# 8+)</span>
+    <span class="kw">void</span> <span class="fn">LogTransaction</span>(<span class="tp">decimal</span> amount)
+        => <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"[{Name}] معالجة: {amount:C}"</span>);
+}
+
+<span class="kw">public interface</span> <span class="cl">IRefundable</span>
+{
+    <span class="tp">bool</span> <span class="fn">Refund</span>(<span class="tp">decimal</span> amount);
+}
+
+<span class="cm">// Class تنفّذ واجهتين</span>
+<span class="kw">public class</span> <span class="cl">StripeGateway</span> : <span class="cl">IPaymentGateway</span>, <span class="cl">IRefundable</span>
+{
+    <span class="kw">public</span> <span class="tp">string</span> <span class="pr">Name</span> => <span class="st">"Stripe"</span>;
+
+    <span class="kw">public bool</span> <span class="fn">ProcessPayment</span>(<span class="tp">decimal</span> amount)
+    {
+        <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"Stripe: دفع {amount:C} ✅"</span>);
+        <span class="kw">return true</span>;
+    }
+
+    <span class="kw">public bool</span> <span class="fn">Refund</span>(<span class="tp">decimal</span> amount)
+    {
+        <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"Stripe: استرداد {amount:C} 🔄"</span>);
+        <span class="kw">return true</span>;
+    }
+}
+
+<span class="cm">// Dependency Injection مثال</span>
+<span class="kw">void</span> <span class="fn">Checkout</span>(<span class="cl">IPaymentGateway</span> gateway, <span class="tp">decimal</span> total)
+{
+    gateway.<span class="fn">LogTransaction</span>(total);
+    gateway.<span class="fn">ProcessPayment</span>(total);
+}
+
+<span class="kw">var</span> stripe = <span class="kw">new</span> <span class="cl">StripeGateway</span>();
+<span class="fn">Checkout</span>(stripe, <span class="nm">99.99m</span>);</pre>
+  </div>
+  <div class="info-box info-note">
+    <span class="info-box-icon">📌</span>
+    <div><strong>Interface vs Abstract Class:</strong> استخدم Interface عندما تريد تعريف "قدرة" يمكن لأي كلاس اكتسابها. استخدم Abstract Class عندما يكون هناك كود مشترك بين الكلاسات المشتقة.</div>
+  </div>
+</div>
+
+<!-- ===== S11: GENERICS ===== -->
+<div class="lesson-section" id="s11">
+  <span class="level-badge level-intermediate">🔥 متوسط</span>
+  <div class="lesson-header">
+    <div class="lesson-num">11</div>
+    <div>
+      <h2 class="lesson-title">الـ Generics</h2>
+      <p class="lesson-subtitle">كود يعمل مع أي نوع — Type Safety + Reusability</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — Generics</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// Generic Method</span>
+<span class="kw">static</span> <span class="tp">T</span> <span class="fn">GetMax</span>&lt;<span class="tp">T</span>&gt;(<span class="tp">T</span> a, <span class="tp">T</span> b) <span class="kw">where</span> <span class="tp">T</span> : <span class="cl">IComparable</span>&lt;<span class="tp">T</span>&gt;
+    => a.<span class="fn">CompareTo</span>(b) > <span class="nm">0</span> ? a : b;
+
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="fn">GetMax</span>(<span class="nm">10</span>, <span class="nm">25</span>));          <span class="cm">// 25</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="fn">GetMax</span>(<span class="st">"Apple"</span>, <span class="st">"Mango"</span>)); <span class="cm">// Mango</span>
+
+<span class="cm">// Generic Class — Stack بسيط</span>
+<span class="kw">public class</span> <span class="cl">SimpleStack</span>&lt;<span class="tp">T</span>&gt;
+{
+    <span class="kw">private</span> <span class="cl">List</span>&lt;<span class="tp">T</span>&gt; _items = [];
+
+    <span class="kw">public void</span> <span class="fn">Push</span>(<span class="tp">T</span> item) => _items.<span class="fn">Add</span>(item);
+
+    <span class="kw">public</span> <span class="tp">T</span> <span class="fn">Pop</span>()
+    {
+        <span class="kw">if</span> (_items.<span class="pr">Count</span> == <span class="nm">0</span>)
+            <span class="kw">throw new</span> <span class="cl">InvalidOperationException</span>(<span class="st">"Stack فارغ!"</span>);
+        <span class="kw">var</span> item = _items[^<span class="nm">1</span>];
+        _items.<span class="fn">RemoveAt</span>(_items.<span class="pr">Count</span> - <span class="nm">1</span>);
+        <span class="kw">return</span> item;
+    }
+
+    <span class="kw">public</span> <span class="tp">int</span> <span class="pr">Count</span> => _items.<span class="pr">Count</span>;
+}
+
+<span class="kw">var</span> stack = <span class="kw">new</span> <span class="cl">SimpleStack</span>&lt;<span class="tp">int</span>&gt;();
+stack.<span class="fn">Push</span>(<span class="nm">1</span>); stack.<span class="fn">Push</span>(<span class="nm">2</span>); stack.<span class="fn">Push</span>(<span class="nm">3</span>);
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(stack.<span class="fn">Pop</span>());  <span class="cm">// 3</span></pre>
+  </div>
+</div>
+
+<!-- ===== S12: COLLECTIONS ===== -->
+<div class="lesson-section" id="s12">
+  <span class="level-badge level-intermediate">🔥 متوسط</span>
+  <div class="lesson-header">
+    <div class="lesson-num">12</div>
+    <div>
+      <h2 class="lesson-title">المجموعات (Collections)</h2>
+      <p class="lesson-subtitle">List, Dictionary, HashSet, Queue, Stack</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — Collections</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// ==============================
+// List&lt;T&gt; — المصفوفة الديناميكية
+// ==============================</span>
+<span class="kw">var</span> names = <span class="kw">new</span> <span class="cl">List</span>&lt;<span class="tp">string</span>&gt; { <span class="st">"Yahya"</span>, <span class="st">"Ali"</span>, <span class="st">"Sara"</span> };
+names.<span class="fn">Add</span>(<span class="st">"Omar"</span>);
+names.<span class="fn">Remove</span>(<span class="st">"Ali"</span>);
+names.<span class="fn">Sort</span>();
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="tp">string</span>.<span class="fn">Join</span>(<span class="st">", "</span>, names));
+
+<span class="cm">// ==============================
+// Dictionary&lt;K, V&gt; — جدول البحث
+// ==============================</span>
+<span class="kw">var</span> scores = <span class="kw">new</span> <span class="cl">Dictionary</span>&lt;<span class="tp">string</span>, <span class="tp">int</span>&gt;
+{
+    [<span class="st">"C#"</span>]         = <span class="nm">95</span>,
+    [<span class="st">"JavaScript"</span>] = <span class="nm">88</span>,
+    [<span class="st">"Python"</span>]     = <span class="nm">82</span>
+};
+
+scores[<span class="st">"Go"</span>] = <span class="nm">75</span>;  <span class="cm">// إضافة جديد</span>
+
+<span class="kw">foreach</span> (<span class="kw">var</span> (lang, score) <span class="kw">in</span> scores)
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"{lang}: {score}"</span>);
+
+<span class="cm">// ==============================
+// HashSet&lt;T&gt; — بدون تكرار
+// ==============================</span>
+<span class="kw">var</span> tags = <span class="kw">new</span> <span class="cl">HashSet</span>&lt;<span class="tp">string</span>&gt; { <span class="st">"dev"</span>, <span class="st">"ui"</span>, <span class="st">"dev"</span> };
+tags.<span class="fn">Add</span>(<span class="st">"ux"</span>);
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(tags.<span class="pr">Count</span>);  <span class="cm">// 3 (dev لا يتكرر)</span>
+
+<span class="cm">// ==============================
+// Queue&lt;T&gt; — FIFO (أول داخل أول خارج)
+// ==============================</span>
+<span class="kw">var</span> queue = <span class="kw">new</span> <span class="cl">Queue</span>&lt;<span class="tp">string</span>&gt;();
+queue.<span class="fn">Enqueue</span>(<span class="st">"Request 1"</span>);
+queue.<span class="fn">Enqueue</span>(<span class="st">"Request 2"</span>);
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(queue.<span class="fn">Dequeue</span>());  <span class="cm">// "Request 1"</span></pre>
+  </div>
+</div>
+
+<!-- ===== S13: LINQ ===== -->
+<div class="lesson-section" id="s13">
+  <span class="level-badge level-advanced">💎 متقدم</span>
+  <div class="lesson-header">
+    <div class="lesson-num">13</div>
+    <div>
+      <h2 class="lesson-title">LINQ — اللغة المدمجة للاستعلامات</h2>
+      <p class="lesson-subtitle">أقوى ميزة في C# — قدرة SQL داخل الكود</p>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <p><strong>LINQ</strong> (Language Integrated Query) يتيح لك الاستعلام عن أي مجموعة بيانات (List, Array, Database, XML...) باستخدام نفس الصياغة الأنيقة.</p>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — LINQ شامل</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="kw">record</span> <span class="cl">Product</span>(<span class="tp">string</span> Name, <span class="tp">decimal</span> Price, <span class="tp">string</span> Category);
+
+<span class="kw">var</span> products = <span class="kw">new</span> <span class="cl">List</span>&lt;<span class="cl">Product</span>&gt;
+{
+    <span class="kw">new</span>(<span class="st">"Laptop"</span>,   <span class="nm">3500m</span>, <span class="st">"Tech"</span>),
+    <span class="kw">new</span>(<span class="st">"Mouse"</span>,    <span class="nm">150m</span>,  <span class="st">"Tech"</span>),
+    <span class="kw">new</span>(<span class="st">"Desk"</span>,     <span class="nm">800m</span>,  <span class="st">"Furniture"</span>),
+    <span class="kw">new</span>(<span class="st">"Chair"</span>,    <span class="nm">1200m</span>, <span class="st">"Furniture"</span>),
+    <span class="kw">new</span>(<span class="st">"Keyboard"</span>, <span class="nm">250m</span>,  <span class="st">"Tech"</span>)
+};
+
+<span class="cm">// ==============================
+// Method Syntax (الأكثر شيوعاً)
+// ==============================</span>
+
+<span class="cm">// Where — التصفية</span>
+<span class="kw">var</span> expensive = products
+    .<span class="fn">Where</span>(p => p.Price > <span class="nm">500m</span>)
+    .<span class="fn">OrderBy</span>(p => p.Price);
+
+<span class="cm">// Select — التحويل</span>
+<span class="kw">var</span> names = products.<span class="fn">Select</span>(p => p.Name.<span class="fn">ToUpper</span>());
+
+<span class="cm">// GroupBy — التجميع</span>
+<span class="kw">var</span> byCategory = products
+    .<span class="fn">GroupBy</span>(p => p.Category)
+    .<span class="fn">Select</span>(g => <span class="kw">new</span>
+    {
+        Category = g.Key,
+        Count    = g.<span class="pr">Count</span>(),
+        AvgPrice = g.<span class="fn">Average</span>(p => p.Price)
+    });
+
+<span class="kw">foreach</span> (<span class="kw">var</span> cat <span class="kw">in</span> byCategory)
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"{cat.Category}: {cat.Count} منتج، متوسط السعر {cat.AvgPrice:C}"</span>);
+
+<span class="cm">// Aggregate Functions</span>
+<span class="tp">decimal</span> total   = products.<span class="fn">Sum</span>(p => p.Price);
+<span class="tp">decimal</span> maxPrice = products.<span class="fn">Max</span>(p => p.Price);
+<span class="kw">var</span>     cheapest = products.<span class="fn">MinBy</span>(p => p.Price)!;
+
+<span class="cm">// ==============================
+// Query Syntax (شبيه SQL)
+// ==============================</span>
+<span class="kw">var</span> techItems =
+    <span class="kw">from</span> p <span class="kw">in</span> products
+    <span class="kw">where</span> p.Category == <span class="st">"Tech"</span>
+    <span class="kw">orderby</span> p.Price <span class="kw">descending</span>
+    <span class="kw">select</span> <span class="st">$"{p.Name} — {p.Price:C}"</span>;
+
+<span class="kw">foreach</span> (<span class="kw">var</span> item <span class="kw">in</span> techItems)
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(item);</pre>
+  </div>
+  <div class="output-box">
+    <div class="output-label">// OUTPUT</div>
+    Tech: 3 منتج، متوسط السعر 1,300.00<br/>Furniture: 2 منتج، متوسط السعر 1,000.00<br/>Laptop — 3,500.00<br/>Keyboard — 250.00<br/>Mouse — 150.00
+  </div>
+</div>
+
+<!-- ===== S14: DELEGATES & EVENTS ===== -->
+<div class="lesson-section" id="s14">
+  <span class="level-badge level-advanced">💎 متقدم</span>
+  <div class="lesson-header">
+    <div class="lesson-num">14</div>
+    <div>
+      <h2 class="lesson-title">Delegates, Lambda & Events</h2>
+      <p class="lesson-subtitle">الدوال كقيم — الأساس الفلسفي للـ Functional Programming في C#</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — Delegates, Func, Action, Events</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// ==============================
+// 1. Delegate — نوع يمثل دالة
+// ==============================</span>
+<span class="kw">delegate</span> <span class="tp">int</span> <span class="cl">MathOp</span>(<span class="tp">int</span> a, <span class="tp">int</span> b);
+
+<span class="cl">MathOp</span> add      = (<span class="nl">a</span>, <span class="nl">b</span>) => a + b;
+<span class="cl">MathOp</span> multiply = (<span class="nl">a</span>, <span class="nl">b</span>) => a * b;
+
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(add(<span class="nm">5</span>, <span class="nm">3</span>));       <span class="cm">// 8</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(multiply(<span class="nm">5</span>, <span class="nm">3</span>)); <span class="cm">// 15</span>
+
+<span class="cm">// ==============================
+// 2. Func&lt;T, TResult&gt; (مدمج)
+// ==============================</span>
+<span class="cl">Func</span>&lt;<span class="tp">int</span>, <span class="tp">int</span>, <span class="tp">int</span>&gt;  power  = (<span class="nl">base_</span>, <span class="nl">exp</span>) => (<span class="tp">int</span>)<span class="cl">Math</span>.<span class="fn">Pow</span>(base_, exp);
+<span class="cl">Func</span>&lt;<span class="tp">string</span>, <span class="tp">string</span>&gt; upper  = s => s.<span class="fn">ToUpper</span>();
+<span class="cl">Action</span>&lt;<span class="tp">string</span>&gt;        log    = msg => <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"[LOG] {msg}"</span>);
+<span class="cl">Predicate</span>&lt;<span class="tp">int</span>&gt;        isEven = n => n % <span class="nm">2</span> == <span class="nm">0</span>;
+
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(power(<span class="nm">2</span>, <span class="nm">10</span>));  <span class="cm">// 1024</span>
+log(<span class="st">"تم تسجيل الدخول"</span>);
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(isEven(<span class="nm">7</span>));     <span class="cm">// False</span>
+
+<span class="cm">// ==============================
+// 3. Events — نظام الأحداث
+// ==============================</span>
+<span class="kw">public class</span> <span class="cl">Button</span>
+{
+    <span class="kw">public event</span> <span class="cl">Action</span>&lt;<span class="tp">string</span>&gt;? Clicked;
+
+    <span class="kw">public void</span> <span class="fn">Click</span>(<span class="tp">string</span> label)
+    {
+        <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"تم النقر على: {label}"</span>);
+        Clicked?.Invoke(label);
+    }
+}
+
+<span class="kw">var</span> btn = <span class="kw">new</span> <span class="cl">Button</span>();
+btn.Clicked += label => <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"  → Handler 1: {label}"</span>);
+btn.Clicked += label => <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"  → Handler 2: تسجيل"</span>);
+btn.<span class="fn">Click</span>(<span class="st">"حفظ"</span>);</pre>
+  </div>
+  <div class="output-box">
+    <div class="output-label">// OUTPUT</div>
+    تم النقر على: حفظ<br/>  → Handler 1: حفظ<br/>  → Handler 2: تسجيل
+  </div>
+</div>
+
+<!-- ===== S15: ASYNC/AWAIT ===== -->
+<div class="lesson-section" id="s15">
+  <span class="level-badge level-advanced">💎 متقدم</span>
+  <div class="lesson-header">
+    <div class="lesson-num">15</div>
+    <div>
+      <h2 class="lesson-title">Async / Await — البرمجة اللامتزامنة</h2>
+      <p class="lesson-subtitle">أهم مفهوم للتطبيقات الحقيقية — API Calls, File IO, Database</p>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <p><strong>Async/Await</strong> يجعل العمليات الطويلة (شبكة، قاعدة بيانات، ملفات) لا تُجمّد واجهة المستخدم أو الخادم.</p>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — Async/Await شامل</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="kw">using</span> System.Net.Http;
+<span class="kw">using</span> System.Text.Json;
+
+<span class="cm">// ==============================
+// 1. دالة async أساسية
+// ==============================</span>
+<span class="kw">static async</span> <span class="cl">Task</span>&lt;<span class="tp">string</span>&gt; <span class="fn">FetchDataAsync</span>(<span class="tp">string</span> url)
+{
+    <span class="kw">using var</span> client = <span class="kw">new</span> <span class="cl">HttpClient</span>();
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"جاري الجلب: {url}"</span>);
+    <span class="tp">string</span> data = <span class="kw">await</span> client.<span class="fn">GetStringAsync</span>(url);
+    <span class="kw">return</span> data[..<span class="fn">Math</span>.<span class="fn">Min</span>(<span class="nm">100</span>, data.Length)]; <span class="cm">// أول 100 حرف</span>
+}
+
+<span class="cm">// ==============================
+// 2. تشغيل عمليات بالتوازي
+// ==============================</span>
+<span class="kw">static async</span> <span class="cl">Task</span> <span class="fn">RunParallelAsync</span>()
+{
+    <span class="kw">var</span> task1 = <span class="fn">SimulateWorkAsync</span>(<span class="st">"DB Query"</span>,   <span class="nm">1000</span>);
+    <span class="kw">var</span> task2 = <span class="fn">SimulateWorkAsync</span>(<span class="st">"API Call"</span>,   <span class="nm">1500</span>);
+    <span class="kw">var</span> task3 = <span class="fn">SimulateWorkAsync</span>(<span class="st">"File Read"</span>,  <span class="nm">800</span>);
+
+    <span class="cm">// ينتهي الثلاثة معاً (لا تنتظر واحداً تلو الآخر)</span>
+    <span class="kw">await</span> <span class="cl">Task</span>.<span class="fn">WhenAll</span>(task1, task2, task3);
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"✅ كل العمليات اكتملت!"</span>);
+}
+
+<span class="kw">static async</span> <span class="cl">Task</span>&lt;<span class="tp">string</span>&gt; <span class="fn">SimulateWorkAsync</span>(<span class="tp">string</span> name, <span class="tp">int</span> ms)
+{
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"بدأ: {name}"</span>);
+    <span class="kw">await</span> <span class="cl">Task</span>.<span class="fn">Delay</span>(ms);
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"انتهى: {name}"</span>);
+    <span class="kw">return</span> name;
+}
+
+<span class="cm">// ==============================
+// 3. try/catch مع async
+// ==============================</span>
+<span class="kw">static async</span> <span class="cl">Task</span>&lt;<span class="tp">bool</span>&gt; <span class="fn">SafeFetchAsync</span>(<span class="tp">string</span> url)
+{
+    <span class="kw">try</span>
+    {
+        <span class="kw">var</span> result = <span class="kw">await</span> <span class="fn">FetchDataAsync</span>(url);
+        <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"نجح: {result.Length} حرف"</span>);
+        <span class="kw">return true</span>;
+    }
+    <span class="kw">catch</span> (<span class="cl">HttpRequestException</span> ex)
+    {
+        <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"خطأ شبكة: {ex.Message}"</span>);
+        <span class="kw">return false</span>;
+    }
+}
+
+<span class="cm">// تشغيل</span>
+<span class="kw">await</span> <span class="fn">RunParallelAsync</span>();</pre>
+  </div>
+  <div class="info-box info-warn">
+    <span class="info-box-icon">⚠️</span>
+    <div><strong>تحذير:</strong> لا تستخدم <code>.Result</code> أو <code>.Wait()</code> على Task — يسبب Deadlock في تطبيقات UI وASP.NET. استخدم <code>await</code> دائماً.</div>
+  </div>
+</div>
+
+<!-- ===== S16: EXCEPTION HANDLING ===== -->
+<div class="lesson-section" id="s16">
+  <span class="level-badge level-advanced">💎 متقدم</span>
+  <div class="lesson-header">
+    <div class="lesson-num">16</div>
+    <div>
+      <h2 class="lesson-title">معالجة الأخطاء (Exception Handling)</h2>
+      <p class="lesson-subtitle">try/catch/finally, Custom Exceptions, Global Handler</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — معالجة الأخطاء</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// ==============================
+// 1. try / catch / finally
+// ==============================</span>
+<span class="kw">try</span>
+{
+    <span class="tp">int</span>[] arr = [<span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span>];
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(arr[<span class="nm">10</span>]); <span class="cm">// IndexOutOfRangeException</span>
+}
+<span class="kw">catch</span> (<span class="cl">IndexOutOfRangeException</span> ex)
+{
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"خطأ الفهرس: {ex.Message}"</span>);
+}
+<span class="kw">catch</span> (<span class="cl">Exception</span> ex) <span class="kw">when</span> (ex.Message.<span class="fn">Contains</span>(<span class="st">"network"</span>))
+{
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"خطأ شبكة محدد"</span>);
+}
+<span class="kw">catch</span> (<span class="cl">Exception</span> ex)
+{
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"خطأ عام: {ex.GetType().Name}"</span>);
+}
+<span class="kw">finally</span>
+{
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"✅ ينفّذ دائماً — للتنظيف"</span>);
+}
+
+<span class="cm">// ==============================
+// 2. Custom Exception
+// ==============================</span>
+<span class="kw">public class</span> <span class="cl">ValidationException</span> : <span class="cl">Exception</span>
+{
+    <span class="kw">public</span> <span class="tp">string</span> <span class="pr">Field</span> { <span class="kw">get</span>; }
+
+    <span class="kw">public</span> <span class="fn">ValidationException</span>(<span class="tp">string</span> field, <span class="tp">string</span> message)
+        : <span class="kw">base</span>(message)
+    {
+        <span class="pr">Field</span> = field;
+    }
+}
+
+<span class="kw">static void</span> <span class="fn">ValidateAge</span>(<span class="tp">int</span> age)
+{
+    <span class="kw">if</span> (age < <span class="nm">0</span> || age > <span class="nm">150</span>)
+        <span class="kw">throw new</span> <span class="cl">ValidationException</span>(<span class="st">"age"</span>, <span class="st">$"العمر {age} غير صحيح"</span>);
+}
+
+<span class="kw">try</span> { <span class="fn">ValidateAge</span>(-<span class="nm">5</span>); }
+<span class="kw">catch</span> (<span class="cl">ValidationException</span> ex)
+{
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"خطأ التحقق في [{ex.Field}]: {ex.Message}"</span>);
+}</pre>
+  </div>
+</div>
+
+<!-- ===== S17: PATTERN MATCHING ===== -->
+<div class="lesson-section" id="s17">
+  <span class="level-badge level-expert">🚀 خبير</span>
+  <div class="lesson-header">
+    <div class="lesson-num">17</div>
+    <div>
+      <h2 class="lesson-title">Pattern Matching</h2>
+      <p class="lesson-subtitle">ميزة C# 8-13 الأقوى — Type, Property, List Patterns</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — Pattern Matching الشامل</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// ==============================
+// Type Pattern
+// ==============================</span>
+<span class="kw">static</span> <span class="tp">string</span> <span class="fn">Describe</span>(<span class="kw">object</span> obj) => obj <span class="kw">switch</span>
+{
+    <span class="tp">int</span>    n  <span class="kw">when</span> n > <span class="nm">0</span> => <span class="st">$"عدد موجب: {n}"</span>,
+    <span class="tp">int</span>    n              => <span class="st">$"عدد: {n}"</span>,
+    <span class="tp">string</span> { Length: 0 } => <span class="st">"نص فارغ"</span>,
+    <span class="tp">string</span> s              => <span class="st">$"نص: {s}"</span>,
+    <span class="kw">null</span>                   => <span class="st">"null"</span>,
+    _                      => <span class="st">$"نوع: {obj.GetType().Name}"</span>
+};
+
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="fn">Describe</span>(<span class="nm">42</span>));     <span class="cm">// عدد موجب: 42</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="fn">Describe</span>(<span class="st">"Dev"</span>));  <span class="cm">// نص: Dev</span>
+
+<span class="cm">// ==============================
+// Property Pattern
+// ==============================</span>
+<span class="kw">record</span> <span class="cl">Order</span>(<span class="tp">decimal</span> Amount, <span class="tp">string</span> Status, <span class="tp">bool</span> IsPremium);
+
+<span class="kw">static</span> <span class="tp">decimal</span> <span class="fn">CalcDiscount</span>(<span class="cl">Order</span> o) => o <span class="kw">switch</span>
+{
+    { IsPremium: <span class="kw">true</span>, Amount: > <span class="nm">1000m</span> } => o.Amount * <span class="nm">0.20m</span>,
+    { IsPremium: <span class="kw">true</span> }                   => o.Amount * <span class="nm">0.10m</span>,
+    { Status: <span class="st">"VIP"</span>, Amount: > <span class="nm">500m</span> }   => o.Amount * <span class="nm">0.15m</span>,
+    _                                       => <span class="nm">0m</span>
+};
+
+<span class="kw">var</span> order = <span class="kw">new</span> <span class="cl">Order</span>(<span class="nm">1500m</span>, <span class="st">"Regular"</span>, <span class="kw">true</span>);
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"الخصم: {CalcDiscount(order):C}"</span>); <span class="cm">// 300.00</span>
+
+<span class="cm">// ==============================
+// List Pattern (C# 11)
+// ==============================</span>
+<span class="kw">static</span> <span class="tp">string</span> <span class="fn">CheckList</span>(<span class="tp">int</span>[] arr) => arr <span class="kw">switch</span>
+{
+    []              => <span class="st">"فارغ"</span>,
+    [<span class="kw">var</span> single]   => <span class="st">$"عنصر واحد: {single}"</span>,
+    [<span class="kw">var</span> first, ..] => <span class="st">$"يبدأ بـ: {first}"</span>
+};
+
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="fn">CheckList</span>([]));           <span class="cm">// فارغ</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="fn">CheckList</span>([<span class="nm">7</span>]));          <span class="cm">// عنصر واحد: 7</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="fn">CheckList</span>([<span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span>]));   <span class="cm">// يبدأ بـ: 1</span></pre>
+  </div>
+</div>
+
+<!-- ===== S18: RECORDS ===== -->
+<div class="lesson-section" id="s18">
+  <span class="level-badge level-expert">🚀 خبير</span>
+  <div class="lesson-header">
+    <div class="lesson-num">18</div>
+    <div>
+      <h2 class="lesson-title">Records و Immutability</h2>
+      <p class="lesson-subtitle">C# 9+ — بيانات ثابتة، مقارنة بالقيم، with expression</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — Records</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// ==============================
+// Record (Positional) — أبسط طريقة
+// ==============================</span>
+<span class="kw">record</span> <span class="cl">Point</span>(<span class="tp">double</span> X, <span class="tp">double</span> Y);
+
+<span class="kw">var</span> p1 = <span class="kw">new</span> <span class="cl">Point</span>(<span class="nm">3.0</span>, <span class="nm">4.0</span>);
+<span class="kw">var</span> p2 = <span class="kw">new</span> <span class="cl">Point</span>(<span class="nm">3.0</span>, <span class="nm">4.0</span>);
+<span class="kw">var</span> p3 = p1 <span class="kw">with</span> { X = <span class="nm">10.0</span> };     <span class="cm">// نسخة معدّلة</span>
+
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(p1 == p2);        <span class="cm">// True  (مقارنة بالقيمة)</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(p1);              <span class="cm">// Point { X = 3, Y = 4 }</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(p3);              <span class="cm">// Point { X = 10, Y = 4 }</span>
+
+<span class="cm">// ==============================
+// Record Class (مفصّل)
+// ==============================</span>
+<span class="kw">public record</span> <span class="cl">User</span>
+{
+    <span class="kw">public required</span> <span class="tp">string</span> <span class="pr">Id</span>    { <span class="kw">get</span>; <span class="kw">init</span>; }
+    <span class="kw">public required</span> <span class="tp">string</span> <span class="pr">Name</span>  { <span class="kw">get</span>; <span class="kw">init</span>; }
+    <span class="kw">public</span>          <span class="tp">string</span> <span class="pr">Email</span> { <span class="kw">get</span>; <span class="kw">init</span>; } = <span class="tp">string</span>.<span class="pr">Empty</span>;
+
+    <span class="cm">// يمكن إضافة methods</span>
+    <span class="kw">public</span> <span class="tp">string</span> <span class="fn">GetDisplayName</span>() => <span class="st">$"@{Name.ToLower()}"</span>;
+}
+
+<span class="kw">var</span> user = <span class="kw">new</span> <span class="cl">User</span> { Id = <span class="st">"1"</span>, Name = <span class="st">"Yahya"</span>, Email = <span class="st">"y@dev.com"</span> };
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(user.<span class="fn">GetDisplayName</span>());  <span class="cm">// @yahya</span>
+
+<span class="cm">// user.Name = "X"; ← خطأ! init-only</span>
+
+<span class="cm">// ==============================
+// Record Struct (C# 10) — Value Type
+// ==============================</span>
+<span class="kw">readonly record struct</span> <span class="cl">Color</span>(<span class="tp">byte</span> R, <span class="tp">byte</span> G, <span class="tp">byte</span> B)
+{
+    <span class="kw">public</span> <span class="tp">string</span> <span class="pr">Hex</span> => <span class="st">$"#{R:X2}{G:X2}{B:X2}"</span>;
+}
+
+<span class="kw">var</span> purple = <span class="kw">new</span> <span class="cl">Color</span>(<span class="nm">124</span>, <span class="nm">58</span>, <span class="nm">237</span>);
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(purple.<span class="pr">Hex</span>);  <span class="cm">// #7C3AED</span></pre>
+  </div>
+  <div class="output-box">
+    <div class="output-label">// OUTPUT</div>
+    True<br/>Point { X = 3, Y = 4 }<br/>Point { X = 10, Y = 4 }<br/>@yahya<br/>#7C3AED
+  </div>
+</div>
+
+<!-- ===== S19: NULLABLE ===== -->
+<div class="lesson-section" id="s19">
+  <span class="level-badge level-expert">🚀 خبير</span>
+  <div class="lesson-header">
+    <div class="lesson-num">19</div>
+    <div>
+      <h2 class="lesson-title">Nullable Reference Types & Null Safety</h2>
+      <p class="lesson-subtitle">C# 8+ — القضاء على NullReferenceException</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — Null Safety</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// في .csproj: &lt;Nullable&gt;enable&lt;/Nullable&gt;</span>
+
+<span class="tp">string</span>  name     = <span class="st">"Yahya"</span>;   <span class="cm">// لا يقبل null</span>
+<span class="tp">string</span>? nickname = <span class="kw">null</span>;     <span class="cm">// يقبل null (? = nullable)</span>
+
+<span class="cm">// Null Conditional ?.</span>
+<span class="tp">int</span>? len = nickname?.<span class="pr">Length</span>;  <span class="cm">// null بدل crash</span>
+
+<span class="cm">// Null Coalescing ??</span>
+<span class="tp">string</span> display = nickname ?? <span class="st">"مجهول"</span>;
+
+<span class="cm">// Null Coalescing Assignment ??=</span>
+nickname ??= <span class="st">"Dev"</span>;  <span class="cm">// يُعيّن فقط إذا كان null</span>
+
+<span class="cm">// Null Forgiving ! (استخدم بحذر)</span>
+<span class="tp">string</span> guaranteed = nickname!;  <span class="cm">// أنت مسؤول</span>
+
+<span class="cm">// ==============================
+// Pattern Matching مع Null
+// ==============================</span>
+<span class="kw">static void</span> <span class="fn">Process</span>(<span class="tp">string</span>? value)
+{
+    <span class="kw">if</span> (value <span class="kw">is</span> <span class="kw">null</span>)
+    {
+        <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"القيمة null"</span>);
+        <span class="kw">return</span>;
+    }
+
+    <span class="cm">// هنا المترجم يعرف أن value ليست null</span>
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(value.<span class="fn">ToUpper</span>());
+}
+
+<span class="cm">// ==============================
+// Required Properties (C# 11)
+// ==============================</span>
+<span class="kw">public class</span> <span class="cl">Config</span>
+{
+    <span class="kw">public required</span> <span class="tp">string</span> <span class="pr">ConnectionString</span> { <span class="kw">get</span>; <span class="kw">init</span>; }
+    <span class="kw">public required</span> <span class="tp">string</span> <span class="pr">AppName</span>          { <span class="kw">get</span>; <span class="kw">init</span>; }
+    <span class="kw">public</span>          <span class="tp">int</span>    <span class="pr">Timeout</span>          { <span class="kw">get</span>; <span class="kw">init</span>; } = <span class="nm">30</span>;
+}
+
+<span class="cm">// خطأ وقت الترجمة إذا لم تُعيّن required:</span>
+<span class="kw">var</span> cfg = <span class="kw">new</span> <span class="cl">Config</span>
+{
+    <span class="pr">ConnectionString</span> = <span class="st">"Server=.;..."</span>,
+    <span class="pr">AppName</span>          = <span class="st">"Yahya.DEV"</span>
+};</pre>
+  </div>
+</div>
+
+<!-- ===== S20: C# 13 NEW FEATURES ===== -->
+<div class="lesson-section" id="s20">
+  <span class="level-badge level-expert">🚀 خبير</span>
+  <div class="lesson-header">
+    <div class="lesson-num">20</div>
+    <div>
+      <h2 class="lesson-title">C# 13 — أحدث الميزات 2024/2025</h2>
+      <p class="lesson-subtitle">params Collections, Lock, Escape Sequences, Partial Properties</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# 13 — .NET 9</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// ==============================
+// 1. params Collections (C# 13)
+// ==============================</span>
+<span class="cm">// قبل C#13: فقط params int[] arr</span>
+<span class="cm">// الآن يدعم List, Span, IEnumerable وغيرها</span>
+<span class="kw">static</span> <span class="tp">int</span> <span class="fn">Sum</span>(<span class="kw">params</span> <span class="cl">IEnumerable</span>&lt;<span class="tp">int</span>&gt; numbers)
+    => numbers.<span class="fn">Sum</span>();
+
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="fn">Sum</span>(<span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span>, <span class="nm">4</span>, <span class="nm">5</span>));      <span class="cm">// 15</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="fn">Sum</span>([<span class="nm">10</span>, <span class="nm">20</span>, <span class="nm">30</span>]));       <span class="cm">// 60</span>
+
+<span class="cm">// ==============================
+// 2. New Lock Type (C# 13)
+// ==============================</span>
+<span class="cm">// أفضل من lock(object) القديم</span>
+<span class="kw">var</span> lockObj = <span class="kw">new</span> <span class="cl">System.Threading.Lock</span>();
+
+<span class="kw">lock</span> (lockObj)
+{
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"عملية thread-safe ✅"</span>);
+}
+
+<span class="cm">// ==============================
+// 3. Escape Sequence \e (C# 13)
+// ==============================</span>
+<span class="cm">// \e = ESC character (ASCII 27) للـ terminal colors</span>
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"\e[32mنص أخضر في الـ terminal\e[0m"</span>);
+
+<span class="cm">// ==============================
+// 4. Primary Constructors (C# 12 - شائع جداً)
+// ==============================</span>
+<span class="kw">public class</span> <span class="cl">ApiService</span>(<span class="cl">HttpClient</span> httpClient, <span class="tp">string</span> baseUrl)
+{
+    <span class="kw">public async</span> <span class="cl">Task</span>&lt;<span class="tp">string</span>&gt; <span class="fn">GetAsync</span>(<span class="tp">string</span> endpoint)
+        => <span class="kw">await</span> httpClient.<span class="fn">GetStringAsync</span>(<span class="st">$"{baseUrl}/{endpoint}"</span>);
+}
+
+<span class="cm">// ==============================
+// 5. Collection Expressions (C# 12)
+// ==============================</span>
+<span class="tp">int</span>[]            arr   = [<span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span>];
+<span class="cl">List</span>&lt;<span class="tp">string</span>&gt;     list  = [<span class="st">"a"</span>, <span class="st">"b"</span>];
+<span class="cl">Span</span>&lt;<span class="tp">int</span>&gt;         span  = [<span class="nm">10</span>, <span class="nm">20</span>];
+
+<span class="cm">// Spread operator ..</span>
+<span class="tp">int</span>[] combined = [..<span class="nl">arr</span>, <span class="nm">4</span>, <span class="nm">5</span>, <span class="nm">6</span>]; <span class="cm">// [1,2,3,4,5,6]</span>
+
+<span class="cm">// ==============================
+// 6. Inline Arrays (C# 12) — للأداء
+// ==============================</span>
+[<span class="cl">System.Runtime.CompilerServices.InlineArray</span>(<span class="nm">10</span>)]
+<span class="kw">public struct</span> <span class="cl">Buffer10</span>
+{
+    <span class="kw">private</span> <span class="tp">int</span> _element;  <span class="cm">// 10 int على الـ stack</span>
+}</pre>
+  </div>
+
+  <div class="tags">
+    <span class="tag">params IEnumerable</span>
+    <span class="tag cyan">System.Threading.Lock</span>
+    <span class="tag green">Collection Expressions</span>
+    <span class="tag gold">Primary Constructors</span>
+    <span class="tag">Spread Operator ..</span>
+    <span class="tag cyan">Inline Arrays</span>
+    <span class="tag green">\e Escape</span>
+  </div>
+
+  <div class="info-box info-tip">
+    <span class="info-box-icon">🚀</span>
+    <div><strong>الخطوة التالية:</strong> بعد إتقان هذا الدليل، تعمّق في: <strong>ASP.NET Core</strong> لبناء APIs، أو <strong>Unity</strong> لتطوير الألعاب، أو <strong>.NET MAUI</strong> لتطبيقات الجوال.</div>
+  </div>
+</div>
+
+<!-- END MAIN -->
+    </main>
+  </div>
+</div>
+
+<!-- TASKBAR -->
+<footer class="taskbar">
+  <div class="taskbar-inner">
+    <div class="taskbar-brand">
+      Yahya<span>.</span>DEV
+      <small>Yahya Al-sulami — Full-Stack Developer & UI/UX Architect</small>
+    </div>
+    <div class="taskbar-links">
+      <a href="mailto:yehiahwary515@gmail.com" class="taskbar-link email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        yehiahwary515@gmail.com
+      </a>
+      <a href="https://www.tiktok.com/@yahya.dev8" target="_blank" rel="noopener noreferrer" class="taskbar-link tiktok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.78a4.85 4.85 0 0 1-1.01-.09z"/></svg>
+        @yahya.dev8
+      </a>
+      <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" rel="noopener noreferrer" class="taskbar-link instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @yahya_alsulami515
+      </a>
+      <a href="https://yehiahwary0-oss.github.io/my-portfolio/" class="taskbar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        الموقع الشخصي
+      </a>
+    </div>
+    <div class="taskbar-copyright">
+      © 2026 <a href="https://yehiahwary0-oss.github.io/my-portfolio/">Yahya.DEV</a> — Yahya Al-sulami.
+      جميع الحقوق محفوظة. صُمِّم بـ ❤️ لمجتمع المطورين العرب.
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+// Progress bar
+window.addEventListener('scroll', () => {
+  const el = document.getElementById('progress-bar');
+  const scrollTop = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  el.style.width = (scrollTop / height * 100) + '%';
+
+  const scrollBtn = document.getElementById('scroll-top');
+  scrollBtn.classList.toggle('visible', scrollTop > 400);
+
+  const navbar = document.getElementById('navbar');
+  navbar.classList.toggle('scrolled', scrollTop > 20);
+});
+
+// TOC active link highlight
+const sections = document.querySelectorAll('.lesson-section');
+const tocLinks = document.querySelectorAll('.toc-list a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  tocLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+// Copy code
+function copyCode(btn) {
+  const pre = btn.closest('.code-block').querySelector('pre');
+  const text = pre.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'تم النسخ ✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'نسخ'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+// Search
+function doSearch(query) {
+  // Sync both search inputs
+  const s1 = document.getElementById('sidebar-search');
+  const s2 = document.getElementById('mobile-search');
+  if (s1 && document.activeElement !== s1) s1.value = query;
+  if (s2 && document.activeElement !== s2) s2.value = query;
+
+  const main = document.getElementById('main-content');
+  if (!query.trim()) {
+    clearHighlights(main);
+    return;
+  }
+  clearHighlights(main);
+  highlightText(main, query);
+}
+
+function highlightText(node, query) {
+  if (node.nodeType === 3) {
+    const idx = node.nodeValue.toLowerCase().indexOf(query.toLowerCase());
+    if (idx >= 0) {
+      const span = document.createElement('span');
+      const before = document.createTextNode(node.nodeValue.substring(0, idx));
+      const mark = document.createElement('mark');
+      mark.textContent = node.nodeValue.substring(idx, idx + query.length);
+      const after = document.createTextNode(node.nodeValue.substring(idx + query.length));
+      span.appendChild(before);
+      span.appendChild(mark);
+      span.appendChild(after);
+      node.parentNode.replaceChild(span, node);
+    }
+  } else if (node.nodeType === 1 && !['SCRIPT','STYLE','PRE'].includes(node.tagName)) {
+    Array.from(node.childNodes).forEach(child => highlightText(child, query));
+  }
+}
+
+function clearHighlights(root) {
+  root.querySelectorAll('mark').forEach(m => {
+    const parent = m.parentNode;
+    parent.replaceChild(document.createTextNode(m.textContent), m);
+    parent.normalize();
+  });
+  root.querySelectorAll('span').forEach(s => {
+    if (!s.className && s.children.length === 0) {
+      s.parentNode && s.parentNode.replaceChild(document.createTextNode(s.textContent), s);
+    }
+  });
+}
+
+// Intersection Observer for animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.05 });
+
+document.querySelectorAll('.lesson-section').forEach(s => {
+  s.style.opacity = '0';
+  s.style.transform = 'translateY(24px)';
+  s.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(s);
+});
+</script>
+
+</body>
+</html>

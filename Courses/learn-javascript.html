@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>تعلم JavaScript من الصفر حتى الاحتراف | Yahya.DEV</title>
+  <meta name="description" content="دليل شامل لتعلم JavaScript بالعربي من الصفر حتى الاحتراف — ES2024، مفاهيم أساسية ومتقدمة، أمثلة عملية، شروحات تفصيلية. بقلم Yahya Al-sulami — Yahya.DEV Full-Stack Developer." />
+  <meta name="keywords" content="تعلم JavaScript, جافاسكريبت بالعربي, كورس JavaScript مجاني, JavaScript للمبتدئين, ES6 ES2024, تعلم البرمجة, Yahya.DEV, Yahya Al-sulami, فول ستاك, frontend developer" />
+  <meta name="author" content="Yahya Al-sulami — Yahya.DEV" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yehiahwary0-oss.github.io/my-portfolio/javascript.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="تعلم JavaScript كاملاً | Yahya.DEV" />
+  <meta property="og:description" content="كورس JavaScript شامل بالعربي — من المبتدئ للمحترف. شروحات تفصيلية، أمثلة حية، ES2024." />
+  <meta property="og:url" content="https://yehiahwary0-oss.github.io/my-portfolio/javascript.html" />
+  <meta property="og:site_name" content="Yahya.DEV" />
+  <meta property="og:image" content="https://yehiahwary0-oss.github.io/my-portfolio/PIC/my.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="تعلم JavaScript من الصفر | Yahya.DEV" />
+  <meta name="twitter:description" content="دليل JavaScript الأشمل بالعربي — ES2024، أمثلة عملية، من المبتدئ للمحترف." />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "تعلم JavaScript من الصفر حتى الاحتراف",
+    "description": "كورس JavaScript شامل بالعربي من المبتدئ للمحترف مع أمثلة عملية وشروحات تفصيلية",
+    "provider": {
+      "@type": "Person",
+      "name": "Yahya Al-sulami",
+      "url": "https://yehiahwary0-oss.github.io/my-portfolio/",
+      "sameAs": ["https://www.instagram.com/yahya_alsulami515", "https://www.tiktok.com/@yahya.dev8"]
+    },
+    "inLanguage": "ar",
+    "educationalLevel": "Beginner to Advanced",
+    "teaches": "JavaScript ES2024"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --js-yellow: #F7DF1E;
+      --js-yellow-dim: #c9b41a;
+      --js-black: #0a0a0a;
+      --bg-deep: #080808;
+      --bg-card: #111111;
+      --bg-card2: #161616;
+      --bg-code: #0d0d0d;
+      --text-primary: #f0f0f0;
+      --text-secondary: #9a9a9a;
+      --text-muted: #555;
+      --border: #1e1e1e;
+      --border-accent: #F7DF1E33;
+      --beginner: #22c55e;
+      --intermediate: #f59e0b;
+      --advanced: #ef4444;
+      --glow: 0 0 40px #F7DF1E22;
+      --glow-strong: 0 0 80px #F7DF1E44;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Cairo', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep); }
+    ::-webkit-scrollbar-thumb { background: var(--js-yellow); border-radius: 3px; }
+
+    /* ─── NOISE TEXTURE ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: .4;
+    }
+
+    /* ─── STICKY NAVBAR ─── */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(8,8,8,0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+    }
+    .nav-logo {
+      width: 36px; height: 36px;
+      background: var(--js-yellow);
+      color: #000;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: .75rem;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    .nav-title {
+      font-size: .9rem;
+      color: var(--text-secondary);
+    }
+    .nav-title span { color: var(--js-yellow); font-weight: 700; }
+    .back-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: .85rem;
+      display: flex; align-items: center; gap: .4rem;
+      transition: color .2s;
+      white-space: nowrap;
+    }
+    .back-link:hover { color: var(--js-yellow); }
+
+    /* ─── SEARCH BAR ─── */
+    .search-wrapper {
+      flex: 1;
+      max-width: 400px;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .5rem 1rem .5rem 2.5rem;
+      color: var(--text-primary);
+      font-family: 'Cairo', sans-serif;
+      font-size: .875rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      direction: rtl;
+    }
+    .search-input:focus {
+      border-color: var(--js-yellow);
+      box-shadow: 0 0 0 3px #F7DF1E18;
+    }
+    .search-icon {
+      position: absolute;
+      left: .75rem; top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+      font-size: 1rem;
+    }
+    .search-results {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0; right: 0;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      max-height: 320px;
+      overflow-y: auto;
+      z-index: 2000;
+      display: none;
+      box-shadow: 0 20px 60px #000a;
+    }
+    .search-results.open { display: block; }
+    .search-item {
+      padding: .75rem 1rem;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border);
+      transition: background .15s;
+      display: flex; align-items: center; gap: .75rem;
+    }
+    .search-item:last-child { border-bottom: none; }
+    .search-item:hover { background: var(--border); }
+    .search-item-tag {
+      font-size: .7rem;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .tag-beginner { background: #22c55e22; color: var(--beginner); }
+    .tag-intermediate { background: #f59e0b22; color: var(--intermediate); }
+    .tag-advanced { background: #ef444422; color: var(--advanced); }
+    .search-item-title { font-size: .875rem; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 100px 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, #F7DF1E18 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: .6; transform: translate(-50%,-50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%,-50%) scale(1.1); }
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: #F7DF1E15;
+      border: 1px solid var(--border-accent);
+      border-radius: 30px;
+      padding: .4rem 1.2rem;
+      font-size: .8rem;
+      color: var(--js-yellow);
+      margin-bottom: 2rem;
+      animation: fadeDown .6s ease both;
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px;
+      background: var(--js-yellow);
+      border-radius: 50%;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+    @keyframes fadeDown {
+      from { opacity:0; transform: translateY(-20px); }
+      to { opacity:1; transform: translateY(0); }
+    }
+    .js-logo-big {
+      width: 120px; height: 120px;
+      background: var(--js-yellow);
+      color: #000;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 2.5rem;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 20px;
+      margin: 0 auto 2.5rem;
+      box-shadow: var(--glow-strong);
+      animation: fadeDown .7s .1s ease both;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      animation: fadeDown .7s .2s ease both;
+    }
+    .hero h1 .accent { color: var(--js-yellow); }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto 3rem;
+      animation: fadeDown .7s .3s ease both;
+    }
+    .hero-stats {
+      display: flex; gap: 2.5rem;
+      flex-wrap: wrap; justify-content: center;
+      animation: fadeDown .7s .4s ease both;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-size: 2rem; font-weight: 900;
+      color: var(--js-yellow);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .stat-label { font-size: .8rem; color: var(--text-muted); }
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem; left: 50%; transform: translateX(-50%);
+      color: var(--text-muted);
+      font-size: .75rem;
+      display: flex; flex-direction: column; align-items: center; gap: .5rem;
+      animation: float 2s ease-in-out infinite;
+    }
+    .scroll-arrow { font-size: 1.2rem; }
+    @keyframes float { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    /* ─── LEVEL TABS ─── */
+    .level-nav {
+      position: sticky;
+      top: 64px; z-index: 900;
+      background: rgba(8,8,8,0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: .75rem 2rem;
+      display: flex; gap: .75rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .level-nav::-webkit-scrollbar { display: none; }
+    .level-btn {
+      padding: .45rem 1.2rem;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: 'Cairo', sans-serif;
+      font-size: .8rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all .2s;
+    }
+    .level-btn:hover, .level-btn.active { background: var(--js-yellow); color: #000; border-color: var(--js-yellow); font-weight: 700; }
+
+    /* ─── MAIN LAYOUT ─── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ─── SECTION ─── */
+    .course-section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-header {
+      margin-bottom: 3rem;
+    }
+    .section-label {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .75rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--js-yellow);
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      margin-bottom: .75rem;
+    }
+    .section-label::before {
+      content: '';
+      width: 20px; height: 1px;
+      background: var(--js-yellow);
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1.3;
+    }
+    .section-title .y { color: var(--js-yellow); }
+    .section-desc {
+      color: var(--text-secondary);
+      margin-top: .75rem;
+      font-size: 1rem;
+    }
+    .level-badge {
+      display: inline-block;
+      padding: .25rem .8rem;
+      border-radius: 20px;
+      font-size: .7rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .badge-beginner { background: #22c55e20; color: var(--beginner); border: 1px solid #22c55e44; }
+    .badge-intermediate { background: #f59e0b20; color: var(--intermediate); border: 1px solid #f59e0b44; }
+    .badge-advanced { background: #ef444420; color: var(--advanced); border: 1px solid #ef444444; }
+
+    /* ─── TOPIC CARD ─── */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .topic-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .topic-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--js-yellow), transparent);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .topic-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-4px);
+      box-shadow: var(--glow);
+    }
+    .topic-card:hover::before { opacity: 1; }
+    .topic-icon {
+      width: 48px; height: 48px;
+      background: #F7DF1E15;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .topic-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: .75rem;
+    }
+    .topic-card p {
+      font-size: .875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ─── CODE BLOCK ─── */
+    .code-block {
+      background: var(--bg-code);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    .code-header {
+      background: #111;
+      border-bottom: 1px solid var(--border);
+      padding: .6rem 1rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .code-dots {
+      display: flex; gap: 6px;
+    }
+    .code-dots span {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .d1 { background: #ff5f57; }
+    .d2 { background: #febc2e; }
+    .d3 { background: #28c840; }
+    .code-lang {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .7rem;
+      color: var(--js-yellow);
+    }
+    .copy-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-secondary);
+      font-size: .7rem;
+      padding: 3px 10px;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: 'Cairo', sans-serif;
+    }
+    .copy-btn:hover { border-color: var(--js-yellow); color: var(--js-yellow); }
+    .copy-btn.copied { border-color: var(--beginner); color: var(--beginner); }
+    pre {
+      padding: 1.5rem;
+      overflow-x: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .82rem;
+      line-height: 1.7;
+      direction: ltr;
+      text-align: left;
+    }
+    .kw { color: #F7DF1E; }
+    .str { color: #a8ff78; }
+    .num { color: #79daf7; }
+    .fn { color: #e9a2ff; }
+    .cm { color: #555; }
+    .var { color: #f0f0f0; }
+    .op { color: #F7DF1E; }
+    .obj { color: #ffa07a; }
+    .bool { color: #79daf7; }
+
+    /* ─── EXPLANATION BOX ─── */
+    .explain-box {
+      background: #F7DF1E08;
+      border: 1px solid #F7DF1E22;
+      border-right: 4px solid var(--js-yellow);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+      font-size: .9rem;
+    }
+    .explain-box h4 {
+      color: var(--js-yellow);
+      margin-bottom: .5rem;
+      font-size: .95rem;
+    }
+    .explain-box ul {
+      padding-right: 1.2rem;
+    }
+    .explain-box li {
+      color: var(--text-secondary);
+      margin-bottom: .3rem;
+      font-size: .875rem;
+    }
+
+    /* ─── LESSON BLOCK ─── */
+    .lesson {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      transition: border-color .3s;
+    }
+    .lesson:hover { border-color: var(--border-accent); }
+    .lesson-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex; align-items: center; gap: .75rem;
+    }
+    .lesson-num {
+      width: 32px; height: 32px;
+      background: var(--js-yellow);
+      color: #000;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem;
+      font-weight: 900;
+      font-family: 'JetBrains Mono', monospace;
+      flex-shrink: 0;
+    }
+    .lesson p {
+      color: var(--text-secondary);
+      font-size: .9rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ─── INFO GRID ─── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .info-card {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .info-card .icon { font-size: 1.8rem; margin-bottom: .5rem; }
+    .info-card h4 { font-size: .9rem; color: var(--js-yellow); margin-bottom: .3rem; }
+    .info-card p { font-size: .8rem; color: var(--text-secondary); }
+
+    /* ─── TABLE ─── */
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 1.5rem 0;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+    thead { background: #F7DF1E15; }
+    th {
+      padding: .75rem 1rem;
+      text-align: right;
+      font-weight: 700;
+      color: var(--js-yellow);
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    td {
+      padding: .7rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .8rem;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #ffffff05; }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* ─── TASK BAR (Social) ─── */
+    .taskbar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid var(--border);
+      padding: .6rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem;
+    }
+    .taskbar-brand {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+    .taskbar-brand span { color: var(--js-yellow); }
+    .taskbar-social {
+      display: flex; align-items: center; gap: .75rem;
+    }
+    .social-link {
+      display: flex; align-items: center; gap: .5rem;
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: .78rem;
+      padding: .3rem .8rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    .social-link:hover { border-color: var(--js-yellow); color: var(--js-yellow); }
+    .social-icon { font-size: .9rem; }
+    .taskbar-copy {
+      font-size: .7rem;
+      color: var(--text-muted);
+      text-align: left;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      padding: 4rem 2rem 6rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--js-yellow);
+      margin-bottom: .5rem;
+    }
+    .footer p { color: var(--text-muted); font-size: .85rem; }
+    .footer a { color: var(--js-yellow); text-decoration: none; }
+
+    /* ─── PROGRESS BAR ─── */
+    .progress-bar {
+      position: fixed;
+      top: 64px; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--js-yellow), var(--js-yellow-dim));
+      z-index: 999;
+      transition: width .1s;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .navbar { padding: 0 1rem; }
+      .nav-title { display: none; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .container { padding: 0 1rem; }
+      .lesson { padding: 1.5rem; }
+      .course-section { padding: 3rem 0; }
+      .taskbar-copy, .taskbar-brand { display: none; }
+    }
+
+    /* ─── HIGHLIGHT SEARCH ─── */
+    .highlight-match { background: #F7DF1E33; border-radius: 3px; padding: 0 2px; }
+
+    /* ─── ANCHOR OFFSET ─── */
+    [id] { scroll-margin-top: 130px; }
+  </style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ─── NAVBAR ─── -->
+<nav class="navbar">
+  <a href="https://yehiahwary0-oss.github.io/my-portfolio/" class="nav-brand" target="_blank">
+    <div class="nav-logo">JS</div>
+    <span class="nav-title"><span>Yahya.DEV</span> / JavaScript</span>
+  </a>
+
+  <div class="search-wrapper">
+    <span class="search-icon">🔍</span>
+    <input type="text" class="search-input" id="searchInput" placeholder="ابحث عن موضوع... (مثلاً: متغيرات، حلقات، functions)" autocomplete="off" />
+    <div class="search-results" id="searchResults"></div>
+  </div>
+
+  <a href="https://yehiahwary0-oss.github.io/my-portfolio/" class="back-link" target="_blank">← الرجوع للبورتفوليو</a>
+</nav>
+
+<!-- ─── LEVEL NAV ─── -->
+<div class="level-nav" id="levelNav">
+  <button class="level-btn active" onclick="scrollToSection('intro')">📌 مقدمة</button>
+  <button class="level-btn" onclick="scrollToSection('basics')">🟢 الأساسيات</button>
+  <button class="level-btn" onclick="scrollToSection('variables')">📦 المتغيرات</button>
+  <button class="level-btn" onclick="scrollToSection('datatypes')">🔢 أنواع البيانات</button>
+  <button class="level-btn" onclick="scrollToSection('operators')">⚙️ العمليات</button>
+  <button class="level-btn" onclick="scrollToSection('conditionals')">🔀 الشروط</button>
+  <button class="level-btn" onclick="scrollToSection('loops')">🔁 الحلقات</button>
+  <button class="level-btn" onclick="scrollToSection('functions')">🔧 الدوال</button>
+  <button class="level-btn" onclick="scrollToSection('arrays')">📚 المصفوفات</button>
+  <button class="level-btn" onclick="scrollToSection('objects')">🗂️ الكائنات</button>
+  <button class="level-btn" onclick="scrollToSection('dom')">🌐 DOM</button>
+  <button class="level-btn" onclick="scrollToSection('events')">⚡ Events</button>
+  <button class="level-btn" onclick="scrollToSection('es6')">✨ ES6+</button>
+  <button class="level-btn" onclick="scrollToSection('async')">⏳ Async</button>
+  <button class="level-btn" onclick="scrollToSection('oop')">🏗️ OOP</button>
+  <button class="level-btn" onclick="scrollToSection('advanced')">🚀 متقدم</button>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-badge">
+    <span class="dot"></span>
+    ES2024 — أحدث إصدار · مُحدَّث باستمرار
+  </div>
+  <div class="js-logo-big">JS</div>
+  <h1>تعلم <span class="accent">JavaScript</span><br/>من الصفر حتى الاحتراف</h1>
+  <p>دليلك الشامل الوحيد لإتقان JavaScript — من أول سطر كود حتى بناء تطبيقات احترافية. شرح بالعربي بأمثلة حية وتفاصيل دقيقة.</p>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">16+</div>
+      <div class="stat-label">موضوع رئيسي</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">80+</div>
+      <div class="stat-label">مثال كود</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">مستويات</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">ES2024</div>
+      <div class="stat-label">أحدث إصدار</div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>اسكرول للأسفل</span>
+    <span class="scroll-arrow">↓</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 1: INTRO -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="intro">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">01 — مقدمة</div>
+      <h2 class="section-title">ما هي <span class="y">JavaScript</span>؟</h2>
+      <p class="section-desc">كل ما تحتاج معرفته قبل أن تبدأ</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="icon">🌐</div>
+        <h4>لغة الويب الأولى</h4>
+        <p>اللغة الوحيدة التي تعمل في المتصفح مباشرةً</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">⚡</div>
+        <h4>تفاعلية فورية</h4>
+        <p>تجعل صفحات الويب حية وتفاعلية بدون إعادة تحميل</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🖥️</div>
+        <h4>Frontend + Backend</h4>
+        <p>تعمل في المتصفح (Frontend) وعلى الخادم (Node.js)</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">📱</div>
+        <h4>تطبيقات موبايل</h4>
+        <p>React Native, Ionic — تطبيقات موبايل بـ JavaScript</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🏆</div>
+        <h4>الأكثر استخداماً</h4>
+        <p>اللغة الأول عالمياً في Stack Overflow منذ 12 سنة</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🔄</div>
+        <h4>مُطوَّرة باستمرار</h4>
+        <p>تحديث سنوي — ES6, ES7... حتى ES2024</p>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title">
+        <span class="lesson-num">01</span>
+        كيف تشغل JavaScript؟
+      </div>
+      <p>JavaScript تعمل مباشرة في أي متصفح. أسهل طريقة هي فتح Developer Tools (F12) والذهاب لتبويب Console وكتابة الكود هناك. أو يمكنك ربطها بملف HTML:</p>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">index.html</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">&lt;!-- طريقة 1: كود مباشر في HTML --&gt;</span>
+<span class="kw">&lt;script&gt;</span>
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"مرحبا بالعالم!"</span>);
+<span class="kw">&lt;/script&gt;</span>
+
+<span class="cm">&lt;!-- طريقة 2: ملف JS خارجي (الأفضل) --&gt;</span>
+<span class="kw">&lt;script</span> <span class="fn">src</span>=<span class="str">"app.js"</span><span class="kw">&gt;&lt;/script&gt;</span>
+
+<span class="cm">&lt;!-- دائماً ضع الـ script قبل إغلاق body --&gt;</span></pre>
+      </div>
+      <div class="explain-box">
+        <h4>💡 لماذا نضع script قبل &lt;/body&gt;؟</h4>
+        <ul>
+          <li>المتصفح يقرأ HTML من فوق لتحت — إذا وضعت الـ script في &lt;head&gt; ستحاول الوصول لعناصر HTML لم تُحمَّل بعد</li>
+          <li>الحل: ضعها آخر الـ body، أو استخدم <code>defer</code> أو <code>async</code> في أحدث كود</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 2: BASICS -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="basics">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-beginner">🟢 مبتدئ</span>
+      <div class="section-label">02 — الأساسيات</div>
+      <h2 class="section-title">أول خطواتك في <span class="y">JavaScript</span></h2>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">02</span>Console — أداة التطوير الأساسية</div>
+      <p>console هو أداة للمطور للتحقق من قيم الكود أثناء التطوير. له أوامر متعددة:</p>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"رسالة عادية"</span>);          <span class="cm">// طباعة عادية</span>
+<span class="fn">console</span>.<span class="fn">warn</span>(<span class="str">"تحذير!"</span>);           <span class="cm">// تحذير باللون الأصفر</span>
+<span class="fn">console</span>.<span class="fn">error</span>(<span class="str">"خطأ!"</span>);          <span class="cm">// خطأ باللون الأحمر</span>
+<span class="fn">console</span>.<span class="fn">table</span>([<span class="str">"أحمد"</span>, <span class="str">"محمد"</span>]); <span class="cm">// عرض البيانات كجدول</span>
+<span class="fn">console</span>.<span class="fn">time</span>(<span class="str">"timer"</span>);           <span class="cm">// بداية قياس الوقت</span>
+<span class="fn">console</span>.<span class="fn">timeEnd</span>(<span class="str">"timer"</span>);        <span class="cm">// نهاية القياس</span>
+<span class="fn">console</span>.<span class="fn">clear</span>();                  <span class="cm">// مسح الـ console</span></pre>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">03</span>التعليقات — Comments</div>
+      <p>التعليقات لا تُنفَّذ من قِبل JavaScript — هي فقط ملاحظات للمطور:</p>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// هذا تعليق على سطر واحد</span>
+
+<span class="cm">/*
+  هذا تعليق
+  على أكثر من سطر
+*/</span>
+
+<span class="kw">let</span> <span class="var">name</span> = <span class="str">"يحيى"</span>; <span class="cm">// تعليق في نفس السطر</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 3: VARIABLES -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="variables">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-beginner">🟢 مبتدئ</span>
+      <div class="section-label">03 — المتغيرات</div>
+      <h2 class="section-title"><span class="y">Variables</span> — تخزين البيانات</h2>
+      <p class="section-desc">المتغير هو مكان في الذاكرة نخزن فيه بيانات ونستخدمها لاحقاً</p>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">04</span>let, const, var — الفرق بينهم</div>
+      <p>في JavaScript الحديثة (ES6+) لدينا 3 طرق لتعريف المتغيرات. القاعدة الذهبية: <strong>استخدم const دائماً، let عند الحاجة للتغيير، وتجنب var.</strong></p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>الكلمة</th>
+              <th>إعادة التعيين</th>
+              <th>إعادة التعريف</th>
+              <th>النطاق (Scope)</th>
+              <th>متى تستخدم؟</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code style="color:var(--js-yellow)">const</code></td>
+              <td style="color:#ef4444">✗ لا</td>
+              <td style="color:#ef4444">✗ لا</td>
+              <td>Block</td>
+              <td>القيم الثابتة (الأكثر استخداماً)</td>
+            </tr>
+            <tr>
+              <td><code style="color:var(--js-yellow)">let</code></td>
+              <td style="color:#22c55e">✓ نعم</td>
+              <td style="color:#ef4444">✗ لا</td>
+              <td>Block</td>
+              <td>عند الحاجة لتغيير القيمة</td>
+            </tr>
+            <tr>
+              <td><code style="color:#555">var</code></td>
+              <td style="color:#22c55e">✓ نعم</td>
+              <td style="color:#22c55e">✓ نعم</td>
+              <td>Function</td>
+              <td>❌ تجنبه في الكود الحديث</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// ─── const ───</span>
+<span class="kw">const</span> <span class="var">siteName</span> = <span class="str">"Yahya.DEV"</span>;
+<span class="cm">// siteName = "غير ذلك"; // ❌ خطأ! لا يمكن تغيير const</span>
+
+<span class="cm">// ─── let ───</span>
+<span class="kw">let</span> <span class="var">score</span> = <span class="num">0</span>;
+<span class="var">score</span> = <span class="num">100</span>; <span class="cm">// ✅ يمكن تغييره</span>
+<span class="var">score</span> += <span class="num">50</span>;  <span class="cm">// ✅ score = 150</span>
+
+<span class="cm">// ─── تعريف متعدد ───</span>
+<span class="kw">let</span> <span class="var">x</span> = <span class="num">10</span>, <span class="var">y</span> = <span class="num">20</span>, <span class="var">z</span> = <span class="num">30</span>;
+
+<span class="cm">// ─── const مع Objects/Arrays ───</span>
+<span class="cm">// const لا يمنع تعديل محتوى الـ Object!</span>
+<span class="kw">const</span> <span class="var">user</span> = { <span class="fn">name</span>: <span class="str">"يحيى"</span> };
+<span class="var">user</span>.<span class="fn">name</span> = <span class="str">"محمد"</span>; <span class="cm">// ✅ يمكن تعديل الخصائص</span>
+<span class="cm">// user = {}; // ❌ لا يمكن إعادة تعيين المتغير نفسه</span></pre>
+      </div>
+
+      <div class="explain-box">
+        <h4>🧠 ما هو Block Scope؟</h4>
+        <ul>
+          <li>الـ Block هو أي كود بين <code>{ }</code> — داخل if، loop، function</li>
+          <li>المتغير المعرَّف بـ let/const داخل block لا يمكن الوصول إليه من خارجه</li>
+          <li>var يتجاهل الـ block — وهذا يسبب مشاكل كثيرة ولهذا نتجنبه</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">05</span>قواعد تسمية المتغيرات</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// ✅ صحيح</span>
+<span class="kw">let</span> <span class="var">userName</span> = <span class="str">"يحيى"</span>;       <span class="cm">// camelCase (الشائع)</span>
+<span class="kw">let</span> <span class="var">_privateVar</span> = <span class="num">42</span>;       <span class="cm">// يبدأ بـ underscore</span>
+<span class="kw">let</span> <span class="var">$price</span> = <span class="num">99</span>;            <span class="cm">// يبدأ بـ $</span>
+<span class="kw">const</span> <span class="var">MAX_SPEED</span> = <span class="num">300</span>;      <span class="cm">// UPPER_CASE للثوابت</span>
+
+<span class="cm">// ❌ خطأ</span>
+<span class="cm">// let 1number = 10;    // لا يبدأ برقم</span>
+<span class="cm">// let my-var = 5;      // لا يحتوي على -</span>
+<span class="cm">// let let = "x";      // لا يستخدم الكلمات المحجوزة</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 4: DATA TYPES -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="datatypes">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-beginner">🟢 مبتدئ</span>
+      <div class="section-label">04 — أنواع البيانات</div>
+      <h2 class="section-title">Data Types — <span class="y">أنواع البيانات</span></h2>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">06</span>الأنواع الأساسية (Primitives)</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// 1. String — نصوص</span>
+<span class="kw">const</span> <span class="var">name</span> = <span class="str">"يحيى"</span>;
+<span class="kw">const</span> <span class="var">msg</span> = <span class="str">'مرحبا'</span>;
+<span class="kw">const</span> <span class="var">template</span> = <span class="str">`اسمي ${<span class="var">name</span>}`</span>; <span class="cm">// Template Literal</span>
+
+<span class="cm">// 2. Number — أرقام (عدد صحيح وعشري معاً)</span>
+<span class="kw">const</span> <span class="var">age</span> = <span class="num">25</span>;
+<span class="kw">const</span> <span class="var">price</span> = <span class="num">9.99</span>;
+<span class="kw">const</span> <span class="var">big</span> = <span class="num">1_000_000</span>; <span class="cm">// ✨ ES2021: Numeric Separator</span>
+
+<span class="cm">// 3. Boolean — صحيح أو خاطئ</span>
+<span class="kw">const</span> <span class="var">isLoggedIn</span> = <span class="bool">true</span>;
+<span class="kw">const</span> <span class="var">isDone</span> = <span class="bool">false</span>;
+
+<span class="cm">// 4. null — قيمة فارغة بشكل متعمد</span>
+<span class="kw">let</span> <span class="var">data</span> = <span class="bool">null</span>;
+
+<span class="cm">// 5. undefined — متغير معرَّف بدون قيمة</span>
+<span class="kw">let</span> <span class="var">result</span>;
+<span class="fn">console</span>.<span class="fn">log</span>(<span class="var">result</span>); <span class="cm">// undefined</span>
+
+<span class="cm">// 6. BigInt — أرقام ضخمة جداً (ES2020)</span>
+<span class="kw">const</span> <span class="var">huge</span> = <span class="num">9007199254740991n</span>;
+
+<span class="cm">// 7. Symbol — قيمة فريدة (متقدم)</span>
+<span class="kw">const</span> <span class="var">id</span> = <span class="fn">Symbol</span>(<span class="str">"id"</span>);</pre>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">07</span>typeof — معرفة نوع المتغير</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="fn">console</span>.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="str">"يحيى"</span>);      <span class="cm">// "string"</span>
+<span class="fn">console</span>.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="num">42</span>);          <span class="cm">// "number"</span>
+<span class="fn">console</span>.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="bool">true</span>);        <span class="cm">// "boolean"</span>
+<span class="fn">console</span>.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="bool">undefined</span>);   <span class="cm">// "undefined"</span>
+<span class="fn">console</span>.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="bool">null</span>);        <span class="cm">// "object" ← باغ تاريخي في JS!</span>
+<span class="fn">console</span>.<span class="fn">log</span>(<span class="kw">typeof</span> {});           <span class="cm">// "object"</span>
+<span class="fn">console</span>.<span class="fn">log</span>(<span class="kw">typeof</span> []);           <span class="cm">// "object" (وليس "array"!)</span>
+<span class="fn">console</span>.<span class="fn">log</span>(<span class="kw">typeof</span> <span class="fn">function</span>(){}); <span class="cm">// "function"</span></pre>
+      </div>
+      <div class="explain-box">
+        <h4>💡 كيف أتحقق من Array؟</h4>
+        <ul>
+          <li><code>Array.isArray(value)</code> — الطريقة الصحيحة للتحقق من كون القيمة مصفوفة</li>
+          <li>typeof لا يميز بين Object و Array، لذا نستخدم Array.isArray</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">08</span>تحويل أنواع البيانات (Type Conversion)</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// String → Number</span>
+<span class="fn">Number</span>(<span class="str">"42"</span>)       <span class="cm">// 42</span>
+<span class="fn">parseInt</span>(<span class="str">"42px"</span>)   <span class="cm">// 42 (يتوقف عند الحرف)</span>
+<span class="fn">parseFloat</span>(<span class="str">"3.14"</span>) <span class="cm">// 3.14</span>
++<span class="str">"99"</span>             <span class="cm">// 99 (Unary Plus - الأسرع)</span>
+
+<span class="cm">// Number → String</span>
+<span class="fn">String</span>(<span class="num">42</span>)          <span class="cm">// "42"</span>
+(<span class="num">42</span>).<span class="fn">toString</span>()    <span class="cm">// "42"</span>
+(<span class="num">255</span>).<span class="fn">toString</span>(<span class="num">16</span>) <span class="cm">// "ff" (Hex)</span>
+
+<span class="cm">// → Boolean</span>
+<span class="fn">Boolean</span>(<span class="num">0</span>)         <span class="cm">// false</span>
+<span class="fn">Boolean</span>(<span class="str">""</span>)        <span class="cm">// false</span>
+<span class="fn">Boolean</span>(<span class="bool">null</span>)      <span class="cm">// false</span>
+<span class="fn">Boolean</span>(<span class="bool">undefined</span>) <span class="cm">// false</span>
+<span class="fn">Boolean</span>(<span class="num">1</span>)         <span class="cm">// true</span>
+<span class="fn">Boolean</span>(<span class="str">"يحيى"</span>)    <span class="cm">// true</span></pre>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">09</span>String Methods — دوال النصوص</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="kw">const</span> <span class="var">str</span> = <span class="str">"  Yahya.DEV  "</span>;
+
+<span class="var">str</span>.<span class="fn">length</span>              <span class="cm">// 13 — طول النص</span>
+<span class="var">str</span>.<span class="fn">trim</span>()              <span class="cm">// "Yahya.DEV" — حذف المسافات</span>
+<span class="var">str</span>.<span class="fn">toUpperCase</span>()       <span class="cm">// "  YAHYA.DEV  "</span>
+<span class="var">str</span>.<span class="fn">toLowerCase</span>()       <span class="cm">// "  yahya.dev  "</span>
+<span class="var">str</span>.<span class="fn">includes</span>(<span class="str">"DEV"</span>)    <span class="cm">// true</span>
+<span class="var">str</span>.<span class="fn">startsWith</span>(<span class="str">"  Y"</span>) <span class="cm">// true</span>
+<span class="var">str</span>.<span class="fn">endsWith</span>(<span class="str">"V  "</span>)   <span class="cm">// true</span>
+<span class="var">str</span>.<span class="fn">replace</span>(<span class="str">"DEV"</span>, <span class="str">"dev"</span>) <span class="cm">// "  Yahya.dev  "</span>
+<span class="var">str</span>.<span class="fn">split</span>(<span class="str">"."</span>)          <span class="cm">// ["  Yahya", "DEV  "]</span>
+<span class="var">str</span>.<span class="fn">slice</span>(<span class="num">2</span>, <span class="num">7</span>)          <span class="cm">// "Yahya"</span>
+<span class="var">str</span>.<span class="fn">indexOf</span>(<span class="str">"DEV"</span>)     <span class="cm">// 8</span>
+<span class="var">str</span>.<span class="fn">repeat</span>(<span class="num">2</span>)           <span class="cm">// "  Yahya.DEV    Yahya.DEV  "</span>
+<span class="var">str</span>.<span class="fn">padStart</span>(<span class="num">15</span>, <span class="str">"*"</span>) <span class="cm">// "**  Yahya.DEV  " — تعبئة من البداية</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 5: OPERATORS -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="operators">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-beginner">🟢 مبتدئ</span>
+      <div class="section-label">05 — العمليات</div>
+      <h2 class="section-title">Operators — <span class="y">العمليات الحسابية والمنطقية</span></h2>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">10</span>كل أنواع العمليات</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// ─── الحسابية ───</span>
+<span class="num">10</span> <span class="op">+</span> <span class="num">3</span>   <span class="cm">// 13 جمع</span>
+<span class="num">10</span> <span class="op">-</span> <span class="num">3</span>   <span class="cm">// 7  طرح</span>
+<span class="num">10</span> <span class="op">*</span> <span class="num">3</span>   <span class="cm">// 30 ضرب</span>
+<span class="num">10</span> <span class="op">/</span> <span class="num">3</span>   <span class="cm">// 3.333... قسمة</span>
+<span class="num">10</span> <span class="op">%</span> <span class="num">3</span>   <span class="cm">// 1  باقي القسمة (Modulus)</span>
+<span class="num">10</span> <span class="op">**</span> <span class="num">3</span>  <span class="cm">// 1000 أس (ES2016)</span>
+
+<span class="cm">// ─── الإسناد ───</span>
+<span class="kw">let</span> <span class="var">x</span> = <span class="num">10</span>;
+<span class="var">x</span> <span class="op">+=</span> <span class="num">5</span>;   <span class="cm">// x = x + 5 = 15</span>
+<span class="var">x</span> <span class="op">-=</span> <span class="num">3</span>;   <span class="cm">// x = 12</span>
+<span class="var">x</span> <span class="op">*=</span> <span class="num">2</span>;   <span class="cm">// x = 24</span>
+<span class="var">x</span> <span class="op">/=</span> <span class="num">4</span>;   <span class="cm">// x = 6</span>
+<span class="var">x</span><span class="op">++</span>;      <span class="cm">// x = 7 (زيادة 1 بعد التعبير)</span>
+<span class="op">++</span><span class="var">x</span>;      <span class="cm">// x = 8 (زيادة 1 قبل التعبير)</span>
+
+<span class="cm">// ─── المقارنة ───</span>
+<span class="num">5</span> <span class="op">==</span> <span class="str">"5"</span>   <span class="cm">// true  (مقارنة غير صارمة — تحويل نوع)</span>
+<span class="num">5</span> <span class="op">===</span> <span class="str">"5"</span>  <span class="cm">// false (مقارنة صارمة — نوع + قيمة) ← استخدم هذا دائماً</span>
+<span class="num">5</span> <span class="op">!=</span> <span class="num">3</span>    <span class="cm">// true</span>
+<span class="num">5</span> <span class="op">!==</span> <span class="str">"5"</span>  <span class="cm">// true</span>
+<span class="num">5</span> <span class="op">&gt;</span> <span class="num">3</span>     <span class="cm">// true</span>
+<span class="num">5</span> <span class="op">&lt;=</span> <span class="num">5</span>    <span class="cm">// true</span>
+
+<span class="cm">// ─── المنطقية ───</span>
+<span class="bool">true</span> <span class="op">&&</span> <span class="bool">false</span>  <span class="cm">// false (AND — كلاهما صحيح)</span>
+<span class="bool">true</span> <span class="op">||</span> <span class="bool">false</span>  <span class="cm">// true  (OR — أحدهما صحيح)</span>
+<span class="op">!</span><span class="bool">true</span>          <span class="cm">// false (NOT — عكس)</span>
+
+<span class="cm">// ─── Nullish Coalescing (ES2020) ───</span>
+<span class="kw">const</span> <span class="var">val</span> = <span class="bool">null</span> <span class="op">??</span> <span class="str">"قيمة افتراضية"</span>; <span class="cm">// "قيمة افتراضية"</span>
+
+<span class="cm">// ─── Optional Chaining (ES2020) ───</span>
+<span class="kw">const</span> <span class="var">city</span> = <span class="var">user</span><span class="op">?.</span><span class="fn">address</span><span class="op">?.</span><span class="fn">city</span>; <span class="cm">// undefined بدل خطأ</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 6: CONDITIONALS -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="conditionals">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-beginner">🟢 مبتدئ</span>
+      <div class="section-label">06 — الشروط</div>
+      <h2 class="section-title">Conditionals — <span class="y">اتخاذ القرارات</span></h2>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">11</span>if / else if / else</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="kw">const</span> <span class="var">score</span> = <span class="num">85</span>;
+
+<span class="kw">if</span> (<span class="var">score</span> <span class="op">>=</span> <span class="num">90</span>) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"ممتاز 🌟"</span>);
+} <span class="kw">else if</span> (<span class="var">score</span> <span class="op">>=</span> <span class="num">75</span>) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"جيد جداً ✅"</span>);
+} <span class="kw">else if</span> (<span class="var">score</span> <span class="op">>=</span> <span class="num">60</span>) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"جيد 👍"</span>);
+} <span class="kw">else</span> {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"راجع المادة 📚"</span>);
+}
+
+<span class="cm">// Ternary Operator — شرط في سطر واحد</span>
+<span class="kw">const</span> <span class="var">status</span> = <span class="var">score</span> <span class="op">>=</span> <span class="num">60</span> <span class="op">?</span> <span class="str">"ناجح"</span> <span class="op">:</span> <span class="str">"راسب"</span>;
+
+<span class="cm">// Nested Ternary (استخدم بحذر)</span>
+<span class="kw">const</span> <span class="var">grade</span> = <span class="var">score</span> <span class="op">>=</span> <span class="num">90</span> <span class="op">?</span> <span class="str">"A"</span>
+             : <span class="var">score</span> <span class="op">>=</span> <span class="num">75</span> <span class="op">?</span> <span class="str">"B"</span>
+             : <span class="var">score</span> <span class="op">>=</span> <span class="num">60</span> <span class="op">?</span> <span class="str">"C"</span>
+             : <span class="str">"F"</span>;</pre>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">12</span>switch / case</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="kw">const</span> <span class="var">day</span> = <span class="str">"الجمعة"</span>;
+
+<span class="kw">switch</span> (<span class="var">day</span>) {
+  <span class="kw">case</span> <span class="str">"السبت"</span>:
+  <span class="kw">case</span> <span class="str">"الأحد"</span>:
+    <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"عطلة نهاية الأسبوع 🎉"</span>);
+    <span class="kw">break</span>; <span class="cm">// مهم جداً! بدونه يكمل للـ case التالي</span>
+  <span class="kw">case</span> <span class="str">"الجمعة"</span>:
+    <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"يوم الجمعة 🕌"</span>);
+    <span class="kw">break</span>;
+  <span class="kw">default</span>:
+    <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"يوم عمل عادي"</span>);
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 7: LOOPS -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="loops">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-beginner">🟢 مبتدئ</span>
+      <div class="section-label">07 — الحلقات</div>
+      <h2 class="section-title">Loops — <span class="y">التكرار</span></h2>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">13</span>جميع أنواع الحلقات</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// ─── for ── الأكثر شيوعاً ───</span>
+<span class="kw">for</span> (<span class="kw">let</span> <span class="var">i</span> = <span class="num">0</span>; <span class="var">i</span> <span class="op">&lt;</span> <span class="num">5</span>; <span class="var">i</span><span class="op">++</span>) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">`رقم: ${<span class="var">i</span>}`</span>);
+}
+
+<span class="cm">// ─── while ── نكرر ما دام الشرط صحيح ───</span>
+<span class="kw">let</span> <span class="var">count</span> = <span class="num">0</span>;
+<span class="kw">while</span> (<span class="var">count</span> <span class="op">&lt;</span> <span class="num">3</span>) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="var">count</span>);
+  <span class="var">count</span><span class="op">++</span>;
+}
+
+<span class="cm">// ─── do...while ── ينفذ مرة على الأقل ───</span>
+<span class="kw">do</span> {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"تنفذ مرة واحدة على الأقل"</span>);
+  <span class="var">count</span><span class="op">++</span>;
+} <span class="kw">while</span> (<span class="var">count</span> <span class="op">&lt;</span> <span class="num">1</span>);
+
+<span class="cm">// ─── for...of ── للـ Arrays ───</span>
+<span class="kw">const</span> <span class="var">fruits</span> = [<span class="str">"تفاح"</span>, <span class="str">"برتقال"</span>, <span class="str">"موز"</span>];
+<span class="kw">for</span> (<span class="kw">const</span> <span class="var">fruit</span> <span class="kw">of</span> <span class="var">fruits</span>) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="var">fruit</span>);
+}
+
+<span class="cm">// ─── for...in ── للـ Objects ───</span>
+<span class="kw">const</span> <span class="var">user</span> = { <span class="fn">name</span>: <span class="str">"يحيى"</span>, <span class="fn">age</span>: <span class="num">25</span> };
+<span class="kw">for</span> (<span class="kw">const</span> <span class="var">key</span> <span class="kw">in</span> <span class="var">user</span>) {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">`${<span class="var">key</span>}: ${<span class="var">user</span>[<span class="var">key</span>]}`</span>);
+}
+
+<span class="cm">// ─── break و continue ───</span>
+<span class="kw">for</span> (<span class="kw">let</span> <span class="var">i</span> = <span class="num">0</span>; <span class="var">i</span> <span class="op">&lt;</span> <span class="num">10</span>; <span class="var">i</span><span class="op">++</span>) {
+  <span class="kw">if</span> (<span class="var">i</span> <span class="op">===</span> <span class="num">3</span>) <span class="kw">continue</span>; <span class="cm">// تخطى 3</span>
+  <span class="kw">if</span> (<span class="var">i</span> <span class="op">===</span> <span class="num">7</span>) <span class="kw">break</span>;    <span class="cm">// توقف عند 7</span>
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="var">i</span>); <span class="cm">// 0,1,2,4,5,6</span>
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 8: FUNCTIONS -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="functions">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-intermediate">🟡 متوسط</span>
+      <div class="section-label">08 — الدوال</div>
+      <h2 class="section-title">Functions — <span class="y">قلب JavaScript</span></h2>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">14</span>كل أنواع الدوال</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// ─── 1. Function Declaration ───</span>
+<span class="kw">function</span> <span class="fn">greet</span>(<span class="var">name</span>) {
+  <span class="kw">return</span> <span class="str">`مرحباً ${<span class="var">name</span>}!`</span>;
+}
+<span class="fn">greet</span>(<span class="str">"يحيى"</span>); <span class="cm">// يمكن استدعاؤها قبل تعريفها (Hoisting)</span>
+
+<span class="cm">// ─── 2. Function Expression ───</span>
+<span class="kw">const</span> <span class="fn">greet</span> = <span class="kw">function</span>(<span class="var">name</span>) {
+  <span class="kw">return</span> <span class="str">`مرحباً ${<span class="var">name</span>}!`</span>;
+};
+
+<span class="cm">// ─── 3. Arrow Function (ES6) ← الأكثر استخداماً ───</span>
+<span class="kw">const</span> <span class="fn">greet</span> = (<span class="var">name</span>) <span class="op">=></span> <span class="str">`مرحباً ${<span class="var">name</span>}!`</span>;
+<span class="kw">const</span> <span class="fn">double</span> = <span class="var">n</span> <span class="op">=></span> <span class="var">n</span> <span class="op">*</span> <span class="num">2</span>; <span class="cm">// بارامتر واحد: بدون ()</span>
+<span class="kw">const</span> <span class="fn">log</span> = () <span class="op">=></span> <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"هلا"</span>); <span class="cm">// بدون بارامتر</span>
+
+<span class="cm">// ─── 4. Default Parameters (ES6) ───</span>
+<span class="kw">const</span> <span class="fn">createUser</span> = (<span class="var">name</span>, <span class="var">role</span> = <span class="str">"زائر"</span>) <span class="op">=></span> ({ <span class="var">name</span>, <span class="var">role</span> });
+<span class="fn">createUser</span>(<span class="str">"يحيى"</span>);           <span class="cm">// {name: "يحيى", role: "زائر"}</span>
+<span class="fn">createUser</span>(<span class="str">"يحيى"</span>, <span class="str">"admin"</span>); <span class="cm">// {name: "يحيى", role: "admin"}</span>
+
+<span class="cm">// ─── 5. Rest Parameters ───</span>
+<span class="kw">const</span> <span class="fn">sum</span> = (...<span class="var">nums</span>) <span class="op">=></span> <span class="var">nums</span>.<span class="fn">reduce</span>((<span class="var">a</span>, <span class="var">b</span>) <span class="op">=></span> <span class="var">a</span> <span class="op">+</span> <span class="var">b</span>, <span class="num">0</span>);
+<span class="fn">sum</span>(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>); <span class="cm">// 15</span>
+
+<span class="cm">// ─── 6. IIFE (Immediately Invoked) ───</span>
+(<span class="kw">function</span>() {
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"تنفذ فوراً!"</span>);
+})();</pre>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">15</span>Scope & Closure — المفهوم الأعمق</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// ─── Closure ── دالة تتذكر بيئتها ───</span>
+<span class="kw">function</span> <span class="fn">createCounter</span>() {
+  <span class="kw">let</span> <span class="var">count</span> = <span class="num">0</span>; <span class="cm">// متغير خاص — محمي من الخارج</span>
+  <span class="kw">return</span> {
+    <span class="fn">increment</span>: () <span class="op">=></span> ++<span class="var">count</span>,
+    <span class="fn">decrement</span>: () <span class="op">=></span> --<span class="var">count</span>,
+    <span class="fn">getCount</span>: () <span class="op">=></span> <span class="var">count</span>
+  };
+}
+
+<span class="kw">const</span> <span class="var">counter</span> = <span class="fn">createCounter</span>();
+<span class="var">counter</span>.<span class="fn">increment</span>(); <span class="cm">// 1</span>
+<span class="var">counter</span>.<span class="fn">increment</span>(); <span class="cm">// 2</span>
+<span class="var">counter</span>.<span class="fn">getCount</span>(); <span class="cm">// 2</span>
+<span class="cm">// لا يمكن الوصول لـ count من الخارج!</span></pre>
+      </div>
+      <div class="explain-box">
+        <h4>🔐 لماذا Closure مهم؟</h4>
+        <ul>
+          <li>يحمي البيانات ويجعلها خاصة (Encapsulation)</li>
+          <li>يُستخدم في بناء مكتبات مثل jQuery</li>
+          <li>أساسي في فهم React Hooks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 9: ARRAYS -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="arrays">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-intermediate">🟡 متوسط</span>
+      <div class="section-label">09 — المصفوفات</div>
+      <h2 class="section-title">Arrays — <span class="y">قوائم البيانات</span></h2>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">16</span>Array Methods الأساسية والمتقدمة</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="kw">const</span> <span class="var">nums</span> = [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>];
+
+<span class="cm">// ─── إضافة وحذف ───</span>
+<span class="var">nums</span>.<span class="fn">push</span>(<span class="num">6</span>);         <span class="cm">// إضافة للنهاية   → [1,2,3,4,5,6]</span>
+<span class="var">nums</span>.<span class="fn">pop</span>();           <span class="cm">// حذف من النهاية  → [1,2,3,4,5]</span>
+<span class="var">nums</span>.<span class="fn">unshift</span>(<span class="num">0</span>);      <span class="cm">// إضافة للبداية   → [0,1,2,3,4,5]</span>
+<span class="var">nums</span>.<span class="fn">shift</span>();         <span class="cm">// حذف من البداية  → [1,2,3,4,5]</span>
+<span class="var">nums</span>.<span class="fn">splice</span>(<span class="num">1</span>, <span class="num">2</span>);    <span class="cm">// حذف 2 عناصر من index 1</span>
+
+<span class="cm">// ─── البحث ───</span>
+<span class="var">nums</span>.<span class="fn">includes</span>(<span class="num">3</span>);     <span class="cm">// true</span>
+<span class="var">nums</span>.<span class="fn">indexOf</span>(<span class="num">3</span>);      <span class="cm">// 2</span>
+<span class="var">nums</span>.<span class="fn">find</span>(<span class="var">n</span> <span class="op">=></span> <span class="var">n</span> <span class="op">></span> <span class="num">3</span>);     <span class="cm">// 4 (أول عنصر يطابق)</span>
+<span class="var">nums</span>.<span class="fn">findIndex</span>(<span class="var">n</span> <span class="op">=></span> <span class="var">n</span> <span class="op">></span> <span class="num">3</span>); <span class="cm">// 3 (index أول عنصر)</span>
+
+<span class="cm">// ─── التحويل (الأهم!) ───</span>
+<span class="var">nums</span>.<span class="fn">map</span>(<span class="var">n</span> <span class="op">=></span> <span class="var">n</span> <span class="op">*</span> <span class="num">2</span>);   <span class="cm">// [2,4,6,8,10] — تحويل كل عنصر</span>
+<span class="var">nums</span>.<span class="fn">filter</span>(<span class="var">n</span> <span class="op">=></span> <span class="var">n</span> <span class="op">></span> <span class="num">2</span>); <span class="cm">// [3,4,5] — تصفية</span>
+<span class="var">nums</span>.<span class="fn">reduce</span>((<span class="var">acc</span>, <span class="var">n</span>) <span class="op">=></span> <span class="var">acc</span> <span class="op">+</span> <span class="var">n</span>, <span class="num">0</span>); <span class="cm">// 15 — تجميع</span>
+<span class="var">nums</span>.<span class="fn">forEach</span>(<span class="var">n</span> <span class="op">=></span> <span class="fn">console</span>.<span class="fn">log</span>(<span class="var">n</span>));  <span class="cm">// لا يرجع قيمة</span>
+<span class="var">nums</span>.<span class="fn">some</span>(<span class="var">n</span> <span class="op">=></span> <span class="var">n</span> <span class="op">></span> <span class="num">4</span>);   <span class="cm">// true — هل أحد العناصر؟</span>
+<span class="var">nums</span>.<span class="fn">every</span>(<span class="var">n</span> <span class="op">=></span> <span class="var">n</span> <span class="op">></span> <span class="num">0</span>);  <span class="cm">// true — هل كلهم؟</span>
+<span class="var">nums</span>.<span class="fn">sort</span>((<span class="var">a</span>, <span class="var">b</span>) <span class="op">=></span> <span class="var">a</span> <span class="op">-</span> <span class="var">b</span>);  <span class="cm">// ترتيب تصاعدي</span>
+<span class="var">nums</span>.<span class="fn">flat</span>();                   <span class="cm">// تسطيح Array متداخل</span>
+<span class="var">nums</span>.<span class="fn">flatMap</span>(<span class="var">n</span> <span class="op">=></span> [<span class="var">n</span>, <span class="var">n</span> <span class="op">*</span> <span class="num">2</span>]); <span class="cm">// map + flat معاً</span>
+
+<span class="cm">// ─── نسخ ودمج ───</span>
+<span class="kw">const</span> <span class="var">copy</span> = [...<span class="var">nums</span>];          <span class="cm">// نسخ بالـ Spread</span>
+<span class="kw">const</span> <span class="var">merged</span> = [...<span class="var">nums</span>, ...[<span class="num">6</span>,<span class="num">7</span>]]; <span class="cm">// دمج مصفوفتين</span>
+<span class="fn">Array</span>.<span class="fn">from</span>({ <span class="fn">length</span>: <span class="num">5</span> }, (<span class="var">_</span>, <span class="var">i</span>) <span class="op">=></span> <span class="var">i</span>); <span class="cm">// [0,1,2,3,4]</span></pre>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">17</span>Destructuring — تفكيك البيانات</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// ─── Array Destructuring ───</span>
+<span class="kw">const</span> [<span class="var">first</span>, <span class="var">second</span>, ...<span class="var">rest</span>] = [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>];
+<span class="cm">// first = 1, second = 2, rest = [3,4]</span>
+
+<span class="cm">// تبادل قيمتين</span>
+<span class="kw">let</span> <span class="var">a</span> = <span class="num">1</span>, <span class="var">b</span> = <span class="num">2</span>;
+[<span class="var">a</span>, <span class="var">b</span>] = [<span class="var">b</span>, <span class="var">a</span>]; <span class="cm">// a=2, b=1</span>
+
+<span class="cm">// ─── Object Destructuring ───</span>
+<span class="kw">const</span> { <span class="var">name</span>, <span class="var">age</span>, <span class="var">city</span> = <span class="str">"الرياض"</span> } = {
+  <span class="fn">name</span>: <span class="str">"يحيى"</span>, <span class="fn">age</span>: <span class="num">25</span>
+};
+<span class="cm">// name="يحيى", age=25, city="الرياض" (قيمة افتراضية)</span>
+
+<span class="cm">// تغيير اسم المتغير</span>
+<span class="kw">const</span> { <span class="var">name</span>: <span class="var">devName</span> } = { <span class="fn">name</span>: <span class="str">"يحيى"</span> };
+<span class="cm">// devName = "يحيى"</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 10: OBJECTS -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="objects">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-intermediate">🟡 متوسط</span>
+      <div class="section-label">10 — الكائنات</div>
+      <h2 class="section-title">Objects — <span class="y">الكائنات</span></h2>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">18</span>إنشاء واستخدام الكائنات</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// ─── إنشاء Object ───</span>
+<span class="kw">const</span> <span class="var">developer</span> = {
+  <span class="fn">name</span>: <span class="str">"يحيى"</span>,
+  <span class="fn">title</span>: <span class="str">"Full-Stack Developer"</span>,
+  <span class="fn">skills</span>: [<span class="str">"JS"</span>, <span class="str">"PHP"</span>, <span class="str">"CSS"</span>],
+  <span class="fn">greet</span>() {
+    <span class="kw">return</span> <span class="str">`مرحباً أنا ${<span class="kw">this</span>.<span class="fn">name</span>}`</span>;
+  }
+};
+
+<span class="cm">// ─── الوصول للخصائص ───</span>
+<span class="var">developer</span>.<span class="fn">name</span>;          <span class="cm">// "يحيى" (Dot Notation)</span>
+<span class="var">developer</span>[<span class="str">"name"</span>];       <span class="cm">// "يحيى" (Bracket — مفيد للمتغيرات)</span>
+<span class="var">developer</span>.<span class="fn">greet</span>();       <span class="cm">// "مرحباً أنا يحيى"</span>
+
+<span class="cm">// ─── Object Methods ───</span>
+<span class="fn">Object</span>.<span class="fn">keys</span>(<span class="var">developer</span>);   <span class="cm">// ["name","title","skills","greet"]</span>
+<span class="fn">Object</span>.<span class="fn">values</span>(<span class="var">developer</span>); <span class="cm">// القيم</span>
+<span class="fn">Object</span>.<span class="fn">entries</span>(<span class="var">developer</span>);<span class="cm">// [[key,val], ...]</span>
+<span class="fn">Object</span>.<span class="fn">assign</span>({}, <span class="var">developer</span>, { <span class="fn">age</span>: <span class="num">25</span> }); <span class="cm">// دمج</span>
+<span class="fn">Object</span>.<span class="fn">freeze</span>(<span class="var">developer</span>); <span class="cm">// منع التعديل</span>
+
+<span class="cm">// ─── Spread Operator مع Objects ───</span>
+<span class="kw">const</span> <span class="var">updated</span> = { ...<span class="var">developer</span>, <span class="fn">age</span>: <span class="num">25</span> };
+
+<span class="cm">// ─── Optional Chaining ───</span>
+<span class="kw">const</span> <span class="var">zip</span> = <span class="var">developer</span><span class="op">?.</span><span class="fn">address</span><span class="op">?.</span><span class="fn">zip</span>; <span class="cm">// undefined (بدون خطأ)</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 11: DOM -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="dom">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-intermediate">🟡 متوسط</span>
+      <div class="section-label">11 — DOM</div>
+      <h2 class="section-title">DOM Manipulation — <span class="y">التحكم في HTML</span></h2>
+      <p class="section-desc">DOM هو واجهة البرمجة التي تسمح لـ JavaScript بالتفاعل مع عناصر HTML وتعديلها</p>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">19</span>Selecting & Modifying Elements</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// ─── اختيار العناصر ───</span>
+<span class="kw">const</span> <span class="var">btn</span>   = <span class="fn">document</span>.<span class="fn">getElementById</span>(<span class="str">"myBtn"</span>);
+<span class="kw">const</span> <span class="var">items</span> = <span class="fn">document</span>.<span class="fn">getElementsByClassName</span>(<span class="str">"item"</span>);
+<span class="kw">const</span> <span class="var">el</span>    = <span class="fn">document</span>.<span class="fn">querySelector</span>(<span class="str">".header h1"</span>);  <span class="cm">// أول عنصر</span>
+<span class="kw">const</span> <span class="var">all</span>   = <span class="fn">document</span>.<span class="fn">querySelectorAll</span>(<span class="str">"li"</span>);    <span class="cm">// NodeList</span>
+
+<span class="cm">// ─── تعديل المحتوى ───</span>
+<span class="var">el</span>.<span class="fn">textContent</span> = <span class="str">"نص جديد"</span>;   <span class="cm">// نص بدون HTML</span>
+<span class="var">el</span>.<span class="fn">innerHTML</span>   = <span class="str">"&lt;b&gt;نص&lt;/b&gt;"</span>; <span class="cm">// نص مع HTML (حذر من XSS)</span>
+
+<span class="cm">// ─── تعديل CSS ───</span>
+<span class="var">el</span>.<span class="fn">style</span>.<span class="fn">color</span>     = <span class="str">"#F7DF1E"</span>;
+<span class="var">el</span>.<span class="fn">style</span>.<span class="fn">fontSize</span>  = <span class="str">"1.5rem"</span>;
+<span class="var">el</span>.<span class="fn">classList</span>.<span class="fn">add</span>(<span class="str">"active"</span>);
+<span class="var">el</span>.<span class="fn">classList</span>.<span class="fn">remove</span>(<span class="str">"hidden"</span>);
+<span class="var">el</span>.<span class="fn">classList</span>.<span class="fn">toggle</span>(<span class="str">"dark"</span>);
+<span class="var">el</span>.<span class="fn">classList</span>.<span class="fn">contains</span>(<span class="str">"active"</span>); <span class="cm">// true/false</span>
+
+<span class="cm">// ─── تعديل الـ Attributes ───</span>
+<span class="var">el</span>.<span class="fn">setAttribute</span>(<span class="str">"data-id"</span>, <span class="str">"5"</span>);
+<span class="var">el</span>.<span class="fn">getAttribute</span>(<span class="str">"href"</span>);
+<span class="var">el</span>.<span class="fn">removeAttribute</span>(<span class="str">"disabled"</span>);
+
+<span class="cm">// ─── إنشاء وإضافة عناصر ───</span>
+<span class="kw">const</span> <span class="var">newEl</span> = <span class="fn">document</span>.<span class="fn">createElement</span>(<span class="str">"div"</span>);
+<span class="var">newEl</span>.<span class="fn">textContent</span> = <span class="str">"عنصر جديد"</span>;
+<span class="fn">document</span>.<span class="fn">body</span>.<span class="fn">appendChild</span>(<span class="var">newEl</span>);  <span class="cm">// إضافة لآخر body</span>
+<span class="var">el</span>.<span class="fn">insertAdjacentHTML</span>(<span class="str">"beforeend"</span>, <span class="str">"&lt;p&gt;مرحبا&lt;/p&gt;"</span>);
+<span class="var">el</span>.<span class="fn">remove</span>(); <span class="cm">// حذف العنصر</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 12: EVENTS -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="events">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-intermediate">🟡 متوسط</span>
+      <div class="section-label">12 — Events</div>
+      <h2 class="section-title">Events — <span class="y">التفاعل مع المستخدم</span></h2>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">20</span>Event Listeners</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="kw">const</span> <span class="var">btn</span> = <span class="fn">document</span>.<span class="fn">querySelector</span>(<span class="str">"#btn"</span>);
+
+<span class="cm">// ─── الطريقة الصحيحة ───</span>
+<span class="var">btn</span>.<span class="fn">addEventListener</span>(<span class="str">"click"</span>, (<span class="var">e</span>) <span class="op">=></span> {
+  <span class="var">e</span>.<span class="fn">preventDefault</span>(); <span class="cm">// منع السلوك الافتراضي</span>
+  <span class="var">e</span>.<span class="fn">stopPropagation</span>(); <span class="cm">// منع Bubbling</span>
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"تم الضغط!"</span>, <span class="var">e</span>.<span class="fn">target</span>);
+});
+
+<span class="cm">// ─── أهم الأحداث ───</span>
+<span class="cm">// Mouse: click, dblclick, mouseenter, mouseleave, mousemove</span>
+<span class="cm">// Keyboard: keydown, keyup, keypress</span>
+<span class="cm">// Form: submit, change, input, focus, blur</span>
+<span class="cm">// Document: DOMContentLoaded, scroll, resize, load</span>
+
+<span class="cm">// ─── Event Delegation (مهم للأداء) ───</span>
+<span class="fn">document</span>.<span class="fn">querySelector</span>(<span class="str">"ul"</span>).<span class="fn">addEventListener</span>(<span class="str">"click"</span>, (<span class="var">e</span>) <span class="op">=></span> {
+  <span class="kw">if</span> (<span class="var">e</span>.<span class="fn">target</span>.<span class="fn">tagName</span> <span class="op">===</span> <span class="str">"LI"</span>) {
+    <span class="fn">console</span>.<span class="fn">log</span>(<span class="var">e</span>.<span class="fn">target</span>.<span class="fn">textContent</span>);
+  }
+});
+
+<span class="cm">// ─── Keyboard Events ───</span>
+<span class="fn">document</span>.<span class="fn">addEventListener</span>(<span class="str">"keydown"</span>, (<span class="var">e</span>) <span class="op">=></span> {
+  <span class="kw">if</span> (<span class="var">e</span>.<span class="fn">key</span> <span class="op">===</span> <span class="str">"Escape"</span>) <span class="fn">closeModal</span>();
+  <span class="kw">if</span> (<span class="var">e</span>.<span class="fn">ctrlKey</span> <span class="op">&&</span> <span class="var">e</span>.<span class="fn">key</span> <span class="op">===</span> <span class="str">"s"</span>) <span class="fn">save</span>();
+});</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 13: ES6+ -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="es6">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-intermediate">🟡 متوسط</span>
+      <div class="section-label">13 — ES6+</div>
+      <h2 class="section-title">ES6+ — <span class="y">الميزات الحديثة</span></h2>
+      <p class="section-desc">JavaScript تُحدَّث سنوياً — هذه أبرز الميزات من ES6 حتى ES2024</p>
+    </div>
+
+    <div class="topics-grid">
+      <div class="topic-card">
+        <div class="topic-icon">📝</div>
+        <h3>Template Literals</h3>
+        <div class="code-block" style="margin:0">
+          <div class="code-header"><div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div><span class="code-lang">ES6</span><button class="copy-btn" onclick="copyCode(this)">نسخ</button></div>
+          <pre><span class="kw">const</span> <span class="var">n</span> = <span class="str">"يحيى"</span>;
+<span class="str">`مرحباً ${<span class="var">n</span>}!`</span>
+<span class="str">`${<span class="num">2</span> <span class="op">+</span> <span class="num">2</span>}`</span> <span class="cm">// "4"</span>
+<span class="str">`سطر 1
+سطر 2`</span> <span class="cm">// متعدد الأسطر</span></pre>
+        </div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon">📦</div>
+        <h3>Modules (ES6)</h3>
+        <div class="code-block" style="margin:0">
+          <div class="code-header"><div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div><span class="code-lang">ES Modules</span><button class="copy-btn" onclick="copyCode(this)">نسخ</button></div>
+          <pre><span class="cm">// math.js</span>
+<span class="kw">export const</span> <span class="fn">add</span> = (<span class="var">a</span>,<span class="var">b</span>) <span class="op">=></span> <span class="var">a</span><span class="op">+</span><span class="var">b</span>;
+<span class="kw">export default</span> <span class="kw">function</span> <span class="fn">multiply</span>() {}
+
+<span class="cm">// app.js</span>
+<span class="kw">import</span> <span class="fn">multiply</span>, { <span class="fn">add</span> } <span class="kw">from</span> <span class="str">"./math.js"</span>;</pre>
+        </div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon">🗺️</div>
+        <h3>Map & Set</h3>
+        <div class="code-block" style="margin:0">
+          <div class="code-header"><div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div><span class="code-lang">ES6</span><button class="copy-btn" onclick="copyCode(this)">نسخ</button></div>
+          <pre><span class="cm">// Map: مفتاح قد يكون أي نوع</span>
+<span class="kw">const</span> <span class="var">map</span> = <span class="kw">new</span> <span class="fn">Map</span>();
+<span class="var">map</span>.<span class="fn">set</span>(<span class="str">"key"</span>, <span class="num">42</span>);
+
+<span class="cm">// Set: قيم فريدة فقط</span>
+<span class="kw">const</span> <span class="var">unique</span> = [..<.<span class="kw">new</span> <span class="fn">Set</span>([<span class="num">1</span>,<span class="num">2</span>,<span class="num">2</span>,<span class="num">3</span>])];
+<span class="cm">// [1, 2, 3]</span></pre>
+        </div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon">✨</div>
+        <h3>ES2020–2024 Highlights</h3>
+        <div class="code-block" style="margin:0">
+          <div class="code-header"><div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div><span class="code-lang">Modern JS</span><button class="copy-btn" onclick="copyCode(this)">نسخ</button></div>
+          <pre><span class="cm">// ES2021: String.replaceAll</span>
+<span class="str">"a_b_c"</span>.<span class="fn">replaceAll</span>(<span class="str">"_"</span>,<span class="str">"-"</span>);
+
+<span class="cm">// ES2022: Array.at()</span>
+[<span class="num">1</span>,<span class="num">2</span>,<span class="num">3</span>].<span class="fn">at</span>(-<span class="num">1</span>); <span class="cm">// 3</span>
+
+<span class="cm">// ES2023: Array.toSorted()</span>
+<span class="var">arr</span>.<span class="fn">toSorted</span>(); <span class="cm">// نسخة مُرتَّبة</span>
+
+<span class="cm">// ES2024: Object.groupBy()</span>
+<span class="fn">Object</span>.<span class="fn">groupBy</span>(<span class="var">items</span>, <span class="var">i</span> <span class="op">=></span> <span class="var">i</span>.<span class="fn">type</span>);</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 14: ASYNC -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="async">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-advanced">🔴 متقدم</span>
+      <div class="section-label">14 — Async</div>
+      <h2 class="section-title">Async JavaScript — <span class="y">البرمجة غير المتزامنة</span></h2>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">21</span>Promises</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// إنشاء Promise</span>
+<span class="kw">const</span> <span class="var">fetchData</span> = <span class="kw">new</span> <span class="fn">Promise</span>((<span class="var">resolve</span>, <span class="var">reject</span>) <span class="op">=></span> {
+  <span class="kw">const</span> <span class="var">success</span> = <span class="bool">true</span>;
+  <span class="kw">if</span> (<span class="var">success</span>) <span class="var">resolve</span>(<span class="str">"البيانات جاهزة ✅"</span>);
+  <span class="kw">else</span> <span class="var">reject</span>(<span class="kw">new</span> <span class="fn">Error</span>(<span class="str">"فشل التحميل ❌"</span>));
+});
+
+<span class="cm">// استخدام Promise</span>
+<span class="var">fetchData</span>
+  .<span class="fn">then</span>(<span class="var">data</span> <span class="op">=></span> <span class="fn">console</span>.<span class="fn">log</span>(<span class="var">data</span>))
+  .<span class="fn">catch</span>(<span class="var">err</span> <span class="op">=></span> <span class="fn">console</span>.<span class="fn">error</span>(<span class="var">err</span>))
+  .<span class="fn">finally</span>(() <span class="op">=></span> <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"انتهى دائماً"</span>));
+
+<span class="cm">// Promise.all — انتظر كلهم معاً</span>
+<span class="kw">const</span> [<span class="var">u</span>, <span class="var">p</span>] = <span class="kw">await</span> <span class="fn">Promise</span>.<span class="fn">all</span>([<span class="fn">getUser</span>(), <span class="fn">getPosts</span>()]);
+
+<span class="cm">// Promise.allSettled — انتظر كلهم حتى لو فشل بعضهم</span>
+<span class="kw">const</span> <span class="var">results</span> = <span class="kw">await</span> <span class="fn">Promise</span>.<span class="fn">allSettled</span>([<span class="var">p1</span>, <span class="var">p2</span>]);
+
+<span class="cm">// Promise.race — أول من ينتهي يفوز</span>
+<span class="kw">const</span> <span class="var">fastest</span> = <span class="kw">await</span> <span class="fn">Promise</span>.<span class="fn">race</span>([<span class="var">p1</span>, <span class="var">p2</span>]);</pre>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">22</span>Async/Await — الأسلوب الحديث</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// Fetch API + Async/Await</span>
+<span class="kw">async function</span> <span class="fn">getUsers</span>() {
+  <span class="kw">try</span> {
+    <span class="kw">const</span> <span class="var">response</span> = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">"https://api.example.com/users"</span>);
+
+    <span class="kw">if</span> (!<span class="var">response</span>.<span class="fn">ok</span>) {
+      <span class="kw">throw new</span> <span class="fn">Error</span>(<span class="str">`HTTP Error: ${<span class="var">response</span>.<span class="fn">status</span>}`</span>);
+    }
+
+    <span class="kw">const</span> <span class="var">users</span> = <span class="kw">await</span> <span class="var">response</span>.<span class="fn">json</span>();
+    <span class="fn">console</span>.<span class="fn">log</span>(<span class="var">users</span>);
+    <span class="kw">return</span> <span class="var">users</span>;
+
+  } <span class="kw">catch</span> (<span class="var">error</span>) {
+    <span class="fn">console</span>.<span class="fn">error</span>(<span class="str">"خطأ:"</span>, <span class="var">error</span>.<span class="fn">message</span>);
+  } <span class="kw">finally</span> {
+    <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"انتهى الطلب"</span>);
+  }
+}
+
+<span class="cm">// Arrow async function</span>
+<span class="kw">const</span> <span class="fn">postData</span> = <span class="kw">async</span> (<span class="var">url</span>, <span class="var">data</span>) <span class="op">=></span> {
+  <span class="kw">const</span> <span class="var">res</span> = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="var">url</span>, {
+    <span class="fn">method</span>: <span class="str">"POST"</span>,
+    <span class="fn">headers</span>: { <span class="str">"Content-Type"</span>: <span class="str">"application/json"</span> },
+    <span class="fn">body</span>: <span class="fn">JSON</span>.<span class="fn">stringify</span>(<span class="var">data</span>)
+  });
+  <span class="kw">return</span> <span class="var">res</span>.<span class="fn">json</span>();
+};</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 15: OOP -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="oop">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-advanced">🔴 متقدم</span>
+      <div class="section-label">15 — OOP</div>
+      <h2 class="section-title">OOP — <span class="y">البرمجة الكائنية</span></h2>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">23</span>Classes — ES6+</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">JavaScript</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="kw">class</span> <span class="obj">Developer</span> {
+  <span class="cm">// Private fields (ES2022)</span>
+  #<span class="var">salary</span> = <span class="num">0</span>;
+
+  <span class="kw">constructor</span>(<span class="var">name</span>, <span class="var">role</span>) {
+    <span class="kw">this</span>.<span class="fn">name</span> = <span class="var">name</span>;
+    <span class="kw">this</span>.<span class="fn">role</span> = <span class="var">role</span>;
+  }
+
+  <span class="cm">// Getter</span>
+  <span class="kw">get</span> <span class="fn">info</span>() {
+    <span class="kw">return</span> <span class="str">`${<span class="kw">this</span>.<span class="fn">name</span>} — ${<span class="kw">this</span>.<span class="fn">role</span>}`</span>;
+  }
+
+  <span class="cm">// Method</span>
+  <span class="fn">greet</span>() {
+    <span class="kw">return</span> <span class="str">`مرحباً! أنا ${<span class="kw">this</span>.<span class="fn">name</span>}`</span>;
+  }
+
+  <span class="cm">// Static method</span>
+  <span class="kw">static</span> <span class="fn">create</span>(<span class="var">name</span>) {
+    <span class="kw">return new</span> <span class="obj">Developer</span>(<span class="var">name</span>, <span class="str">"Junior"</span>);
+  }
+}
+
+<span class="cm">// Inheritance — الوراثة</span>
+<span class="kw">class</span> <span class="obj">FullStack</span> <span class="kw">extends</span> <span class="obj">Developer</span> {
+  <span class="kw">constructor</span>(<span class="var">name</span>) {
+    <span class="kw">super</span>(<span class="var">name</span>, <span class="str">"Full-Stack"</span>); <span class="cm">// استدعاء الـ parent</span>
+    <span class="kw">this</span>.<span class="fn">stack</span> = [<span class="str">"Laravel"</span>, <span class="str">"React"</span>, <span class="str">"MySQL"</span>];
+  }
+
+  <span class="fn">greet</span>() {
+    <span class="kw">return</span> <span class="str">`${<span class="kw">super</span>.<span class="fn">greet</span>()} — Full-Stack Developer!`</span>;
+  }
+}
+
+<span class="kw">const</span> <span class="var">yahya</span> = <span class="kw">new</span> <span class="obj">FullStack</span>(<span class="str">"يحيى"</span>);
+<span class="var">yahya</span>.<span class="fn">greet</span>();        <span class="cm">// "مرحباً! أنا يحيى — Full-Stack Developer!"</span>
+<span class="var">yahya</span> <span class="kw">instanceof</span> <span class="obj">Developer</span>; <span class="cm">// true</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 16: ADVANCED -->
+<!-- ══════════════════════════════════════════ -->
+<section class="course-section" id="advanced">
+  <div class="container">
+    <div class="section-header">
+      <span class="level-badge badge-advanced">🔴 متقدم</span>
+      <div class="section-label">16 — متقدم</div>
+      <h2 class="section-title">المفاهيم <span class="y">المتقدمة</span></h2>
+    </div>
+
+    <div class="topics-grid">
+
+      <div class="topic-card">
+        <div class="topic-icon">🔄</div>
+        <h3>Generators & Iterators</h3>
+        <div class="code-block" style="margin:0">
+          <div class="code-header"><div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div><span class="code-lang">ES6</span><button class="copy-btn" onclick="copyCode(this)">نسخ</button></div>
+          <pre><span class="kw">function</span>* <span class="fn">counter</span>() {
+  <span class="kw">let</span> <span class="var">i</span> = <span class="num">0</span>;
+  <span class="kw">while</span> (<span class="bool">true</span>) <span class="kw">yield</span> <span class="var">i</span><span class="op">++</span>;
+}
+<span class="kw">const</span> <span class="var">gen</span> = <span class="fn">counter</span>();
+<span class="var">gen</span>.<span class="fn">next</span>().<span class="fn">value</span>; <span class="cm">// 0</span>
+<span class="var">gen</span>.<span class="fn">next</span>().<span class="fn">value</span>; <span class="cm">// 1</span></pre>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon">🪝</div>
+        <h3>Proxy & Reflect</h3>
+        <div class="code-block" style="margin:0">
+          <div class="code-header"><div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div><span class="code-lang">ES6</span><button class="copy-btn" onclick="copyCode(this)">نسخ</button></div>
+          <pre><span class="kw">const</span> <span class="var">handler</span> = {
+  <span class="fn">get</span>(<span class="var">target</span>, <span class="var">key</span>) {
+    <span class="kw">return</span> <span class="var">key</span> <span class="kw">in</span> <span class="var">target</span>
+      ? <span class="var">target</span>[<span class="var">key</span>]
+      : <span class="str">`${<span class="var">key</span>} غير موجود`</span>;
+  }
+};
+<span class="kw">const</span> <span class="var">p</span> = <span class="kw">new</span> <span class="fn">Proxy</span>({<span class="fn">a</span>:<span class="num">1</span>}, <span class="var">handler</span>);
+<span class="var">p</span>.<span class="fn">b</span>; <span class="cm">// "b غير موجود"</span></pre>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon">⏱️</div>
+        <h3>Event Loop & Call Stack</h3>
+        <div class="code-block" style="margin:0">
+          <div class="code-header"><div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div><span class="code-lang">JavaScript</span><button class="copy-btn" onclick="copyCode(this)">نسخ</button></div>
+          <pre><span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"1"</span>);        <span class="cm">// Sync</span>
+<span class="fn">setTimeout</span>(() <span class="op">=></span>
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"2"</span>), <span class="num">0</span> <span class="cm">// Macro-task</span>
+);
+<span class="fn">Promise</span>.<span class="fn">resolve</span>().<span class="fn">then</span>(() <span class="op">=></span>
+  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"3"</span>)      <span class="cm">// Micro-task</span>
+);
+<span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"4"</span>);        <span class="cm">// Sync</span>
+<span class="cm">// Output: 1, 4, 3, 2</span></pre>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon">🧩</div>
+        <h3>Design Patterns</h3>
+        <div class="code-block" style="margin:0">
+          <div class="code-header"><div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div><span class="code-lang">Patterns</span><button class="copy-btn" onclick="copyCode(this)">نسخ</button></div>
+          <pre><span class="cm">// Singleton</span>
+<span class="kw">class</span> <span class="obj">DB</span> {
+  <span class="kw">static</span> <span class="var">#instance</span>;
+  <span class="kw">static</span> <span class="fn">getInstance</span>() {
+    <span class="kw">if</span> (!<span class="obj">DB</span>.<span class="var">#instance</span>)
+      <span class="obj">DB</span>.<span class="var">#instance</span> = <span class="kw">new</span> <span class="obj">DB</span>();
+    <span class="kw">return</span> <span class="obj">DB</span>.<span class="var">#instance</span>;
+  }
+}
+<span class="cm">// Observer, Factory, Module patterns</span></pre>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon">🔧</div>
+        <h3>Error Handling</h3>
+        <div class="code-block" style="margin:0">
+          <div class="code-header"><div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div><span class="code-lang">JavaScript</span><button class="copy-btn" onclick="copyCode(this)">نسخ</button></div>
+          <pre><span class="kw">class</span> <span class="obj">ApiError</span> <span class="kw">extends</span> <span class="obj">Error</span> {
+  <span class="kw">constructor</span>(<span class="var">msg</span>, <span class="var">status</span>) {
+    <span class="kw">super</span>(<span class="var">msg</span>);
+    <span class="kw">this</span>.<span class="fn">status</span> = <span class="var">status</span>;
+  }
+}
+<span class="kw">try</span> {
+  <span class="kw">throw new</span> <span class="obj">ApiError</span>(<span class="str">"Unauthorized"</span>, <span class="num">401</span>);
+} <span class="kw">catch</span> (<span class="var">e</span>) {
+  <span class="kw">if</span> (<span class="var">e</span> <span class="kw">instanceof</span> <span class="obj">ApiError</span>) {
+    <span class="fn">console</span>.<span class="fn">log</span>(<span class="var">e</span>.<span class="fn">status</span>); <span class="cm">// 401</span>
+  }
+}</pre>
+        </div>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon">⚡</div>
+        <h3>Performance & Web APIs</h3>
+        <div class="code-block" style="margin:0">
+          <div class="code-header"><div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div><span class="code-lang">Browser APIs</span><button class="copy-btn" onclick="copyCode(this)">نسخ</button></div>
+          <pre><span class="cm">// Intersection Observer</span>
+<span class="kw">const</span> <span class="var">obs</span> = <span class="kw">new</span> <span class="fn">IntersectionObserver</span>((<span class="var">entries</span>) <span class="op">=></span> {
+  <span class="var">entries</span>.<span class="fn">forEach</span>(<span class="var">e</span> <span class="op">=></span> {
+    <span class="kw">if</span> (<span class="var">e</span>.<span class="fn">isIntersecting</span>) <span class="cm">// في الشاشة؟</span>
+      <span class="var">e</span>.<span class="fn">target</span>.<span class="fn">classList</span>.<span class="fn">add</span>(<span class="str">"visible"</span>);
+  });
+});
+<span class="var">obs</span>.<span class="fn">observe</span>(<span class="fn">document</span>.<span class="fn">querySelector</span>(<span class="str">".card"</span>));</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson" style="margin-top:2rem">
+      <div class="lesson-title"><span class="lesson-num">24</span>Local Storage & Session Storage</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">Web Storage API</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// ─── localStorage (يبقى بعد إغلاق المتصفح) ───</span>
+<span class="fn">localStorage</span>.<span class="fn">setItem</span>(<span class="str">"theme"</span>, <span class="str">"dark"</span>);
+<span class="fn">localStorage</span>.<span class="fn">getItem</span>(<span class="str">"theme"</span>);    <span class="cm">// "dark"</span>
+<span class="fn">localStorage</span>.<span class="fn">removeItem</span>(<span class="str">"theme"</span>);
+<span class="fn">localStorage</span>.<span class="fn">clear</span>();
+
+<span class="cm">// تخزين Object</span>
+<span class="kw">const</span> <span class="var">user</span> = { <span class="fn">name</span>: <span class="str">"يحيى"</span>, <span class="fn">role</span>: <span class="str">"admin"</span> };
+<span class="fn">localStorage</span>.<span class="fn">setItem</span>(<span class="str">"user"</span>, <span class="fn">JSON</span>.<span class="fn">stringify</span>(<span class="var">user</span>));
+
+<span class="cm">// استرجاع Object</span>
+<span class="kw">const</span> <span class="var">saved</span> = <span class="fn">JSON</span>.<span class="fn">parse</span>(<span class="fn">localStorage</span>.<span class="fn">getItem</span>(<span class="str">"user"</span>));
+
+<span class="cm">// ─── sessionStorage (يُمسح عند إغلاق التبويب) ───</span>
+<span class="fn">sessionStorage</span>.<span class="fn">setItem</span>(<span class="str">"token"</span>, <span class="str">"abc123"</span>);</pre>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-title"><span class="lesson-num">25</span>Regular Expressions — التعابير النمطية</div>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span></div>
+          <span class="code-lang">RegEx</span>
+          <button class="copy-btn" onclick="copyCode(this)">نسخ</button>
+        </div>
+        <pre><span class="cm">// إنشاء RegEx</span>
+<span class="kw">const</span> <span class="var">emailRegex</span> = <span class="str">/^[\w.-]+@[\w.-]+\.\w{2,}$/</span>;
+<span class="kw">const</span> <span class="var">phoneRegex</span> = <span class="str">/^(05)[0-9]{8}$/</span>; <span class="cm">// رقم سعودي</span>
+
+<span class="cm">// test — هل يطابق؟</span>
+<span class="var">emailRegex</span>.<span class="fn">test</span>(<span class="str">"yahya@gmail.com"</span>); <span class="cm">// true</span>
+
+<span class="cm">// match — استخراج التطابقات</span>
+<span class="str">"Tel: 0501234567"</span>.<span class="fn">match</span>(<span class="str">/\d{10}/</span>); <span class="cm">// ["0501234567"]</span>
+
+<span class="cm">// replace</span>
+<span class="str">"hello world"</span>.<span class="fn">replace</span>(<span class="str">/\s/g</span>, <span class="str">"-"</span>); <span class="cm">// "hello-world"</span>
+
+<span class="cm">// ─── Flags ───</span>
+<span class="cm">// g = global (كل التطابقات)</span>
+<span class="cm">// i = case insensitive</span>
+<span class="cm">// m = multiline</span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ROADMAP ─── -->
+<section class="course-section" id="roadmap" style="border-bottom:none">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">🗺️ — خارطة الطريق</div>
+      <h2 class="section-title">مسارك من <span class="y">المبتدئ للمحترف</span></h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="icon">🟢</div>
+        <h4>المستوى الأول</h4>
+        <p>المتغيرات، الأنواع، الشروط، الحلقات، الدوال — الأساس الذي يبني عليه كل شيء</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🟡</div>
+        <h4>المستوى الثاني</h4>
+        <p>المصفوفات، الكائنات، DOM، Events، ES6+ — تبدأ تبني مشاريع حقيقية</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🔴</div>
+        <h4>المستوى الثالث</h4>
+        <p>Async/Await، OOP، Closures، Patterns — مستوى المطور الاحترافي</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🚀</div>
+        <h4>ما بعد JavaScript</h4>
+        <p>React أو Vue للـ Frontend، Node.js للـ Backend، TypeScript للمشاريع الكبيرة</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="footer-logo">Yahya.DEV</div>
+  <p style="margin-bottom:.5rem">صُمِّمت وبُنيت بـ ❤️ بواسطة <a href="https://yehiahwary0-oss.github.io/my-portfolio/" target="_blank">Yahya Al-sulami</a></p>
+  <p>Full-Stack Developer & UI/UX Architect · JavaScript Series</p>
+</footer>
+
+<!-- ─── TASK BAR ─── -->
+<div class="taskbar">
+  <div class="taskbar-brand"><span>Yahya.DEV</span> · JS Course</div>
+  <div class="taskbar-social">
+    <a href="mailto:yehiahwary515@gmail.com" class="social-link">
+      <span class="social-icon">✉️</span> Email
+    </a>
+    <a href="https://www.tiktok.com/@yahya.dev8?_r=1&_t=ZS-96l0vQMsaWL" target="_blank" class="social-link">
+      <span class="social-icon">🎵</span> TikTok
+    </a>
+    <a href="https://www.instagram.com/yahya_alsulami515?igsh=MWY4enBuMXNpaTRycA%3D%3D&utm_source=qr" target="_blank" class="social-link">
+      <span class="social-icon">📸</span> Instagram
+    </a>
+    <a href="https://yehiahwary0-oss.github.io/my-portfolio/" target="_blank" class="social-link">
+      <span class="social-icon">🌐</span> Portfolio
+    </a>
+  </div>
+  <div class="taskbar-copy">© 2025 Yahya.DEV</div>
+</div>
+
+<script>
+// ─── SEARCH DATA ───
+const searchData = [
+  { id: "intro", title: "مقدمة — ما هي JavaScript؟", level: "beginner" },
+  { id: "basics", title: "الأساسيات — Console وأول كود", level: "beginner" },
+  { id: "variables", title: "المتغيرات — let, const, var", level: "beginner" },
+  { id: "datatypes", title: "أنواع البيانات — String, Number, Boolean", level: "beginner" },
+  { id: "operators", title: "العمليات الحسابية والمنطقية", level: "beginner" },
+  { id: "conditionals", title: "الشروط — if, else, switch", level: "beginner" },
+  { id: "loops", title: "الحلقات — for, while, forEach", level: "beginner" },
+  { id: "functions", title: "الدوال — Function, Arrow, Closure", level: "intermediate" },
+  { id: "arrays", title: "المصفوفات — map, filter, reduce", level: "intermediate" },
+  { id: "objects", title: "الكائنات — Object Methods, Destructuring", level: "intermediate" },
+  { id: "dom", title: "DOM — التحكم في HTML و CSS", level: "intermediate" },
+  { id: "events", title: "Events — addEventListener, Event Loop", level: "intermediate" },
+  { id: "es6", title: "ES6+ — Template Literals, Modules, Map, Set", level: "intermediate" },
+  { id: "async", title: "Async — Promises, Async/Await, Fetch API", level: "advanced" },
+  { id: "oop", title: "OOP — Classes, Inheritance, Private Fields", level: "advanced" },
+  { id: "advanced", title: "متقدم — Generators, Proxy, Patterns, RegEx", level: "advanced" },
+  { id: "roadmap", title: "خارطة الطريق من المبتدئ للمحترف", level: "beginner" },
+];
+
+const input = document.getElementById("searchInput");
+const resultsBox = document.getElementById("searchResults");
+
+function getLevelLabel(level) {
+  const map = { beginner: "مبتدئ", intermediate: "متوسط", advanced: "متقدم" };
+  return map[level] || level;
+}
+
+input.addEventListener("input", () => {
+  const q = input.value.trim().toLowerCase();
+  if (!q) { resultsBox.classList.remove("open"); return; }
+
+  const matches = searchData.filter(d =>
+    d.title.toLowerCase().includes(q) ||
+    d.id.toLowerCase().includes(q)
+  );
+
+  if (!matches.length) {
+    resultsBox.innerHTML = `<div class="search-item" style="cursor:default;color:#555">لا توجد نتائج</div>`;
+  } else {
+    resultsBox.innerHTML = matches.map(m => `
+      <div class="search-item" onclick="goTo('${m.id}')">
+        <span class="search-item-tag tag-${m.level}">${getLevelLabel(m.level)}</span>
+        <span class="search-item-title">${m.title}</span>
+      </div>
+    `).join("");
+  }
+  resultsBox.classList.add("open");
+});
+
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".search-wrapper")) resultsBox.classList.remove("open");
+});
+
+function goTo(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  resultsBox.classList.remove("open");
+  input.value = "";
+}
+
+// ─── LEVEL NAV SCROLL ───
+function scrollToSection(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  document.querySelectorAll(".level-btn").forEach(b => b.classList.remove("active"));
+  event.target.classList.add("active");
+}
+
+// ─── PROGRESS BAR ───
+window.addEventListener("scroll", () => {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = (window.scrollY / total) * 100;
+  document.getElementById("progressBar").style.width = pct + "%";
+});
+
+// ─── COPY CODE ───
+function copyCode(btn) {
+  const pre = btn.closest(".code-block").querySelector("pre");
+  const text = pre.textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = "✓ تم";
+    btn.classList.add("copied");
+    setTimeout(() => { btn.textContent = "نسخ"; btn.classList.remove("copied"); }, 2000);
+  });
+}
+
+// ─── ACTIVE NAV ON SCROLL ───
+const sections = document.querySelectorAll(".course-section");
+const btns = document.querySelectorAll(".level-btn");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      btns.forEach(b => b.classList.remove("active"));
+      const targetBtn = document.querySelector(`.level-btn[onclick*="${id}"]`);
+      if (targetBtn) targetBtn.classList.add("active");
+    }
+  });
+}, { threshold: 0.3, rootMargin: "-130px 0px 0px 0px" });
+
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

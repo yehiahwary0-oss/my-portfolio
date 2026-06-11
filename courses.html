@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- ═══ SEO ═══ -->
+  <title>Free Coding Courses — Yahya Al-Sulami | HTML · CSS · JavaScript · PHP · SQL · C# | Yahya.DEV</title>
+  <meta name="description" content="Free professional coding courses by Yahya Al-Sulami (Yahya.DEV). Learn HTML5, CSS3, JavaScript, PHP, C#, and SQL from beginner to professional level. No paid platforms — real skills, real projects."/>
+  <meta name="keywords" content="free coding courses, learn HTML free, learn CSS free, learn JavaScript free, learn PHP free, learn SQL free, learn C# free, Yahya Al-Sulami courses, Yahya.DEV, تعلم البرمجة مجانا, كورسات برمجة"/>
+  <meta name="author" content="Yahya Al-Sulami — Yahya.DEV"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="theme-color" content="#020208"/>
+  <link rel="canonical" href="https://yehiahwary0-oss.github.io/my-portfolio/courses.html"/>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Free Coding Courses — Yahya Al-Sulami | Yahya.DEV"/>
+  <meta property="og:description" content="Free professional courses: HTML5, CSS3, JavaScript, PHP, C#, SQL. From zero to professional — no paid platforms needed."/>
+  <meta property="og:image" content="https://yehiahwary0-oss.github.io/my-portfolio/PIC/YAH.webp"/>
+  <meta property="og:url" content="https://yehiahwary0-oss.github.io/my-portfolio/courses.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Free Coding Courses — Yahya Al-Sulami | Yahya.DEV"/>
+  <meta name="twitter:image" content="https://yehiahwary0-oss.github.io/my-portfolio/PIC/YAH.webp"/>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"EducationalOrganization",
+    "name":"Yahya.DEV Courses",
+    "url":"https://yehiahwary0-oss.github.io/my-portfolio/courses.html",
+    "founder":{"@type":"Person","name":"Yahya Al-Sulami"},
+    "description":"Free professional coding courses: Frontend, Backend, and Database development.",
+    "hasOfferCatalog":{
+      "@type":"OfferCatalog",
+      "name":"Free Coding Courses",
+      "itemListElement":[
+        {"@type":"Course","name":"HTML5 Mastery","isAccessibleForFree":true,"url":"https://yehiahwary0-oss.github.io/my-portfolio/Courses/learn-html.html"},
+        {"@type":"Course","name":"CSS3 & Design Systems","isAccessibleForFree":true,"url":"https://yehiahwary0-oss.github.io/my-portfolio/Courses/learn-css.html"},
+        {"@type":"Course","name":"JavaScript ES6+","isAccessibleForFree":true,"url":"https://yehiahwary0-oss.github.io/my-portfolio/Courses/learn-javascript.html"},
+        {"@type":"Course","name":"PHP Complete","isAccessibleForFree":true,"url":"https://yehiahwary0-oss.github.io/my-portfolio/Courses/learn-php.html"},
+        {"@type":"Course","name":"C# & .NET","isAccessibleForFree":true,"url":"https://yehiahwary0-oss.github.io/my-portfolio/Courses/learn-csharp.html"},
+        {"@type":"Course","name":"SQL & Databases","isAccessibleForFree":true,"url":"https://yehiahwary0-oss.github.io/my-portfolio/Courses/learn-sql.html"}
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="PIC/logo.webp" type="image/webp"/>
+  <link rel="apple-touch-icon" href="PIC/logo.webp"/>
+
+  <link rel="stylesheet" href="assets/css/core.css"/>
+  <link rel="stylesheet" href="assets/css/components.css"/>
+  <link rel="stylesheet" href="assets/css/animations.css"/>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+
+  <style>
+  body.no-scroll { overflow: hidden; }
+  #three-canvas { position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%; }
+
+  /* ══ PAGE HERO ══ */
+  .page-hero {
+    min-height: 50vh; padding-top: 72px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; position: relative;
+    z-index: var(--z-base); overflow: hidden;
+    padding-left: var(--container-pad);
+    padding-right: var(--container-pad);
+  }
+  .page-hero::after {
+    content: ''; position: absolute;
+    bottom: 0; left: 0; right: 0; height: 160px;
+    background: linear-gradient(to bottom, transparent, var(--bg-base));
+    z-index: 1;
+  }
+  .page-hero-tag {
+    display: inline-flex; align-items: center; gap: var(--space-3);
+    font-family: var(--font-mono); font-size: 0.68rem;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--cyan); margin-bottom: var(--space-4);
+    opacity: 0; transform: translateY(20px);
+  }
+  .page-hero-tag::before { content:''; width:28px; height:1px; background: linear-gradient(90deg, var(--cyan), transparent); }
+  .page-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 7vw, 7rem);
+    font-weight: 800; letter-spacing: -0.03em;
+    line-height: 0.95; color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    opacity: 0; transform: translateY(30px);
+  }
+  .page-hero-sub {
+    font-size: 1.05rem; color: var(--text-secondary);
+    max-width: 520px; line-height: 1.85;
+    opacity: 0; transform: translateY(20px);
+  }
+
+  /* ══ STATS BAR ══ */
+  .stats-bar-section {
+    position: relative; z-index: var(--z-base);
+    padding: 0 var(--container-pad) var(--space-9);
+  }
+  .stats-bar {
+    max-width: var(--container); margin: 0 auto;
+    display: flex; justify-content: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    flex-wrap: wrap;
+  }
+  .stats-bar-item {
+    flex: 1; min-width: 160px;
+    padding: var(--space-7) var(--space-6);
+    text-align: center;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+  .stats-bar-item:last-child { border-right: none; }
+  .stats-bar-num {
+    font-family: var(--font-display);
+    font-size: 2.4rem; font-weight: 800;
+    letter-spacing: -0.03em; line-height: 1;
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-2);
+  }
+  .stats-bar-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+
+  /* ══ TRACK ══ */
+  .track {
+    position: relative; z-index: var(--z-base);
+    padding: 0 var(--container-pad) var(--space-9);
+  }
+  .track-inner { max-width: var(--container); margin: 0 auto; }
+
+  .track-header {
+    display: flex; align-items: center; gap: var(--space-5);
+    margin-bottom: var(--space-7);
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid var(--border);
+  }
+  .track-icon {
+    width: 64px; height: 64px;
+    border-radius: var(--radius-md);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; flex-shrink: 0;
+  }
+  .track-icon.fe { background: linear-gradient(135deg, rgba(99,102,241,.15), rgba(168,85,247,.15)); border: 1px solid rgba(99,102,241,.25); }
+  .track-icon.be { background: linear-gradient(135deg, rgba(6,182,212,.12), rgba(99,102,241,.1)); border: 1px solid rgba(6,182,212,.25); }
+  .track-icon.db { background: linear-gradient(135deg, rgba(34,197,94,.1), rgba(6,182,212,.08)); border: 1px solid rgba(34,197,94,.2); }
+
+  .track-info { flex: 1; }
+  .track-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem; font-weight: 700;
+    color: var(--text-primary); margin-bottom: var(--space-2);
+    letter-spacing: -0.015em;
+  }
+  .track-desc { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; max-width: 480px; }
+  .track-count {
+    font-family: var(--font-mono); font-size: 0.62rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 6px 16px; border-radius: var(--radius-full);
+    flex-shrink: 0;
+  }
+  .track-count.fe { background: rgba(99,102,241,.1); border:1px solid rgba(99,102,241,.25); color: var(--indigo-l); }
+  .track-count.be { background: rgba(6,182,212,.08); border:1px solid rgba(6,182,212,.2); color: var(--cyan-l); }
+  .track-count.db { background: rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.2); color: #4ade80; }
+
+  /* ══ COURSE CARDS ══ */
+  .courses-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-5);
+  }
+  .c-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    text-decoration: none; display: block;
+    position: relative; overflow: hidden;
+    transition: border-color var(--dur-base),
+                transform var(--dur-base) var(--ease-out),
+                box-shadow var(--dur-slow);
+  }
+  .c-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    transform: scaleX(0); transform-origin: left;
+    transition: transform var(--dur-slow) var(--ease-out);
+  }
+  .c-card:hover { border-color: var(--border-hover); transform: translateY(-6px); box-shadow: 0 24px 56px rgba(0,0,0,0.55); }
+  .c-card:hover::before { transform: scaleX(1); }
+
+  .c-card.html::before { background: linear-gradient(90deg,#e44d26,#f16529); }
+  .c-card.css::before  { background: linear-gradient(90deg,#264de4,#2965f1); }
+  .c-card.js::before   { background: linear-gradient(90deg,#f7df1e,#e5c900); }
+  .c-card.php::before  { background: linear-gradient(90deg,#777bb3,#4f5b93); }
+  .c-card.cs::before   { background: linear-gradient(90deg,#9b4f96,#68217a); }
+  .c-card.sql::before  { background: linear-gradient(90deg,var(--cyan),var(--indigo)); }
+
+  .c-card.html:hover { border-color: rgba(241,101,41,.3); }
+  .c-card.css:hover  { border-color: rgba(41,101,241,.3); }
+  .c-card.js:hover   { border-color: rgba(247,223,30,.25); }
+  .c-card.php:hover  { border-color: rgba(119,123,179,.3); }
+  .c-card.cs:hover   { border-color: rgba(155,79,150,.3); }
+  .c-card.sql:hover  { border-color: rgba(6,182,212,.3); }
+
+  .c-lang-badge {
+    display: inline-block; margin-bottom: var(--space-4);
+    padding: 4px 12px; border-radius: var(--radius-full);
+    font-family: var(--font-mono); font-size: 0.6rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .c-lang-badge.html { background:rgba(241,101,41,.12); border:1px solid rgba(241,101,41,.3); color:#fb7c47; }
+  .c-lang-badge.css  { background:rgba(41,101,241,.12); border:1px solid rgba(41,101,241,.3); color:var(--indigo-l); }
+  .c-lang-badge.js   { background:rgba(247,223,30,.08); border:1px solid rgba(247,223,30,.25); color:#fbbf24; }
+  .c-lang-badge.php  { background:rgba(119,123,179,.12); border:1px solid rgba(119,123,179,.3); color:#a5b4fc; }
+  .c-lang-badge.cs   { background:rgba(155,79,150,.12); border:1px solid rgba(155,79,150,.3); color:#e879f9; }
+  .c-lang-badge.sql  { background:rgba(6,182,212,.08); border:1px solid rgba(6,182,212,.25); color:var(--cyan-l); }
+
+  .c-icon { font-size: 2.8rem; margin-bottom: var(--space-3); display: block; }
+  .c-level { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: var(--space-2); }
+  .c-title { font-family: var(--font-display); font-size: 1.1rem; color: var(--text-primary); margin-bottom: var(--space-3); letter-spacing: -0.01em; }
+  .c-desc  { font-size: 0.85rem; line-height: 1.78; color: var(--text-secondary); margin-bottom: var(--space-5); }
+
+  .c-topics { margin-bottom: var(--space-5); }
+  .c-topics-label { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: var(--space-3); }
+  .c-topic-list { display: flex; flex-direction: column; gap: var(--space-2); }
+  .c-topic {
+    display: flex; align-items: flex-start; gap: var(--space-3);
+    font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;
+  }
+  .c-topic::before { content: '✓'; color: var(--indigo-l); font-size: 0.7rem; flex-shrink: 0; margin-top: 1px; }
+
+  .c-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: var(--space-4); border-top: 1px solid var(--border);
+  }
+  .c-cta {
+    display: flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 0.62rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--indigo-l); transition: gap var(--dur-base);
+  }
+  .c-cta::after { content: '→'; }
+  .c-card:hover .c-cta { gap: 10px; }
+
+  /* ══ ROADMAP ══ */
+  .roadmap-section {
+    position: relative; z-index: var(--z-base);
+    padding: var(--space-9) var(--container-pad) var(--space-10);
+    background: linear-gradient(180deg, transparent, rgba(10,10,24,0.6), transparent);
+  }
+  .roadmap-inner { max-width: var(--container); margin: 0 auto; }
+  .roadmap-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 0; position: relative; margin-top: var(--space-8);
+  }
+  .roadmap-grid::before {
+    content: ''; position: absolute;
+    top: 30px; left: calc(16.67% + 12px); right: calc(16.67% + 12px);
+    height: 1px;
+    background: linear-gradient(90deg, var(--indigo), var(--cyan), #4ade80);
+    z-index: 0;
+  }
+  .roadmap-step { text-align: center; padding: 0 var(--space-5); position: relative; z-index: 1; }
+  .roadmap-num {
+    width: 60px; height: 60px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
+    margin: 0 auto var(--space-5);
+  }
+  .roadmap-num.s1 { background: var(--grad-brand); color: #fff; box-shadow: 0 0 32px rgba(99,102,241,.4); }
+  .roadmap-num.s2 { background: var(--grad-cyan);  color: #fff; box-shadow: 0 0 32px rgba(6,182,212,.35); }
+  .roadmap-num.s3 { background: linear-gradient(135deg,#22c55e,#059669); color: #fff; box-shadow: 0 0 32px rgba(34,197,94,.35); }
+  .roadmap-step-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-3); }
+  .roadmap-step-desc  { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.7; }
+
+  /* ══ RESPONSIVE ══ */
+  @media (max-width: 900px) {
+    .track-header { flex-wrap: wrap; }
+    .track-count { display: none; }
+    .roadmap-grid { grid-template-columns: 1fr; }
+    .roadmap-grid::before { display: none; }
+    .roadmap-step { margin-bottom: var(--space-6); }
+    .stats-bar-item { border-bottom: 1px solid var(--border); border-right: none; }
+    .stats-bar-item:last-child { border-bottom: none; }
+  }
+  @media (max-width: 540px) {
+    .courses-row { grid-template-columns: 1fr; }
+  }
+  </style>
+</head>
+<body>
+
+<div id="preloader" role="status" aria-label="Loading">
+  <div class="preloader-logo">Yahya<span>.</span>DEV</div>
+  <div class="preloader-bar-track"><div class="preloader-bar-fill"></div></div>
+  <div class="preloader-count">0%</div>
+</div>
+<div id="page-transition" class="page-transition-overlay" aria-hidden="true"></div>
+<div id="cursor-dot"  aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+<div id="scroll-progress" role="progressbar" aria-hidden="true"></div>
+<div class="noise-overlay" aria-hidden="true"></div>
+<canvas id="three-canvas" aria-hidden="true"></canvas>
+
+<!-- NAV -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Yahya.DEV — Home">
+      <div class="nav-logo-img-wrap">
+        <img src="PIC/logo.webp" alt="Yahya Al-Sulami" class="nav-logo-img" width="40" height="40" loading="eager"/>
+        <div class="nav-logo-ring" aria-hidden="true"></div>
+      </div>
+      <span class="nav-logo-text">Yahya<span class="dot">.</span><span class="dev">DEV</span></span>
+      <div class="logo-popup" role="dialog" aria-label="Yahya Al-Sulami profile">
+        <div class="logo-popup-card">
+          <div class="logo-popup-cover">
+            <div class="logo-popup-cover-grid" aria-hidden="true"></div>
+            <div class="logo-popup-avatar-wrap">
+              <div class="logo-popup-avatar-ring" aria-hidden="true"></div>
+              <img src="PIC/logo.webp" alt="Yahya Al-Sulami" class="logo-popup-avatar" width="52" height="52" loading="lazy"/>
+            </div>
+          </div>
+          <div class="logo-popup-body">
+            <div class="logo-popup-name">Yahya Al-Sulami</div>
+            <div class="logo-popup-handle">@yahya.dev</div>
+            <p class="logo-popup-bio">Full-Stack Developer &amp; UI Architect. Building systems that perform and interfaces that captivate.</p>
+            <div class="logo-popup-stats">
+              <div class="logo-popup-stat">
+                <div class="logo-popup-stat-num">4+</div>
+                <div class="logo-popup-stat-label">Projects</div>
+              </div>
+              <div class="logo-popup-stat">
+                <div class="logo-popup-stat-num">6+</div>
+                <div class="logo-popup-stat-label">Courses</div>
+              </div>
+              <div class="logo-popup-stat">
+                <div class="logo-popup-stat-num">3+</div>
+                <div class="logo-popup-stat-label">Years</div>
+              </div>
+            </div>
+            <div class="logo-popup-socials">
+              <a href="https://github.com/yehiahwary0-oss" target="_blank" rel="noopener" class="logo-popup-link gh" aria-label="GitHub">GH</a>
+              <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" rel="noopener" class="logo-popup-link ig" aria-label="Instagram">IG</a>
+              <a href="https://www.tiktok.com/@yahya.dev8" target="_blank" rel="noopener" class="logo-popup-link tk" aria-label="TikTok">TK</a>
+              <a href="mailto:yehiahwary515@gmail.com" class="logo-popup-link em" aria-label="Email">✉</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#about"   class="nav-link">About</a>
+      <a href="index.html#skills"  class="nav-link">Skills</a>
+      <a href="projects.html"      class="nav-link">Projects</a>
+      <a href="courses.html"       class="nav-link active">Courses</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang-btn="en">EN</button>
+        <button class="lang-btn"        data-lang-btn="ar">AR</button>
+      </div>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
+        <span data-theme-icon>☀</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="index.html#about"   class="nav-link">About</a>
+  <a href="index.html#skills"  class="nav-link">Skills</a>
+  <a href="projects.html"      class="nav-link">Projects</a>
+  <a href="courses.html"       class="nav-link active">Courses</a>
+  <a href="index.html#contact" class="nav-link">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<header class="page-hero" aria-label="Courses page header">
+  <div class="bg-grid bg-grid-fade" aria-hidden="true"></div>
+  <div class="bg-spotlight" aria-hidden="true"></div>
+  <div class="page-hero-tag" id="phTag">100% Free · Zero Gatekeeping</div>
+  <h1 class="page-hero-title" id="phTitle">
+    Learn to <span class="text-gradient">Code</span>
+  </h1>
+  <p class="page-hero-sub" id="phSub"
+     data-en="Professional-grade courses built from scratch to pro level. No subscriptions. No paywalls. Real knowledge that builds real careers."
+     data-ar="كورسات احترافية من الصفر للمحترف. بدون اشتراكات. بدون قيود. معرفة حقيقية تبني مسيرات حقيقية.">
+    Professional-grade courses built from scratch to pro level.
+    No subscriptions. No paywalls. Real knowledge that builds real careers.
+  </p>
+</header>
+
+<!-- STATS BAR -->
+<div class="stats-bar-section">
+  <div class="stats-bar reveal" aria-label="Course statistics">
+    <div class="stats-bar-item">
+      <div class="stats-bar-num">6</div>
+      <div class="stats-bar-label" data-en="Free Courses" data-ar="كورسات مجانية">Free Courses</div>
+    </div>
+    <div class="stats-bar-item">
+      <div class="stats-bar-num">3</div>
+      <div class="stats-bar-label" data-en="Learning Tracks" data-ar="مسارات تعلم">Learning Tracks</div>
+    </div>
+    <div class="stats-bar-item">
+      <div class="stats-bar-num">$0</div>
+      <div class="stats-bar-label" data-en="Cost Forever" data-ar="التكلفة إلى الأبد">Cost Forever</div>
+    </div>
+    <div class="stats-bar-item">
+      <div class="stats-bar-num">∞</div>
+      <div class="stats-bar-label" data-en="Potential" data-ar="الإمكانيات">Potential</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ══ FRONTEND TRACK ══ -->
+  <section class="track" aria-labelledby="fe-title">
+    <div class="track-inner">
+      <div class="track-header reveal">
+        <div class="track-icon fe">🎨</div>
+        <div class="track-info">
+          <h2 class="track-title" id="fe-title" data-en="Frontend Development" data-ar="تطوير الواجهة الأمامية">Frontend Development</h2>
+          <p class="track-desc" data-en="Master the visual layer of the web. From raw HTML structure to interactive JavaScript applications." data-ar="أتقن الطبقة البصرية للويب. من هيكل HTML إلى تطبيقات JavaScript التفاعلية.">
+            Master the visual layer of the web. From raw HTML structure to interactive JavaScript applications.
+          </p>
+        </div>
+        <span class="track-count fe" data-en="3 Courses" data-ar="3 كورسات">3 Courses</span>
+      </div>
+      <div class="courses-row">
+
+        <a href="Courses/learn-html.html" class="c-card html reveal" aria-label="HTML5 Mastery Course">
+          <span class="c-lang-badge html">HTML5</span>
+          <span class="c-icon">🌐</span>
+          <div class="c-level">Frontend · Beginner → Professional</div>
+          <h3 class="c-title" data-en="HTML5 Mastery" data-ar="إتقان HTML5">HTML5 Mastery</h3>
+          <p class="c-desc" data-en="The backbone of every website. Learn semantic, accessible, and SEO-optimized HTML that search engines and users both love." data-ar="العمود الفقري لكل موقع. تعلم HTML دلالي وقابل للوصول ومحسّن لمحركات البحث.">
+            The backbone of every website. Learn semantic, accessible, and SEO-optimized HTML that search engines and users both love.
+          </p>
+          <div class="c-topics">
+            <div class="c-topics-label">What you'll learn</div>
+            <div class="c-topic-list">
+              <div class="c-topic">Semantic HTML5 — structure that means something</div>
+              <div class="c-topic">Forms, inputs, validation, and accessibility</div>
+              <div class="c-topic">SEO-driven document structure and meta tags</div>
+              <div class="c-topic">HTML5 APIs — Canvas, Video, Audio, Storage</div>
+            </div>
+          </div>
+          <div class="c-footer">
+            <span class="c-cta" data-en="Start Learning" data-ar="ابدأ التعلم">Start Learning</span>
+            <span class="tag tag-green">FREE</span>
+          </div>
+        </a>
+
+        <a href="Courses/learn-css.html" class="c-card css reveal reveal-d1" aria-label="CSS3 Design Systems Course">
+          <span class="c-lang-badge css">CSS3</span>
+          <span class="c-icon">🎨</span>
+          <div class="c-level">Frontend · Beginner → Professional</div>
+          <h3 class="c-title" data-en="CSS3 & Design Systems" data-ar="CSS3 وأنظمة التصميم">CSS3 & Design Systems</h3>
+          <p class="c-desc" data-en="Transform markup into stunning interfaces. Flexbox, Grid, animations, variables, and responsive design systems." data-ar="حوّل العلامات إلى واجهات مذهلة. Flexbox, Grid، الأنيميشن، والمتغيرات.">
+            Transform markup into stunning interfaces. Flexbox, Grid, animations, variables, and responsive design systems.
+          </p>
+          <div class="c-topics">
+            <div class="c-topics-label">What you'll learn</div>
+            <div class="c-topic-list">
+              <div class="c-topic">Flexbox & CSS Grid — modern layout mastery</div>
+              <div class="c-topic">CSS Variables and design tokens</div>
+              <div class="c-topic">Animations, transitions, and keyframes</div>
+              <div class="c-topic">Responsive design and mobile-first thinking</div>
+            </div>
+          </div>
+          <div class="c-footer">
+            <span class="c-cta" data-en="Start Learning" data-ar="ابدأ التعلم">Start Learning</span>
+            <span class="tag tag-green">FREE</span>
+          </div>
+        </a>
+
+        <a href="Courses/learn-javascript.html" class="c-card js reveal reveal-d2" aria-label="JavaScript ES6+ Course">
+          <span class="c-lang-badge js">JavaScript</span>
+          <span class="c-icon">⚡</span>
+          <div class="c-level">Frontend · Beginner → Professional</div>
+          <h3 class="c-title" data-en="JavaScript ES6+" data-ar="جافاسكريبت ES6+">JavaScript ES6+</h3>
+          <p class="c-desc" data-en="The language that powers the modern web. Master DOM manipulation, async programming, APIs, OOP, and professional patterns." data-ar="اللغة التي تشغّل الويب الحديث. إتقان DOM، البرمجة غير المتزامنة، APIs، وOOP.">
+            The language that powers the modern web. Master DOM manipulation, async programming, APIs, OOP, and professional patterns.
+          </p>
+          <div class="c-topics">
+            <div class="c-topics-label">What you'll learn</div>
+            <div class="c-topic-list">
+              <div class="c-topic">ES6+ syntax — arrow functions, destructuring, modules</div>
+              <div class="c-topic">DOM manipulation and event-driven programming</div>
+              <div class="c-topic">Async/Await, Promises, and Fetch API</div>
+              <div class="c-topic">Object-Oriented Programming in JavaScript</div>
+            </div>
+          </div>
+          <div class="c-footer">
+            <span class="c-cta" data-en="Start Learning" data-ar="ابدأ التعلم">Start Learning</span>
+            <span class="tag tag-green">FREE</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BACKEND TRACK ══ -->
+  <section class="track" style="background:linear-gradient(180deg,transparent,rgba(6,182,212,0.02),transparent)" aria-labelledby="be-title">
+    <div class="track-inner">
+      <div class="track-header reveal">
+        <div class="track-icon be">⚙️</div>
+        <div class="track-info">
+          <h2 class="track-title" id="be-title" data-en="Backend Development" data-ar="تطوير الخادم">Backend Development</h2>
+          <p class="track-desc" data-en="Build the engines that power applications. Server-side logic, APIs, authentication, and security." data-ar="ابنِ المحركات التي تشغّل التطبيقات. منطق الخادم، APIs، المصادقة، والأمان.">
+            Build the engines that power applications. Server-side logic, APIs, authentication, and security.
+          </p>
+        </div>
+        <span class="track-count be" data-en="2 Courses" data-ar="2 كورسات">2 Courses</span>
+      </div>
+      <div class="courses-row">
+
+        <a href="Courses/learn-php.html" class="c-card php reveal" aria-label="PHP Complete Course">
+          <span class="c-lang-badge php">PHP 8+</span>
+          <span class="c-icon">🐘</span>
+          <div class="c-level">Backend · Beginner → Professional</div>
+          <h3 class="c-title" data-en="PHP Complete" data-ar="PHP الكامل">PHP Complete</h3>
+          <p class="c-desc" data-en="The language behind 77% of all websites. PHP 8+ from fundamentals to advanced OOP, security, and production-ready apps." data-ar="اللغة الموجودة خلف 77% من المواقع. PHP 8+ من الأساسيات إلى OOP المتقدم والأمان.">
+            The language behind 77% of all websites. PHP 8+ from fundamentals to advanced OOP, security, and production-ready apps.
+          </p>
+          <div class="c-topics">
+            <div class="c-topics-label">What you'll learn</div>
+            <div class="c-topic-list">
+              <div class="c-topic">PHP 8+ syntax, types, and modern features</div>
+              <div class="c-topic">OOP — classes, traits, interfaces</div>
+              <div class="c-topic">Sessions, cookies, and authentication systems</div>
+              <div class="c-topic">Security — SQL injection, XSS, CSRF prevention</div>
+            </div>
+          </div>
+          <div class="c-footer">
+            <span class="c-cta" data-en="Start Learning" data-ar="ابدأ التعلم">Start Learning</span>
+            <span class="tag tag-green">FREE</span>
+          </div>
+        </a>
+
+        <a href="Courses/learn-csharp.html" class="c-card cs reveal reveal-d1" aria-label="C# and .NET Course">
+          <span class="c-lang-badge cs">C# · .NET</span>
+          <span class="c-icon">💎</span>
+          <div class="c-level">Backend · Intermediate → Professional</div>
+          <h3 class="c-title" data-en="C# & .NET" data-ar="C# و .NET">C# & .NET</h3>
+          <p class="c-desc" data-en="Enterprise-grade language trusted by Microsoft and thousands of companies. Master OOP, LINQ, .NET ecosystem, and serious software." data-ar="لغة على مستوى المؤسسات تثق بها Microsoft وآلاف الشركات. إتقان OOP و LINQ ومنظومة .NET.">
+            Enterprise-grade language trusted by Microsoft and thousands of companies. Master OOP, LINQ, .NET ecosystem, and serious software.
+          </p>
+          <div class="c-topics">
+            <div class="c-topics-label">What you'll learn</div>
+            <div class="c-topic-list">
+              <div class="c-topic">C# fundamentals — types, control flow, methods</div>
+              <div class="c-topic">Advanced OOP — inheritance, polymorphism</div>
+              <div class="c-topic">LINQ — querying data with elegance</div>
+              <div class="c-topic">.NET ecosystem — NuGet, assemblies, config</div>
+            </div>
+          </div>
+          <div class="c-footer">
+            <span class="c-cta" data-en="Start Learning" data-ar="ابدأ التعلم">Start Learning</span>
+            <span class="tag tag-green">FREE</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DATABASE TRACK ══ -->
+  <section class="track" aria-labelledby="db-title">
+    <div class="track-inner">
+      <div class="track-header reveal">
+        <div class="track-icon db">🗄️</div>
+        <div class="track-info">
+          <h2 class="track-title" id="db-title" data-en="Database & Data Layer" data-ar="قواعد البيانات وطبقة البيانات">Database & Data Layer</h2>
+          <p class="track-desc" data-en="Every great application is built on great data architecture. Design, query, and optimize databases that scale." data-ar="كل تطبيق عظيم مبني على بنية بيانات عظيمة. صمّم واستعلم وحسّن قواعد البيانات.">
+            Every great application is built on great data architecture. Design, query, and optimize databases that scale.
+          </p>
+        </div>
+        <span class="track-count db" data-en="1 Course" data-ar="كورس واحد">1 Course</span>
+      </div>
+      <div class="courses-row">
+
+        <a href="Courses/learn-sql.html" class="c-card sql reveal" aria-label="SQL and Databases Course">
+          <span class="c-lang-badge sql">SQL</span>
+          <span class="c-icon">🗄️</span>
+          <div class="c-level">Database · Beginner → Professional</div>
+          <h3 class="c-title" data-en="SQL & Databases" data-ar="SQL وقواعد البيانات">SQL & Databases</h3>
+          <p class="c-desc" data-en="Relational databases are the foundation of almost every application. Master SQL, design, optimization, and work with MySQL and PostgreSQL." data-ar="قواعد البيانات العلائقية هي أساس كل تطبيق تقريباً. إتقان SQL والتصميم والتحسين.">
+            Relational databases are the foundation of almost every application. Master SQL, design, optimization, and work with MySQL and PostgreSQL.
+          </p>
+          <div class="c-topics">
+            <div class="c-topics-label">What you'll learn</div>
+            <div class="c-topic-list">
+              <div class="c-topic">Database design — normalization, ER diagrams</div>
+              <div class="c-topic">SQL queries — SELECT, JOIN, GROUP BY, subqueries</div>
+              <div class="c-topic">Indexes, performance, and EXPLAIN plans</div>
+              <div class="c-topic">Transactions, ACID, and data integrity</div>
+            </div>
+          </div>
+          <div class="c-footer">
+            <span class="c-cta" data-en="Start Learning" data-ar="ابدأ التعلم">Start Learning</span>
+            <span class="tag tag-green">FREE</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ROADMAP ══ -->
+  <section class="roadmap-section" aria-labelledby="roadmap-title">
+    <div class="roadmap-inner">
+      <div class="reveal">
+        <div class="section-label" data-en="Learning Path" data-ar="مسار التعلم">Learning Path</div>
+        <h2 class="display-md" id="roadmap-title" style="margin-bottom:var(--space-3)">
+          <span data-en="Suggested" data-ar="المسار">Suggested</span>
+          <span class="text-gradient"> Roadmap</span>
+        </h2>
+        <div class="divider"></div>
+      </div>
+      <div class="roadmap-grid">
+        <div class="roadmap-step reveal">
+          <div class="roadmap-num s1">01</div>
+          <div class="roadmap-step-title" data-en="Start Frontend" data-ar="ابدأ بالواجهة">Start Frontend</div>
+          <p class="roadmap-step-desc" data-en="HTML → CSS → JavaScript. Master the visual layer first. Build 5+ real projects before moving on." data-ar="HTML → CSS → JavaScript. أتقن الطبقة البصرية أولاً. ابنِ 5+ مشاريع حقيقية.">
+            HTML → CSS → JavaScript. Master the visual layer first. Build 5+ real projects before moving on.
+          </p>
+        </div>
+        <div class="roadmap-step reveal reveal-d2">
+          <div class="roadmap-num s2">02</div>
+          <div class="roadmap-step-title" data-en="Add Backend" data-ar="أضف الخادم">Add Backend</div>
+          <p class="roadmap-step-desc" data-en="PHP or C#. Learn server-side logic, APIs, authentication. Build full applications end-to-end." data-ar="PHP أو C#. تعلم منطق الخادم، APIs، المصادقة. ابنِ تطبيقات كاملة من البداية للنهاية.">
+            PHP or C#. Learn server-side logic, APIs, authentication. Build full applications end-to-end.
+          </p>
+        </div>
+        <div class="roadmap-step reveal reveal-d4">
+          <div class="roadmap-num s3">03</div>
+          <div class="roadmap-step-title" data-en="Master Databases" data-ar="أتقن قواعد البيانات">Master Databases</div>
+          <p class="roadmap-step-desc" data-en="SQL is non-negotiable. Understand data design, optimize queries, and connect your full-stack together." data-ar="SQL ضرورة لا تفاوض عليها. افهم تصميم البيانات وحسّن الاستعلامات.">
+            SQL is non-negotiable. Understand data design, optimize queries, and connect your full-stack together.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Yahya<span class="dot">.</span><span class="dev">DEV</span></div>
+    <p class="footer-copy">© 2025 Yahya Al-Sulami. All courses are free forever.</p>
+    <div class="footer-socials">
+      <a href="https://github.com/yehiahwary0-oss" target="_blank" rel="noopener" class="footer-social" aria-label="GitHub">GH</a>
+      <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">IG</a>
+      <a href="https://www.tiktok.com/@yahya.dev8" target="_blank" rel="noopener" class="footer-social" aria-label="TikTok">TK</a>
+      <a href="mailto:yehiahwary515@gmail.com" class="footer-social" aria-label="Email">✉</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/core.js" defer></script>
+<script src="assets/js/three-bg.js" defer></script>
+<script src="assets/js/gsap-init.js" defer></script>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  function tryHero() {
+    if (typeof gsap === 'undefined') { setTimeout(tryHero, 100); return; }
+    gsap.to('#phTag',   { opacity:1, y:0, duration:.7, delay:.2, ease:'power3.out' });
+    gsap.to('#phTitle', { opacity:1, y:0, duration:.9, delay:.4, ease:'power3.out' });
+    gsap.to('#phSub',   { opacity:1, y:0, duration:.7, delay:.7, ease:'power3.out' });
+  }
+  tryHero();
+});
+</script>
+
+</body>
+</html>
