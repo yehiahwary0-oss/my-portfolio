@@ -457,6 +457,67 @@ body .nav-logo-img-wrap { cursor: none; }
 .nav-link:hover::after,
 .nav-link.active::after { width: 100%; }
 
+/* ── Services Nav Link — Eye-Catching ── */
+.nav-link-hire {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px !important;
+  border-radius: 100px;
+  border: 1px solid rgba(6,182,212,0.25);
+  background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(6,182,212,0.08));
+  color: var(--cyan-l) !important;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s var(--ease-spring), box-shadow 0.3s;
+}
+.nav-link-hire::after { display: none; }
+.nav-link-hire .nav-hire-text { position: relative; }
+.nav-link-hire:hover {
+  border-color: var(--cyan);
+  background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(6,182,212,0.15));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(6,182,212,0.25);
+  color: #fff !important;
+}
+.nav-link-hire.active {
+  border-color: var(--cyan);
+  background: linear-gradient(135deg, rgba(99,102,241,0.18), rgba(6,182,212,0.18));
+  color: #fff !important;
+  box-shadow: 0 0 0 1px rgba(6,182,212,0.3), 0 0 16px rgba(6,182,212,0.2);
+}
+/* Pulsing dot badge */
+.nav-hire-badge {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--cyan-l);
+  box-shadow: 0 0 8px var(--cyan), 0 0 4px var(--cyan);
+  flex-shrink: 0;
+  animation: nav-hire-pulse 1.8s ease infinite;
+}
+@keyframes nav-hire-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.6; }
+}
+/* Ambient glow ring */
+.nav-link-hire::before {
+  content: '';
+  position: absolute; inset: -1px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--indigo), var(--cyan));
+  opacity: 0;
+  z-index: -1;
+  filter: blur(8px);
+  transition: opacity 0.3s;
+}
+.nav-link-hire:hover::before { opacity: 0.35; }
+
+/* Mobile menu version */
+.mobile-menu .nav-link-hire {
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 18px !important;
+}
+
 /* Nav Actions */
 .nav-actions {
   display: flex;

@@ -409,3 +409,6 @@ ul, ol { list-style: none; }
 
 /* Scroll to top */
 [dir="rtl"] #scroll-top       { right: auto; left: 32px; }
+
+/* Nav hire badge — RTL */
+[dir="rtl"] .nav-link-hire { flex-direction: row-reverse; }
