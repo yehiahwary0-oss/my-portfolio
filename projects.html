@@ -3,35 +3,21 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <!-- ═══ SEO ═══ -->
   <title>Projects — Yahya Al-Sulami | Full-Stack Developer Portfolio | Yahya.DEV</title>
-  <meta name="description" content="Real-world projects by Yahya Al-Sulami (Yahya.DEV) — Full-Stack trading platforms, cinematic UI websites, real client projects, and SaaS systems. Built with PHP, Laravel, Node.js, Next.js, React, PostgreSQL."/>
-  <meta name="keywords" content="Yahya Al-Sulami projects, Yahya.DEV portfolio, Full-Stack projects, Vortex TraderY, Schweppes Gold, Elite Care Ambulance, SaaS projects, web development portfolio"/>
+  <meta name="description" content="Real-world projects by Yahya Al-Sulami (Yahya.DEV) — Full-Stack trading platforms, cinematic UI websites, real client projects, and SaaS systems. PHP · Laravel · Node.js · Next.js · React · PostgreSQL."/>
+  <meta name="keywords" content="Yahya Al-Sulami projects, Yahya.DEV portfolio, Full-Stack projects, Vortex TraderY, Schweppes Gold, Elite Care Ambulance, SaaS projects"/>
   <meta name="author" content="Yahya Al-Sulami — Yahya.DEV"/>
   <meta name="robots" content="index, follow"/>
   <meta name="theme-color" content="#020208"/>
   <link rel="canonical" href="https://yehiahwary0-oss.github.io/my-portfolio/projects.html"/>
-
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Projects — Yahya Al-Sulami | Yahya.DEV"/>
   <meta property="og:description" content="Real-world Full-Stack projects, SaaS systems, and cinematic UI experiences by Yahya Al-Sulami."/>
   <meta property="og:image" content="https://yehiahwary0-oss.github.io/my-portfolio/PIC/YAH.webp"/>
   <meta property="og:url" content="https://yehiahwary0-oss.github.io/my-portfolio/projects.html"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Projects — Yahya Al-Sulami | Yahya.DEV"/>
   <meta name="twitter:image" content="https://yehiahwary0-oss.github.io/my-portfolio/PIC/YAH.webp"/>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"CollectionPage",
-    "name":"Projects by Yahya Al-Sulami",
-    "url":"https://yehiahwary0-oss.github.io/my-portfolio/projects.html",
-    "author":{"@type":"Person","name":"Yahya Al-Sulami","url":"https://yehiahwary0-oss.github.io/my-portfolio/"},
-    "description":"A collection of real-world Full-Stack, SaaS, and cinematic UI projects by Yahya Al-Sulami."
-  }
-  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Projects by Yahya Al-Sulami","url":"https://yehiahwary0-oss.github.io/my-portfolio/projects.html","author":{"@type":"Person","name":"Yahya Al-Sulami","url":"https://yehiahwary0-oss.github.io/my-portfolio/"},"description":"Real-world Full-Stack, SaaS, and cinematic UI projects by Yahya Al-Sulami."}</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -42,328 +28,292 @@
   <link rel="stylesheet" href="assets/css/core.css"/>
   <link rel="stylesheet" href="assets/css/components.css"/>
   <link rel="stylesheet" href="assets/css/animations.css"/>
+  <link rel="stylesheet" href="assets/css/index-sections.css"/>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
 
   <style>
+  /* ══ Projects Page Specific ══ */
   body.no-scroll { overflow: hidden; }
   #three-canvas { position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%; }
 
-  /* ══ PAGE HERO ══ */
+  /* Page Hero */
   .page-hero {
-    min-height: 52vh;
+    min-height: 48vh;
     padding-top: 72px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
     text-align: center;
-    position: relative;
-    z-index: var(--z-base);
+    position: relative; z-index: 2;
     overflow: hidden;
     padding-left: var(--container-pad);
     padding-right: var(--container-pad);
   }
-  .page-hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 160px;
-    background: linear-gradient(to bottom, transparent, var(--bg-base));
-    z-index: 1;
+  .page-hero-bg {
+    position: absolute; inset: 0; z-index: 0; overflow: hidden;
   }
-  .page-hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-3);
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--cyan);
-    margin-bottom: var(--space-4);
-    opacity: 0;
-    transform: translateY(20px);
+  .page-hero-bg img {
+    width:100%; height:100%;
+    object-fit: cover; object-position: center 20%;
+    opacity: 0.1;
+    filter: saturate(1.2) blur(1px);
   }
-  .page-hero-tag::before {
-    content: '';
-    width: 28px; height: 1px;
-    background: linear-gradient(90deg, var(--cyan), transparent);
+  .page-hero-bg::after {
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(to bottom,
+      rgba(2,2,8,0.3) 0%,
+      rgba(2,2,8,0.7) 50%,
+      rgba(2,2,8,1) 100%);
+  }
+  .page-hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(99,102,241,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99,102,241,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 90% 100% at 50% 0%, black 20%, transparent 100%);
+  }
+  .page-hero-spotlight {
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 0%,
+      rgba(99,102,241,0.08) 0%, transparent 70%);
+  }
+  .page-hero-content {
+    position: relative; z-index: 2;
+    padding: 60px 0 40px;
+  }
+  .page-hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--cyan); margin-bottom: 24px;
+    padding: 7px 16px;
+    background: rgba(6,182,212,0.06);
+    border: 1px solid rgba(6,182,212,0.2);
+    border-radius: 100px;
+    opacity: 0; transform: translateY(20px);
+  }
+  .page-hero-eyebrow-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--cyan); box-shadow: 0 0 8px var(--cyan);
+    animation: pulse-dot 1.5s ease infinite;
   }
   .page-hero-title {
     font-family: var(--font-display);
-    font-size: clamp(2.8rem, 7vw, 7rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 0.95;
-    color: var(--text-primary);
-    margin-bottom: var(--space-4);
-    opacity: 0;
-    transform: translateY(30px);
+    font-size: clamp(3rem, 8vw, 7.5rem);
+    font-weight: 800; letter-spacing: -0.035em; line-height: 0.92;
+    margin-bottom: 24px;
+    opacity: 0; transform: translateY(30px);
   }
   .page-hero-sub {
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-    max-width: 500px;
-    line-height: 1.85;
-    opacity: 0;
-    transform: translateY(20px);
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    color: var(--text-secondary); max-width: 480px; line-height: 1.85;
+    opacity: 0; transform: translateY(20px);
   }
 
-  /* ══ FILTER BAR ══ */
-  .filter-section {
-    position: relative; z-index: var(--z-base);
-    padding: var(--space-6) var(--container-pad) var(--space-7);
-    display: flex;
+  /* Filter */
+  .filter-wrap {
+    position: relative; z-index: 2;
+    max-width: var(--container); margin: 0 auto;
+    padding: 32px var(--container-pad) 40px;
+    display: flex; gap: 8px; flex-wrap: wrap;
     justify-content: center;
-    gap: var(--space-2);
-    flex-wrap: wrap;
-    max-width: var(--container);
-    margin: 0 auto;
   }
   .filter-btn {
     padding: 9px 22px;
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-full);
-    color: var(--text-muted);
-    cursor: none;
-    transition: all var(--dur-base);
+    font-family: var(--font-mono); font-size: 0.63rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    background: rgba(10,10,24,0.7); border: 1px solid rgba(99,102,241,0.12);
+    border-radius: 100px; color: var(--text-muted); cursor: none;
+    backdrop-filter: blur(8px);
+    transition: all 0.25s var(--ease-out);
   }
-  .filter-btn.active, .filter-btn:hover {
-    border-color: var(--indigo);
-    color: var(--text-primary);
-    background: rgba(99,102,241,0.1);
-  }
-  .filter-btn[data-filter="all"].active {
-    border-color: var(--cyan);
-    background: rgba(6,182,212,0.08);
-    color: var(--cyan-l);
-    box-shadow: 0 0 16px rgba(6,182,212,0.15);
-  }
+  .filter-btn:hover { border-color: rgba(99,102,241,0.3); color: var(--text-primary); background: rgba(99,102,241,0.08); }
+  .filter-btn.active { border-color: var(--cyan); color: var(--cyan-l); background: rgba(6,182,212,0.08); box-shadow: 0 0 20px rgba(6,182,212,0.12); }
 
-  /* ══ PROJECTS GRID ══ */
+  /* Projects Grid */
   #projects-grid {
-    position: relative; z-index: var(--z-base);
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 var(--container-pad) var(--space-10);
+    position: relative; z-index: 2;
+    max-width: var(--container); margin: 0 auto;
+    padding: 0 var(--container-pad) 80px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    gap: var(--space-6);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 
-  /* ══ PROJECT CARD ══ */
+  /* Project Card */
   .p-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-    transition: border-color var(--dur-base),
-                box-shadow var(--dur-slow),
-                transform var(--dur-base) var(--ease-out);
-    animation: fadeUp 0.6s var(--ease-out) both;
+    background: rgba(10,10,24,0.8);
+    border: 1px solid rgba(99,102,241,0.1);
+    border-radius: 20px; overflow: hidden;
+    backdrop-filter: blur(12px);
+    transition: border-color 0.3s, transform 0.4s var(--ease-out), box-shadow 0.4s;
+    position: relative;
   }
   .p-card:hover {
-    border-color: var(--border-hover);
-    box-shadow: 0 32px 80px rgba(0,0,0,0.7), var(--glow-indigo);
-    transform: translateY(-6px);
+    border-color: rgba(99,102,241,0.28);
+    transform: translateY(-8px);
+    box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 40px rgba(99,102,241,0.1);
   }
   .p-card.hidden { display: none; }
 
-  /* Featured spans 2 cols */
+  /* Featured — spans 2 cols */
   .p-card.featured { grid-column: span 2; }
-  .p-card.featured .p-img { height: 340px; }
+  .p-card.featured .p-img { height: 360px; }
 
   .p-img {
-    position: relative;
-    overflow: hidden;
-    height: 260px;
+    position: relative; overflow: hidden; height: 260px;
     background: var(--bg-surface);
   }
   .p-img img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform var(--dur-xl) var(--ease-out),
-                filter var(--dur-slow);
-    filter: brightness(0.8) saturate(0.85);
+    width:100%; height:100%; object-fit: cover;
+    transition: transform 0.8s var(--ease-out), filter 0.5s;
+    filter: brightness(0.75) saturate(0.8);
   }
-  .p-card:hover .p-img img {
-    transform: scale(1.07);
-    filter: brightness(0.95) saturate(1.05);
+  .p-card:hover .p-img img { transform: scale(1.07); filter: brightness(0.95) saturate(1.05); }
+
+  /* Scan line hover */
+  .p-img::before {
+    content: '';
+    position: absolute; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    z-index: 2; opacity: 0; top: -1px;
   }
+  .p-card:hover .p-img::before {
+    opacity: 1;
+    animation: scan 1.8s linear infinite;
+  }
+  @keyframes scan { from { top: -1px; } to { top: 101%; } }
+
   .p-img-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(2,2,8,0.97) 0%, transparent 55%);
+    background: linear-gradient(to top, rgba(2,2,8,0.97) 0%, rgba(2,2,8,0.3) 50%, transparent 75%);
   }
   .p-img-shine {
     position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(99,102,241,0.06) 0%, transparent 60%);
-    opacity: 0;
-    transition: opacity var(--dur-base);
+    background: linear-gradient(135deg, rgba(99,102,241,0.05) 0%, transparent 60%);
+    opacity: 0; transition: opacity 0.3s;
   }
   .p-card:hover .p-img-shine { opacity: 1; }
-
   .p-badges {
-    position: absolute;
-    top: var(--space-4); left: var(--space-4);
-    display: flex; gap: var(--space-2); flex-wrap: wrap;
+    position: absolute; top: 16px; left: 16px;
+    display: flex; gap: 8px; flex-wrap: wrap; z-index: 3;
   }
 
-  .p-body { padding: var(--space-6) var(--space-7); }
+  .p-body { padding: 28px 32px 32px; }
   .p-num {
-    font-family: var(--font-mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.3em;
-    color: var(--text-muted);
-    margin-bottom: var(--space-2);
+    font-family: var(--font-mono); font-size: 0.55rem;
+    letter-spacing: 0.35em; color: var(--text-muted); margin-bottom: 8px;
   }
   .p-title {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: var(--space-3);
-    letter-spacing: -0.015em;
+    font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;
+    color: var(--text-primary); margin-bottom: 12px; letter-spacing: -0.02em;
+    transition: color 0.2s;
   }
+  .p-card:hover .p-title { color: var(--cyan-l); }
   .p-desc {
-    font-size: 0.875rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    margin-bottom: var(--space-5);
+    font-size: 0.875rem; line-height: 1.8;
+    color: var(--text-secondary); margin-bottom: 20px;
   }
-
   .p-features {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    margin-bottom: var(--space-5);
+    display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;
   }
   .p-feature {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-3);
-    font-size: 0.83rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;
   }
   .p-feature::before {
-    content: '▸';
-    color: var(--indigo-l);
-    flex-shrink: 0;
-    margin-top: 1px;
-    font-size: 0.7rem;
+    content: '▸'; color: var(--indigo-l); flex-shrink: 0;
+    margin-top: 1px; font-size: 0.7rem;
   }
-
-  .p-tags {
-    display: flex; flex-wrap: wrap; gap: var(--space-2);
-    margin-bottom: var(--space-5);
-  }
+  .p-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
   .p-tag {
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: var(--radius-full);
+    font-family: var(--font-mono); font-size: 0.58rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 100px;
     background: rgba(99,102,241,0.07);
     border: 1px solid rgba(99,102,241,0.15);
     color: var(--indigo-l);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
   }
-
-  .p-links {
-    display: flex; gap: var(--space-3); flex-wrap: wrap;
-  }
-  .p-link {
-    flex: 1; min-width: 110px;
-    padding: 11px 16px;
-    display: flex; align-items: center; justify-content: center;
-    gap: var(--space-2);
-    font-family: var(--font-mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border-radius: var(--radius-sm);
-    transition: all var(--dur-base);
-  }
-  .p-link-live {
-    background: rgba(99,102,241,0.1);
-    border: 1px solid rgba(99,102,241,0.25);
-    color: var(--indigo-l);
-  }
-  .p-link-live:hover { background: var(--indigo); color: #fff; border-color: var(--indigo); }
-  .p-link-demo {
-    background: rgba(6,182,212,0.07);
-    border: 1px solid rgba(6,182,212,0.2);
+  .p-card:hover .p-tag {
+    background: rgba(6,182,212,0.06);
+    border-color: rgba(6,182,212,0.18);
     color: var(--cyan-l);
   }
-  .p-link-demo:hover { background: var(--cyan-d); color: #fff; border-color: var(--cyan); }
+  .p-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .p-link {
+    flex: 1; min-width: 110px; padding: 11px 16px;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 0.6rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border-radius: 10px; transition: all 0.25s;
+  }
+  .p-link-live {
+    background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.22);
+    color: var(--indigo-l);
+  }
+  .p-link-live:hover { background: var(--indigo); color:#fff; border-color:var(--indigo); box-shadow: 0 4px 16px rgba(99,102,241,0.4); }
+  .p-link-demo {
+    background: rgba(6,182,212,0.07); border: 1px solid rgba(6,182,212,0.18);
+    color: var(--cyan-l);
+  }
+  .p-link-demo:hover { background: var(--cyan-d); color:#fff; border-color:var(--cyan); box-shadow: 0 4px 16px rgba(6,182,212,0.35); }
 
-  /* ══ CTA STRIP ══ */
+  /* CTA Strip */
   .cta-strip {
-    position: relative; z-index: var(--z-base);
-    max-width: var(--container);
-    margin: 0 auto var(--space-10);
+    position: relative; z-index: 2;
+    max-width: var(--container); margin: 0 auto var(--space-10);
     padding: 0 var(--container-pad);
   }
   .cta-strip-inner {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-xl);
-    padding: var(--space-8) var(--space-9);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-6);
-    flex-wrap: wrap;
-    position: relative;
-    overflow: hidden;
+    background: rgba(10,10,24,0.8);
+    border: 1px solid rgba(99,102,241,0.12);
+    border-radius: 24px;
+    padding: 48px 56px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 32px; flex-wrap: wrap;
+    position: relative; overflow: hidden;
+    backdrop-filter: blur(16px);
   }
   .cta-strip-inner::before {
     content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 1px;
+    position: absolute; top:0; left:10%; right:10%; height:1px;
     background: linear-gradient(90deg, transparent, var(--indigo), var(--cyan), transparent);
   }
   .cta-strip-inner::after {
     content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(99,102,241,0.1), transparent 70%);
+    position: absolute; top:-80px; right:-80px;
+    width: 280px; height: 280px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(99,102,241,0.08), transparent 70%);
     pointer-events: none;
   }
   .cta-text h3 {
     font-family: var(--font-display);
     font-size: clamp(1.4rem, 2.5vw, 2rem);
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: var(--space-2);
-    letter-spacing: -0.015em;
+    font-weight: 700; color: var(--text-primary);
+    margin-bottom: 8px; letter-spacing: -0.02em;
   }
-  .cta-text p { font-size: 0.95rem; color: var(--text-secondary); max-width: 480px; line-height: 1.8; }
+  .cta-text p { font-size: 0.95rem; color: var(--text-secondary); max-width: 460px; line-height: 1.8; }
 
-  /* ══ RESPONSIVE ══ */
+  /* Responsive */
   @media (max-width: 900px) {
     #projects-grid { grid-template-columns: 1fr; }
     .p-card.featured { grid-column: span 1; }
     .p-card.featured .p-img { height: 260px; }
+    .cta-strip-inner { padding: 32px 28px; }
   }
   @media (max-width: 540px) {
-    #projects-grid { padding: 0 var(--space-4) var(--space-8); gap: var(--space-4); }
-    .p-body { padding: var(--space-5); }
-    .cta-strip-inner { padding: var(--space-6); }
+    #projects-grid { padding: 0 20px 60px; gap: 16px; }
+    .p-body { padding: 20px; }
+    .filter-wrap { padding: 24px 20px 32px; gap: 6px; }
   }
   </style>
 </head>
-<body>
+<body class="no-scroll">
 
 <div id="preloader" role="status" aria-label="Loading">
   <div class="preloader-logo">Yahya<span>.</span>DEV</div>
@@ -377,22 +327,35 @@
 <div class="noise-overlay" aria-hidden="true"></div>
 <canvas id="three-canvas" aria-hidden="true"></canvas>
 
+<!-- Scroll to Top -->
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="st-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#6366f1"/><stop offset="100%" style="stop-color:#06b6d4"/></linearGradient></defs>
+    <circle class="st-bg"       cx="24" cy="24" r="22"/>
+    <circle class="st-track"    cx="24" cy="24" r="20" stroke-dasharray="126" stroke-dashoffset="0"/>
+    <circle class="st-progress" cx="24" cy="24" r="20"/>
+    <polyline class="st-arrow" points="17,27 24,19 31,27"/>
+  </svg>
+</button>
+
 <!-- NAV -->
 <nav id="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Yahya.DEV — Home">
+    <div class="nav-logo" role="button" tabindex="0" aria-label="Yahya.DEV profile" aria-expanded="false">
       <div class="nav-logo-img-wrap">
         <img src="PIC/logo.webp" alt="Yahya Al-Sulami" class="nav-logo-img" width="40" height="40" loading="eager"/>
         <div class="nav-logo-ring" aria-hidden="true"></div>
       </div>
-      <span class="nav-logo-text">Yahya<span class="dot">.</span><span class="dev">DEV</span></span>
+      <a href="index.html" class="nav-logo-home-link" aria-label="Go to Home">
+        <span class="nav-logo-text">Yahya<span class="dot">.</span><span class="dev">DEV</span></span>
+      </a>
       <div class="logo-popup" role="dialog" aria-label="Yahya Al-Sulami profile">
         <div class="logo-popup-card">
           <div class="logo-popup-cover">
             <div class="logo-popup-cover-grid" aria-hidden="true"></div>
             <div class="logo-popup-avatar-wrap">
               <div class="logo-popup-avatar-ring" aria-hidden="true"></div>
-              <img src="PIC/logo.webp" alt="Yahya Al-Sulami" class="logo-popup-avatar" width="52" height="52" loading="lazy"/>
+              <img src="PIC/logo.webp" alt="Yahya Al-Sulami" class="logo-popup-avatar" width="80" height="80" loading="lazy"/>
             </div>
           </div>
           <div class="logo-popup-body">
@@ -400,18 +363,9 @@
             <div class="logo-popup-handle">@yahya.dev</div>
             <p class="logo-popup-bio">Full-Stack Developer &amp; UI Architect. Building systems that perform and interfaces that captivate.</p>
             <div class="logo-popup-stats">
-              <div class="logo-popup-stat">
-                <div class="logo-popup-stat-num">4+</div>
-                <div class="logo-popup-stat-label">Projects</div>
-              </div>
-              <div class="logo-popup-stat">
-                <div class="logo-popup-stat-num">6+</div>
-                <div class="logo-popup-stat-label">Courses</div>
-              </div>
-              <div class="logo-popup-stat">
-                <div class="logo-popup-stat-num">3+</div>
-                <div class="logo-popup-stat-label">Years</div>
-              </div>
+              <div class="logo-popup-stat"><div class="logo-popup-stat-num" data-count="4" data-suffix="+">4+</div><div class="logo-popup-stat-label">Projects</div></div>
+              <div class="logo-popup-stat"><div class="logo-popup-stat-num" data-count="6" data-suffix="+">6+</div><div class="logo-popup-stat-label">Courses</div></div>
+              <div class="logo-popup-stat"><div class="logo-popup-stat-num" data-count="3" data-suffix="+">3+</div><div class="logo-popup-stat-label">Years</div></div>
             </div>
             <div class="logo-popup-socials">
               <a href="https://github.com/yehiahwary0-oss" target="_blank" rel="noopener" class="logo-popup-link gh" aria-label="GitHub">GH</a>
@@ -422,22 +376,23 @@
           </div>
         </div>
       </div>
-    </a>
-    <nav class="nav-links">
-      <a href="index.html#about"    class="nav-link">About</a>
-      <a href="index.html#skills"   class="nav-link">Skills</a>
-      <a href="projects.html"       class="nav-link active">Projects</a>
-      <a href="courses.html"        class="nav-link">Courses</a>
-      <a href="index.html#contact"  class="nav-link">Contact</a>
+    </div>
+
+    <nav class="nav-links" aria-label="Site sections">
+      <a href="index.html#about"   class="nav-link" data-en="About"    data-ar="عني">About</a>
+      <a href="index.html#skills"  class="nav-link" data-en="Skills"   data-ar="مهاراتي">Skills</a>
+      <a href="projects.html"      class="nav-link active" data-en="Projects" data-ar="مشاريعي">Projects</a>
+      <a href="services.html" class="nav-link" target="_blank" data-en="Services" data-ar="خدماتي">Services</a>
+      <a href="courses.html"       class="nav-link" data-en="Courses"  data-ar="كورساتي">Courses</a>
+      <a href="index.html#contact" class="nav-link" data-en="Contact"  data-ar="تواصل">Contact</a>
     </nav>
+
     <div class="nav-actions">
-      <div class="lang-toggle">
+      <div class="lang-toggle" aria-label="Language selector">
         <button class="lang-btn active" data-lang-btn="en">EN</button>
         <button class="lang-btn"        data-lang-btn="ar">AR</button>
       </div>
-      <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
-        <span data-theme-icon>☀</span>
-      </button>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme"><span data-theme-icon>☀</span></button>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -449,42 +404,50 @@
   <a href="index.html#about"   class="nav-link">About</a>
   <a href="index.html#skills"  class="nav-link">Skills</a>
   <a href="projects.html"      class="nav-link active">Projects</a>
+  <a href="services.html" class="nav-link" target="_blank">Services</a>
   <a href="courses.html"       class="nav-link">Courses</a>
   <a href="index.html#contact" class="nav-link">Contact</a>
 </div>
 
 <!-- PAGE HERO -->
 <header class="page-hero" aria-label="Projects page header">
-  <div class="bg-grid bg-grid-fade" aria-hidden="true"></div>
-  <div class="bg-spotlight" aria-hidden="true"></div>
-  <div class="page-hero-tag" id="phTag">Real Work. Real Impact.</div>
-  <h1 class="page-hero-title" id="phTitle">
-    My <span class="text-gradient">Projects</span>
-  </h1>
-  <p class="page-hero-sub" id="phSub"
-     data-en="Every project here is live, real, and built with precision. From SaaS platforms to cinematic UI — this is what I do."
-     data-ar="كل مشروع هنا حي وحقيقي ومبني بدقة. من منصات SaaS إلى واجهات سينمائية.">
-    Every project here is live, real, and built with precision.
-    From SaaS platforms to cinematic UI — this is what I do.
-  </p>
+  <div class="page-hero-bg" aria-hidden="true">
+    <img src="PIC/YAH.webp" alt="" loading="eager" width="1920" height="1080"/>
+  </div>
+  <div class="page-hero-grid"      aria-hidden="true"></div>
+  <div class="page-hero-spotlight" aria-hidden="true"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow" id="phEyebrow">
+      <span class="page-hero-eyebrow-dot"></span>
+      <span data-en="Real Work. Real Impact." data-ar="عمل حقيقي. أثر حقيقي.">Real Work. Real Impact.</span>
+    </div>
+    <h1 class="page-hero-title" id="phTitle">
+      My <span class="text-gradient">Projects</span>
+    </h1>
+    <p class="page-hero-sub" id="phSub"
+       data-en="Every project here is live, real, and built with precision. From SaaS platforms to cinematic UI — this is what I do."
+       data-ar="كل مشروع هنا حي وحقيقي ومبني بدقة. من منصات SaaS إلى واجهات سينمائية.">
+      Every project here is live, real, and built with precision.
+      From SaaS platforms to cinematic UI — this is what I do.
+    </p>
+  </div>
 </header>
 
-<!-- FILTER BAR -->
-<div class="filter-section reveal" role="toolbar" aria-label="Filter projects">
-  <button class="filter-btn active" data-filter="all"       data-en="All"        data-ar="الكل">All</button>
-  <button class="filter-btn"        data-filter="fullstack" data-en="Full-Stack" data-ar="فول ستاك">Full-Stack</button>
-  <button class="filter-btn"        data-filter="ui"        data-en="Cinematic UI" data-ar="واجهات سينمائية">Cinematic UI</button>
-  <button class="filter-btn"        data-filter="client"    data-en="Real Client" data-ar="عملاء حقيقيون">Real Client</button>
-  <button class="filter-btn"        data-filter="portfolio" data-en="Portfolio"  data-ar="بورتفوليو">Portfolio</button>
+<!-- FILTER -->
+<div class="filter-wrap reveal" role="toolbar" aria-label="Filter projects">
+  <button class="filter-btn active" data-filter="all"       data-en="All Projects"  data-ar="الكل">All Projects</button>
+  <button class="filter-btn"        data-filter="fullstack" data-en="Full-Stack"    data-ar="فول ستاك">Full-Stack</button>
+  <button class="filter-btn"        data-filter="ui"        data-en="Cinematic UI"  data-ar="واجهات سينمائية">Cinematic UI</button>
+  <button class="filter-btn"        data-filter="client"    data-en="Real Client"   data-ar="عملاء">Real Client</button>
+  <button class="filter-btn"        data-filter="portfolio" data-en="Portfolio"     data-ar="بورتفوليو">Portfolio</button>
 </div>
 
 <!-- PROJECTS GRID -->
 <main id="projects-grid" aria-label="Projects list">
 
   <!-- 001 Vortex TraderY — Featured -->
-  <article class="p-card featured reveal" data-cat="fullstack"
-           data-tilt data-tilt-max="4" data-tilt-speed="500" data-tilt-glare data-tilt-max-glare="0.06"
-           style="animation-delay:.05s">
+  <article class="p-card featured" data-cat="fullstack"
+           data-tilt data-tilt-max="3" data-tilt-speed="500" data-tilt-glare data-tilt-max-glare="0.05">
     <div class="p-img">
       <img src="PIC/vortex.png" alt="Vortex TraderY — Full-Stack Trading Platform by Yahya Al-Sulami" loading="eager" width="900" height="500"/>
       <div class="p-img-overlay" aria-hidden="true"></div>
@@ -505,14 +468,10 @@
         <div class="p-feature">Deployed on Vercel with CI/CD pipeline and environment isolation</div>
       </div>
       <div class="p-tags">
-        <span class="p-tag">Next.js 14</span>
-        <span class="p-tag">Node.js</span>
-        <span class="p-tag">Express</span>
-        <span class="p-tag">PostgreSQL</span>
-        <span class="p-tag">Prisma</span>
-        <span class="p-tag">TypeScript</span>
-        <span class="p-tag">JWT Auth</span>
-        <span class="p-tag">Vercel</span>
+        <span class="p-tag">Next.js 14</span><span class="p-tag">Node.js</span>
+        <span class="p-tag">Express</span><span class="p-tag">PostgreSQL</span>
+        <span class="p-tag">Prisma</span><span class="p-tag">TypeScript</span>
+        <span class="p-tag">JWT Auth</span><span class="p-tag">Vercel</span>
       </div>
       <div class="p-links">
         <a href="https://vortex-trader-y.vercel.app/" target="_blank" rel="noopener" class="p-link p-link-live">↗ Live Platform</a>
@@ -522,9 +481,8 @@
   </article>
 
   <!-- 002 Schweppes Gold -->
-  <article class="p-card reveal reveal-d1" data-cat="ui"
-           data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.08"
-           style="animation-delay:.1s">
+  <article class="p-card" data-cat="ui"
+           data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.07">
     <div class="p-img">
       <img src="PIC/sh.png" alt="Schweppes Gold — Cinematic UI Website by Yahya Al-Sulami" loading="lazy" width="600" height="340"/>
       <div class="p-img-overlay" aria-hidden="true"></div>
@@ -537,19 +495,16 @@
     <div class="p-body">
       <div class="p-num">Project / 002</div>
       <h2 class="p-title">Schweppes Gold</h2>
-      <p class="p-desc">A luxury cinematic product website that blurs the line between web and film. Immersive scroll-driven animations, particle systems, and premium visual storytelling.</p>
+      <p class="p-desc">A luxury cinematic product website blurring the line between web and film. Immersive scroll-driven animations, particle systems, and premium visual storytelling.</p>
       <div class="p-features">
         <div class="p-feature">GSAP ScrollTrigger — chapter-by-chapter narrative animations</div>
         <div class="p-feature">Custom particle canvas systems per scene section</div>
         <div class="p-feature">Zero-dependency — lightweight yet visually rich</div>
       </div>
       <div class="p-tags">
-        <span class="p-tag">HTML5</span>
-        <span class="p-tag">CSS3</span>
-        <span class="p-tag">JavaScript</span>
-        <span class="p-tag">GSAP</span>
-        <span class="p-tag">Canvas API</span>
-        <span class="p-tag">ScrollTrigger</span>
+        <span class="p-tag">HTML5</span><span class="p-tag">CSS3</span>
+        <span class="p-tag">JavaScript</span><span class="p-tag">GSAP</span>
+        <span class="p-tag">Canvas API</span><span class="p-tag">ScrollTrigger</span>
       </div>
       <div class="p-links">
         <a href="https://yehiahwary0-oss.github.io/Schweppes/" target="_blank" rel="noopener" class="p-link p-link-live">↗ Live Site</a>
@@ -559,9 +514,8 @@
   </article>
 
   <!-- 003 Elite Care Ambulance -->
-  <article class="p-card reveal reveal-d2" data-cat="client"
-           data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.08"
-           style="animation-delay:.15s">
+  <article class="p-card" data-cat="client"
+           data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.07">
     <div class="p-img">
       <img src="PIC/elite.png" alt="Elite Care Ambulance — Real Client Medical Website by Yahya Al-Sulami" loading="lazy" width="600" height="340"/>
       <div class="p-img-overlay" aria-hidden="true"></div>
@@ -575,19 +529,16 @@
     <div class="p-body">
       <div class="p-num">Project / 003</div>
       <h2 class="p-title">Elite Care Ambulance</h2>
-      <p class="p-desc">A real-world production website for a medical ambulance service. Built with a focus on credibility, performance, and technical SEO dominance. Live in full operation.</p>
+      <p class="p-desc">A real-world production website for a medical ambulance service. Built for credibility, performance, and technical SEO dominance. Live in full operation.</p>
       <div class="p-features">
         <div class="p-feature">Full technical SEO — structured data, meta, sitemap, Schema.org</div>
         <div class="p-feature">Performance-first — optimized for Core Web Vitals</div>
         <div class="p-feature">Conversion-focused layout with professional credibility design</div>
       </div>
       <div class="p-tags">
-        <span class="p-tag">HTML5</span>
-        <span class="p-tag">CSS3</span>
-        <span class="p-tag">JavaScript</span>
-        <span class="p-tag">SEO</span>
-        <span class="p-tag">Core Web Vitals</span>
-        <span class="p-tag">Schema.org</span>
+        <span class="p-tag">HTML5</span><span class="p-tag">CSS3</span>
+        <span class="p-tag">JavaScript</span><span class="p-tag">SEO</span>
+        <span class="p-tag">Core Web Vitals</span><span class="p-tag">Schema.org</span>
       </div>
       <div class="p-links">
         <a href="https://www.elite-ambulance.online/" target="_blank" rel="noopener" class="p-link p-link-live">↗ Live Site</a>
@@ -597,9 +548,8 @@
   </article>
 
   <!-- 004 Portfolio V1 -->
-  <article class="p-card reveal reveal-d3" data-cat="portfolio"
-           data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.08"
-           style="animation-delay:.2s">
+  <article class="p-card" data-cat="portfolio"
+           data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.07">
     <div class="p-img">
       <img src="PIC/my.png" alt="Portfolio V1 — First Developer Portfolio by Yahya Al-Sulami" loading="lazy" width="600" height="340"/>
       <div class="p-img-overlay" aria-hidden="true"></div>
@@ -612,19 +562,16 @@
     <div class="p-body">
       <div class="p-num">Project / 004</div>
       <h2 class="p-title">Portfolio V1</h2>
-      <p class="p-desc">The first iteration of my personal developer portfolio. A cinematic dark-themed showcase of early-stage UI/UX design and full-stack development. The foundation of where I am today.</p>
+      <p class="p-desc">The first iteration of my personal developer portfolio. Cinematic dark design, animated particle systems, full SEO, and multi-language course integration.</p>
       <div class="p-features">
         <div class="p-feature">Dark cinematic design with animated particle systems</div>
-        <div class="p-feature">Full SEO implementation with Open Graph and structured data</div>
+        <div class="p-feature">Full SEO with Open Graph and structured data</div>
         <div class="p-feature">Multi-language course integration — HTML, CSS, JS, PHP</div>
       </div>
       <div class="p-tags">
-        <span class="p-tag">HTML5</span>
-        <span class="p-tag">CSS3</span>
-        <span class="p-tag">JavaScript</span>
-        <span class="p-tag">SEO</span>
-        <span class="p-tag">Formspree</span>
-        <span class="p-tag">GitHub Pages</span>
+        <span class="p-tag">HTML5</span><span class="p-tag">CSS3</span>
+        <span class="p-tag">JavaScript</span><span class="p-tag">SEO</span>
+        <span class="p-tag">Formspree</span><span class="p-tag">GitHub Pages</span>
       </div>
       <div class="p-links">
         <a href="https://yehiahwary0-oss.github.io/yahya.github.io/" target="_blank" rel="noopener" class="p-link p-link-live">↗ Live Site</a>
@@ -641,8 +588,7 @@
       <h3 data-en="Have a project in mind?" data-ar="هل لديك مشروع في ذهنك؟">Have a project in mind?</h3>
       <p data-en="Let's build something powerful together. Available for freelance work, collaborations, and full-time opportunities."
          data-ar="لنبني شيئاً قوياً معاً. متاح للعمل الحر والتعاون والفرص بدوام كامل.">
-        Let's build something powerful together. Available for freelance work,
-        collaborations, and full-time opportunities.
+        Let's build something powerful together. Available for freelance work, collaborations, and full-time opportunities.
       </p>
     </div>
     <a href="index.html#contact" class="btn btn-primary btn-lg">
@@ -655,8 +601,11 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand">Yahya<span class="dot">.</span><span class="dev">DEV</span></div>
-    <p class="footer-copy">© 2025 Yahya Al-Sulami. All rights reserved.</p>
+    <div>
+      <div class="footer-brand">Yahya<span class="dot">.</span><span class="dev">DEV</span></div>
+      <div class="footer-tagline" data-en="Engineering experiences, not just code." data-ar="أبني تجارب، لا مجرد كود.">Engineering experiences, not just code.</div>
+    </div>
+    <p class="footer-copy">© <span id="footer-year">2025</span> Yahya Al-Sulami</p>
     <div class="footer-socials">
       <a href="https://github.com/yehiahwary0-oss" target="_blank" rel="noopener" class="footer-social" aria-label="GitHub">GH</a>
       <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">IG</a>
@@ -664,42 +613,86 @@
       <a href="mailto:yehiahwary515@gmail.com" class="footer-social" aria-label="Email">✉</a>
     </div>
   </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      <span>Built with</span><span>♥ + Code</span>
+      <span>·</span>
+      <span>Yahya.DEV <span id="footer-year2">2025</span></span>
+    </div>
+    <div class="footer-bottom-right">
+      <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a> ·
+      <a href="courses.html" data-en="Courses" data-ar="كورسات">Courses</a> ·
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+  </div>
 </footer>
 
 <script src="assets/js/core.js" defer></script>
 <script src="assets/js/three-bg.js" defer></script>
-<script src="assets/js/gsap-init.js" defer></script>
+<script src="assets/js/index-animations.js" defer></script>
 
 <script>
+// Dynamic year
+const yr = new Date().getFullYear();
+['footer-year','footer-year2'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.textContent = yr;
+});
+
 // Hero entrance
 window.addEventListener('DOMContentLoaded', () => {
   function tryHero() {
     if (typeof gsap === 'undefined') { setTimeout(tryHero, 100); return; }
-    gsap.to('#phTag',   { opacity:1, y:0, duration:.7, delay:.2, ease:'power3.out' });
-    gsap.to('#phTitle', { opacity:1, y:0, duration:.9, delay:.4, ease:'power3.out' });
-    gsap.to('#phSub',   { opacity:1, y:0, duration:.7, delay:.7, ease:'power3.out' });
+    const tl = gsap.timeline({ defaults:{ ease:'power3.out' }, delay:0.2 });
+    tl.to('#phEyebrow', { opacity:1, y:0, duration:0.7 })
+      .to('#phTitle',   { opacity:1, y:0, duration:0.9 }, '-=0.4')
+      .to('#phSub',     { opacity:1, y:0, duration:0.7 }, '-=0.5');
   }
   tryHero();
-});
 
-// Filter
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-    document.querySelectorAll('.p-card').forEach(card => {
-      const show = f === 'all' || card.dataset.cat === f;
-      card.classList.toggle('hidden', !show);
+  // Filter
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.p-card').forEach(card => {
+        card.classList.toggle('hidden', f !== 'all' && card.dataset.cat !== f);
+      });
+      if (typeof VanillaTilt !== 'undefined') {
+        setTimeout(() => {
+          VanillaTilt.init(document.querySelectorAll('.p-card:not(.hidden)[data-tilt]'),
+            { max:5, speed:400, glare:true, 'max-glare':0.07 });
+        }, 50);
+      }
     });
-    if (typeof VanillaTilt !== 'undefined') {
-      setTimeout(() => {
-        VanillaTilt.init(document.querySelectorAll('.p-card:not(.hidden)[data-tilt]'), {
-          max:6, speed:400, glare:true, 'max-glare':.08
-        });
-      }, 50);
-    }
   });
+
+  // Project cards entrance
+  function tryCards() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') { setTimeout(tryCards, 100); return; }
+    gsap.registerPlugin(ScrollTrigger);
+    document.querySelectorAll('.p-card').forEach((card, i) => {
+      gsap.fromTo(card,
+        { opacity:0, y:60, x: i%2===0 ? -16 : 16 },
+        { opacity:1, y:0, x:0, duration:0.75, ease:'power3.out',
+          delay: (i%2) * 0.08,
+          scrollTrigger:{ trigger:card, start:'top 85%' }
+        }
+      );
+    });
+    // CTA
+    const cta = document.querySelector('.cta-strip-inner');
+    if (cta) {
+      gsap.fromTo(cta,
+        { opacity:0, y:30 },
+        { opacity:1, y:0, duration:0.8, ease:'power3.out',
+          scrollTrigger:{ trigger:cta, start:'top 85%' }
+        }
+      );
+    }
+  }
+  tryCards();
 });
 </script>
 

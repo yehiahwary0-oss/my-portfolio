@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- ═══ SEO ═══ -->
+  <title>Services — Yahya Al-Sulami | Full-Stack Web Development · UI Design · SEO | Yahya.DEV</title>
+  <meta name="description" content="Professional web development services by Yahya Al-Sulami. Full-Stack development, UI/UX design, SEO optimization, SaaS platforms, performance engineering. One developer — every layer. Fast delivery, clean code, real results."/>
+  <meta name="keywords" content="web development services, Full-Stack developer for hire, UI UX design services, SEO optimization, SaaS development, PHP Laravel developer, Next.js developer, Yahya Al-Sulami, Yahya.DEV, مطور مواقع للتوظيف, خدمات تطوير مواقع, تصميم مواقع احترافية"/>
+  <meta name="author" content="Yahya Al-Sulami — Yahya.DEV"/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <meta name="theme-color" content="#020208"/>
+  <link rel="canonical" href="https://yehiahwary0-oss.github.io/my-portfolio/services.html"/>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Services — Yahya Al-Sulami | Yahya.DEV"/>
+  <meta property="og:description" content="One developer who handles everything — Design, Code, SEO, Performance. Fast delivery. Clean code. Real results."/>
+  <meta property="og:image" content="https://yehiahwary0-oss.github.io/my-portfolio/PIC/YAH.webp"/>
+  <meta property="og:url" content="https://yehiahwary0-oss.github.io/my-portfolio/services.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Services — Yahya Al-Sulami | Yahya.DEV"/>
+  <meta name="twitter:image" content="https://yehiahwary0-oss.github.io/my-portfolio/PIC/YAH.webp"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Yahya.DEV — Web Development Services",
+    "url": "https://yehiahwary0-oss.github.io/my-portfolio/services.html",
+    "provider": {
+      "@type": "Person",
+      "name": "Yahya Al-Sulami",
+      "jobTitle": "Full-Stack Developer & UI Architect",
+      "url": "https://yehiahwary0-oss.github.io/my-portfolio/"
+    },
+    "description": "Full-Stack web development, UI/UX design, SEO optimization, and SaaS platform development.",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Web Development Services",
+      "itemListElement": [
+        {"@type": "Offer", "name": "Complete Website", "description": "Professional website with SEO, performance optimization, and clean code"},
+        {"@type": "Offer", "name": "Full-Stack Web Application", "description": "Custom web applications with backend, database, and API integration"},
+        {"@type": "Offer", "name": "SaaS Platform Development", "description": "Complete SaaS systems with authentication, dashboard, and payment integration"},
+        {"@type": "Offer", "name": "UI/UX Design & Frontend", "description": "Cinematic, high-performance frontend design"},
+        {"@type": "Offer", "name": "SEO Optimization", "description": "Technical SEO to reach Google page 1"}
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="PIC/logo.webp" type="image/webp"/>
+  <link rel="apple-touch-icon" href="PIC/logo.webp"/>
+
+  <link rel="stylesheet" href="assets/css/core.css"/>
+  <link rel="stylesheet" href="assets/css/components.css"/>
+  <link rel="stylesheet" href="assets/css/animations.css"/>
+  <link rel="stylesheet" href="assets/css/index-sections.css"/>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+  <style>
+  body.no-scroll { overflow: hidden; }
+  #three-canvas { position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%; }
+
+  /* ══════════════════════════
+     PAGE HERO
+  ══════════════════════════ */
+  .page-hero {
+    min-height: 52vh; padding-top: 72px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; position: relative; z-index: 2;
+    overflow: hidden;
+    padding-left: var(--container-pad); padding-right: var(--container-pad);
+  }
+  .page-hero-bg { position:absolute;inset:0;z-index:0;overflow:hidden; }
+  .page-hero-bg img { width:100%;height:100%;object-fit:cover;object-position:center 20%;opacity:.1;filter:saturate(1.3) blur(1px); }
+  .page-hero-bg::after { content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,2,8,.2) 0%,rgba(2,2,8,.65) 50%,rgba(2,2,8,1) 100%); }
+  .page-hero-grid { position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(99,102,241,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.03) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 90% 100% at 50% 0%,black 20%,transparent 100%); }
+  .page-hero-spotlight { position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(99,102,241,.1) 0%,transparent 70%); }
+  .page-hero-content { position:relative;z-index:2;padding:64px 0 40px; }
+  .page-hero-eyebrow { display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cyan);margin-bottom:24px;padding:7px 16px;background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.2);border-radius:100px;opacity:0;transform:translateY(20px); }
+  .page-hero-eyebrow-dot { width:5px;height:5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:pulse-dot 1.5s ease infinite; }
+  .page-hero-title { font-family:var(--font-display);font-size:clamp(2.8rem,7vw,7rem);font-weight:800;letter-spacing:-.035em;line-height:.92;margin-bottom:24px;opacity:0;transform:translateY(30px); }
+  .page-hero-sub { font-size:clamp(.95rem,1.5vw,1.1rem);color:var(--text-secondary);max-width:560px;line-height:1.85;opacity:0;transform:translateY(20px);margin:0 auto; }
+
+  /* ══════════════════════════
+     WHY ME — Manifesto Strip
+  ══════════════════════════ */
+  .manifesto {
+    position: relative; z-index: 2;
+    padding: 80px var(--container-pad);
+    background: linear-gradient(180deg, transparent, rgba(99,102,241,.03), transparent);
+  }
+  .manifesto-inner {
+    max-width: var(--container); margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  .manifesto-left {}
+  .manifesto-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800; letter-spacing: -.03em;
+    line-height: 1.05; color: var(--text-primary);
+    margin-bottom: 24px;
+  }
+  .manifesto-headline em {
+    font-style: normal;
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .manifesto-body {
+    font-size: 1rem; line-height: 1.9;
+    color: var(--text-secondary); margin-bottom: 32px;
+  }
+  .manifesto-body strong { color: var(--text-primary); font-weight: 500; }
+
+  /* Why me grid */
+  .manifesto-right {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .why-card {
+    background: rgba(10,10,24,.8);
+    border: 1px solid rgba(99,102,241,.1);
+    border-radius: 16px; padding: 24px 20px;
+    position: relative; overflow: hidden;
+    transition: border-color .3s, transform .3s var(--ease-out);
+    backdrop-filter: blur(8px);
+  }
+  .why-card::before {
+    content: '';
+    position: absolute; top:0;left:0;right:0;height:2px;
+    background: var(--grad-brand);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .5s var(--ease-out);
+  }
+  .why-card:hover { border-color:rgba(99,102,241,.25); transform:translateY(-4px); }
+  .why-card:hover::before { transform: scaleX(1); }
+  .why-icon { font-size:1.6rem; margin-bottom:12px; display:block; }
+  .why-title {
+    font-family: var(--font-display); font-size:.85rem;
+    font-weight:700; color:var(--text-primary);
+    margin-bottom:6px; letter-spacing:-.01em;
+  }
+  .why-desc { font-size:.78rem; line-height:1.65; color:var(--text-muted); }
+
+  /* ══════════════════════════
+     SATISFACTION METER
+  ══════════════════════════ */
+  .satisfaction-section {
+    position: relative; z-index: 2;
+    padding: 0 var(--container-pad) 80px;
+  }
+  .satisfaction-inner {
+    max-width: var(--container); margin: 0 auto;
+  }
+  .satisfaction-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 16px; margin-top: 48px;
+  }
+  .satisfaction-card {
+    background: rgba(10,10,24,.8);
+    border: 1px solid rgba(99,102,241,.1);
+    border-radius: 20px; padding: 32px 24px;
+    text-align: center; position: relative;
+    overflow: hidden; backdrop-filter: blur(8px);
+    transition: border-color .3s, transform .3s var(--ease-out);
+  }
+  .satisfaction-card:hover { border-color:rgba(99,102,241,.25); transform:translateY(-5px); }
+  .satisfaction-card::before {
+    content: '';
+    position: absolute; top:0;left:0;right:0;height:1px;
+    background: linear-gradient(90deg, transparent, var(--indigo), var(--cyan), transparent);
+    opacity: .6;
+  }
+  /* Circular progress */
+  .sat-circle-wrap {
+    position: relative; width: 100px; height: 100px;
+    margin: 0 auto 16px;
+  }
+  .sat-circle-wrap svg { transform: rotate(-90deg); width:100%;height:100%; }
+  .sat-circle-track {
+    fill: none; stroke: rgba(99,102,241,.1); stroke-width: 4;
+  }
+  .sat-circle-fill {
+    fill: none; stroke-width: 4; stroke-linecap: round;
+    stroke-dasharray: 251.2;
+    stroke-dashoffset: 251.2;
+    transition: stroke-dashoffset 1.5s var(--ease-out);
+  }
+  .sat-circle-fill.indigo { stroke: url(#sat-grad-indigo); }
+  .sat-circle-fill.cyan   { stroke: url(#sat-grad-cyan); }
+  .sat-circle-fill.purple { stroke: url(#sat-grad-purple); }
+  .sat-circle-fill.green  { stroke: url(#sat-grad-green); }
+  .sat-circle-num {
+    position: absolute; top:50%;left:50%;
+    transform: translate(-50%,-50%);
+    font-family: var(--font-display); font-size:1.4rem;
+    font-weight:800; letter-spacing:-.03em;
+    background: var(--grad-text);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .sat-title {
+    font-family: var(--font-display); font-size:.88rem;
+    font-weight:700; color:var(--text-primary);
+    margin-bottom:6px; letter-spacing:-.01em;
+  }
+  .sat-desc { font-size:.72rem; color:var(--text-muted); line-height:1.6; }
+
+  /* ══════════════════════════
+     SERVICES
+  ══════════════════════════ */
+  .services-section {
+    position: relative; z-index: 2;
+    padding: 0 var(--container-pad) 80px;
+  }
+  .services-inner { max-width: var(--container); margin: 0 auto; }
+
+  .services-list {
+    display: flex; flex-direction: column;
+    gap: 2px; margin-top: 48px;
+  }
+
+  /* Accordion-style service row */
+  .svc-item {
+    background: rgba(10,10,24,.7);
+    border: 1px solid rgba(99,102,241,.1);
+    border-radius: 16px;
+    overflow: hidden; backdrop-filter: blur(8px);
+    transition: border-color .3s;
+  }
+  .svc-item:hover { border-color: rgba(99,102,241,.22); }
+
+  .svc-header {
+    display: grid;
+    grid-template-columns: 60px 1fr auto auto;
+    align-items: center; gap: 24px;
+    padding: 28px 32px; cursor: none;
+    transition: background .2s;
+  }
+  .svc-header:hover { background: rgba(99,102,241,.04); }
+
+  .svc-num {
+    font-family: var(--font-mono); font-size:.65rem;
+    letter-spacing:.2em; color:var(--text-muted);
+    background: rgba(99,102,241,.08);
+    border: 1px solid rgba(99,102,241,.15);
+    border-radius: 8px; padding:6px 10px;
+    text-align: center;
+  }
+  .svc-title-wrap {}
+  .svc-title {
+    font-family: var(--font-display); font-size:1.15rem;
+    font-weight:700; color:var(--text-primary);
+    margin-bottom:4px; letter-spacing:-.015em;
+    transition: color .2s;
+  }
+  .svc-item:hover .svc-title { color: var(--cyan-l); }
+  .svc-subtitle { font-size:.78rem; color:var(--text-muted); font-family:var(--font-mono); letter-spacing:.06em; }
+
+  .svc-tags-inline {
+    display: flex; gap:6px; flex-wrap:wrap; justify-content:flex-end;
+  }
+  .svc-tag-inline {
+    font-family:var(--font-mono);font-size:.55rem;
+    letter-spacing:.08em;text-transform:uppercase;
+    padding:3px 9px;border-radius:100px;
+    background:rgba(99,102,241,.07);
+    border:1px solid rgba(99,102,241,.15);
+    color:var(--indigo-l);
+  }
+
+  .svc-arrow {
+    width:36px;height:36px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(99,102,241,.08);
+    border:1px solid rgba(99,102,241,.15);
+    color:var(--indigo-l);font-size:.85rem;
+    transition:background .2s,transform .3s var(--ease-spring),border-color .2s;
+    flex-shrink:0;
+  }
+  .svc-item:hover .svc-arrow { background:rgba(99,102,241,.18);border-color:var(--indigo);transform:translateX(4px); }
+
+  /* Expanded content */
+  .svc-body {
+    padding: 0 32px 0;
+    max-height: 0; overflow: hidden;
+    transition: max-height .5s var(--ease-out), padding .3s;
+  }
+  .svc-body.open { max-height: 600px; padding: 0 32px 32px; }
+
+  .svc-body-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 40px; padding-top: 24px;
+    border-top: 1px solid rgba(99,102,241,.08);
+  }
+  .svc-desc {
+    font-size:.9rem;line-height:1.85;color:var(--text-secondary);
+    margin-bottom:20px;
+  }
+  .svc-features { display:flex;flex-direction:column;gap:10px; }
+  .svc-feature {
+    display:flex;align-items:flex-start;gap:10px;
+    font-size:.83rem;color:var(--text-secondary);line-height:1.5;
+  }
+  .svc-feature::before { content:'▸';color:var(--indigo-l);flex-shrink:0;font-size:.7rem;margin-top:2px; }
+
+  .svc-right {}
+  .svc-deliverables-title {
+    font-family:var(--font-mono);font-size:.6rem;
+    letter-spacing:.2em;text-transform:uppercase;
+    color:var(--text-muted);margin-bottom:14px;
+  }
+  .svc-deliverables { display:flex;flex-direction:column;gap:8px;margin-bottom:24px; }
+  .svc-deliverable {
+    display:flex;align-items:center;gap:10px;
+    font-size:.82rem;color:var(--text-secondary);
+  }
+  .svc-deliverable-dot {
+    width:6px;height:6px;border-radius:50%;
+    background:var(--cyan);box-shadow:0 0 6px var(--cyan);
+    flex-shrink:0;
+  }
+  .svc-timeline {
+    display:flex;align-items:center;gap:10px;
+    padding:12px 16px;
+    background:rgba(6,182,212,.05);
+    border:1px solid rgba(6,182,212,.15);
+    border-radius:10px;
+  }
+  .svc-timeline-icon { font-size:1rem; }
+  .svc-timeline-text { font-family:var(--font-mono);font-size:.65rem;letter-spacing:.1em;color:var(--cyan-l); }
+
+  /* ══════════════════════════
+     PROCESS — How I Work
+  ══════════════════════════ */
+  .process-section {
+    position: relative; z-index: 2;
+    padding: 80px var(--container-pad);
+    background: linear-gradient(180deg, transparent, rgba(10,10,24,.5), transparent);
+  }
+  .process-inner { max-width: var(--container); margin: 0 auto; }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(5,1fr);
+    gap: 2px; margin-top: 48px; position: relative;
+  }
+  /* Connecting line */
+  .process-steps::before {
+    content:'';position:absolute;
+    top:28px;left:calc(10% + 14px);right:calc(10% + 14px);
+    height:1px;
+    background:linear-gradient(90deg,var(--indigo),var(--cyan),var(--purple),var(--cyan),#22c55e);
+    z-index:0;
+  }
+  .process-step {
+    text-align:center;padding:0 12px;
+    position:relative;z-index:1;
+  }
+  .process-step-num {
+    width:56px;height:56px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-mono);font-size:.75rem;font-weight:500;
+    margin:0 auto 20px;
+    background:rgba(10,10,24,.95);
+    border:1px solid rgba(99,102,241,.25);
+    color:var(--indigo-l);
+    transition:background .3s,border-color .3s,transform .3s var(--ease-spring);
+    position:relative;z-index:1;
+  }
+  .process-step:hover .process-step-num {
+    background:rgba(99,102,241,.2);
+    border-color:var(--indigo);
+    transform:scale(1.1);
+  }
+  .process-step-title { font-family:var(--font-display);font-size:.88rem;font-weight:700;color:var(--text-primary);margin-bottom:6px; }
+  .process-step-desc  { font-size:.75rem;color:var(--text-muted);line-height:1.65; }
+
+  /* ══════════════════════════
+     TECH STACK SECTION
+  ══════════════════════════ */
+  .stack-section {
+    position: relative; z-index: 2;
+    padding: 0 var(--container-pad) 80px;
+  }
+  .stack-inner { max-width: var(--container); margin: 0 auto; }
+  .stack-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 16px; margin-top: 48px;
+  }
+  .stack-card {
+    background: rgba(10,10,24,.8);
+    border: 1px solid rgba(99,102,241,.1);
+    border-radius: 16px; padding: 28px 24px;
+    backdrop-filter: blur(8px);
+    transition: border-color .3s, transform .3s var(--ease-out);
+  }
+  .stack-card:hover { border-color:rgba(99,102,241,.22);transform:translateY(-4px); }
+  .stack-card-title {
+    font-family:var(--font-mono);font-size:.62rem;
+    letter-spacing:.2em;text-transform:uppercase;
+    color:var(--cyan);margin-bottom:20px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .stack-card-title::before { content:'';width:20px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent); }
+  .stack-pills { display:flex;flex-wrap:wrap;gap:8px; }
+  .stack-pill {
+    font-family:var(--font-mono);font-size:.62rem;
+    letter-spacing:.06em;
+    padding:5px 12px;border-radius:100px;
+    background:rgba(99,102,241,.07);
+    border:1px solid rgba(99,102,241,.14);
+    color:var(--indigo-l);
+    transition:background .2s,border-color .2s,color .2s,transform .2s var(--ease-spring);
+  }
+  .stack-pill:hover { background:rgba(99,102,241,.15);border-color:var(--indigo);color:#fff;transform:translateY(-2px); }
+
+  /* ══════════════════════════
+     CTA — HIRE ME
+  ══════════════════════════ */
+  .hire-section {
+    position: relative; z-index: 2;
+    padding: 0 var(--container-pad) 100px;
+  }
+  .hire-inner { max-width: var(--container); margin: 0 auto; }
+  .hire-card {
+    background: rgba(10,10,24,.85);
+    border: 1px solid rgba(99,102,241,.15);
+    border-radius: 28px; padding: 72px 64px;
+    position: relative; overflow: hidden;
+    text-align: center; backdrop-filter: blur(16px);
+  }
+  .hire-card::before {
+    content:'';position:absolute;top:0;left:15%;right:15%;height:1px;
+    background:linear-gradient(90deg,transparent,var(--indigo),var(--cyan),transparent);
+  }
+  .hire-card::after {
+    content:'';position:absolute;
+    top:-100px;left:50%;transform:translateX(-50%);
+    width:400px;height:400px;border-radius:50%;
+    background:radial-gradient(circle,rgba(99,102,241,.08),transparent 70%);
+    pointer-events:none;
+  }
+  /* Floating orbs */
+  .hire-orb-1 {
+    position:absolute;top:20%;left:5%;
+    width:200px;height:200px;border-radius:50%;
+    background:radial-gradient(circle,rgba(168,85,247,.06),transparent 70%);
+    animation:orb-float 8s ease-in-out infinite;
+  }
+  .hire-orb-2 {
+    position:absolute;bottom:10%;right:5%;
+    width:160px;height:160px;border-radius:50%;
+    background:radial-gradient(circle,rgba(6,182,212,.05),transparent 70%);
+    animation:orb-float 11s ease-in-out infinite reverse;
+  }
+  .hire-eyebrow {
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--font-mono);font-size:.62rem;
+    letter-spacing:.25em;text-transform:uppercase;
+    color:var(--cyan);margin-bottom:24px;
+  }
+  .hire-eyebrow-dot { width:5px;height:5px;border-radius:50%;background:var(--cyan);animation:pulse-dot 1.5s ease infinite; }
+  .hire-title {
+    font-family:var(--font-display);
+    font-size:clamp(2.2rem,5vw,4rem);
+    font-weight:800;letter-spacing:-.035em;line-height:1.05;
+    color:var(--text-primary);margin-bottom:16px;
+    position:relative;z-index:1;
+  }
+  .hire-sub {
+    font-size:1rem;color:var(--text-secondary);
+    max-width:520px;margin:0 auto 40px;line-height:1.85;
+    position:relative;z-index:1;
+  }
+  .hire-cta {
+    display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+    position:relative;z-index:1;margin-bottom:48px;
+  }
+  /* Instagram CTA — highlighted */
+  .btn-instagram {
+    display:inline-flex;align-items:center;gap:10px;
+    padding:16px 36px;
+    background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+    color:#fff;font-family:var(--font-body);
+    font-size:.95rem;font-weight:600;
+    letter-spacing:.04em;
+    border-radius:12px;border:none;
+    cursor:none;position:relative;overflow:hidden;
+    transition:transform .3s var(--ease-spring),box-shadow .3s;
+    box-shadow:0 4px 24px rgba(220,39,67,.3);
+  }
+  .btn-instagram::before {
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);
+    opacity:0;transition:opacity .3s;
+  }
+  .btn-instagram:hover { transform:translateY(-3px);box-shadow:0 8px 36px rgba(220,39,67,.5); }
+  .btn-instagram:hover::before { opacity:1; }
+  .btn-instagram-icon { font-size:1.1rem; }
+
+  /* Social proof bar */
+  .hire-proof {
+    display:flex;align-items:center;justify-content:center;
+    gap:32px;flex-wrap:wrap;
+    padding-top:32px;border-top:1px solid rgba(99,102,241,.08);
+    position:relative;z-index:1;
+  }
+  .hire-proof-item {
+    display:flex;align-items:center;gap:8px;
+    font-family:var(--font-mono);font-size:.62rem;
+    letter-spacing:.1em;color:var(--text-muted);
+  }
+  .hire-proof-dot { width:5px;height:5px;border-radius:50%;background:var(--cyan);flex-shrink:0; }
+
+  /* ══════════════════════════
+     RESPONSIVE
+  ══════════════════════════ */
+  @media(max-width:1100px) {
+    .manifesto-inner { grid-template-columns:1fr; gap:48px; }
+    .satisfaction-grid { grid-template-columns:repeat(2,1fr); }
+    .process-steps { grid-template-columns:repeat(3,1fr); gap:16px; }
+    .process-steps::before { display:none; }
+    .stack-grid { grid-template-columns:1fr 1fr; }
+    .svc-header { grid-template-columns:48px 1fr auto; }
+    .svc-tags-inline { display:none; }
+  }
+  @media(max-width:768px) {
+    .manifesto-right { grid-template-columns:1fr; }
+    .satisfaction-grid { grid-template-columns:repeat(2,1fr); }
+    .process-steps { grid-template-columns:1fr 1fr; }
+    .stack-grid { grid-template-columns:1fr; }
+    .svc-body-inner { grid-template-columns:1fr; gap:24px; }
+    .hire-card { padding:48px 28px; }
+    .hire-cta { flex-direction:column;align-items:center; }
+    .hire-cta .btn { width:100%;justify-content:center; }
+  }
+  @media(max-width:480px) {
+    .process-steps { grid-template-columns:1fr; }
+    .satisfaction-grid { grid-template-columns:1fr; }
+    .svc-header { grid-template-columns:1fr auto;gap:16px;padding:20px; }
+    .svc-num { display:none; }
+  }
+  </style>
+</head>
+<body class="no-scroll">
+
+<div id="preloader" role="status" aria-label="Loading">
+  <div class="preloader-logo">Yahya<span>.</span>DEV</div>
+  <div class="preloader-bar-track"><div class="preloader-bar-fill"></div></div>
+  <div class="preloader-count">0%</div>
+</div>
+<div id="page-transition" class="page-transition-overlay" aria-hidden="true"></div>
+<div id="cursor-dot"  aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+<div id="scroll-progress" role="progressbar" aria-hidden="true"></div>
+<div class="noise-overlay" aria-hidden="true"></div>
+<canvas id="three-canvas" aria-hidden="true"></canvas>
+
+<!-- Scroll to Top -->
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="st-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#6366f1"/><stop offset="100%" style="stop-color:#06b6d4"/></linearGradient></defs>
+    <circle class="st-bg" cx="24" cy="24" r="22"/>
+    <circle class="st-track" cx="24" cy="24" r="20" stroke-dasharray="126" stroke-dashoffset="0"/>
+    <circle class="st-progress" cx="24" cy="24" r="20"/>
+    <polyline class="st-arrow" points="17,27 24,19 31,27"/>
+  </svg>
+</button>
+
+<!-- NAV -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <div class="nav-logo" role="button" tabindex="0" aria-label="Yahya.DEV profile" aria-expanded="false">
+      <div class="nav-logo-img-wrap">
+        <img src="PIC/logo.webp" alt="Yahya Al-Sulami" class="nav-logo-img" width="40" height="40" loading="eager"/>
+        <div class="nav-logo-ring" aria-hidden="true"></div>
+      </div>
+      <a href="index.html" class="nav-logo-home-link" aria-label="Go to Home">
+        <span class="nav-logo-text">Yahya<span class="dot">.</span><span class="dev">DEV</span></span>
+      </a>
+      <div class="logo-popup" role="dialog" aria-label="Yahya Al-Sulami profile">
+        <div class="logo-popup-card">
+          <div class="logo-popup-cover">
+            <div class="logo-popup-cover-grid" aria-hidden="true"></div>
+            <div class="logo-popup-avatar-wrap">
+              <div class="logo-popup-avatar-ring" aria-hidden="true"></div>
+              <img src="PIC/logo.webp" alt="Yahya Al-Sulami" class="logo-popup-avatar" width="80" height="80" loading="lazy"/>
+            </div>
+          </div>
+          <div class="logo-popup-body">
+            <div class="logo-popup-name">Yahya Al-Sulami</div>
+            <div class="logo-popup-handle">@yahya.dev</div>
+            <p class="logo-popup-bio">Full-Stack Developer &amp; UI Architect. One developer — every layer.</p>
+            <div class="logo-popup-stats">
+              <div class="logo-popup-stat"><div class="logo-popup-stat-num" data-count="4" data-suffix="+">4+</div><div class="logo-popup-stat-label">Projects</div></div>
+              <div class="logo-popup-stat"><div class="logo-popup-stat-num" data-count="6" data-suffix="+">6+</div><div class="logo-popup-stat-label">Courses</div></div>
+              <div class="logo-popup-stat"><div class="logo-popup-stat-num" data-count="3" data-suffix="+">3+</div><div class="logo-popup-stat-label">Years</div></div>
+            </div>
+            <div class="logo-popup-socials">
+              <a href="https://github.com/yehiahwary0-oss" target="_blank" rel="noopener" class="logo-popup-link gh" aria-label="GitHub">GH</a>
+              <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" rel="noopener" class="logo-popup-link ig" aria-label="Instagram">IG</a>
+              <a href="https://www.tiktok.com/@yahya.dev8" target="_blank" rel="noopener" class="logo-popup-link tk" aria-label="TikTok">TK</a>
+              <a href="mailto:yehiahwary515@gmail.com" class="logo-popup-link em" aria-label="Email">✉</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="nav-links" aria-label="Site sections">
+      <a href="index.html#about"   class="nav-link" data-en="About"    data-ar="عني">About</a>
+      <a href="index.html#skills"  class="nav-link" data-en="Skills"   data-ar="مهاراتي">Skills</a>
+      <a href="projects.html"      class="nav-link" target="_blank" data-en="Projects" data-ar="مشاريعي">Projects</a>
+      <a href="services.html"      class="nav-link active" data-en="Services" data-ar="خدماتي">Services</a>
+      <a href="courses.html"       class="nav-link" target="_blank" data-en="Courses"  data-ar="كورساتي">Courses</a>
+      <a href="index.html#contact" class="nav-link" data-en="Contact"  data-ar="تواصل">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang-toggle" aria-label="Language selector">
+        <button class="lang-btn active" data-lang-btn="en">EN</button>
+        <button class="lang-btn"        data-lang-btn="ar">AR</button>
+      </div>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme"><span data-theme-icon>☀</span></button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="index.html#about"   class="nav-link">About</a>
+  <a href="index.html#skills"  class="nav-link">Skills</a>
+  <a href="projects.html"      class="nav-link" target="_blank">Projects</a>
+  <a href="services.html"      class="nav-link active">Services</a>
+  <a href="courses.html"       class="nav-link" target="_blank">Courses</a>
+  <a href="index.html#contact" class="nav-link">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<header class="page-hero" aria-label="Services page header">
+  <div class="page-hero-bg" aria-hidden="true">
+    <img src="PIC/YAH.webp" alt="" loading="eager" width="1920" height="1080"/>
+  </div>
+  <div class="page-hero-grid"      aria-hidden="true"></div>
+  <div class="page-hero-spotlight" aria-hidden="true"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow" id="phEyebrow">
+      <span class="page-hero-eyebrow-dot"></span>
+      <span data-en="One Developer. Every Layer." data-ar="مطور واحد. كل طبقة.">One Developer. Every Layer.</span>
+    </div>
+    <h1 class="page-hero-title" id="phTitle">
+      What I <span class="text-gradient">Build</span><br/>
+      <span style="font-size:.6em;font-weight:600;color:var(--text-secondary)">for You</span>
+    </h1>
+    <p class="page-hero-sub" id="phSub"
+       data-en="Design. Code. SEO. Performance. Security. You don't need five agencies — you need one specialist who masters all of it."
+       data-ar="تصميم. كود. SEO. أداء. أمان. لا تحتاج خمس وكالات — تحتاج متخصصاً واحداً يتقن كل شيء.">
+      Design. Code. SEO. Performance. Security.<br/>
+      You don't need five agencies — you need one specialist who masters all of it.
+    </p>
+  </div>
+</header>
+
+<main>
+
+<!-- ══ WHY ME — MANIFESTO ══ -->
+<section class="manifesto" aria-labelledby="manifesto-title">
+  <div class="manifesto-inner">
+    <div class="manifesto-left reveal-left">
+      <div class="section-label" data-en="Why Choose Me" data-ar="لماذا تختارني">Why Choose Me</div>
+      <h2 class="manifesto-headline" id="manifesto-title">
+        <em>Every layer</em><br/>
+        handled by<br/>
+        one expert.
+      </h2>
+      <p class="manifesto-body"
+         data-en="Most clients end up hiring a designer, a developer, an SEO specialist, and a performance engineer separately — paying 4x the price for poor coordination. I handle all of it. One vision. One voice. Zero miscommunication."
+         data-ar="معظم العملاء يوظفون مصمم ومطور ومتخصص SEO ومهندس أداء بشكل منفصل — يدفعون 4 أضعاف المبلغ مع ضعف التنسيق. أنا أتولى كل ذلك. رؤية واحدة. صوت واحد. لا سوء تواصل.">
+        Most clients end up hiring a designer, a developer, an SEO specialist,
+        and a performance engineer separately — paying 4× the price for poor coordination.
+        I handle <strong>all of it</strong>. One vision. One voice. Zero miscommunication.
+      </p>
+      <p class="manifesto-body"
+         data-en="I understand Linux, network security, Google's algorithms, Bash scripting, and backend architecture. This isn't a portfolio — it's a guarantee that what I build performs, ranks, and scales."
+         data-ar="أفهم Linux وأمان الشبكات وخوارزميات Google وBash scripting وهندسة الخادم. هذا ليس بورتفوليو — هذا ضمان أن ما أبنيه يؤدي ويصنّف ويتوسع.">
+        I understand <strong>Linux, network security, Google's algorithms, Bash scripting,
+        and backend architecture</strong>. This isn't a portfolio —
+        it's a guarantee that what I build performs, ranks, and scales.
+      </p>
+    </div>
+
+    <div class="manifesto-right">
+      <div class="why-card reveal">
+        <span class="why-icon">⚡</span>
+        <div class="why-title" data-en="Fast Delivery" data-ar="تسليم سريع">Fast Delivery</div>
+        <p class="why-desc" data-en="No agency bureaucracy. Direct communication, fast decisions, rapid execution." data-ar="لا بيروقراطية وكالات. تواصل مباشر، قرارات سريعة، تنفيذ فوري.">No agency bureaucracy. Direct communication, fast decisions, rapid execution.</p>
+      </div>
+      <div class="why-card reveal reveal-d1">
+        <span class="why-icon">🎯</span>
+        <div class="why-title" data-en="SEO to 100" data-ar="SEO يصل 100">SEO to 100</div>
+        <p class="why-desc" data-en="Not just good code — Google-ready architecture. Lighthouse 90+, structured data, Core Web Vitals." data-ar="ليس فقط كود جيد — بنية جاهزة لـGoogle. Lighthouse 90+، بيانات منظمة، Core Web Vitals.">Not just good code — Google-ready architecture. Lighthouse 90+, structured data, Core Web Vitals.</p>
+      </div>
+      <div class="why-card reveal reveal-d2">
+        <span class="why-icon">🔐</span>
+        <div class="why-title" data-en="Secure by Default" data-ar="آمن بالأساس">Secure by Default</div>
+        <p class="why-desc" data-en="Linux knowledge, network security, SQL injection prevention, XSS protection — security isn't an add-on." data-ar="معرفة Linux، أمان الشبكات، منع SQL injection — الأمان ليس إضافة.">Linux knowledge, network security, SQL injection prevention — security isn't an add-on.</p>
+      </div>
+      <div class="why-card reveal reveal-d3">
+        <span class="why-icon">🤝</span>
+        <div class="why-title" data-en="Full Follow-Up" data-ar="متابعة كاملة">Full Follow-Up</div>
+        <p class="why-desc" data-en="I don't disappear after launch. Ongoing support, bug fixes, and updates — you're never alone." data-ar="لا أختفي بعد الإطلاق. دعم مستمر، إصلاح أخطاء، تحديثات — لن تكون وحدك أبداً.">I don't disappear after launch. Ongoing support, bug fixes, and updates — you're never alone.</p>
+      </div>
+      <div class="why-card reveal reveal-d4">
+        <span class="why-icon">✨</span>
+        <div class="why-title" data-en="Clean Code" data-ar="كود نظيف">Clean Code</div>
+        <p class="why-desc" data-en="Maintainable, documented, and scalable. Code you can build on — not code you'll need to rewrite." data-ar="كود قابل للصيانة والتوسع. كود تبني عليه — لا كود ستحتاج إعادة كتابته.">Maintainable, documented, and scalable. Code you can build on — not code you'll need to rewrite.</p>
+      </div>
+      <div class="why-card reveal reveal-d5">
+        <span class="why-icon">📊</span>
+        <div class="why-title" data-en="Performance First" data-ar="الأداء أولاً">Performance First</div>
+        <p class="why-desc" data-en="Every millisecond costs conversions. I build sites that load fast, respond instantly, and feel premium." data-ar="كل ميلي ثانية تكلف تحويلات. أبني مواقع تحمل بسرعة وتستجيب فوراً وتشعر بالفخامة.">Every millisecond costs conversions. I build sites that load fast, respond instantly, and feel premium.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SATISFACTION METERS ══ -->
+<section class="satisfaction-section" aria-labelledby="satisfaction-title">
+  <div class="satisfaction-inner">
+    <div class="section-label reveal" data-en="Client Satisfaction" data-ar="رضا العملاء">Client Satisfaction</div>
+    <h2 class="display-md reveal" id="satisfaction-title" style="margin-bottom:8px">
+      <span data-en="Numbers That" data-ar="أرقام">Numbers That</span>
+      <span class="text-gradient"> Speak</span>
+    </h2>
+    <div class="divider reveal"></div>
+
+    <!-- SVG gradients for circles -->
+    <svg width="0" height="0" style="position:absolute">
+      <defs>
+        <linearGradient id="sat-grad-indigo" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#6366f1"/>
+          <stop offset="100%" style="stop-color:#818cf8"/>
+        </linearGradient>
+        <linearGradient id="sat-grad-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#06b6d4"/>
+          <stop offset="100%" style="stop-color:#22d3ee"/>
+        </linearGradient>
+        <linearGradient id="sat-grad-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#a855f7"/>
+          <stop offset="100%" style="stop-color:#c084fc"/>
+        </linearGradient>
+        <linearGradient id="sat-grad-green" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#22c55e"/>
+          <stop offset="100%" style="stop-color:#4ade80"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <div class="satisfaction-grid">
+      <div class="satisfaction-card reveal" data-sat="98">
+        <div class="sat-circle-wrap">
+          <svg viewBox="0 0 88 88">
+            <circle class="sat-circle-track" cx="44" cy="44" r="40"/>
+            <circle class="sat-circle-fill indigo" cx="44" cy="44" r="40" data-percent="98"/>
+          </svg>
+          <div class="sat-circle-num">98%</div>
+        </div>
+        <div class="sat-title" data-en="Client Satisfaction" data-ar="رضا العملاء">Client Satisfaction</div>
+        <p class="sat-desc" data-en="Clients who get exactly what they envisioned — and more." data-ar="عملاء حصلوا على ما تخيلوه بالضبط — وأكثر.">Clients who get exactly what they envisioned — and more.</p>
+      </div>
+
+      <div class="satisfaction-card reveal reveal-d1" data-sat="100">
+        <div class="sat-circle-wrap">
+          <svg viewBox="0 0 88 88">
+            <circle class="sat-circle-track" cx="44" cy="44" r="40"/>
+            <circle class="sat-circle-fill cyan" cx="44" cy="44" r="40" data-percent="100"/>
+          </svg>
+          <div class="sat-circle-num">100</div>
+        </div>
+        <div class="sat-title" data-en="SEO Score Target" data-ar="هدف نقاط SEO">SEO Score Target</div>
+        <p class="sat-desc" data-en="Google Lighthouse SEO score I aim for on every project." data-ar="نقاط Google Lighthouse SEO التي أستهدفها في كل مشروع.">Google Lighthouse SEO score I aim for on every project.</p>
+      </div>
+
+      <div class="satisfaction-card reveal reveal-d2" data-sat="95">
+        <div class="sat-circle-wrap">
+          <svg viewBox="0 0 88 88">
+            <circle class="sat-circle-track" cx="44" cy="44" r="40"/>
+            <circle class="sat-circle-fill purple" cx="44" cy="44" r="40" data-percent="95"/>
+          </svg>
+          <div class="sat-circle-num">95%</div>
+        </div>
+        <div class="sat-title" data-en="On-Time Delivery" data-ar="التسليم في الوقت">On-Time Delivery</div>
+        <p class="sat-desc" data-en="Projects delivered on or before the agreed deadline." data-ar="مشاريع تُسلَّم في الموعد المتفق عليه أو قبله.">Projects delivered on or before the agreed deadline.</p>
+      </div>
+
+      <div class="satisfaction-card reveal reveal-d3" data-sat="90">
+        <div class="sat-circle-wrap">
+          <svg viewBox="0 0 88 88">
+            <circle class="sat-circle-track" cx="44" cy="44" r="40"/>
+            <circle class="sat-circle-fill green" cx="44" cy="44" r="40" data-percent="90"/>
+          </svg>
+          <div class="sat-circle-num">90+</div>
+        </div>
+        <div class="sat-title" data-en="Performance Score" data-ar="نقاط الأداء">Performance Score</div>
+        <p class="sat-desc" data-en="Minimum Lighthouse performance score on delivered projects." data-ar="الحد الأدنى لنقاط أداء Lighthouse في المشاريع المُسلَّمة.">Minimum Lighthouse performance score on delivered projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES LIST ══ -->
+<section class="services-section" aria-labelledby="services-title">
+  <div class="services-inner">
+    <div class="section-label reveal" data-en="What I Offer" data-ar="ما أقدمه">What I Offer</div>
+    <h2 class="display-md reveal" id="services-title" style="margin-bottom:8px">
+      <span data-en="Services &" data-ar="الخدمات و">Services &amp;</span>
+      <span class="text-gradient"> Expertise</span>
+    </h2>
+    <div class="divider reveal" style="margin-bottom:0"></div>
+
+    <div class="services-list" id="svc-list">
+
+      <!-- Service 1 -->
+      <div class="svc-item reveal">
+        <div class="svc-header" data-svc="1">
+          <div class="svc-num">01</div>
+          <div class="svc-title-wrap">
+            <div class="svc-title" data-en="Complete Website" data-ar="موقع ويب متكامل">Complete Website</div>
+            <div class="svc-subtitle" data-en="Design · Code · SEO · Deploy" data-ar="تصميم · كود · SEO · نشر">Design · Code · SEO · Deploy</div>
+          </div>
+          <div class="svc-tags-inline">
+            <span class="svc-tag-inline">HTML5</span>
+            <span class="svc-tag-inline">CSS3</span>
+            <span class="svc-tag-inline">JavaScript</span>
+            <span class="svc-tag-inline">SEO</span>
+          </div>
+          <div class="svc-arrow">→</div>
+        </div>
+        <div class="svc-body" id="svc-body-1">
+          <div class="svc-body-inner">
+            <div>
+              <p class="svc-desc" data-en="A complete professional website built from scratch. From wireframe to live deployment — designed to impress, built to perform, and optimized to rank." data-ar="موقع ويب احترافي كامل مبني من الصفر. من الهيكل التقريبي حتى النشر المباشر — مصمم ليبهر، مبني ليؤدي، ومحسّن للتصنيف.">
+                A complete professional website built from scratch. From wireframe to live deployment — designed to impress, built to perform, and optimized to rank.
+              </p>
+              <div class="svc-features">
+                <div class="svc-feature" data-en="Custom cinematic UI design — no templates" data-ar="تصميم UI سينمائي مخصص — لا قوالب">Custom cinematic UI design — no templates</div>
+                <div class="svc-feature" data-en="Fully responsive — perfect on every device" data-ar="متجاوب بالكامل — مثالي على كل جهاز">Fully responsive — perfect on every device</div>
+                <div class="svc-feature" data-en="Technical SEO — Lighthouse 90+, structured data" data-ar="SEO تقني — Lighthouse 90+، بيانات منظمة">Technical SEO — Lighthouse 90+, structured data</div>
+                <div class="svc-feature" data-en="Performance optimized — sub-2s load time" data-ar="محسّن للأداء — وقت تحميل أقل من ثانيتين">Performance optimized — sub-2s load time</div>
+                <div class="svc-feature" data-en="Contact form, social integration, analytics ready" data-ar="نموذج تواصل، تكامل اجتماعي، جاهز للتحليلات">Contact form, social integration, analytics ready</div>
+              </div>
+            </div>
+            <div class="svc-right">
+              <div class="svc-deliverables-title" data-en="Deliverables" data-ar="المخرجات">Deliverables</div>
+              <div class="svc-deliverables">
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Full source code (clean & documented)" data-ar="كود المصدر كامل (نظيف وموثق)">Full source code (clean & documented)</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Deployed & live on your domain" data-ar="منشور وحي على نطاقك">Deployed & live on your domain</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="SEO report & sitemap" data-ar="تقرير SEO وخريطة الموقع">SEO report & sitemap</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="30 days post-launch support" data-ar="30 يوم دعم بعد الإطلاق">30 days post-launch support</span></div>
+              </div>
+              <div class="svc-timeline">
+                <span class="svc-timeline-icon">⏱</span>
+                <span class="svc-timeline-text" data-en="Delivery: 5–14 days depending on scope" data-ar="التسليم: 5-14 يوم حسب النطاق">Delivery: 5–14 days depending on scope</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="svc-item reveal reveal-d1">
+        <div class="svc-header" data-svc="2">
+          <div class="svc-num">02</div>
+          <div class="svc-title-wrap">
+            <div class="svc-title" data-en="Full-Stack Web Application" data-ar="تطبيق ويب Full-Stack">Full-Stack Web Application</div>
+            <div class="svc-subtitle" data-en="Backend · Database · API · Frontend" data-ar="خادم · قاعدة بيانات · API · واجهة">Backend · Database · API · Frontend</div>
+          </div>
+          <div class="svc-tags-inline">
+            <span class="svc-tag-inline">PHP/Laravel</span>
+            <span class="svc-tag-inline">Node.js</span>
+            <span class="svc-tag-inline">PostgreSQL</span>
+          </div>
+          <div class="svc-arrow">→</div>
+        </div>
+        <div class="svc-body" id="svc-body-2">
+          <div class="svc-body-inner">
+            <div>
+              <p class="svc-desc" data-en="Complex web applications with full backend logic, database design, REST APIs, authentication systems, and a polished frontend — all under one roof." data-ar="تطبيقات ويب معقدة مع منطق خادم كامل، تصميم قاعدة بيانات، REST APIs، أنظمة مصادقة، وواجهة أمامية مصقولة — كل ذلك تحت سقف واحد.">
+                Complex web applications with full backend logic, database design, REST APIs, authentication systems, and a polished frontend — all under one roof.
+              </p>
+              <div class="svc-features">
+                <div class="svc-feature" data-en="PHP/Laravel or Node.js + Express backend" data-ar="خادم PHP/Laravel أو Node.js + Express">PHP/Laravel or Node.js + Express backend</div>
+                <div class="svc-feature" data-en="PostgreSQL or MySQL with optimized schema" data-ar="PostgreSQL أو MySQL مع مخطط محسّن">PostgreSQL or MySQL with optimized schema</div>
+                <div class="svc-feature" data-en="JWT authentication & role-based access" data-ar="مصادقة JWT والتحكم في الوصول القائم على الأدوار">JWT authentication & role-based access</div>
+                <div class="svc-feature" data-en="REST API — clean, documented, versioned" data-ar="REST API — نظيف، موثق، ذو إصدارات">REST API — clean, documented, versioned</div>
+                <div class="svc-feature" data-en="React / Next.js frontend with real-time features" data-ar="واجهة React / Next.js مع ميزات في الوقت الفعلي">React / Next.js frontend with real-time features</div>
+              </div>
+            </div>
+            <div class="svc-right">
+              <div class="svc-deliverables-title" data-en="Deliverables" data-ar="المخرجات">Deliverables</div>
+              <div class="svc-deliverables">
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Full source code + documentation" data-ar="كود المصدر كامل + توثيق">Full source code + documentation</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Database schema & migration files" data-ar="مخطط قاعدة البيانات وملفات الترحيل">Database schema & migration files</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="API documentation" data-ar="توثيق API">API documentation</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Deployment & environment setup" data-ar="إعداد النشر والبيئة">Deployment & environment setup</span></div>
+              </div>
+              <div class="svc-timeline">
+                <span class="svc-timeline-icon">⏱</span>
+                <span class="svc-timeline-text" data-en="Delivery: 2–8 weeks depending on scope" data-ar="التسليم: 2-8 أسابيع حسب النطاق">Delivery: 2–8 weeks depending on scope</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="svc-item reveal reveal-d2">
+        <div class="svc-header" data-svc="3">
+          <div class="svc-num">03</div>
+          <div class="svc-title-wrap">
+            <div class="svc-title" data-en="SaaS Platform Development" data-ar="تطوير منصة SaaS">SaaS Platform Development</div>
+            <div class="svc-subtitle" data-en="Multi-tenant · Dashboard · Subscriptions" data-ar="متعدد المستأجرين · لوحة تحكم · اشتراكات">Multi-tenant · Dashboard · Subscriptions</div>
+          </div>
+          <div class="svc-tags-inline">
+            <span class="svc-tag-inline">Next.js</span>
+            <span class="svc-tag-inline">SaaS</span>
+            <span class="svc-tag-inline">Prisma</span>
+          </div>
+          <div class="svc-arrow">→</div>
+        </div>
+        <div class="svc-body" id="svc-body-3">
+          <div class="svc-body-inner">
+            <div>
+              <p class="svc-desc" data-en="Complete SaaS platforms built for scale. Multi-tenant architecture, subscription management, admin dashboards, and the infrastructure to grow from 10 to 10,000 users." data-ar="منصات SaaS كاملة مبنية للتوسع. هندسة متعددة المستأجرين، إدارة الاشتراكات، لوحات تحكم للمشرفين، والبنية التحتية للنمو من 10 إلى 10,000 مستخدم.">
+                Complete SaaS platforms built for scale. Multi-tenant architecture, subscription management, admin dashboards, and the infrastructure to grow from 10 to 10,000 users.
+              </p>
+              <div class="svc-features">
+                <div class="svc-feature" data-en="Multi-tenant architecture — users, teams, organizations" data-ar="هندسة متعددة المستأجرين — مستخدمون، فرق، مؤسسات">Multi-tenant architecture — users, teams, organizations</div>
+                <div class="svc-feature" data-en="Subscription system & payment integration" data-ar="نظام اشتراكات وتكامل مدفوعات">Subscription system & payment integration</div>
+                <div class="svc-feature" data-en="Admin dashboard with analytics & controls" data-ar="لوحة تحكم إدارية مع تحليلات وضوابط">Admin dashboard with analytics & controls</div>
+                <div class="svc-feature" data-en="Real-time features with WebSocket" data-ar="ميزات في الوقت الفعلي مع WebSocket">Real-time features with WebSocket</div>
+                <div class="svc-feature" data-en="Scalable infrastructure & CI/CD pipeline" data-ar="بنية تحتية قابلة للتوسع وخط CI/CD">Scalable infrastructure & CI/CD pipeline</div>
+              </div>
+            </div>
+            <div class="svc-right">
+              <div class="svc-deliverables-title" data-en="Deliverables" data-ar="المخرجات">Deliverables</div>
+              <div class="svc-deliverables">
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Full platform source code" data-ar="كود المصدر الكامل للمنصة">Full platform source code</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Database architecture documentation" data-ar="توثيق هندسة قاعدة البيانات">Database architecture documentation</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Deployment on Vercel / cloud provider" data-ar="نشر على Vercel / مزود سحابي">Deployment on Vercel / cloud provider</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Training & handover session" data-ar="جلسة تدريب وتسليم">Training & handover session</span></div>
+              </div>
+              <div class="svc-timeline">
+                <span class="svc-timeline-icon">⏱</span>
+                <span class="svc-timeline-text" data-en="Delivery: 4–16 weeks depending on scope" data-ar="التسليم: 4-16 أسبوع حسب النطاق">Delivery: 4–16 weeks depending on scope</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="svc-item reveal reveal-d3">
+        <div class="svc-header" data-svc="4">
+          <div class="svc-num">04</div>
+          <div class="svc-title-wrap">
+            <div class="svc-title" data-en="UI/UX Design & Frontend" data-ar="تصميم UI/UX والواجهة الأمامية">UI/UX Design & Frontend</div>
+            <div class="svc-subtitle" data-en="Cinematic · Responsive · High-Performance" data-ar="سينمائي · متجاوب · عالي الأداء">Cinematic · Responsive · High-Performance</div>
+          </div>
+          <div class="svc-tags-inline">
+            <span class="svc-tag-inline">React</span>
+            <span class="svc-tag-inline">GSAP</span>
+            <span class="svc-tag-inline">Three.js</span>
+          </div>
+          <div class="svc-arrow">→</div>
+        </div>
+        <div class="svc-body" id="svc-body-4">
+          <div class="svc-body-inner">
+            <div>
+              <p class="svc-desc" data-en="Interfaces that don't just look good — they feel premium. Cinematic animations, micro-interactions, and designs that make your brand unforgettable." data-ar="واجهات لا تبدو جيدة فحسب — تشعر بالفخامة. أنيميشن سينمائي، تفاعلات دقيقة، وتصاميم تجعل علامتك التجارية لا تُنسى.">
+                Interfaces that don't just look good — they feel premium. Cinematic animations, micro-interactions, and designs that make your brand unforgettable.
+              </p>
+              <div class="svc-features">
+                <div class="svc-feature" data-en="Custom design system — colors, typography, components" data-ar="نظام تصميم مخصص — ألوان، خطوط، مكونات">Custom design system — colors, typography, components</div>
+                <div class="svc-feature" data-en="GSAP ScrollTrigger animations & micro-interactions" data-ar="أنيميشن GSAP ScrollTrigger وتفاعلات دقيقة">GSAP ScrollTrigger animations & micro-interactions</div>
+                <div class="svc-feature" data-en="Three.js 3D elements & particle systems" data-ar="عناصر Three.js ثلاثية الأبعاد وأنظمة جسيمات">Three.js 3D elements & particle systems</div>
+                <div class="svc-feature" data-en="Mobile-first, pixel-perfect at every breakpoint" data-ar="Mobile-first، مثالي على كل نقطة توقف">Mobile-first, pixel-perfect at every breakpoint</div>
+              </div>
+            </div>
+            <div class="svc-right">
+              <div class="svc-deliverables-title" data-en="Deliverables" data-ar="المخرجات">Deliverables</div>
+              <div class="svc-deliverables">
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Full frontend codebase" data-ar="كود الواجهة الأمامية كاملاً">Full frontend codebase</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Design tokens & component library" data-ar="رموز التصميم ومكتبة المكونات">Design tokens & component library</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Responsive across all devices" data-ar="متجاوب على جميع الأجهزة">Responsive across all devices</span></div>
+              </div>
+              <div class="svc-timeline">
+                <span class="svc-timeline-icon">⏱</span>
+                <span class="svc-timeline-text" data-en="Delivery: 1–3 weeks depending on scope" data-ar="التسليم: 1-3 أسابيع حسب النطاق">Delivery: 1–3 weeks depending on scope</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="svc-item reveal reveal-d4">
+        <div class="svc-header" data-svc="5">
+          <div class="svc-num">05</div>
+          <div class="svc-title-wrap">
+            <div class="svc-title" data-en="SEO & Performance Audit" data-ar="تدقيق SEO والأداء">SEO & Performance Audit</div>
+            <div class="svc-subtitle" data-en="Lighthouse · Core Web Vitals · Google Rankings" data-ar="Lighthouse · Core Web Vitals · تصنيفات Google">Lighthouse · Core Web Vitals · Google Rankings</div>
+          </div>
+          <div class="svc-tags-inline">
+            <span class="svc-tag-inline">SEO</span>
+            <span class="svc-tag-inline">Performance</span>
+            <span class="svc-tag-inline">Analytics</span>
+          </div>
+          <div class="svc-arrow">→</div>
+        </div>
+        <div class="svc-body" id="svc-body-5">
+          <div class="svc-body-inner">
+            <div>
+              <p class="svc-desc" data-en="Your website exists — but does Google know? A deep technical SEO audit and performance overhaul that pushes your site to page 1 and keeps it there." data-ar="موقعك موجود — لكن هل تعرفه Google؟ تدقيق SEO تقني عميق وإصلاح شامل للأداء يدفع موقعك إلى الصفحة الأولى ويبقيه هناك.">
+                Your website exists — but does Google know? A deep technical SEO audit and performance overhaul that pushes your site to page 1 and keeps it there.
+              </p>
+              <div class="svc-features">
+                <div class="svc-feature" data-en="Full Lighthouse audit — Performance, SEO, Accessibility" data-ar="تدقيق Lighthouse كامل — الأداء، SEO، إمكانية الوصول">Full Lighthouse audit — Performance, SEO, Accessibility</div>
+                <div class="svc-feature" data-en="Core Web Vitals optimization (LCP, FID, CLS)" data-ar="تحسين Core Web Vitals (LCP, FID, CLS)">Core Web Vitals optimization (LCP, FID, CLS)</div>
+                <div class="svc-feature" data-en="Schema.org structured data implementation" data-ar="تطبيق البيانات المنظمة Schema.org">Schema.org structured data implementation</div>
+                <div class="svc-feature" data-en="Google Search Console & sitemap optimization" data-ar="تحسين Google Search Console وخريطة الموقع">Google Search Console & sitemap optimization</div>
+                <div class="svc-feature" data-en="Image optimization, lazy loading, code splitting" data-ar="تحسين الصور، التحميل الكسول، تقسيم الكود">Image optimization, lazy loading, code splitting</div>
+              </div>
+            </div>
+            <div class="svc-right">
+              <div class="svc-deliverables-title" data-en="Deliverables" data-ar="المخرجات">Deliverables</div>
+              <div class="svc-deliverables">
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Detailed audit report" data-ar="تقرير تدقيق مفصل">Detailed audit report</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Full technical SEO implementation" data-ar="تطبيق SEO تقني كامل">Full technical SEO implementation</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Before & after Lighthouse scores" data-ar="نقاط Lighthouse قبل وبعد">Before & after Lighthouse scores</span></div>
+                <div class="svc-deliverable"><div class="svc-deliverable-dot"></div><span data-en="Ongoing monitoring setup" data-ar="إعداد مراقبة مستمرة">Ongoing monitoring setup</span></div>
+              </div>
+              <div class="svc-timeline">
+                <span class="svc-timeline-icon">⏱</span>
+                <span class="svc-timeline-text" data-en="Delivery: 3–7 days" data-ar="التسليم: 3-7 أيام">Delivery: 3–7 days</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ══ -->
+<section class="process-section" aria-labelledby="process-title">
+  <div class="process-inner">
+    <div class="section-label reveal" data-en="How I Work" data-ar="كيف أعمل">How I Work</div>
+    <h2 class="display-md reveal" id="process-title" style="margin-bottom:8px">
+      <span data-en="The Process" data-ar="العملية">The Process</span>
+      <span class="text-gradient"> — Simple & Clear</span>
+    </h2>
+    <div class="divider reveal" style="margin-bottom:0"></div>
+
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="process-step-num">01</div>
+        <div class="process-step-title" data-en="Discovery Call" data-ar="مكالمة استكشاف">Discovery Call</div>
+        <p class="process-step-desc" data-en="We talk about your project, goals, timeline, and budget. No obligation." data-ar="نتحدث عن مشروعك وأهدافك والجدول الزمني والميزانية. بدون التزام.">We talk about your project, goals, timeline, and budget. No obligation.</p>
+      </div>
+      <div class="process-step reveal reveal-d1">
+        <div class="process-step-num">02</div>
+        <div class="process-step-title" data-en="Proposal & Agreement" data-ar="عرض واتفاق">Proposal & Agreement</div>
+        <p class="process-step-desc" data-en="Clear scope, timeline, and pricing. No hidden fees. No surprises." data-ar="نطاق واضح وجدول زمني وتسعير. لا رسوم خفية. لا مفاجآت.">Clear scope, timeline, and pricing. No hidden fees. No surprises.</p>
+      </div>
+      <div class="process-step reveal reveal-d2">
+        <div class="process-step-num">03</div>
+        <div class="process-step-title" data-en="Design & Build" data-ar="تصميم وبناء">Design & Build</div>
+        <p class="process-step-desc" data-en="I design and build your project with regular updates. You're always in the loop." data-ar="أصمم وأبني مشروعك مع تحديثات منتظمة. أنت دائماً على علم بما يجري.">I design and build with regular updates. You're always in the loop.</p>
+      </div>
+      <div class="process-step reveal reveal-d3">
+        <div class="process-step-num">04</div>
+        <div class="process-step-title" data-en="Review & Refine" data-ar="مراجعة وتحسين">Review & Refine</div>
+        <p class="process-step-desc" data-en="You review, we refine. Revisions until you're 100% satisfied." data-ar="أنت تراجع ونحن نحسّن. مراجعات حتى تصبح راضياً 100%.">You review, we refine. Revisions until you're 100% satisfied.</p>
+      </div>
+      <div class="process-step reveal reveal-d4">
+        <div class="process-step-num">05</div>
+        <div class="process-step-title" data-en="Launch & Support" data-ar="إطلاق ودعم">Launch & Support</div>
+        <p class="process-step-desc" data-en="We go live. Post-launch support included. I stay available for follow-up." data-ar="ننطلق. يشمل الدعم بعد الإطلاق. أبقى متاحاً للمتابعة.">We go live. Post-launch support included. I stay available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TECH STACK ══ -->
+<section class="stack-section" aria-labelledby="stack-title">
+  <div class="stack-inner">
+    <div class="section-label reveal" data-en="The Arsenal" data-ar="الترسانة">The Arsenal</div>
+    <h2 class="display-md reveal" id="stack-title" style="margin-bottom:8px">
+      <span data-en="Technologies I" data-ar="التقنيات التي">Technologies I</span>
+      <span class="text-gradient"> Master</span>
+    </h2>
+    <div class="divider reveal" style="margin-bottom:0"></div>
+    <div class="stack-grid">
+      <div class="stack-card reveal">
+        <div class="stack-card-title">Frontend</div>
+        <div class="stack-pills">
+          <span class="stack-pill">HTML5</span><span class="stack-pill">CSS3</span>
+          <span class="stack-pill">JavaScript ES6+</span><span class="stack-pill">React</span>
+          <span class="stack-pill">Next.js 14</span><span class="stack-pill">TypeScript</span>
+          <span class="stack-pill">GSAP</span><span class="stack-pill">Three.js</span>
+          <span class="stack-pill">Tailwind CSS</span>
+        </div>
+      </div>
+      <div class="stack-card reveal reveal-d1">
+        <div class="stack-card-title">Backend & Database</div>
+        <div class="stack-pills">
+          <span class="stack-pill">PHP 8+</span><span class="stack-pill">Laravel</span>
+          <span class="stack-pill">Node.js</span><span class="stack-pill">Express</span>
+          <span class="stack-pill">PostgreSQL</span><span class="stack-pill">MySQL</span>
+          <span class="stack-pill">Prisma ORM</span><span class="stack-pill">REST APIs</span>
+          <span class="stack-pill">JWT Auth</span>
+        </div>
+      </div>
+      <div class="stack-card reveal reveal-d2">
+        <div class="stack-card-title">Infrastructure & Tools</div>
+        <div class="stack-pills">
+          <span class="stack-pill">Linux</span><span class="stack-pill">Bash</span>
+          <span class="stack-pill">Git & GitHub</span><span class="stack-pill">Vercel</span>
+          <span class="stack-pill">Network Security</span><span class="stack-pill">SEO</span>
+          <span class="stack-pill">Lighthouse</span><span class="stack-pill">Schema.org</span>
+          <span class="stack-pill">Google Algorithms</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HIRE ME CTA ══ -->
+<section class="hire-section" aria-labelledby="hire-title">
+  <div class="hire-inner">
+    <div class="hire-card reveal">
+      <div class="hire-orb-1" aria-hidden="true"></div>
+      <div class="hire-orb-2" aria-hidden="true"></div>
+
+      <div class="hire-eyebrow">
+        <span class="hire-eyebrow-dot"></span>
+        <span data-en="Ready to Start?" data-ar="مستعد للبدء؟">Ready to Start?</span>
+      </div>
+      <h2 class="hire-title" id="hire-title">
+        Let's Build Your<br/>
+        <span class="text-gradient">Next Project</span>
+      </h2>
+      <p class="hire-sub"
+         data-en="Tell me about your project on Instagram. I respond fast, I ask the right questions, and I'll give you an honest assessment — no sales pitch."
+         data-ar="أخبرني عن مشروعك على Instagram. أرد بسرعة، أطرح الأسئلة الصحيحة، وسأعطيك تقييماً صادقاً — بدون عروض مبيعات.">
+        Tell me about your project on Instagram. I respond fast, ask the right questions,
+        and give you an honest assessment — no sales pitch.
+      </p>
+
+      <div class="hire-cta">
+        <a href="https://www.instagram.com/yahya_alsulami515"
+           target="_blank" rel="noopener"
+           class="btn-instagram">
+          <span class="btn-instagram-icon">📸</span>
+          <span data-en="Message Me on Instagram" data-ar="راسلني على Instagram">Message Me on Instagram</span>
+        </a>
+        <a href="mailto:yehiahwary515@gmail.com" class="btn btn-outline btn-lg">
+          <span data-en="Send an Email" data-ar="أرسل بريداً إلكترونياً">Send an Email</span>
+        </a>
+      </div>
+
+      <div class="hire-proof">
+        <div class="hire-proof-item">
+          <div class="hire-proof-dot"></div>
+          <span data-en="Responds within 24 hours" data-ar="يرد خلال 24 ساعة">Responds within 24 hours</span>
+        </div>
+        <div class="hire-proof-item">
+          <div class="hire-proof-dot"></div>
+          <span data-en="Free project consultation" data-ar="استشارة مجانية للمشروع">Free project consultation</span>
+        </div>
+        <div class="hire-proof-item">
+          <div class="hire-proof-dot"></div>
+          <span data-en="Competitive pricing" data-ar="أسعار تنافسية">Competitive pricing</span>
+        </div>
+        <div class="hire-proof-item">
+          <div class="hire-proof-dot"></div>
+          <span data-en="No contracts — just results" data-ar="لا عقود — فقط نتائج">No contracts — just results</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Yahya<span class="dot">.</span><span class="dev">DEV</span></div>
+      <div class="footer-tagline" data-en="Engineering experiences, not just code." data-ar="أبني تجارب، لا مجرد كود.">Engineering experiences, not just code.</div>
+    </div>
+    <p class="footer-copy">© <span id="footer-year">2025</span> Yahya Al-Sulami. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="https://github.com/yehiahwary0-oss" target="_blank" rel="noopener" class="footer-social" aria-label="GitHub">GH</a>
+      <a href="https://www.instagram.com/yahya_alsulami515" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">IG</a>
+      <a href="https://www.tiktok.com/@yahya.dev8" target="_blank" rel="noopener" class="footer-social" aria-label="TikTok">TK</a>
+      <a href="mailto:yehiahwary515@gmail.com" class="footer-social" aria-label="Email">✉</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      <span>Built with</span><span>♥ + Code</span>
+      <span>·</span>
+      <span>Yahya.DEV <span id="footer-year2">2025</span></span>
+    </div>
+    <div class="footer-bottom-right">
+      <a href="index.html">Home</a> ·
+      <a href="projects.html" target="_blank">Projects</a> ·
+      <a href="courses.html" target="_blank">Courses</a> ·
+      <a href="sitemap.xml">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/core.js" defer></script>
+<script src="assets/js/three-bg.js" defer></script>
+<script src="assets/js/index-animations.js" defer></script>
+
+<script>
+// Dynamic year
+const yr = new Date().getFullYear();
+['footer-year','footer-year2'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=yr; });
+
+window.addEventListener('DOMContentLoaded', () => {
+  // Hero entrance
+  function tryHero() {
+    if (typeof gsap==='undefined') { setTimeout(tryHero,100); return; }
+    const tl = gsap.timeline({ defaults:{ease:'power3.out'}, delay:0.2 });
+    tl.to('#phEyebrow', { opacity:1, y:0, duration:0.7 })
+      .to('#phTitle',   { opacity:1, y:0, duration:0.9 }, '-=0.4')
+      .to('#phSub',     { opacity:1, y:0, duration:0.7 }, '-=0.5');
+  }
+  tryHero();
+
+  // Service accordion
+  document.querySelectorAll('.svc-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const id   = header.dataset.svc;
+      const body = document.getElementById('svc-body-' + id);
+      const item = header.closest('.svc-item');
+      const arrow = header.querySelector('.svc-arrow');
+      const isOpen = body.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.svc-body').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.svc-item').forEach(i => i.style.borderColor = '');
+      document.querySelectorAll('.svc-arrow').forEach(a => { a.style.background=''; a.style.borderColor=''; a.style.color=''; a.textContent='→'; });
+
+      if (!isOpen) {
+        body.classList.add('open');
+        item.style.borderColor = 'rgba(99,102,241,.3)';
+        arrow.style.background = 'rgba(99,102,241,.2)';
+        arrow.style.borderColor = 'var(--indigo)';
+        arrow.style.color = '#fff';
+        arrow.textContent = '↓';
+      }
+    });
+  });
+
+  // Satisfaction circles animation
+  function animateCircles() {
+    if (typeof gsap==='undefined'||typeof ScrollTrigger==='undefined') { setTimeout(animateCircles,100); return; }
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.querySelectorAll('.sat-circle-fill').forEach(circle => {
+      const pct = parseFloat(circle.dataset.percent) / 100;
+      const circumference = 251.2;
+      const offset = circumference - (pct * circumference);
+
+      gsap.to(circle, {
+        strokeDashoffset: offset,
+        duration: 1.5,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: circle, start: 'top 80%' }
+      });
+    });
+  }
+  animateCircles();
+
+  // GSAP scroll animations
+  function tryAnimations() {
+    if (typeof gsap==='undefined'||typeof ScrollTrigger==='undefined') { setTimeout(tryAnimations,100); return; }
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Why cards
+    gsap.fromTo('.why-card',
+      { opacity:0, y:40, scale:.97 },
+      { opacity:1, y:0, scale:1, duration:.65, stagger:.08, ease:'power3.out',
+        scrollTrigger:{ trigger:'.manifesto-right', start:'top 80%' }
+      }
+    );
+    // Services
+    gsap.fromTo('.svc-item',
+      { opacity:0, y:32 },
+      { opacity:1, y:0, duration:.65, stagger:.1, ease:'power3.out',
+        scrollTrigger:{ trigger:'.services-list', start:'top 82%' }
+      }
+    );
+    // Process steps
+    gsap.fromTo('.process-step',
+      { opacity:0, y:40 },
+      { opacity:1, y:0, duration:.65, stagger:.12, ease:'power3.out',
+        scrollTrigger:{ trigger:'.process-steps', start:'top 80%' }
+      }
+    );
+    // Stack cards
+    gsap.fromTo('.stack-card',
+      { opacity:0, y:32 },
+      { opacity:1, y:0, duration:.65, stagger:.12, ease:'power3.out',
+        scrollTrigger:{ trigger:'.stack-grid', start:'top 82%' }
+      }
+    );
+    // Hire card
+    gsap.fromTo('.hire-card',
+      { opacity:0, y:48, scale:.98 },
+      { opacity:1, y:0, scale:1, duration:.9, ease:'power3.out',
+        scrollTrigger:{ trigger:'.hire-card', start:'top 80%' }
+      }
+    );
+    // Stack pills hover-in
+    document.querySelectorAll('.stack-pill').forEach((pill,i) => {
+      gsap.fromTo(pill,
+        { opacity:0, scale:.85 },
+        { opacity:1, scale:1, duration:.4, delay: i * 0.03, ease:'back.out(1.5)',
+          scrollTrigger:{ trigger:pill.closest('.stack-card'), start:'top 82%' }
+        }
+      );
+    });
+  }
+  tryAnimations();
+});
+</script>
+
+</body>
+</html>
