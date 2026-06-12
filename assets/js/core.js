@@ -440,9 +440,10 @@ function initPageTransitions() {
   // Exit animation on internal link click
   document.querySelectorAll('a[href]').forEach(link => {
     const href = link.getAttribute('href');
-    // Only internal, non-hash links
+    // Only internal, non-hash, non-blank links
     if (!href || href.startsWith('#') || href.startsWith('http') ||
         href.startsWith('mailto') || href.startsWith('tel')) return;
+    if (link.getAttribute('target') === '_blank') return;
 
     link.addEventListener('click', e => {
       e.preventDefault();
@@ -542,3 +543,279 @@ document.addEventListener('DOMContentLoaded', () => {
   initPageTransitions();
   initContactForm();
 });
+
+/* ══════════════════════════════
+   COMMAND PALETTE  Ctrl+K / ⌘K
+══════════════════════════════ */
+function initCommandPalette() {
+  // Inject HTML
+  const html = `
+<div id="cmd-overlay" aria-hidden="true"></div>
+<div id="cmd-palette" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+  <div id="cmd-inner">
+    <div id="cmd-search-wrap">
+      <span id="cmd-icon">⌘</span>
+      <input id="cmd-input" type="text" placeholder="Type a command or search..." autocomplete="off" spellcheck="false"/>
+      <kbd id="cmd-esc">ESC</kbd>
+    </div>
+    <div id="cmd-results" role="listbox"></div>
+    <div id="cmd-footer">
+      <span><kbd>↑↓</kbd> Navigate</span>
+      <span><kbd>↵</kbd> Select</span>
+      <span><kbd>ESC</kbd> Close</span>
+    </div>
+  </div>
+</div>`;
+
+  document.body.insertAdjacentHTML('beforeend', html);
+
+  // Inject CSS
+  const style = document.createElement('style');
+  style.textContent = `
+#cmd-overlay {
+  position:fixed;inset:0;z-index:8000;
+  background:rgba(2,2,8,0.7);
+  backdrop-filter:blur(8px);
+  opacity:0;transition:opacity .2s;pointer-events:none;
+}
+#cmd-overlay.open { opacity:1;pointer-events:all; }
+
+#cmd-palette {
+  position:fixed;top:20%;left:50%;
+  transform:translateX(-50%) translateY(-12px) scale(0.97);
+  width:min(600px,94vw);
+  z-index:8001;
+  background:rgba(10,10,22,0.97);
+  border:1px solid rgba(99,102,241,0.22);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,0.8),0 0 0 1px rgba(255,255,255,0.04);
+  opacity:0;
+  transition:opacity .22s var(--ease-out,ease),transform .22s var(--ease-spring,ease);
+  pointer-events:none;
+}
+#cmd-palette.open {
+  opacity:1;transform:translateX(-50%) translateY(0) scale(1);
+  pointer-events:all;
+}
+#cmd-search-wrap {
+  display:flex;align-items:center;gap:12px;
+  padding:16px 20px;
+  border-bottom:1px solid rgba(99,102,241,0.1);
+}
+#cmd-icon {
+  font-size:1.1rem;color:rgba(99,102,241,0.7);
+  flex-shrink:0;font-family:'JetBrains Mono',monospace;
+}
+#cmd-input {
+  flex:1;background:transparent;border:none;outline:none;
+  font-family:'DM Sans',sans-serif;font-size:1rem;
+  color:#f1f5f9;caret-color:#06b6d4;
+}
+#cmd-input::placeholder { color:#475569; }
+#cmd-esc {
+  font-family:'JetBrains Mono',monospace;font-size:.62rem;
+  padding:3px 8px;border-radius:5px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  color:#64748b;flex-shrink:0;
+}
+#cmd-results { max-height:320px;overflow-y:auto;padding:8px; }
+#cmd-results::-webkit-scrollbar { width:3px; }
+#cmd-results::-webkit-scrollbar-thumb { background:rgba(99,102,241,0.4);border-radius:2px; }
+
+.cmd-group-label {
+  font-family:'JetBrains Mono',monospace;font-size:.58rem;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:#475569;padding:10px 12px 6px;
+}
+.cmd-item {
+  display:flex;align-items:center;gap:14px;
+  padding:11px 14px;border-radius:10px;
+  cursor:none;transition:background .15s;
+  border:1px solid transparent;
+}
+.cmd-item:hover, .cmd-item.selected {
+  background:rgba(99,102,241,0.1);
+  border-color:rgba(99,102,241,0.18);
+}
+.cmd-item-icon {
+  width:34px;height:34px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(99,102,241,0.08);
+  border:1px solid rgba(99,102,241,0.12);
+  font-size:.9rem;flex-shrink:0;
+}
+.cmd-item-text { flex:1; }
+.cmd-item-title {
+  font-size:.88rem;font-weight:500;color:#f1f5f9;
+  font-family:'DM Sans',sans-serif;
+}
+.cmd-item-desc {
+  font-size:.72rem;color:#64748b;
+  font-family:'JetBrains Mono',monospace;
+  margin-top:1px;
+}
+.cmd-item-kbd {
+  font-family:'JetBrains Mono',monospace;font-size:.6rem;
+  padding:2px 7px;border-radius:4px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  color:#64748b;flex-shrink:0;
+}
+#cmd-footer {
+  display:flex;gap:20px;align-items:center;
+  padding:10px 20px;
+  border-top:1px solid rgba(99,102,241,0.08);
+  background:rgba(99,102,241,0.03);
+}
+#cmd-footer span {
+  display:flex;align-items:center;gap:6px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.6rem;color:#475569;
+}
+#cmd-footer kbd {
+  padding:2px 6px;border-radius:4px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  color:#94a3b8;
+}
+  `;
+  document.head.appendChild(style);
+
+  // Commands
+  const commands = [
+    { group:'Navigate', icon:'🏠', title:'Go Home',         desc:'Back to homepage',          action:() => window.location.href='index.html' },
+    { group:'Navigate', icon:'🚀', title:'View Projects',   desc:'All projects showcase',     action:() => window.location.href='projects.html' },
+    { group:'Navigate', icon:'📚', title:'Browse Courses',  desc:'Free coding courses',       action:() => window.location.href='courses.html' },
+    { group:'Navigate', icon:'✉', title:'Contact Me',      desc:'Get in touch',              action:() => { window.location.href='index.html#contact'; } },
+    { group:'Navigate', icon:'⚡', title:'View Skills',     desc:'Technical arsenal',         action:() => { window.location.href='index.html#skills'; } },
+    { group:'Social',   icon:'GH', title:'GitHub',          desc:'github.com/yehiahwary0-oss',action:() => window.open('https://github.com/yehiahwary0-oss','_blank') },
+    { group:'Social',   icon:'IG', title:'Instagram',       desc:'@yahya_alsulami515',        action:() => window.open('https://www.instagram.com/yahya_alsulami515','_blank') },
+    { group:'Social',   icon:'TK', title:'TikTok',          desc:'@yahya.dev8',               action:() => window.open('https://www.tiktok.com/@yahya.dev8','_blank') },
+    { group:'Actions',  icon:'🌙', title:'Toggle Theme',    desc:'Switch dark / light mode',  action:() => { const t=document.documentElement.dataset.theme==='dark'?'light':'dark'; document.documentElement.dataset.theme=t; localStorage.setItem('ya-theme',t); } },
+    { group:'Actions',  icon:'🌐', title:'Switch to Arabic', desc:'تبديل اللغة للعربية',       action:() => { if(typeof applyLang==='function') applyLang('ar'); } },
+    { group:'Actions',  icon:'🔝', title:'Scroll to Top',   desc:'Back to the beginning',    action:() => window.scrollTo({top:0,behavior:'smooth'}) },
+  ];
+
+  const overlay   = document.getElementById('cmd-overlay');
+  const palette   = document.getElementById('cmd-palette');
+  const input     = document.getElementById('cmd-input');
+  const results   = document.getElementById('cmd-results');
+  let selectedIdx = 0;
+  let filtered    = [...commands];
+
+  function open() {
+    overlay.classList.add('open');
+    palette.removeAttribute('hidden');
+    palette.classList.add('open');
+    input.value = '';
+    renderResults('');
+    setTimeout(() => input.focus(), 50);
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    overlay.classList.remove('open');
+    palette.classList.remove('open');
+    setTimeout(() => { palette.setAttribute('hidden',''); }, 220);
+    document.body.style.overflow = '';
+  }
+
+  function renderResults(query) {
+    const q = query.toLowerCase().trim();
+    filtered = commands.filter(c =>
+      !q ||
+      c.title.toLowerCase().includes(q) ||
+      c.desc.toLowerCase().includes(q) ||
+      c.group.toLowerCase().includes(q)
+    );
+    selectedIdx = 0;
+
+    // Group by
+    const groups = {};
+    filtered.forEach(c => {
+      if (!groups[c.group]) groups[c.group] = [];
+      groups[c.group].push(c);
+    });
+
+    let html = '';
+    let globalIdx = 0;
+    Object.entries(groups).forEach(([group, items]) => {
+      html += `<div class="cmd-group-label">${group}</div>`;
+      items.forEach(item => {
+        const idx = globalIdx++;
+        html += `
+<div class="cmd-item${idx===0?' selected':''}" data-idx="${idx}" role="option" aria-selected="${idx===0}">
+  <div class="cmd-item-icon">${item.icon}</div>
+  <div class="cmd-item-text">
+    <div class="cmd-item-title">${item.title}</div>
+    <div class="cmd-item-desc">${item.desc}</div>
+  </div>
+</div>`;
+      });
+    });
+
+    if (!html) html = '<div class="cmd-group-label" style="text-align:center;padding:24px">No results found</div>';
+    results.innerHTML = html;
+
+    results.querySelectorAll('.cmd-item').forEach(el => {
+      el.addEventListener('click', () => execute(parseInt(el.dataset.idx)));
+      el.addEventListener('mouseenter', () => {
+        selectedIdx = parseInt(el.dataset.idx);
+        updateSelected();
+      });
+    });
+  }
+
+  function updateSelected() {
+    results.querySelectorAll('.cmd-item').forEach((el, i) => {
+      el.classList.toggle('selected', i === selectedIdx);
+      el.setAttribute('aria-selected', i === selectedIdx);
+    });
+    const sel = results.querySelector('.cmd-item.selected');
+    if (sel) sel.scrollIntoView({ block:'nearest' });
+  }
+
+  function execute(idx) {
+    if (filtered[idx]) { filtered[idx].action(); close(); }
+  }
+
+  input.addEventListener('input', e => renderResults(e.target.value));
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); selectedIdx = Math.min(selectedIdx+1, filtered.length-1); updateSelected(); }
+    if (e.key === 'ArrowUp')   { e.preventDefault(); selectedIdx = Math.max(selectedIdx-1, 0); updateSelected(); }
+    if (e.key === 'Enter')     { execute(selectedIdx); }
+    if (e.key === 'Escape')    { close(); }
+  });
+
+  overlay.addEventListener('click', close);
+
+  document.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      palette.hasAttribute('hidden') ? open() : close();
+    }
+  });
+
+  // Add trigger button to nav
+  const navActions = document.querySelector('.nav-actions');
+  if (navActions) {
+    const btn = document.createElement('button');
+    btn.className = 'theme-toggle';
+    btn.setAttribute('aria-label', 'Command palette (Ctrl+K)');
+    btn.title = 'Command palette  Ctrl+K';
+    btn.style.cssText = 'font-family:var(--font-mono);font-size:.62rem;letter-spacing:.05em;width:auto;padding:0 10px;border-radius:8px;gap:6px;display:flex;align-items:center;';
+    btn.innerHTML = '<span style="opacity:.5">⌘</span><span>K</span>';
+    btn.addEventListener('click', open);
+    navActions.insertBefore(btn, navActions.firstChild);
+  }
+}
+
+// Init command palette on DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCommandPalette);
+} else {
+  initCommandPalette();
+}

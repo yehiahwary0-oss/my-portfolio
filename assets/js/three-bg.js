@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
     alpha: true,
     powerPreference: 'high-performance',
   });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  renderer.setPixelRatio(PIXEL_RATIO);
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0x000000, 0);
 
@@ -28,7 +28,12 @@ window.addEventListener('load', () => {
   camera.position.z = 5;
 
   /* ── Particle Field ── */
-  const PARTICLE_COUNT = window.innerWidth < 768 ? 1200 : 2800;
+  // Mobile optimization — reduce particles & complexity
+  const isMobile  = window.innerWidth < 768;
+  const isTablet  = window.innerWidth < 1100;
+  const PARTICLE_COUNT = isMobile ? 600 : isTablet ? 1400 : 2800;
+  const PIXEL_RATIO    = isMobile ? 1 : Math.min(window.devicePixelRatio, 1.5);
+  const FLOATER_COUNT  = isMobile ? 0 : 4;
   const geo   = new THREE.BufferGeometry();
   const pos   = new Float32Array(PARTICLE_COUNT * 3);
   const col   = new Float32Array(PARTICLE_COUNT * 3);
@@ -75,12 +80,12 @@ window.addEventListener('load', () => {
   /* ── Floating Wireframe Geometries ── */
   const floaters = [];
 
-  const geoShapes = [
+  const geoShapes = FLOATER_COUNT > 0 ? [
     new THREE.IcosahedronGeometry(0.9, 1),
     new THREE.OctahedronGeometry(0.75, 0),
     new THREE.TetrahedronGeometry(0.65, 0),
     new THREE.TorusGeometry(0.6, 0.15, 8, 16),
-  ];
+  ] : [];
 
   const colors = [0x6366f1, 0x06b6d4, 0xa855f7, 0x818cf8];
 
@@ -127,7 +132,7 @@ window.addEventListener('load', () => {
   let t = 0;
   (function animate() {
     requestAnimationFrame(animate);
-    t += 0.002;
+    t += isMobile ? 0.001 : 0.002;
 
     // Smooth mouse follow
     targetX += (mouseX - targetX) * 0.04;

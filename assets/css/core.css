@@ -285,3 +285,127 @@ ul, ol { list-style: none; }
 @media (max-width: 768px) {
   :root { --container-pad: 20px; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   RTL SUPPORT — Arabic Direction
+═══════════════════════════════════════════════════════════ */
+[dir="rtl"] {
+  font-family: 'Syne', 'Segoe UI', Tahoma, sans-serif;
+  letter-spacing: 0;
+}
+
+/* Nav */
+[dir="rtl"] .nav-inner        { flex-direction: row-reverse; }
+[dir="rtl"] .nav-links        { flex-direction: row-reverse; }
+[dir="rtl"] .nav-actions      { flex-direction: row-reverse; }
+[dir="rtl"] .nav-logo         { flex-direction: row-reverse; }
+[dir="rtl"] .nav-logo-home-link { margin-right: 0; margin-left: 0; }
+[dir="rtl"] .nav-link::after  { left: auto; right: 0; }
+[dir="rtl"] .logo-popup       { left: auto; right: 50%; transform: translateX(50%) translateY(-12px) scale(0.94); }
+[dir="rtl"] .nav-logo.active .logo-popup { transform: translateX(50%) translateY(0) scale(1); }
+[dir="rtl"] .logo-popup::before { left: auto; right: 50%; transform: translateX(50%) rotate(45deg); }
+[dir="rtl"] .logo-popup-body  { text-align: right; }
+
+/* Hero */
+[dir="rtl"] .hero-content     { direction: rtl; }
+[dir="rtl"] .hero-tag         { flex-direction: row-reverse; }
+[dir="rtl"] .hero-tag::before { background: linear-gradient(270deg, var(--cyan), transparent); }
+[dir="rtl"] .hero-cta         { flex-direction: row-reverse; }
+[dir="rtl"] .hero-title .name-first,
+[dir="rtl"] .hero-title .name-last { text-align: right; }
+
+/* Section labels */
+[dir="rtl"] .section-label    { flex-direction: row-reverse; }
+[dir="rtl"] .section-label::before { background: linear-gradient(270deg, var(--cyan), transparent); }
+
+/* About */
+[dir="rtl"] .about-inner      { direction: rtl; }
+[dir="rtl"] .about-text       { text-align: right; }
+[dir="rtl"] .tech-stack-row   { justify-content: flex-end; }
+[dir="rtl"] .about-quote      { border-left: none; border-right: 2px solid var(--indigo); border-radius: 8px 0 0 8px; }
+[dir="rtl"] .about-quote::before { left: auto; right: 20px; }
+
+/* Terminal — keep LTR */
+[dir="rtl"] .about-terminal   { direction: ltr; text-align: left; }
+
+/* Skills */
+[dir="rtl"] .skill-bar-header { flex-direction: row-reverse; }
+[dir="rtl"] .skill-bar-fill   { background: linear-gradient(270deg, var(--indigo), var(--cyan)); }
+[dir="rtl"] .skill-bar-fill::after { right: auto; left: -2px; }
+[dir="rtl"] .skill-cat-title  { text-align: right; }
+
+/* Projects */
+[dir="rtl"] .projects-header  { flex-direction: row-reverse; }
+[dir="rtl"] .project-badges   { left: auto; right: 16px; }
+[dir="rtl"] .project-body     { text-align: right; }
+[dir="rtl"] .project-tags     { justify-content: flex-end; }
+[dir="rtl"] .project-links    { flex-direction: row-reverse; }
+[dir="rtl"] .view-all-link    { flex-direction: row-reverse; }
+[dir="rtl"] .view-all-link::after { content: '←'; }
+
+/* Filter */
+[dir="rtl"] .filter-wrap      { direction: rtl; }
+
+/* Contact */
+[dir="rtl"] .contact-inner    { direction: rtl; }
+[dir="rtl"] .contact-info     { text-align: right; }
+[dir="rtl"] .contact-link     { flex-direction: row-reverse; }
+[dir="rtl"] .contact-link:hover { transform: translateX(-8px); }
+[dir="rtl"] .contact-link-text { text-align: right; }
+
+/* Form */
+[dir="rtl"] .form-label       { text-align: right; }
+[dir="rtl"] .form-input,
+[dir="rtl"] .form-textarea    { text-align: right; direction: rtl; }
+[dir="rtl"] .form-submit      { align-self: flex-end; }
+
+/* Footer */
+[dir="rtl"] .footer-inner     { direction: rtl; }
+[dir="rtl"] .footer-bottom    { flex-direction: row-reverse; }
+[dir="rtl"] .footer-bottom-left { flex-direction: row-reverse; }
+[dir="rtl"] .footer-socials   { flex-direction: row-reverse; }
+
+/* Scroll indicator */
+[dir="rtl"] .scroll-indicator-label { letter-spacing: 0; }
+
+/* Mobile menu */
+[dir="rtl"] .mobile-menu      { text-align: right; }
+[dir="rtl"] .hamburger        { margin-right: auto; margin-left: 0; }
+
+/* Marquee — reverse direction in RTL */
+[dir="rtl"] .marquee-track    { animation-direction: reverse; }
+[dir="rtl"] .marquee-wrap::before { left: 0; background: linear-gradient(to left, var(--bg-base), transparent); }
+[dir="rtl"] .marquee-wrap::after  { right: 0; background: linear-gradient(to right, var(--bg-base), transparent); }
+
+/* CTA strip */
+[dir="rtl"] .cta-strip-inner  { flex-direction: row-reverse; }
+[dir="rtl"] .cta-text         { text-align: right; }
+
+/* Course cards */
+[dir="rtl"] .c-footer         { flex-direction: row-reverse; }
+[dir="rtl"] .c-cta::after     { content: '←'; }
+[dir="rtl"] .track-header     { flex-direction: row-reverse; }
+[dir="rtl"] .track-count      { margin-left: 0; margin-right: auto; }
+
+/* Roadmap */
+[dir="rtl"] .roadmap-grid::before {
+  background: linear-gradient(270deg, var(--indigo), var(--cyan), #22c55e);
+}
+
+/* p-card features */
+[dir="rtl"] .p-feature        { flex-direction: row-reverse; text-align: right; }
+[dir="rtl"] .p-feature::before { margin-top: 1px; }
+[dir="rtl"] .p-badges         { left: auto; right: 16px; }
+[dir="rtl"] .p-body           { text-align: right; }
+[dir="rtl"] .p-tags           { justify-content: flex-end; }
+[dir="rtl"] .p-links          { flex-direction: row-reverse; }
+
+/* Page hero */
+[dir="rtl"] .page-hero-eyebrow { flex-direction: row-reverse; }
+[dir="rtl"] .stats-bar-wrap   { direction: rtl; }
+
+/* Preloader */
+[dir="rtl"] .preloader-logo   { letter-spacing: 0; }
+
+/* Scroll to top */
+[dir="rtl"] #scroll-top       { right: auto; left: 32px; }

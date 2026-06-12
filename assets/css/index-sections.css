@@ -1228,6 +1228,31 @@
   font-size: 0.9rem; font-weight: 500; color: var(--text-primary);
 }
 
+/* Featured Instagram link */
+.contact-link-featured {
+  position: relative;
+  border-color: rgba(220,39,67,0.25) !important;
+  background: linear-gradient(135deg, rgba(240,148,51,0.06), rgba(188,24,136,0.06)) !important;
+}
+.contact-link-featured:hover {
+  border-color: rgba(220,39,67,0.5) !important;
+  box-shadow: 0 8px 32px rgba(220,39,67,0.15);
+}
+.contact-link-featured .contact-link-icon {
+  background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+  border: none; color: #fff;
+}
+.contact-link-featured .contact-link-label { color: #f0934f; }
+.contact-link-badge {
+  margin-left: auto;
+  font-family: var(--font-mono); font-size: 0.55rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 100px;
+  background: linear-gradient(135deg,#f09433,#dc2743,#bc1888);
+  color: #fff; flex-shrink: 0;
+}
+[dir="rtl"] .contact-link-badge { margin-left: 0; margin-right: auto; }
+
 /* Form */
 .contact-form { display: flex; flex-direction: column; gap: 16px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
