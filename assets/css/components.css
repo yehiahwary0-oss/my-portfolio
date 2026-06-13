@@ -518,6 +518,32 @@ body .nav-logo-img-wrap { cursor: none; }
   padding: 12px 18px !important;
 }
 
+/* Mobile lang toggle — only visible on very small screens via media query */
+.mobile-lang-toggle {
+  display: none;
+  gap: 8px;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border);
+}
+.mobile-lang-toggle .lang-btn {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+}
+.mobile-lang-toggle .lang-btn.active {
+  background: var(--indigo);
+  color: #fff;
+  border-color: var(--indigo);
+}
+@media (max-width: 380px) {
+  .mobile-lang-toggle { display: flex; }
+}
+
 /* Nav Actions */
 .nav-actions {
   display: flex;
@@ -1042,6 +1068,20 @@ footer {
     text-align: center;
   }
   .footer-socials { justify-content: center; }
+
+  /* Nav actions — prevent crowding on mobile */
+  .nav-actions { gap: 6px; }
+  /* Hide command palette trigger on mobile — Ctrl+K is a desktop feature */
+  #cmd-trigger-btn { display: none !important; }
+  .lang-toggle { padding: 5px 8px; }
+  .lang-btn { font-size: 0.6rem; padding: 2px 5px; }
+  .theme-toggle { width: 32px; height: 32px; font-size: 0.8rem; }
+}
+
+@media (max-width: 380px) {
+  .nav-inner { gap: 8px; }
+  .nav-logo-text { font-size: 0.95rem; }
+  .lang-toggle { display: none; } /* lang toggle moves to mobile menu only on very small screens */
 }
 @media (max-width: 480px) {
   .btn-primary, .btn-outline { width: 100%; justify-content: center; }

@@ -803,6 +803,7 @@ function initCommandPalette() {
   const navActions = document.querySelector('.nav-actions');
   if (navActions) {
     const btn = document.createElement('button');
+    btn.id = 'cmd-trigger-btn';
     btn.className = 'theme-toggle';
     btn.setAttribute('aria-label', 'Command palette (Ctrl+K)');
     btn.title = 'Command palette  Ctrl+K';
