@@ -4,12 +4,8 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects — Yahya Al-Sulami | Full-Stack Developer Portfolio | Yahya.DEV</title>
-  <!-- ═══ BILINGUAL SEO BOOST ═══ -->
-<meta name="description" content="مشاريع حقيقية لـ يحيى السلمي (Yahya.DEV) — منصات تداول Full-Stack، مواقع سينمائية UI، مشاريع عملاء حقيقيين، أنظمة SaaS. Real Full-Stack projects: trading platforms, cinematic UI websites, real client work, SaaS systems by Yahya Al-Sulami. PHP, Laravel, Node.js, Next.js, React, PostgreSQL."/>
-<meta name="keywords" content="مشاريع يحيى السلمي, أعمال مطور مواقع, نماذج مواقع احترافية, Yahya Al-Sulami Projects, Vortex TraderY, Schweppes Gold, Elite Care Ambulance, portfolio مطور Full-Stack, مشاريع SaaS, مواقع عملاء حقيقيين, نماذج تصميم UI UX, مشاريع PHP Laravel, مشاريع Next.js React"/>
-<link rel="alternate" hreflang="en" href="https://yehiahwary0-oss.github.io/my-portfolio/projects.html"/>
-<link rel="alternate" hreflang="ar" href="https://yehiahwary0-oss.github.io/my-portfolio/projects.html"/>
-<link rel="alternate" hreflang="x-default" href="https://yehiahwary0-oss.github.io/my-portfolio/projects.html"/>
+  <meta name="description" content="Real-world projects by Yahya Al-Sulami (Yahya.DEV) — Full-Stack trading platforms, cinematic UI websites, real client projects, and SaaS systems. PHP · Laravel · Node.js · Next.js · React · PostgreSQL."/>
+  <meta name="keywords" content="Yahya Al-Sulami projects, Yahya.DEV portfolio, Full-Stack projects, Vortex TraderY, Schweppes Gold, Elite Care Ambulance, SaaS projects"/>
   <meta name="author" content="Yahya Al-Sulami — Yahya.DEV"/>
   <meta name="robots" content="index, follow"/>
   <meta name="theme-color" content="#020208"/>
@@ -29,12 +25,10 @@
   <link rel="icon" href="PIC/logo.webp" type="image/webp"/>
   <link rel="apple-touch-icon" href="PIC/logo.webp"/>
 
-  <link rel="stylesheet" href="assets/css/core.css"/>
-  <link rel="stylesheet" href="assets/css/components.css"/>
-  <link rel="stylesheet" href="assets/css/animations.css"/>
-  <link rel="stylesheet" href="assets/css/index-sections.css"/>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <link rel="stylesheet" href="assets/css/core.css?v=20260614"/>
+  <link rel="stylesheet" href="assets/css/components.css?v=20260614"/>
+  <link rel="stylesheet" href="assets/css/animations.css?v=20260614"/>
+  <link rel="stylesheet" href="assets/css/index-sections.css?v=20260614"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
@@ -42,7 +36,6 @@
   <style>
   /* ══ Projects Page Specific ══ */
   body.no-scroll { overflow: hidden; }
-  #three-canvas { position:fixed;inset:0;z-index:0;pointer-events:none;width:100%;height:100%; }
 
   /* Page Hero */
   .page-hero {
@@ -318,6 +311,7 @@
   </style>
 </head>
 <body class="no-scroll">
+<div class="starfield" aria-hidden="true"></div>
 
 <div id="preloader" role="status" aria-label="Loading">
   <div class="preloader-logo">Yahya<span>.</span>DEV</div>
@@ -329,7 +323,6 @@
 <div id="cursor-ring" aria-hidden="true"></div>
 <div id="scroll-progress" role="progressbar" aria-hidden="true"></div>
 <div class="noise-overlay" aria-hidden="true"></div>
-<canvas id="three-canvas" aria-hidden="true"></canvas>
 
 <!-- Scroll to Top -->
 <button id="scroll-top" aria-label="Scroll to top">
@@ -635,9 +628,8 @@
   </div>
 </footer>
 
-<script src="assets/js/core.js" defer></script>
-<script src="assets/js/three-bg.js" defer></script>
-<script src="assets/js/index-animations.js" defer></script>
+<script src="assets/js/core.js?v=20260614" defer></script>
+<script src="assets/js/index-animations.js?v=20260614" defer></script>
 
 <script>
 // Dynamic year

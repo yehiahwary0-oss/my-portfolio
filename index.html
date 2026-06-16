@@ -4,15 +4,8 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yahya Al-Sulami — Full-Stack Developer & UI Architect | Yahya.DEV</title>
-  <!-- ═══ BILINGUAL SEO BOOST ═══ -->
-<meta name="description" content="Yahya Al-Sulami (يحيى السلمي) — Full-Stack Developer & UI Architect | مطور مواقع متكامل Full-Stack في السعودية والخليج. بناء مواقع SEO قوي يصل لـ100، تصميم UI/UX سينمائي، PHP, Laravel, Node.js, Next.js, React, PostgreSQL. Web developer for hire — fast delivery, clean code."/>
-<meta name="keywords" content="Yahya Al-Sulami, يحيى السلمي, Yahya.DEV, مطور مواقع, مطور مواقع السعودية, مطور فل ستاك, Full-Stack Developer, مصمم مواقع UI UX, تصميم مواقع احترافية, تطوير مواقع SEO, مطور Laravel, مطور Next.js, مطور PHP, مبرمج مواقع للتوظيف, Web Developer for Hire, Freelance Developer Saudi Arabia, موقع سريع الأداء, SEO يصل 100, تصميم مواقع فخمة"/>
-<link rel="alternate" hreflang="en" href="https://yehiahwary0-oss.github.io/my-portfolio/"/>
-<link rel="alternate" hreflang="ar" href="https://yehiahwary0-oss.github.io/my-portfolio/"/>
-<link rel="alternate" hreflang="x-default" href="https://yehiahwary0-oss.github.io/my-portfolio/"/>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Yahya Al-Sulami","alternateName":["Yahya.DEV","يحيى السلمي"],"description":"مطور مواقع Full-Stack ومصمم UI/UX — متخصص في بناء مواقع سريعة الأداء وقوية في SEO. Full-Stack Developer specializing in high-performance, SEO-optimized websites.","jobTitle":"Full-Stack Developer & UI Architect | مطور مواقع متكامل","knowsLanguage":["en","ar"],"areaServed":["Saudi Arabia","Gulf Region","Worldwide"]}
-</script>
+  <meta name="description" content="Yahya Al-Sulami (Yahya.DEV) — Elite Full-Stack Developer & UI Architect. Building high-performance SaaS platforms, web systems, and cinematic digital experiences. PHP · Laravel · Node.js · Next.js · React · PostgreSQL."/>
+  <meta name="keywords" content="Yahya Al-Sulami, Yahya.DEV, Full-Stack Developer, Laravel, PHP, Node.js, Next.js, React, UI Architect, SaaS, PostgreSQL, يحيى السلمي"/>
   <meta name="author" content="Yahya Al-Sulami — Yahya.DEV"/>
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
   <meta name="theme-color" content="#020208"/>
@@ -33,17 +26,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="icon" href="PIC/logo.webp" type="image/webp"/>
   <link rel="apple-touch-icon" href="PIC/logo.webp"/>
-  <link rel="stylesheet" href="assets/css/core.css"/>
-  <link rel="stylesheet" href="assets/css/components.css"/>
-  <link rel="stylesheet" href="assets/css/animations.css"/>
-  <link rel="stylesheet" href="assets/css/index-sections.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <link rel="stylesheet" href="assets/css/core.css?v=20260614"/>
+  <link rel="stylesheet" href="assets/css/components.css?v=20260614"/>
+  <link rel="stylesheet" href="assets/css/animations.css?v=20260614"/>
+  <link rel="stylesheet" href="assets/css/index-sections.css?v=20260614"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
 </head>
 <body class="no-scroll">
+<div class="starfield" aria-hidden="true"></div>
 
 <!-- Preloader -->
 <div id="preloader" role="status" aria-label="Loading">
@@ -65,8 +58,6 @@
 <!-- Noise -->
 <div class="noise-overlay" aria-hidden="true"></div>
 
-<!-- Three.js -->
-<canvas id="three-canvas" aria-hidden="true"></canvas>
 
 <!-- Scroll to Top -->
 <button id="scroll-top" aria-label="Scroll to top">
@@ -164,12 +155,9 @@
 
 <!-- ════ HERO ════ -->
 <section id="hero" aria-label="Hero">
-  <div class="hero-mesh" aria-hidden="true"></div>
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
-  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
-  <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
-  <div class="hero-bg" aria-hidden="true">
+  <div class="hero-mesh"  aria-hidden="true"></div>
+  <div class="hero-grid"  aria-hidden="true"></div>
+  <div class="hero-bg-img" aria-hidden="true">
     <img src="PIC/YAH.webp" alt="" loading="eager" fetchpriority="high" width="1920" height="1080"/>
   </div>
 
@@ -201,9 +189,29 @@
       </div>
     </div>
 
-    <!-- Stats Card -->
+    <!-- Developer Status Dashboard -->
     <div class="hero-right" id="hero-stats">
-      <div class="hero-stats-card">
+      <div class="hero-dash">
+        <div class="hero-dash-header">
+          <span class="hero-dash-dot"></span>
+          <span class="hero-dash-title">yahya.dev/status</span>
+          <span class="hero-dash-tag">LIVE</span>
+        </div>
+        <div class="hero-dash-body">
+          <div class="dash-row">
+            <span class="dash-label" data-en="role" data-ar="الدور">role</span>
+            <span class="dash-value" data-en="Full-Stack Developer" data-ar="مطور Full-Stack">Full-Stack Developer</span>
+          </div>
+          <div class="dash-row">
+            <span class="dash-label" data-en="focus" data-ar="التركيز">focus</span>
+            <span class="dash-value" data-en="UI Architecture · SEO · Performance" data-ar="بنية الواجهات · SEO · الأداء">UI Architecture · SEO · Performance</span>
+          </div>
+          <div class="dash-row">
+            <span class="dash-label" data-en="based" data-ar="الموقع">based</span>
+            <span class="dash-value" data-en="Remote · Worldwide" data-ar="عن بُعد · حول العالم">Remote · Worldwide</span>
+          </div>
+        </div>
+        <div class="dash-divider"></div>
         <div class="stats-grid">
           <div class="stat-item">
             <span class="stat-num" data-count="4" data-suffix="+">4+</span>
@@ -274,13 +282,25 @@
 
 <!-- ════ ABOUT ════ -->
 <section id="about" aria-labelledby="about-title">
-  <div class="about-bg" aria-hidden="true">
-    <img src="PIC/YA.webp" alt="" loading="lazy" width="1920" height="1080"/>
-  </div>
+  <div class="about-bg" aria-hidden="true"></div>
+  <div class="about-glow" aria-hidden="true"></div>
+  <div class="about-glow-2" aria-hidden="true"></div>
 
   <div class="about-inner">
     <!-- Left — Identity Visual -->
     <div class="about-visual reveal-left">
+
+      <!-- Identity Image Card — properly framed -->
+      <div class="about-identity-card">
+        <div class="about-identity-img-wrap">
+          <img src="PIC/YA.webp" alt="Yahya Al-Sulami — Full-Stack Developer" loading="lazy" width="600" height="400"/>
+          <div class="about-identity-overlay" aria-hidden="true"></div>
+          <div class="about-identity-badge">
+            <span class="about-identity-badge-dot"></span>
+            <span data-en="Full-Stack Developer" data-ar="مطور Full-Stack">Full-Stack Developer</span>
+          </div>
+        </div>
+      </div>
 
       <!-- Terminal Card -->
       <div class="about-terminal">
@@ -378,9 +398,8 @@
 
 <!-- ════ SKILLS ════ -->
 <section id="skills" aria-labelledby="skills-title">
-  <div class="skills-bg" aria-hidden="true">
-    <img src="PIC/about.webp" alt="" loading="lazy" width="1920" height="1080"/>
-  </div>
+  <div class="skills-bg" aria-hidden="true"></div>
+  <div class="skills-glow-2" aria-hidden="true"></div>
   <div class="skills-inner">
     <div class="section-header">
       <div class="section-label" data-en="Technical Arsenal" data-ar="الترسانة التقنية">Technical Arsenal</div>
@@ -388,7 +407,20 @@
         <span data-en="Skills &" data-ar="المهارات">Skills &amp;</span>
         <span class="text-gradient"> Expertise</span>
       </h2>
-      <div class="divider" style="margin-bottom:64px"></div>
+      <div class="divider" style="margin-bottom:40px"></div>
+    </div>
+
+    <!-- Code in Action — about.webp framed as a real code screenshot -->
+    <div class="skills-code-card reveal">
+      <div class="skills-code-bar">
+        <span class="pdot red"></span>
+        <span class="pdot yellow"></span>
+        <span class="pdot green"></span>
+        <span class="skills-code-title">bash — ~/projects/yahya.dev</span>
+      </div>
+      <div class="skills-code-img">
+        <img src="PIC/about.webp" alt="Yahya Al-Sulami coding environment — Linux, PHP, Bash" loading="lazy" width="900" height="400"/>
+      </div>
     </div>
 
     <div class="skills-grid">
@@ -590,9 +622,8 @@
 
 <!-- ════ CONTACT ════ -->
 <section id="contact" aria-labelledby="contact-title">
-  <div class="contact-bg" aria-hidden="true">
-    <img src="PIC/contact.webp" alt="" loading="lazy" width="1920" height="1080"/>
-  </div>
+  <div class="contact-bg" aria-hidden="true"></div>
+  <div class="contact-glow-2" aria-hidden="true"></div>
   <div class="contact-inner">
     <div class="contact-info">
       <div class="section-label" data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</div>
@@ -600,6 +631,17 @@
         <span data-en="Let's Build Something" data-ar="لنبني">Let's Build Something</span><span class="text-gradient"> Legendary</span>
       </h2>
       <div class="divider" style="margin-bottom:20px"></div>
+
+      <!-- Contact visual card — contact.webp properly framed -->
+      <div class="contact-visual-card reveal">
+        <img src="PIC/contact.webp" alt="Contact Yahya Al-Sulami" loading="lazy" width="600" height="300"/>
+        <div class="contact-visual-overlay" aria-hidden="true"></div>
+        <div class="contact-visual-badge">
+          <span class="about-identity-badge-dot"></span>
+          <span data-en="Let's work together" data-ar="لنعمل معاً">Let's work together</span>
+        </div>
+      </div>
+
       <p data-en="Have a project in mind? Need a high-performance system, a cinematic web experience, or a complete SaaS platform? Let's talk." data-ar="هل لديك مشروع في ذهنك؟ أنا مستعد لتحويل رؤيتك إلى واقع.">
         Have a project in mind? Need a high-performance system, a cinematic web experience, or a complete SaaS platform? Let's talk.
       </p>
@@ -665,10 +707,9 @@
 </footer>
 
 <!-- ════ SCRIPTS ════ -->
-<script src="assets/js/core.js" defer></script>
-<script src="assets/js/three-bg.js" defer></script>
-<script src="assets/js/gsap-init.js" defer></script>
-<script src="assets/js/index-animations.js" defer></script>
+<script src="assets/js/core.js?v=20260614" defer></script>
+<script src="assets/js/gsap-init.js?v=20260614" defer></script>
+<script src="assets/js/index-animations.js?v=20260614" defer></script>
 
 <script>
 // Dynamic year

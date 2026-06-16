@@ -24,7 +24,6 @@ function initPreloader() {
       setTimeout(() => {
         loader.classList.add('hidden');
         document.body.classList.remove('no-scroll');
-        initHeroEntrance();
       }, 300);
     }
     if (fill)  fill.style.width  = progress + '%';
@@ -504,24 +503,9 @@ function initContactForm() {
   });
 }
 
-/* ══════════════════════════════
-   HERO ENTRANCE (called after preloader)
-══════════════════════════════ */
-function initHeroEntrance() {
-  function tryGSAP() {
-    if (typeof gsap === 'undefined') { setTimeout(tryGSAP, 100); return; }
-
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-    tl.to('#hero-tag',   { opacity: 1, y: 0, duration: 0.7, delay: 0.1 })
-      .to('#hero-title', { opacity: 1, y: 0, duration: 0.9 }, '-=0.4')
-      .to('#hero-role',  { opacity: 1, y: 0, duration: 0.7 }, '-=0.5')
-      .to('#hero-desc',  { opacity: 1, y: 0, duration: 0.7 }, '-=0.4')
-      .to('#hero-cta',   { opacity: 1, y: 0, duration: 0.7 }, '-=0.4')
-      .to('#hero-stats', { opacity: 1, y: 0, duration: 0.7 }, '-=0.3');
-  }
-  tryGSAP();
-}
+/* Hero entrance is now handled purely via CSS animations
+   (see .hero-tag, .hero-title, etc. in index-sections.css)
+   — guarantees visibility even if GSAP/CDN fails to load. */
 
 /* ══════════════════════════════
    INIT ALL

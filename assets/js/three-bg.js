@@ -11,6 +11,13 @@ window.addEventListener('load', () => {
   const canvas = document.getElementById('three-canvas');
   if (!canvas) return;
 
+  /* ── Mobile optimization — reduce particles & complexity ── */
+  const isMobile  = window.innerWidth < 768;
+  const isTablet  = window.innerWidth < 1100;
+  const PARTICLE_COUNT = isMobile ? 600 : isTablet ? 1400 : 2800;
+  const PIXEL_RATIO    = isMobile ? 1 : Math.min(window.devicePixelRatio, 1.5);
+  const FLOATER_COUNT  = isMobile ? 0 : 4;
+
   /* ── Renderer ── */
   const renderer = new THREE.WebGLRenderer({
     canvas,
@@ -28,12 +35,6 @@ window.addEventListener('load', () => {
   camera.position.z = 5;
 
   /* ── Particle Field ── */
-  // Mobile optimization — reduce particles & complexity
-  const isMobile  = window.innerWidth < 768;
-  const isTablet  = window.innerWidth < 1100;
-  const PARTICLE_COUNT = isMobile ? 600 : isTablet ? 1400 : 2800;
-  const PIXEL_RATIO    = isMobile ? 1 : Math.min(window.devicePixelRatio, 1.5);
-  const FLOATER_COUNT  = isMobile ? 0 : 4;
   const geo   = new THREE.BufferGeometry();
   const pos   = new Float32Array(PARTICLE_COUNT * 3);
   const col   = new Float32Array(PARTICLE_COUNT * 3);
@@ -94,7 +95,7 @@ window.addEventListener('load', () => {
       color: colors[i],
       wireframe: true,
       transparent: true,
-      opacity: 0.1,
+      opacity: 0.06,
     });
     const mesh = new THREE.Mesh(g, m);
     mesh.position.set(
@@ -148,7 +149,7 @@ window.addEventListener('load', () => {
       mesh.rotation.y += 0.005 + i * 0.0008;
       mesh.rotation.z += 0.001 + i * 0.0005;
       mesh.position.y  = Math.sin(t * 0.8 + i * 1.5) * 0.7;
-      mesh.material.opacity = 0.06 + Math.sin(t + i) * 0.04;
+      mesh.material.opacity = 0.035 + Math.sin(t + i) * 0.025;
     });
 
     renderer.render(scene, camera);

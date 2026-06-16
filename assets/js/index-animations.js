@@ -29,27 +29,9 @@ function initScrollTop() {
   });
 }
 
-/* ══════════════════════════════
-   HERO ENTRANCE
-══════════════════════════════ */
-function initHeroEntrance() {
-  function tryGSAP() {
-    if (typeof gsap === 'undefined') { setTimeout(tryGSAP, 80); return; }
-
-    const tl = gsap.timeline({
-      defaults: { ease: 'power3.out' },
-      delay: 0.1,
-    });
-
-    tl.to('#hero-tag',   { opacity:1, y:0, duration:0.7 })
-      .to('#hero-title', { opacity:1, y:0, duration:1.0 }, '-=0.4')
-      .to('#hero-role',  { opacity:1, y:0, duration:0.7 }, '-=0.5')
-      .to('#hero-desc',  { opacity:1, y:0, duration:0.7 }, '-=0.4')
-      .to('#hero-cta',   { opacity:1, y:0, duration:0.7 }, '-=0.4')
-      .to('#hero-stats', { opacity:1, y:0, duration:0.8 }, '-=0.3');
-  }
-  tryGSAP();
-}
+/* Hero entrance is now handled purely via CSS animations
+   (see .hero-tag, .hero-title, etc. in index-sections.css)
+   — guarantees visibility even if GSAP/CDN fails to load. */
 
 /* ══════════════════════════════
    TERMINAL TYPING EFFECT
@@ -205,47 +187,21 @@ function initScrollAnimations() {
       );
     });
 
-    /* ── Hero bg slow zoom ── */
-    const heroBgImg = document.querySelector('.hero-bg img');
-    if (heroBgImg) {
-      gsap.to(heroBgImg, {
-        yPercent:22, scale:1.08,
-        ease:'none',
+    /* ── Hero aurora subtle drift on scroll ── */
+    const heroAurora = document.querySelector('.hero-aurora');
+    if (heroAurora) {
+      gsap.to(heroAurora, {
+        yPercent: 25,
+        ease: 'none',
         scrollTrigger: {
-          trigger:'#hero', start:'top top',
-          end:'bottom top', scrub:1.5
-        }
-      });
-    }
-
-    /* ── Skills bg parallax ── */
-    const skillsBgImg = document.querySelector('.skills-bg img');
-    if (skillsBgImg) {
-      gsap.to(skillsBgImg, {
-        yPercent:18,
-        ease:'none',
-        scrollTrigger: {
-          trigger:'#skills', start:'top bottom',
-          end:'bottom top', scrub:true
-        }
-      });
-    }
-
-    /* ── Contact bg parallax ── */
-    const contactBgImg = document.querySelector('.contact-bg img');
-    if (contactBgImg) {
-      gsap.to(contactBgImg, {
-        yPercent:16,
-        ease:'none',
-        scrollTrigger: {
-          trigger:'#contact', start:'top bottom',
-          end:'bottom top', scrub:true
+          trigger: '#hero', start: 'top top',
+          end: 'bottom top', scrub: 1.5
         }
       });
     }
 
     /* ── Stats card 3D tilt on scroll ── */
-    const statsCard = document.querySelector('.hero-stats-card');
+    const statsCard = document.querySelector('.hero-dash');
     if (statsCard) {
       gsap.to(statsCard, {
         rotateX:4, rotateY:-3,
@@ -388,7 +344,6 @@ function initActiveNav() {
 ══════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
   initScrollTop();
-  initHeroEntrance();
   initScrollAnimations();
   initMagnetic();
   initSkillBarAnimations();

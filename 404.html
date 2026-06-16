@@ -4,17 +4,13 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>404 — Page Not Found | Yahya.DEV</title>
-  <!-- ═══ BILINGUAL SEO ═══ -->
-  <meta name="description" content="الصفحة غير موجودة — يحيى السلمي (Yahya.DEV). عد للرئيسية لاستكشاف المشاريع والخدمات والكورسات. Page not found — return to homepage to explore projects, services, and courses."/>
-  <link rel="alternate" hreflang="en" href="https://yehiahwary0-oss.github.io/my-portfolio/404.html"/>
-  <link rel="alternate" hreflang="ar" href="https://yehiahwary0-oss.github.io/my-portfolio/404.html"/>
+  <meta name="description" content="Page not found — Yahya Al-Sulami portfolio. Navigate back to the main site."/>
   <meta name="robots" content="noindex, follow"/>
   <meta name="theme-color" content="#020208"/>
   <link rel="icon" href="PIC/logo.webp" type="image/webp"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 
   <style>
     :root {
@@ -53,8 +49,6 @@
       transition:width .3s var(--ease),height .3s var(--ease),border-color .3s;
     }
     body:has(a:hover) #cursor-ring { width:50px;height:50px;border-color:var(--cyan); }
-
-    #three-canvas { position:fixed;inset:0;z-index:0;pointer-events:none; }
 
     /* Noise */
     body::before {
@@ -161,12 +155,37 @@
       letter-spacing:.15em;color:var(--muted);
     }
     .redirect-note span { color:var(--indigo-l); }
+  /* CSS-only starfield */
+  .starfield { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+  .starfield::before, .starfield::after {
+    content:''; position:absolute; inset:-50%; width:200%; height:200%;
+    background-repeat:repeat; opacity:0.5;
+  }
+  .starfield::before {
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(165,180,252,0.7) 0%, transparent 60%),
+      radial-gradient(1px 1px at 60% 70%, rgba(165,180,252,0.5) 0%, transparent 60%),
+      radial-gradient(1px 1px at 80% 20%, rgba(103,232,249,0.6) 0%, transparent 60%),
+      radial-gradient(1px 1px at 35% 85%, rgba(165,180,252,0.5) 0%, transparent 60%),
+      radial-gradient(1px 1px at 90% 55%, rgba(216,180,254,0.5) 0%, transparent 60%);
+    background-size:380px 380px;
+    animation: starfield-drift 180s linear infinite;
+  }
+  .starfield::after {
+    background-image:
+      radial-gradient(1.5px 1.5px at 15% 50%, rgba(255,255,255,0.5) 0%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 75% 35%, rgba(255,255,255,0.4) 0%, transparent 60%),
+      radial-gradient(1.5px 1.5px at 45% 75%, rgba(216,180,254,0.4) 0%, transparent 60%);
+    background-size:560px 560px;
+    animation: starfield-drift 260s linear infinite reverse;
+  }
+  @keyframes starfield-drift { from{transform:translate(0,0);} to{transform:translate(-380px,-380px);} }
   </style>
 </head>
 <body>
+<div class="starfield" aria-hidden="true"></div>
 <div id="cursor-dot"  aria-hidden="true"></div>
 <div id="cursor-ring" aria-hidden="true"></div>
-<canvas id="three-canvas" aria-hidden="true"></canvas>
 
 <div class="content" role="main" aria-label="404 Error Page">
   <div class="error-label">Signal Lost</div>
@@ -193,35 +212,6 @@ document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
 // Countdown
 let c=10;const cd=document.getElementById('cd');
 setInterval(()=>{c--;cd.textContent=c;if(c<=0)window.location.href='index.html';},1000);
-</script>
-
-<script>
-window.addEventListener('load',()=>{
-  if(typeof THREE==='undefined')return;
-  const canvas=document.getElementById('three-canvas');
-  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.5));
-  renderer.setSize(window.innerWidth,window.innerHeight);
-  const scene=new THREE.Scene();
-  const camera=new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,.1,1000);
-  camera.position.z=5;
-  const geo=new THREE.BufferGeometry();
-  const n=1600,pos=new Float32Array(n*3),col=new Float32Array(n*3);
-  for(let i=0;i<n*3;i+=3){
-    pos[i]=(Math.random()-.5)*60;pos[i+1]=(Math.random()-.5)*60;pos[i+2]=(Math.random()-.5)*60;
-    const t=Math.random();
-    if(t<.45){col[i]=.39;col[i+1]=.40;col[i+2]=.95;}
-    else if(t<.7){col[i]=.024;col[i+1]=.714;col[i+2]=.831;}
-    else{col[i]=.66;col[i+1]=.33;col[i+2]=.97;}
-  }
-  geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
-  geo.setAttribute('color',new THREE.BufferAttribute(col,3));
-  scene.add(new THREE.Points(geo,new THREE.PointsMaterial({size:.05,vertexColors:true,transparent:true,opacity:.6})));
-  let mx2=0,my2=0,t=0;
-  document.addEventListener('mousemove',e=>{mx2=(e.clientX/window.innerWidth-.5)*2;my2=(e.clientY/window.innerHeight-.5)*2;});
-  window.addEventListener('resize',()=>{renderer.setSize(window.innerWidth,window.innerHeight);camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();});
-  (function animate(){requestAnimationFrame(animate);t+=.003;scene.rotation.y=mx2*.04+t*.04;scene.rotation.x=my2*.025;renderer.render(scene,camera);})();
-});
 </script>
 </body>
 </html>
