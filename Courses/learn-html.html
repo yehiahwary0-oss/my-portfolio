@@ -1041,6 +1041,88 @@
     }
 
     /* ═══════════════════════════════════════════
+       PITFALL BOX — مطبات برمجية
+    ═══════════════════════════════════════════ */
+    .pitfall-box {
+      background: linear-gradient(135deg, rgba(220,38,38,0.07), rgba(220,38,38,0.015));
+      border: 1px solid rgba(220,38,38,0.28);
+      border-radius: var(--r-xl);
+      padding: 1.75rem 2rem;
+      margin: 1.75rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .pitfall-box::before {
+      content: '⚠ PITFALL';
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-family: var(--display);
+      font-size: 2.5rem;
+      color: rgba(220,38,38,0.07);
+      letter-spacing: 2px;
+      pointer-events: none;
+    }
+    .pf-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.1rem;
+    }
+    .pf-icon {
+      width: 38px; height: 38px;
+      background: rgba(220,38,38,0.12);
+      border: 1px solid rgba(220,38,38,0.3);
+      border-radius: var(--r-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .pf-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #dc2626;
+    }
+    .pf-error {
+      background: #0a0a0a;
+      border: 1px solid rgba(220,38,38,0.25);
+      border-radius: var(--r-sm);
+      padding: 0.75rem 1rem;
+      margin: 0.75rem 0;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: #ff6b6b;
+      direction: ltr;
+      text-align: left;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    .pf-error::before { content: '▶ Console: '; color: var(--text-dim); }
+    .pf-fix {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-top: 0.6rem;
+    }
+    .pf-fix strong { color: var(--green); }
+
+    .sb-link-pit { color: #dc2626; }
+    .sb-link-pit:hover,
+    .sb-link-pit.active {
+      color: #dc2626;
+      background: rgba(220,38,38,0.1);
+      border-right-color: #dc2626;
+    }
+
+    .sri-badge.pit { background: rgba(220,38,38,0.12); color: #dc2626; }
+
+    @media (max-width: 640px) {
+      .pitfall-box { padding: 1.5rem; }
+    }
+
+    /* ═══════════════════════════════════════════
        TASK CARD
     ═══════════════════════════════════════════ */
     .task-card {
@@ -1548,6 +1630,7 @@
         <a href="#l01" class="sb-link"><span class="sb-dot"></span>ما هي HTML؟</a>
         <a href="#l02" class="sb-link"><span class="sb-dot"></span>كيف يعمل المتصفح؟</a>
         <a href="#l03" class="sb-link"><span class="sb-dot"></span>البنية الأساسية</a>
+        <a href="#pf1" class="sb-link sb-link-pit"><span class="sb-dot"></span>⚠ مطبات الوحدة 1</a>
         <a href="#t1" class="sb-link sb-link-task"><span class="sb-dot"></span>🎯 Task 1</a>
       </div>
     </div>
@@ -1564,6 +1647,7 @@
         <a href="#l05" class="sb-link"><span class="sb-dot"></span>الفقرات والنص</a>
         <a href="#l06" class="sb-link"><span class="sb-dot"></span>تنسيق النص</a>
         <a href="#l07" class="sb-link"><span class="sb-dot"></span>القوائم</a>
+        <a href="#pf2" class="sb-link sb-link-pit"><span class="sb-dot"></span>⚠ مطبات الوحدة 2</a>
         <a href="#t2" class="sb-link sb-link-task"><span class="sb-dot"></span>🎯 Task 2</a>
       </div>
     </div>
@@ -1579,6 +1663,7 @@
         <a href="#l08" class="sb-link"><span class="sb-dot"></span>الروابط &lt;a&gt;</a>
         <a href="#l09" class="sb-link"><span class="sb-dot"></span>الصور &lt;img&gt;</a>
         <a href="#l10" class="sb-link"><span class="sb-dot"></span>الوسائط video/audio</a>
+        <a href="#pf3" class="sb-link sb-link-pit"><span class="sb-dot"></span>⚠ مطبات الوحدة 3</a>
         <a href="#t3" class="sb-link sb-link-task"><span class="sb-dot"></span>🎯 Task 3</a>
       </div>
     </div>
@@ -1595,6 +1680,7 @@
         <a href="#l12" class="sb-link"><span class="sb-dot"></span>الجداول</a>
         <a href="#l13" class="sb-link"><span class="sb-dot"></span>النماذج Forms</a>
         <a href="#l14" class="sb-link"><span class="sb-dot"></span>أنواع Input</a>
+        <a href="#pf4" class="sb-link sb-link-pit"><span class="sb-dot"></span>⚠ مطبات الوحدة 4</a>
         <a href="#t4" class="sb-link sb-link-task"><span class="sb-dot"></span>🎯 Task 4</a>
       </div>
     </div>
@@ -1611,6 +1697,7 @@
         <a href="#l16" class="sb-link"><span class="sb-dot"></span>Accessibility (ARIA)</a>
         <a href="#l17" class="sb-link"><span class="sb-dot"></span>Global & Data Attrs</a>
         <a href="#l18" class="sb-link"><span class="sb-dot"></span>عناصر متقدمة</a>
+        <a href="#pf5" class="sb-link sb-link-pit"><span class="sb-dot"></span>⚠ مطبات الوحدة 5</a>
         <a href="#t5" class="sb-link sb-link-task"><span class="sb-dot"></span>🎯 Task 5</a>
       </div>
     </div>
@@ -1654,6 +1741,7 @@
         </div>
         <div class="uh-meta">
           <span class="uh-badge">3 دروس</span>
+          <span class="uh-badge">1 مطب برمجي</span>
           <span class="uh-badge">1 تاسك</span>
           <span class="uh-badge">~45 دقيقة</span>
         </div>
@@ -1805,6 +1893,40 @@
       </div>
     </section>
 
+    <!-- PITFALLS UNIT 1 -->
+    <div class="pitfall-box" id="pf1">
+      <div class="pf-header">
+        <div class="pf-icon">⚠️</div>
+        <div class="pf-title">مطبات برمجية شائعة — الوحدة الأولى</div>
+      </div>
+
+      <div class="prose">
+        <p><strong>1. نسيان الـ DOCTYPE تماماً</strong></p>
+      </div>
+      <div class="pf-error">// مفيش error في الـ Console — لكن الصفحة بتتصرف غريب!
+// المتصفح بيدخل "Quirks Mode" بدل "Standards Mode"</div>
+      <div class="pf-fix"><strong>الحل:</strong> &lt;!DOCTYPE html&gt; لازم يكون أول سطر في الملف بالظبط — حتى قبل أي مسافة أو تعليق. بدونه، المتصفحات القديمة (وبعض الحديثة) بتفسّر الـ CSS والـ box model بطريقة مختلفة تماماً عن المتوقع، وده بيسبب اختلافات تصميم صعبة التتبع.</div>
+
+      <div class="prose" style="margin-top:1.5rem">
+        <p><strong>2. نسيان إغلاق Tag (Unclosed Tag)</strong></p>
+      </div>
+      <div class="pf-error">// مفيش error صريح — لكن الـ layout بيتكسر
+&lt;div class="card"&gt;
+  &lt;p&gt;نص هنا
+&lt;/div&gt;
+// نسيت &lt;/p&gt; — كل العناصر بعدها بتتأثر</div>
+      <div class="pf-fix"><strong>الحل:</strong> HTML "متسامحة" ومش دايماً بتدّيك error واضح زي JavaScript، لكن العناصر اللي بعد الـ tag الناقص بتتداخل بشكل غلط. استخدم extension زي "Auto Close Tag" في VS Code، أو افتح الصفحة في DevTools ← Elements وشوف لو في تداخل غريب في شجرة الـ HTML.</div>
+
+      <div class="prose" style="margin-top:1.5rem">
+        <p><strong>3. استخدام id بدل class للتنسيق المتكرر</strong></p>
+      </div>
+      <div class="pf-error">// مفيش error — لكن مشكلة تصميمية حقيقية
+&lt;div id="card"&gt;...&lt;/div&gt;
+&lt;div id="card"&gt;...&lt;/div&gt;
+// id لازم يكون فريد! استخدامه مرتين غلط دلالياً</div>
+      <div class="pf-fix"><strong>الحل:</strong> id مخصص لعنصر واحد بس في الصفحة كلها (للـ JavaScript وanchor links). لو عندك عناصر متكررة بنفس التصميم، استخدم class بدلاً من ذلك. هذا سيتضح أكثر في كورس CSS، لكن المبدأ الصحيح يبدأ من الآن.</div>
+    </div>
+
     <!-- TASK 1 -->
     <div class="task-card" id="t1">
       <div class="task-header">
@@ -1865,6 +1987,7 @@
         </div>
         <div class="uh-meta">
           <span class="uh-badge">4 دروس</span>
+          <span class="uh-badge">1 مطب برمجي</span>
           <span class="uh-badge">1 تاسك</span>
           <span class="uh-badge">~60 دقيقة</span>
         </div>
@@ -2076,6 +2199,43 @@
       </div>
     </section>
 
+    <!-- PITFALLS UNIT 2 -->
+    <div class="pitfall-box" id="pf2">
+      <div class="pf-header">
+        <div class="pf-icon">⚠️</div>
+        <div class="pf-title">مطبات برمجية شائعة — الوحدة الثانية</div>
+      </div>
+
+      <div class="prose">
+        <p><strong>1. استخدام &lt;br&gt; بدل CSS للمسافات</strong></p>
+      </div>
+      <div class="pf-error">// مفيش error — لكن الموقع بيبقى صعب الصيانة
+&lt;p&gt;نص&lt;/p&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;p&gt;نص تاني&lt;/p&gt;
+// 3 br متتالية لعمل مسافة — ده غلط دلالياً</div>
+      <div class="pf-fix"><strong>الحل:</strong> &lt;br&gt; معناها "سطر جديد داخل نفس الفقرة" — مش "مسافة بين عنصرين". لو محتاج مسافة بين فقرتين، الحل الصحيح هو margin في CSS (هتتعلمه بالتفصيل في الكورس الجاي)، مش تكديس وسوم br.</div>
+
+      <div class="prose" style="margin-top:1.5rem">
+        <p><strong>2. تخطي مستوى في العناوين (Heading Levels)</strong></p>
+      </div>
+      <div class="pf-error">// مفيش error — لكن مشكلة SEO وAccessibility حقيقية
+&lt;h1&gt;العنوان الرئيسي&lt;/h1&gt;
+&lt;h4&gt;عنوان فرعي&lt;/h4&gt;
+// قفزنا من h1 لـ h4 مباشرة — تسلسل مكسور</div>
+      <div class="pf-fix"><strong>الحل:</strong> العناوين لازم تتبع تسلسل منطقي — h1 ثم h2 ثم h3 وهكذا، بدون تخطي مستويات. screen readers للمكفوفين بتعتمد على التسلسل ده للتنقل، وGoogle بتستخدمه لفهم هيكل صفحتك. استخدم h4 بعد h3 فقط، مش بعد h1 مباشرة.</div>
+
+      <div class="prose" style="margin-top:1.5rem">
+        <p><strong>3. نسيان &lt;/li&gt; أو استخدام عنصر غير li داخل ul/ol</strong></p>
+      </div>
+      <div class="pf-error">// HTML "بتسامح" أحياناً لكن النتيجة غير متوقعة
+&lt;ul&gt;
+  &lt;div&gt;عنصر غلط&lt;/div&gt;
+  &lt;li&gt;عنصر صح&lt;/li&gt;
+&lt;/ul&gt;</div>
+      <div class="pf-fix"><strong>الحل:</strong> العنصر الوحيد المسموح به مباشرة جوّا &lt;ul&gt; أو &lt;ol&gt; هو &lt;li&gt;. أي عنصر تاني بيخرب الـ semantic structure حتى لو ظاهرياً اشتغل في المتصفح. لو محتاج محتوى معقد جوّا item، حطه جوّا الـ &lt;li&gt; نفسه: &lt;li&gt;&lt;div&gt;...&lt;/div&gt;&lt;/li&gt;.</div>
+    </div>
+
     <!-- TASK 2 -->
     <div class="task-card" id="t2">
       <div class="task-header">
@@ -2135,6 +2295,7 @@
         </div>
         <div class="uh-meta">
           <span class="uh-badge">3 دروس</span>
+          <span class="uh-badge">1 مطب برمجي</span>
           <span class="uh-badge">1 تاسك</span>
           <span class="uh-badge">~45 دقيقة</span>
         </div>
@@ -2302,6 +2463,37 @@
       </div>
     </section>
 
+    <!-- PITFALLS UNIT 3 -->
+    <div class="pitfall-box" id="pf3">
+      <div class="pf-header">
+        <div class="pf-icon">⚠️</div>
+        <div class="pf-title">مطبات برمجية شائعة — الوحدة الثالثة</div>
+      </div>
+
+      <div class="prose">
+        <p><strong>1. نسيان alt في الصور</strong></p>
+      </div>
+      <div class="pf-error">// مفيش error في الـ Console — لكن مشكلة SEO وAccessibility خطيرة
+&lt;img src="profile.jpg"&gt;
+// مفيش alt خالص!</div>
+      <div class="pf-fix"><strong>الحل:</strong> alt مش اختياري أبداً. بدونها، Google مش بتقدر تفهرس صورتك في نتائج البحث، وبرامج قراءة الشاشة للمكفوفين بتقرأ اسم الملف الغريب بدل وصف مفيد. حتى الصور الزخرفية البحتة محتاجة <code style="font-family:var(--mono)">alt=""</code> (فاضية لكن موجودة) عشان screen readers تتخطاها بهدوء.</div>
+
+      <div class="prose" style="margin-top:1.5rem">
+        <p><strong>2. روابط خارجية بدون rel="noopener noreferrer"</strong></p>
+      </div>
+      <div class="pf-error">// مفيش error ظاهر — لكنها ثغرة أمنية حقيقية
+&lt;a href="https://external-site.com" target="_blank"&gt;رابط&lt;/a&gt;
+// الصفحة الجديدة تقدر تتحكم في صفحتك عن طريق window.opener!</div>
+      <div class="pf-fix"><strong>الحل:</strong> أي رابط بـ target="_blank" لازم يكون معاه <code style="font-family:var(--mono)">rel="noopener noreferrer"</code>. بدونها، الموقع اللي بتفتحه في تاب جديد يقدر يوصل لـ window.opener بتاع صفحتك الأصلية وأحياناً يعيد توجيهها لموقع ضار (تكتيك تصيّد معروف).</div>
+
+      <div class="prose" style="margin-top:1.5rem">
+        <p><strong>3. مسار صورة غلط (Broken Image)</strong></p>
+      </div>
+      <div class="pf-error">GET file:///PIC/profile.jpg net::ERR_FILE_NOT_FOUND
+// أو في السيرفر: GET /images/profile.jpg 404 (Not Found)</div>
+      <div class="pf-fix"><strong>الحل:</strong> افتح DevTools ← Network Tab وشوف الطلبات اللي فشلت (هتبقى باللون الأحمر). تأكد إن المسار (src) نسبي وصحيح بالنسبة لمكان ملف الـ HTML — لو الصورة في مجلد "PIC" بجانب الملف، المسار الصح هو "PIC/profile.jpg" مش "/PIC/profile.jpg" أو مسار مطلق من جهازك.</div>
+    </div>
+
     <!-- TASK 3 -->
     <div class="task-card" id="t3">
       <div class="task-header">
@@ -2353,6 +2545,7 @@
         </div>
         <div class="uh-meta">
           <span class="uh-badge">4 دروس</span>
+          <span class="uh-badge">1 مطب برمجي</span>
           <span class="uh-badge">1 تاسك</span>
           <span class="uh-badge">~75 دقيقة</span>
         </div>
@@ -2605,6 +2798,44 @@
       </table>
     </section>
 
+    <!-- PITFALLS UNIT 4 -->
+    <div class="pitfall-box" id="pf4">
+      <div class="pf-header">
+        <div class="pf-icon">⚠️</div>
+        <div class="pf-title">مطبات برمجية شائعة — الوحدة الرابعة</div>
+      </div>
+
+      <div class="prose">
+        <p><strong>1. نسيان for/id لربط label بالـ input</strong></p>
+      </div>
+      <div class="pf-error">// مفيش error — لكن الـ Accessibility مكسورة تماماً
+&lt;label&gt;الاسم:&lt;/label&gt;
+&lt;input type="text" id="name"&gt;
+// مفيش for في الـ label — الربط غير موجود!</div>
+      <div class="pf-fix"><strong>الحل:</strong> الـ label لازم يكون عنده <code style="font-family:var(--mono)">for="name"</code> بنفس قيمة الـ id بتاع الـ input. بدون الربط ده، الضغط على نص الـ label مش هيفعّل الـ input، وscreen readers مش هتقدر تربط الوصف بالحقل — وده مشكلة accessibility حقيقية مش مجرد تفصيلة.</div>
+
+      <div class="prose" style="margin-top:1.5rem">
+        <p><strong>2. استخدام div بدل العناصر الدلالية (Semantic Elements)</strong></p>
+      </div>
+      <div class="pf-error">// مفيش error — لكن SEO وAccessibility أضعف بكثير
+&lt;div class="header"&gt;...&lt;/div&gt;
+&lt;div class="nav"&gt;...&lt;/div&gt;
+&lt;div class="main"&gt;...&lt;/div&gt;</div>
+      <div class="pf-fix"><strong>الحل:</strong> استخدم &lt;header&gt;، &lt;nav&gt;، &lt;main&gt;، &lt;footer&gt; بدل &lt;div&gt; عشوائية بـ class اسمها بس "header" أو "nav". المتصفح وGoogle وscreen readers بيفهموا العناصر الدلالية دي تلقائياً كجزء من بنية الصفحة، عكس div اللي معناها "مجرد صندوق بدون معنى".</div>
+
+      <div class="prose" style="margin-top:1.5rem">
+        <p><strong>3. زرار submit بدون type محدد جوّا form فيها أكتر من زرار</strong></p>
+      </div>
+      <div class="pf-error">// مفيش error — لكن سلوك غير متوقع
+&lt;form&gt;
+  ...
+  &lt;button&gt;حفظ مؤقت&lt;/button&gt;
+  &lt;button&gt;إرسال&lt;/button&gt;
+&lt;/form&gt;
+// الاتنين بيبعتوا الفورم! النوع الافتراضي submit</div>
+      <div class="pf-fix"><strong>الحل:</strong> أي &lt;button&gt; جوّا &lt;form&gt; بيكون نوعه الافتراضي <code style="font-family:var(--mono)">type="submit"</code> حتى لو ماحددتهوش. لو عندك زرار مش المفروض يبعت الفورم (زي "حفظ مؤقت" أو "إلغاء")، لازم تحدد له <code style="font-family:var(--mono)">type="button"</code> صراحةً.</div>
+    </div>
+
     <!-- TASK 4 -->
     <div class="task-card" id="t4">
       <div class="task-header">
@@ -2657,6 +2888,7 @@
         </div>
         <div class="uh-meta">
           <span class="uh-badge">4 دروس</span>
+          <span class="uh-badge">1 مطب برمجي</span>
           <span class="uh-badge">1 تاسك</span>
           <span class="uh-badge">~60 دقيقة</span>
         </div>
@@ -2864,6 +3096,40 @@
 <span class="ht">&lt;canvas</span> <span class="ha">id</span>=<span class="hv">"myCanvas"</span> <span class="ha">width</span>=<span class="hv">"400"</span> <span class="ha">height</span>=<span class="hv">"200"</span><span class="ht">&gt;&lt;/canvas&gt;</span></pre></div>
       </div>
     </section>
+
+    <!-- PITFALLS UNIT 5 -->
+    <div class="pitfall-box" id="pf5">
+      <div class="pf-header">
+        <div class="pf-icon">⚠️</div>
+        <div class="pf-title">مطبات برمجية شائعة — الوحدة الخامسة</div>
+      </div>
+
+      <div class="prose">
+        <p><strong>1. نسيان viewport meta tag</strong></p>
+      </div>
+      <div class="pf-error">// مفيش error — لكن الصفحة بتبان "مصغّرة" على الموبايل بشكل غريب
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;صفحتي&lt;/title&gt;
+  &lt;!-- مفيش viewport meta tag! --&gt;
+&lt;/head&gt;</div>
+      <div class="pf-fix"><strong>الحل:</strong> بدون <code style="font-family:var(--mono)">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>، المتصفحات على الموبايل بتفترض إن الصفحة مصممة لشاشة desktop عريضة (980px تقريباً) وبتعرضها مصغّرة بالكامل. ده أشهر سبب لصفحة "تبان تمام على اللابتوب لكن مكسورة على الموبايل".</p></div>
+
+      <div class="prose" style="margin-top:1.5rem">
+        <p><strong>2. استخدام aria-label على عنصر عنده نص بالفعل</strong></p>
+      </div>
+      <div class="pf-error">// مفيش error — لكن screen reader بيكرر المعلومة أو يتجاهل النص الحقيقي
+&lt;button aria-label="إغلاق"&gt;إغلاق النافذة&lt;/button&gt;
+// النص الظاهر "إغلاق النافذة"، لكن aria-label بيقول "إغلاق" بس</div>
+      <div class="pf-fix"><strong>الحل:</strong> aria-label بيُستخدم بس لما العنصر **مفيهوش نص ظاهر** (زي زرار بأيقونة بس). لو عندك نص واضح جوّا العنصر بالفعل، سيبه يتكلم لوحده من غير aria-label — الإضافة هنا بتكرر أو تناقض المعنى بدل ما تساعد.</div>
+
+      <div class="prose" style="margin-top:1.5rem">
+        <p><strong>3. كتابة data-* attribute بأحرف كبيرة (camelCase) في الـ HTML</strong></p>
+      </div>
+      <div class="pf-error">// لو حاولت توصلها بـ JavaScript:
+Uncaught TypeError: Cannot read properties of undefined (reading 'projectId')</div>
+      <div class="pf-fix"><strong>الحل:</strong> في الـ HTML، اكتب data-* attributes بحروف صغيرة ودش فقط: <code style="font-family:var(--mono)">data-project-id="5"</code> مش <code style="font-family:var(--mono)">data-projectId="5"</code>. JavaScript بتحوّلها تلقائياً لـ camelCase في الـ dataset (تبقى element.dataset.projectId) — لكن الـ HTML نفسها لازم تتكتب بـ kebab-case دايماً.</div>
+    </div>
 
     <!-- TASK 5 -->
     <div class="task-card" id="t5">
@@ -3090,6 +3356,12 @@ const SEARCH_DATA = [
   { id: 'l16', badge: 'unit',  label: 'UNIT 5',   title: 'Accessibility ARIA',       desc: 'aria-label، role، tabindex، skip link' },
   { id: 'l17', badge: 'unit',  label: 'UNIT 5',   title: 'Global & Data Attributes', desc: 'id، class، data-*، hidden، contenteditable' },
   { id: 'l18', badge: 'unit',  label: 'UNIT 5',   title: 'عناصر متقدمة',             desc: 'details، dialog، template، canvas' },
+  // Pitfalls
+  { id: 'pf1', badge: 'pit',   label: 'PITFALLS', title: 'مطبات الوحدة 1',           desc: 'DOCTYPE، Unclosed Tag، id مكرر' },
+  { id: 'pf2', badge: 'pit',   label: 'PITFALLS', title: 'مطبات الوحدة 2',           desc: 'br بدل CSS، تخطي Heading Levels، li خارج ul' },
+  { id: 'pf3', badge: 'pit',   label: 'PITFALLS', title: 'مطبات الوحدة 3',           desc: 'alt مفقودة، noopener noreferrer، Broken Image' },
+  { id: 'pf4', badge: 'pit',   label: 'PITFALLS', title: 'مطبات الوحدة 4',           desc: 'label for/id، div بدل semantic، button type' },
+  { id: 'pf5', badge: 'pit',   label: 'PITFALLS', title: 'مطبات الوحدة 5',           desc: 'viewport meta، aria-label مكرر، data-* camelCase' },
   // Tasks
   { id: 't1',  badge: 'task',  label: 'TASK',     title: 'Task 1 — أول ملف HTML',   desc: 'VS Code، Live Server، index.html' },
   { id: 't2',  badge: 'task',  label: 'TASK',     title: 'Task 2 — About & Skills', desc: 'قسم About والمهارات' },

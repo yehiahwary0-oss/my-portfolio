@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
-  <title>تعلم C# من الصفر للاحتراف | Yahya.DEV — دليل شامل 2026</title>
-  <meta name="description" content="دورة C# الأكثر شمولاً بالعربية — من المبتدئ إلى المحترف. تعلم C# 13 مع أمثلة عملية، شرح مفصّل للكود، وكل ما تحتاجه لإتقان لغة C# في 2026. بقلم Yahya Al-sulami — Yahya.DEV." />
-  <meta name="keywords" content="تعلم C#, شرح C# بالعربي, دورة سي شارب, C# للمبتدئين, C# 2026, دليل C#, Yahya.DEV, يحيى السلمي, برمجة C#, تعلم البرمجة, OOP C#, .NET C#, async await C#, LINQ C#" />
+  <title>تعلم C# من الصفر للاحتراف | Yahya.DEV — دليل شامل + مشروع تطبيقي 2026</title>
+  <meta name="description" content="دورة C# وبرمجة كائنية (OOP) الأكثر شمولاً بالعربية — من المبتدئ إلى الاحتراف، مع مشروع Console تطبيقي كامل يؤهّلك لدخول دبلومة Backend .NET. بقلم Yahya Al-sulami — Yahya.DEV." />
+  <meta name="keywords" content="تعلم C#, شرح C# بالعربي, دورة سي شارب, C# للمبتدئين, C# 2026, دليل C#, Yahya.DEV, يحيى السلمي, برمجة C#, تعلم البرمجة, OOP C#, .NET C#, async await C#, LINQ C#, مشروع C#, Backend .NET, Repository Pattern C#" />
   <meta name="author" content="Yahya Al-sulami — Yahya.DEV" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://yehiahwary0-oss.github.io/my-portfolio/csharp-course.html" />
@@ -991,6 +991,116 @@ mark {
   .taskbar-inner { flex-direction: column; text-align: center; }
   .taskbar-links { justify-content: center; }
 }
+
+/* ============================================================
+   NEW LEVEL BADGES — Mindset / Task / Pitfall / Project
+   ============================================================ */
+.level-mindset { background: rgba(6,182,212,0.15); color: var(--accent-cyan); border: 1px solid rgba(6,182,212,0.3); }
+.level-task    { background: rgba(6,182,212,0.15); color: var(--accent-cyan); border: 1px solid rgba(6,182,212,0.3); }
+.level-pitfall { background: rgba(239,68,68,0.15); color: var(--accent-red); border: 1px solid rgba(239,68,68,0.3); }
+.level-project { background: rgba(16,185,129,0.15); color: var(--accent-green); border: 1px solid rgba(16,185,129,0.3); }
+.level-card.project::before { background: var(--accent-green); }
+
+/* ============================================================
+   MENTAL-MODEL PIPELINE DIAGRAM
+   ============================================================ */
+.pipeline { display: flex; gap: 0; flex-wrap: wrap; margin: 1.5rem 0; }
+.pipe-step {
+  flex: 1; min-width: 140px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px; text-align: center;
+}
+.pipe-step .pi { font-size: 24px; margin-bottom: 6px; }
+.pipe-step h5 { font-family: var(--font-display); font-size: 0.85rem; font-weight: 800; margin-bottom: 3px; }
+.pipe-step p { font-size: 0.72rem; color: var(--text-muted); line-height: 1.6; }
+.pipe-arrow { display: flex; align-items: center; justify-content: center; padding: 0 8px; color: var(--accent-purple); font-size: 18px; flex-shrink: 0; }
+@media (max-width: 700px) { .pipeline { flex-direction: column; } .pipe-arrow { transform: rotate(90deg); padding: 4px 0; } }
+
+/* ============================================================
+   PRACTICAL TASK BOX
+   ============================================================ */
+.task-box {
+  border: 1px solid rgba(6,182,212,0.3);
+  background: linear-gradient(135deg, rgba(6,182,212,0.08), rgba(124,58,237,0.03));
+  border-radius: var(--radius);
+  padding: 1.6rem 1.7rem;
+  margin: 2.2rem 0 1.2rem;
+}
+.task-box-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.task-box-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent-cyan), #0891b2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0;
+}
+.task-box h4 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; }
+.task-box-lv {
+  margin-right: auto; font-family: var(--font-code); font-size: 0.68rem; color: var(--accent-cyan);
+  background: rgba(6,182,212,0.12); border: 1px solid rgba(6,182,212,0.3); padding: 2px 10px; border-radius: 20px;
+}
+.task-box p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.9; margin-bottom: 0.8rem; }
+.task-box ul { padding-right: 1.2rem; margin: 0.6rem 0 1rem; font-size: 0.87rem; color: var(--text-secondary); line-height: 1.9; }
+.task-box ul li { margin-bottom: 0.4rem; }
+.task-hint-box {
+  display: flex; gap: 9px; align-items: flex-start; font-size: 0.78rem; color: var(--text-muted);
+  background: var(--bg-surface); border: 1px dashed var(--border-bright); border-radius: 9px; padding: 10px 14px;
+}
+.task-hint-box b { color: var(--accent-cyan); font-weight: 800; }
+
+/* ============================================================
+   PITFALL / DEBUG BOX
+   ============================================================ */
+.debug-box {
+  background: rgba(239,68,68,0.05);
+  border: 1px solid rgba(239,68,68,0.22);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.1rem;
+}
+.debug-box-h { display: flex; align-items: center; gap: 8px; font-weight: 800; color: #fca5a5; margin-bottom: 0.8rem; font-size: 0.92rem; }
+.debug-row { display: flex; flex-direction: column; gap: 7px; font-size: 0.78rem; }
+.debug-wrong, .debug-err, .debug-fix {
+  padding: 9px 12px; border-radius: 7px; font-family: var(--font-code);
+  font-size: 0.74rem; line-height: 1.75; white-space: pre-wrap; overflow-x: auto; direction: ltr; text-align: left;
+}
+.debug-wrong { background: rgba(239,68,68,0.08); color: #fecaca; border: 1px solid rgba(239,68,68,0.15); }
+.debug-wrong::before { content: '✗ الكود اللي هيسبب المشكلة'; display: block; font-family: var(--font-ar); font-size: 0.68rem; color: var(--accent-red); margin-bottom: 5px; font-weight: 700; direction: rtl; text-align: right; }
+.debug-err { background: #010810; color: #fca5a5; border: 1px solid var(--border); }
+.debug-err::before { content: '⚠ الخطأ الذي سيظهر'; display: block; font-family: var(--font-ar); font-size: 0.68rem; color: var(--text-muted); margin-bottom: 5px; font-weight: 700; direction: rtl; text-align: right; }
+.debug-fix { background: rgba(16,185,129,0.06); color: #bbf7d0; border: 1px solid rgba(16,185,129,0.15); }
+.debug-fix::before { content: '✓ التصحيح'; display: block; font-family: var(--font-ar); font-size: 0.68rem; color: var(--accent-green); margin-bottom: 5px; font-weight: 700; direction: rtl; text-align: right; }
+.debug-why { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.85; margin-top: 0.7rem; padding-top: 0.7rem; border-top: 1px solid rgba(239,68,68,0.15); direction: rtl; text-align: right; }
+.debug-why b { color: #fca5a5; }
+
+/* ============================================================
+   PROJECT FILE TREE
+   ============================================================ */
+.file-tree {
+  font-family: var(--font-code); font-size: 0.8rem; line-height: 1.95; color: var(--text-secondary);
+  background: #010810; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 1.1rem 1.3rem; overflow-x: auto; direction: ltr; text-align: left;
+}
+.file-tree .d { color: #c084fc; font-weight: 700; }
+.file-tree .f { color: var(--text-muted); }
+.file-tree .c { color: #3a4a5c; }
+
+/* ============================================================
+   MOBILE TOC DRAWER
+   ============================================================ */
+.mobile-menu-btn { display: none; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary); width: 38px; height: 38px; border-radius: 9px; font-size: 1.1rem; cursor: pointer; align-items: center; justify-content: center; }
+@media (max-width: 1024px) {
+  .mobile-menu-btn { display: flex; }
+  .sidebar {
+    display: flex !important;
+    position: fixed; top: 0; right: -300px; bottom: 0; width: 280px;
+    border-radius: 0; height: 100vh; max-height: 100vh; z-index: 950;
+    transition: right 0.3s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: -15px 0 40px rgba(0,0,0,0.5);
+  }
+  .sidebar.open { right: 0; }
+  .drawer-overlay { position: fixed; inset: 0; background: rgba(2,4,8,0.6); backdrop-filter: blur(3px); z-index: 940; display: none; }
+  .drawer-overlay.open { display: block; }
+}
 </style>
 </head>
 <body>
@@ -1011,8 +1121,12 @@ mark {
     <a href="https://yehiahwary0-oss.github.io/my-portfolio/" class="nav-back">
       ← الرئيسية
     </a>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="محتويات الدورة" title="محتويات الدورة">☰</button>
   </div>
 </nav>
+
+<!-- MOBILE TOC DRAWER OVERLAY -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
 
 <!-- MOBILE SEARCH -->
 <div class="mobile-search-bar">
@@ -1033,13 +1147,12 @@ mark {
       تعلم <span class="cs-logo">C#</span><br />من الصفر للاحتراف
     </h1>
     <p class="hero-sub">
-      دليل شامل يغني عن الكورسات — من أول سطر كود حتى البرمجة الاحترافية.
-      بأمثلة حقيقية، شرح مفصّل، وكل ما تحتاجه في 2026.
+      دليل شامل يغني عن الكورسات — من أول سطر كود حتى الاحتراف في OOP، بمشروع Console تطبيقي كامل يؤهّلك لدخول عالم Backend بثقة.
     </p>
     <div class="hero-meta">
       <div class="hero-meta-item"><span class="dot dot-green"></span>محدّث 30 مايو 2026</div>
       <div class="hero-meta-item"><span class="dot dot-gold"></span>C# 13 / .NET 9</div>
-      <div class="hero-meta-item"><span class="dot dot-cyan"></span>9 مستويات كاملة</div>
+      <div class="hero-meta-item"><span class="dot dot-cyan"></span>30 قسم + مشروع Console تطبيقي</div>
       <div class="hero-meta-item"><span class="dot dot-purple"></span>بقلم Yahya.DEV</div>
     </div>
     <div class="hero-cta-group">
@@ -1053,9 +1166,9 @@ mark {
 <div class="container">
   <div class="stats-bar">
     <div class="stat-item"><div class="stat-num">13</div><div class="stat-label">إصدار C# الحالي</div></div>
-    <div class="stat-item"><div class="stat-num">9</div><div class="stat-label">مستويات تعليمية</div></div>
-    <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label">مثال كود حقيقي</div></div>
-    <div class="stat-item"><div class="stat-num">2026</div><div class="stat-label">آخر تحديث</div></div>
+    <div class="stat-item"><div class="stat-num">30</div><div class="stat-label">قسم تعليمي كامل</div></div>
+    <div class="stat-item"><div class="stat-num">75+</div><div class="stat-label">مثال كود حقيقي</div></div>
+    <div class="stat-item"><div class="stat-num">1</div><div class="stat-label">مشروع Console مستقل</div></div>
   </div>
 </div>
 
@@ -1074,9 +1187,11 @@ mark {
         <ul class="level-topics">
           <li>ما هي C# وتاريخها</li>
           <li>البيئة وأول برنامج</li>
+          <li>🧠 العقلية الخلفية: CLR وStack/Heap</li>
           <li>المتغيرات والأنواع</li>
           <li>العمليات والتحكم</li>
           <li>الحلقات والمصفوفات</li>
+          <li>🎯 تطبيق: نظام تقييم طلاب</li>
         </ul>
       </div>
       <div class="level-card intermediate">
@@ -1087,8 +1202,10 @@ mark {
           <li>الكلاسات والكائنات</li>
           <li>الوراثة والتغليف</li>
           <li>الواجهات والتجريد</li>
+          <li>🪲 مطبات OOP الشائعة</li>
           <li>الـ Generics</li>
           <li>المجموعات Collections</li>
+          <li>🎯 تطبيق: نظام مكتبة</li>
         </ul>
       </div>
       <div class="level-card advanced">
@@ -1100,7 +1217,7 @@ mark {
           <li>Delegates & Events</li>
           <li>Async / Await</li>
           <li>معالجة الأخطاء</li>
-          <li>Design Patterns</li>
+          <li>🪲 مطبات Async والأخطاء</li>
         </ul>
       </div>
       <div class="level-card expert">
@@ -1115,6 +1232,18 @@ mark {
           <li>Performance & Spans</li>
         </ul>
       </div>
+      <div class="level-card project">
+        <span class="level-badge level-project">🏗️ مشروع</span>
+        <h3>مشروع التخرّج</h3>
+        <p>طبّق كل ما تعلّمته في تطبيق Console حقيقي</p>
+        <ul class="level-topics">
+          <li>Console App منظّم بـ OOP</li>
+          <li>Record & Enum Types</li>
+          <li>Repository Pattern</li>
+          <li>حفظ البيانات بـ JSON</li>
+          <li>🏁 تحدي مستقل نهائي</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -1124,7 +1253,7 @@ mark {
   <div class="course-layout">
 
     <!-- SIDEBAR TOC -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="search-box">
         <input type="text" id="sidebar-search" placeholder="ابحث في الدرس..." oninput="doSearch(this.value)" />
         <span class="search-icon">🔍</span>
@@ -1134,27 +1263,38 @@ mark {
         <div class="toc-group-title">⚡ مبتدئ</div>
         <li><a href="#s1"><span class="toc-num">01</span> ما هي C#؟</a></li>
         <li><a href="#s2"><span class="toc-num">02</span> بيئة العمل وأول برنامج</a></li>
+        <li><a href="#mindset"><span class="toc-num">🧠</span> العقلية الخلفية: CLR وStack/Heap</a></li>
         <li><a href="#s3"><span class="toc-num">03</span> المتغيرات والأنواع</a></li>
         <li><a href="#s4"><span class="toc-num">04</span> العمليات والتحكم</a></li>
         <li><a href="#s5"><span class="toc-num">05</span> الحلقات</a></li>
         <li><a href="#s6"><span class="toc-num">06</span> المصفوفات</a></li>
         <li><a href="#s7"><span class="toc-num">07</span> الدوال (Methods)</a></li>
+        <li><a href="#task1"><span class="toc-num">🎯</span> تطبيق: نظام تقييم طلاب</a></li>
         <div class="toc-group-title">🔥 متوسط</div>
         <li><a href="#s8"><span class="toc-num">08</span> الكلاسات والكائنات</a></li>
         <li><a href="#s9"><span class="toc-num">09</span> الوراثة والتغليف</a></li>
         <li><a href="#s10"><span class="toc-num">10</span> الواجهات Interface</a></li>
+        <li><a href="#pit1"><span class="toc-num">🪲</span> مطبات: أساسيات OOP</a></li>
         <li><a href="#s11"><span class="toc-num">11</span> Generics</a></li>
         <li><a href="#s12"><span class="toc-num">12</span> Collections</a></li>
+        <li><a href="#task2"><span class="toc-num">🎯</span> تطبيق: نظام مكتبة</a></li>
         <div class="toc-group-title">💎 متقدم</div>
         <li><a href="#s13"><span class="toc-num">13</span> LINQ</a></li>
         <li><a href="#s14"><span class="toc-num">14</span> Delegates & Events</a></li>
         <li><a href="#s15"><span class="toc-num">15</span> Async / Await</a></li>
         <li><a href="#s16"><span class="toc-num">16</span> معالجة الأخطاء</a></li>
+        <li><a href="#pit2"><span class="toc-num">🪲</span> مطبات: Async والأخطاء</a></li>
         <div class="toc-group-title">🚀 خبير</div>
         <li><a href="#s17"><span class="toc-num">17</span> Pattern Matching</a></li>
         <li><a href="#s18"><span class="toc-num">18</span> Records</a></li>
         <li><a href="#s19"><span class="toc-num">19</span> Nullable & Null Safety</a></li>
         <li><a href="#s20"><span class="toc-num">20</span> C# 13 الجديد</a></li>
+        <div class="toc-group-title">🏗️ مشروع التخرّج</div>
+        <li><a href="#project-intro"><span class="toc-num">21</span> مقدّمة المشروع</a></li>
+        <li><a href="#project-arch"><span class="toc-num">22</span> البنية والنماذج</a></li>
+        <li><a href="#project-logic"><span class="toc-num">23</span> منطق العمل والقائمة</a></li>
+        <li><a href="#final"><span class="toc-num">🏁</span> التحدي النهائي المستقل</a></li>
+        <li><a href="#ref"><span class="toc-num">★</span> مرجع سريع</a></li>
       </ul>
     </aside>
 
@@ -1267,6 +1407,80 @@ dotnet run</pre>
   <div class="info-box info-tip">
     <span class="info-box-icon">💡</span>
     <div><strong>نصيحة:</strong> ابدأ بـ VS Code مع إضافة "C# Dev Kit" — أسرع للتعلم ويعمل على Windows وMac وLinux بدون مشاكل.</div>
+  </div>
+</div>
+
+<!-- ===== MINDSET: HOW C# CODE ACTUALLY RUNS ===== -->
+<div class="lesson-section" id="mindset">
+  <span class="level-badge level-mindset">🧠 عقلية المبرمج</span>
+  <div class="lesson-header">
+    <div class="lesson-num">🧠</div>
+    <div>
+      <h2 class="lesson-title">العقلية الخلفية: كيف تُنفَّذ أكوادك فعلياً؟</h2>
+      <p class="lesson-subtitle">Compilation → IL → CLR → JIT، وStack vs Heap</p>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <p>قبل أن تكتب سطراً واحداً آخر، يجب أن تفهم سؤالاً جوهرياً: عندما تضغط <strong>Run</strong>، ماذا يحدث بالضبط بين كتابتك للكود وظهور النتيجة على الشاشة؟ هذا الفهم هو ما يفرّق بين من "يحفظ الصيغ" ومن يفهم اللغة فعلياً.</p>
+    <div class="highlight">C# ليست لغة تُترجَم مباشرة لتعليمات المعالج كما في C/C++ — بل تمر بخطوة وسيطة ذكية تجعلها تعمل على Windows وLinux وmacOS بنفس الكود تماماً.</div>
+  </div>
+
+  <div class="pipeline">
+    <div class="pipe-step"><div class="pi">📝</div><h5>1. كودك C#</h5><p>ملفات .cs التي تكتبها بنفسك</p></div>
+    <div class="pipe-arrow">←</div>
+    <div class="pipe-step"><div class="pi">⚙️</div><h5>2. مترجم Roslyn</h5><p>يحوّل الكود إلى IL (لغة وسيطة، ليست لغة المعالج)</p></div>
+    <div class="pipe-arrow">←</div>
+    <div class="pipe-step"><div class="pi">📦</div><h5>3. Assembly (.dll)</h5><p>ملف يحتوي IL + بيانات وصفية (Metadata)</p></div>
+    <div class="pipe-arrow">←</div>
+    <div class="pipe-step"><div class="pi">🚀</div><h5>4. CLR + JIT</h5><p>عند التشغيل، JIT يحوّل IL لتعليمات معالج حقيقية</p></div>
+  </div>
+
+  <div class="info-box info-note">
+    <span class="info-box-icon">📌</span>
+    <div><strong>لماذا هذا مهم؟</strong> هذا بالضبط سبب عمل C# على أي نظام تشغيل لديه CLR مناسب (.NET Runtime) — كودك المُترجَم (IL) واحد، والـ JIT الخاص بكل نظام هو من "يُترجمه" أخيراً لتعليمات تلك المعالج. هذا أيضاً ما يسمح لـ <strong>Garbage Collector</strong> بإدارة الذاكرة تلقائياً — جزء من بيئة CLR نفسها.</div>
+  </div>
+
+  <div class="lesson-body">
+    <strong>الذاكرة: Stack مقابل Heap — أهم تفصيل ستحتاجه لفهم باقي الكورس</strong>
+    <p style="margin-top:8px">كل متغير في برنامجك يعيش في مكان واحد من اثنين، وهذا يحدّد سلوكه بالكامل:</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th>الخاصية</th><th>Stack (المكدّس)</th><th>Heap (الكومة)</th></tr>
+      <tr><td>من يعيش هنا؟</td><td>Value Types: int, double, bool, struct</td><td>Reference Types: class, string, array, object</td></tr>
+      <tr><td>السرعة</td><td>سريع جداً — تنظيم تلقائي صارم</td><td>أبطأ نسبياً — يحتاج تتبّعاً</td></tr>
+      <tr><td>التنظيف</td><td>يُحذف فوراً عند خروج الدالة</td><td>يُنظَّفه Garbage Collector لاحقاً</td></tr>
+      <tr><td>ما يحمله المتغير</td><td>القيمة الفعلية مباشرة</td><td>مرجع (Reference) يشير لموقع البيانات في Heap</td></tr>
+    </table>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">C# — أثر عملي لـ Value vs Reference</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="cm">// Value Type — كل متغير له نسخته الخاصة على Stack</span>
+<span class="tp">int</span> a = <span class="nm">10</span>;
+<span class="tp">int</span> b = a;     <span class="cm">// نسخة جديدة كاملة</span>
+b = <span class="nm">99</span>;
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(a); <span class="cm">// 10 — لم يتأثر a أبداً</span>
+
+<span class="cm">// Reference Type — المتغيران يشيران لنفس الكائن في Heap</span>
+<span class="kw">var</span> arr1 = <span class="kw">new</span> <span class="tp">int</span>[] { <span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span> };
+<span class="kw">var</span> arr2 = arr1;   <span class="cm">// arr2 يشير لنفس المصفوفة، لا نسخة جديدة</span>
+arr2[<span class="nm">0</span>] = <span class="nm">99</span>;
+<span class="fn">Console</span>.<span class="fn">WriteLine</span>(arr1[<span class="nm">0</span>]); <span class="cm">// 99 — تأثّر arr1 أيضاً!</span></pre>
+  </div>
+  <div class="output-box">
+    <div class="output-label">// OUTPUT</div>
+    10<br/>99
+  </div>
+
+  <div class="info-box info-warn">
+    <span class="info-box-icon">⚠️</span>
+    <div><strong>هذا الفرق سيفسّر لك لاحقاً ظواهر "غريبة" كثيرة</strong> — مثل تعديل خاصية كلاس داخل دالة فيؤثر على الأصل (لأنه مرجع)، بعكس تعديل قيمة int في دالة فلا يتغيّر شيء بالخارج. احتفظ بهذا الجدول في ذهنك طوال الكورس.</div>
   </div>
 </div>
 
@@ -1602,6 +1816,26 @@ numbers[<span class="nm">1</span>] = <span class="nm">99</span>;
   </div>
 </div>
 
+<!-- ===== TASK 1 ===== -->
+<div class="lesson-section" id="task1">
+<div class="task-box">
+  <div class="task-box-header">
+    <div class="task-box-icon">🎯</div>
+    <h4>تطبيق عملي — نظام تقييم الطلاب</h4>
+    <span class="task-box-lv">مستوى: أساسي</span>
+  </div>
+  <p>دمجت حتى الآن: المتغيرات، التحكم في التدفق، الحلقات، المصفوفات، والدوال. حان وقت تجميعها في برنامج Console واحد متكامل — بدون أي حل جاهز، فقط المواصفة:</p>
+  <ul>
+    <li>أنشئ مصفوفة <code>int[]</code> بدرجات 5 طلاب (من 0 إلى 100).</li>
+    <li>اكتب دالة <code>static string GetGrade(int score)</code> تستخدم <em>Switch Expression</em> لتُرجع التقدير (A/B/C/D/F).</li>
+    <li>اطبع باستخدام <code>foreach</code> كل درجة وتقديرها المقابل.</li>
+    <li>اكتب دالة ثانية <code>static double GetAverage(int[] scores)</code> تحسب المتوسط وتطبعه.</li>
+    <li><strong>التحدي الإضافي:</strong> اكتب دالة <code>static int[] GetTopThree(int[] scores)</code> تُرجع أعلى 3 درجات مرتّبة تنازلياً — بدون استخدام LINQ (لم نصل له بعد)، استخدم <code>Array.Sort</code> و<code>Array.Reverse</code> فقط.</li>
+  </ul>
+  <div class="task-hint-box"><b>🔍 ابحث عن:</b>&nbsp; "C# switch expression syntax" · "Array.Sort C# descending" · "C# static method return array"</div>
+</div>
+</div>
+
 <!-- ===== S8: OOP - CLASSES ===== -->
 <div class="lesson-section" id="s8">
   <span class="level-badge level-intermediate">🔥 متوسط</span>
@@ -1827,6 +2061,82 @@ dev.<span class="fn">Introduce</span>();
   </div>
 </div>
 
+<!-- ===== PITFALL 1: OOP BASICS ===== -->
+<div class="lesson-section" id="pit1">
+  <span class="level-badge level-pitfall">🪲 مطبات برمجية</span>
+  <div class="lesson-header">
+    <div class="lesson-num">🪲</div>
+    <div>
+      <h2 class="lesson-title">مطبات برمجية — أساسيات OOP</h2>
+      <p class="lesson-subtitle">NullReferenceException، نسيان override، وأخطاء الوصول</p>
+    </div>
+  </div>
+
+  <div class="debug-box">
+    <div class="debug-box-h">⚠️ NullReferenceException — أشهر استثناء في C#</div>
+    <div class="debug-row">
+<div class="debug-wrong">Customer? customer = FindCustomer(99); // غير موجود، يرجع null
+Console.WriteLine(customer.Name);</div>
+<div class="debug-err">System.NullReferenceException: 'Object reference not set
+to an instance of an object.'</div>
+<div class="debug-fix">Console.WriteLine(customer?.Name ?? "غير موجود");</div>
+    </div>
+    <div class="debug-why"><b>السبب:</b> الدالة أرجعت null لأنها لم تجد نتيجة، وحاولت الوصول لخاصية على متغير لا يشير لأي كائن حقيقي في Heap. الـ Nullable Reference Types في C# الحديثة تنبّهك لهذا أثناء الكتابة قبل التشغيل أصلاً.</div>
+  </div>
+
+  <div class="debug-box">
+    <div class="debug-box-h">⚠️ نسيان override فلا يُستدعى السلوك الجديد أبداً</div>
+    <div class="debug-row">
+<div class="debug-wrong">class Animal { public virtual string Speak() => "صوت"; }
+class Dog : Animal {
+    public string Speak() => "هواو"; // نسي override!
+}
+Animal a = new Dog();
+Console.WriteLine(a.Speak()); // "صوت" — ليس "هواو"!</div>
+<div class="debug-err">لا خطأ ترجمة — لكن CS0114 warning: 'Dog.Speak() hides
+inherited member. Use the new keyword if hiding was intended.'</div>
+<div class="debug-fix">public override string Speak() => "هواو";</div>
+    </div>
+    <div class="debug-why"><b>السبب:</b> بدون override، الدالة الجديدة "تخفي" الأصلية فقط (Method Hiding) ولا تستبدلها فعلياً — والاستدعاء عبر النوع الأساسي (Animal) يبقى يرى الدالة القديمة. هذا فرق دقيق ويُسقط الكثيرين.</div>
+  </div>
+
+  <div class="debug-box">
+    <div class="debug-box-h">⚠️ StackOverflowException من Recursion غير منتهٍ في الخصائص</div>
+    <div class="debug-row">
+<div class="debug-wrong">private string name;
+public string Name {
+    get => Name;        // يستدعي نفسه! ليس name
+    set => Name = value; // نفس المشكلة
+}</div>
+<div class="debug-err">Process terminated. StackOverflowException</div>
+<div class="debug-fix">public string Name {
+    get => name;
+    set => name = value;
+}
+// أو أبسط: public string Name { get; set; }</div>
+    </div>
+    <div class="debug-why"><b>السبب:</b> الخاصية Name (بحرف كبير) تستدعي نفسها بدلاً من الحقل name (بحرف صغير) — كل استدعاء يضيف إطاراً جديداً على Stack حتى تمتلئ الذاكرة المخصصة له تماماً.</div>
+  </div>
+
+  <div class="debug-box">
+    <div class="debug-box-h">⚠️ محاولة الوصول لعضو private من كلاس مشتق</div>
+    <div class="debug-row">
+<div class="debug-wrong">class Account {
+    private decimal balance;
+}
+class SavingsAccount : Account {
+    public void Show() => Console.WriteLine(balance); // ❌
+}</div>
+<div class="debug-err">CS0122: 'Account.balance' is inaccessible
+due to its protection level</div>
+<div class="debug-fix">class Account {
+    protected decimal balance; // متاح للمشتقّات فقط
+}</div>
+    </div>
+    <div class="debug-why"><b>السبب:</b> private تعني "هذا الكلاس فقط، لا حتى أطفاله". إن أردت أن تصل الكلاسات المشتقة لعضو ما، استخدم protected — هذا الفرق هو جوهر مبدأ Encapsulation الصحيح.</div>
+  </div>
+</div>
+
 <!-- ===== S11: GENERICS ===== -->
 <div class="lesson-section" id="s11">
   <span class="level-badge level-intermediate">🔥 متوسط</span>
@@ -1932,6 +2242,26 @@ queue.<span class="fn">Enqueue</span>(<span class="st">"Request 1"</span>);
 queue.<span class="fn">Enqueue</span>(<span class="st">"Request 2"</span>);
 <span class="fn">Console</span>.<span class="fn">WriteLine</span>(queue.<span class="fn">Dequeue</span>());  <span class="cm">// "Request 1"</span></pre>
   </div>
+</div>
+
+<!-- ===== TASK 2 ===== -->
+<div class="lesson-section" id="task2">
+<div class="task-box">
+  <div class="task-box-header">
+    <div class="task-box-icon">🎯</div>
+    <h4>تطبيق عملي — نظام مكتبة (Library Management)</h4>
+    <span class="task-box-lv">مستوى: متوسط</span>
+  </div>
+  <p>الآن وقد امتلكت OOP الكاملة والـ Generics والـ Collections، ابنِ نظاماً حقيقياً صغيراً — هذا التمرين هو بروفة مباشرة لمشروع التخرّج القادم:</p>
+  <ul>
+    <li>كلاس <code>Book</code> بخصائص: <code>Title</code>, <code>Author</code>, <code>bool IsBorrowed</code>.</li>
+    <li>كلاس <code>Library</code> يحتوي <code>List&lt;Book&gt;</code> داخلية (private)، مع دوال: <code>AddBook</code>, <code>BorrowBook(string title)</code>, <code>ReturnBook(string title)</code>.</li>
+    <li>استخدم <code>Dictionary&lt;string, Book&gt;</code> بدلاً من List إن أردت بحثاً أسرع بالعنوان — جرّب الفرق في الأداء بنفسك.</li>
+    <li>دالة <code>ListAvailableBooks()</code> تطبع فقط الكتب غير المستعارة حالياً.</li>
+    <li><strong>التحدي الإضافي:</strong> اجعل <code>BorrowBook</code> تُطلق <code>Exception</code> مخصصة (<code>BookNotAvailableException</code>) إن كان الكتاب مستعاراً فعلاً، وتعامل معها بـ try/catch في نقطة الاستخدام.</li>
+  </ul>
+  <div class="task-hint-box"><b>🔍 ابحث عن:</b>&nbsp; "C# Dictionary TryGetValue" · "C# custom exception class" · "List vs Dictionary performance C#"</div>
+</div>
 </div>
 
 <!-- ===== S13: LINQ ===== -->
@@ -2231,6 +2561,70 @@ btn.<span class="fn">Click</span>(<span class="st">"حفظ"</span>);</pre>
   </div>
 </div>
 
+<!-- ===== PITFALL 2: ASYNC & EXCEPTIONS ===== -->
+<div class="lesson-section" id="pit2">
+  <span class="level-badge level-pitfall">🪲 مطبات برمجية</span>
+  <div class="lesson-header">
+    <div class="lesson-num">🪲</div>
+    <div>
+      <h2 class="lesson-title">مطبات برمجية — Async وException Handling</h2>
+      <p class="lesson-subtitle">Deadlocks، async void، وCatch الصامت</p>
+    </div>
+  </div>
+
+  <div class="debug-box">
+    <div class="debug-box-h">⚠️ Deadlock من استخدام .Result أو .Wait()</div>
+    <div class="debug-row">
+<div class="debug-wrong">public string GetData() {
+    var task = FetchDataAsync();
+    return task.Result; // ⛔ يحظر الـ Thread الرئيسي
+}</div>
+<div class="debug-err">يتجمّد البرنامج بلا أي رسالة خطأ — Deadlock صامت تماماً</div>
+<div class="debug-fix">public async Task&lt;string&gt; GetDataAsync() {
+    return await FetchDataAsync(); // await لا يحظر الـ Thread
+}</div>
+    </div>
+    <div class="debug-why"><b>السبب:</b> <code style="font-family:var(--font-code)">.Result</code> يوقف الـ Thread الحالي وينتظره بشكل متزامن (Blocking)، بينما المهمة غير المتزامنة قد تحتاج العودة لهذا الـ Thread نفسه لتكمل — فيحصل تعليق دائري. القاعدة: <strong>async طوال الطريق</strong>، لا تخلط بين Sync و Async.</div>
+  </div>
+
+  <div class="debug-box">
+    <div class="debug-box-h">⚠️ async void — استثناءات تختفي بلا أثر</div>
+    <div class="debug-row">
+<div class="debug-wrong">async void SaveData() {
+    throw new Exception("فشل الحفظ");
+    // لا أحد يستطيع الـ catch لهذا الاستثناء!
+}</div>
+<div class="debug-err">البرنامج قد ينهار فجأة دون stack trace مفيد، أو الخطأ يُبتلع تماماً</div>
+<div class="debug-fix">async Task SaveDataAsync() {
+    throw new Exception("فشل الحفظ");
+}
+// عند الاستدعاء: await SaveDataAsync(); داخل try/catch</div>
+    </div>
+    <div class="debug-why"><b>السبب:</b> <code style="font-family:var(--font-code)">async void</code> لا تُرجع Task يمكن انتظاره أو مراقبته — استثناءاتها لا تنتقل للمُستدعي بالطريقة العادية. استخدمها فقط لمعالجات الأحداث (Event Handlers)، وفي كل مكان آخر استخدم <code style="font-family:var(--font-code)">async Task</code>.</div>
+  </div>
+
+  <div class="debug-box">
+    <div class="debug-box-h">⚠️ catch (Exception) فارغ يُخفي مشاكل حقيقية</div>
+    <div class="debug-row">
+<div class="debug-wrong">try {
+    ProcessOrder(order);
+} catch (Exception) {
+    // فارغ تماماً — صمت كامل
+}</div>
+<div class="debug-err">لا خطأ ظاهر — لكن الطلب لم يُعالَج فعلياً، والبرنامج "يبدو" سليماً</div>
+<div class="debug-fix">try {
+    ProcessOrder(order);
+} catch (OrderValidationException ex) {
+    Console.WriteLine($"خطأ تحقق: {ex.Message}");
+} catch (Exception ex) {
+    Console.WriteLine($"خطأ غير متوقع: {ex.Message}");
+    throw; // أعد إطلاقه إن لم تستطع التعامل معه فعلياً
+}</div>
+    </div>
+    <div class="debug-why"><b>السبب:</b> الإمساك بكل الاستثناءات بنوع عام دون أي تعامل حقيقي معها هو أخطر أنماط الأخطاء — يحوّل مشاكل حقيقية إلى سلوك صامت غير متوقَّع. أمسك بأنواع محدّدة قدر الإمكان، وسجِّل كل ما تمسكه.</div>
+  </div>
+</div>
+
 <!-- ===== S17: PATTERN MATCHING ===== -->
 <div class="lesson-section" id="s17">
   <span class="level-badge level-expert">🚀 خبير</span>
@@ -2519,6 +2913,304 @@ nickname ??= <span class="st">"Dev"</span>;  <span class="cm">// يُعيّن ف
   </div>
 </div>
 
+<!-- ===== PROJECT INTRO ===== -->
+<div class="lesson-section" id="project-intro">
+  <span class="level-badge level-project">🏗️ مشروع التخرّج</span>
+  <div class="lesson-header">
+    <div class="lesson-num">21</div>
+    <div>
+      <h2 class="lesson-title">مقدّمة المشروع — نظام يحيى لإدارة المهام (نسخة Console)</h2>
+      <p class="lesson-subtitle">تطبيق كل أدوات الكورس في مشروع واحد منظَّم بانضباط هندسي حقيقي</p>
+    </div>
+  </div>
+  <div class="lesson-body">
+    <p>هذا المشروع يجمع كل ما تعلّمته: <strong>Records</strong>، <strong>Enums</strong>، <strong>Interfaces</strong>، <strong>Generics/Collections</strong>، <strong>LINQ</strong>، و<strong>Exception Handling</strong> — في تطبيق Console واحد منظَّم بطبقات واضحة (Models / Repositories / Services).</p>
+    <div class="highlight">المبدأ المحوري هنا هو <strong>Repository Pattern</strong>: نخفي "كيف تُخزَّن البيانات" خلف Interface ثابت. اليوم التخزين في ملف JSON — وعندما تبدأ دبلومة Backend .NET وتتعلّم Entity Framework Core، ستستبدل <code style="font-family:var(--font-code)">JsonTaskRepository</code> بـ <code style="font-family:var(--font-code)">EfTaskRepository</code> يتصل بقاعدة بيانات حقيقية — بنفس الـ Interface تماماً، دون تعديل أي كود آخر في المشروع.</div>
+  </div>
+
+  <div class="file-tree">📁<span class="d">TaskManagerConsole/</span>
+├── 📁<span class="d">Models/</span>
+│   └── <span class="f">TaskItem.cs</span>             <span class="c">← القسم 22</span>
+├── 📁<span class="d">Repositories/</span>
+│   ├── <span class="f">ITaskRepository.cs</span>      <span class="c">← القسم 22</span>
+│   └── <span class="f">JsonTaskRepository.cs</span>   <span class="c">← القسم 22</span>
+├── 📁<span class="d">Services/</span>
+│   └── <span class="f">TaskService.cs</span>          <span class="c">← القسم 23</span>
+├── <span class="f">Program.cs</span>                  <span class="c">← القسم 23 — قائمة Console</span>
+└── <span class="f">tasks.json</span>                  <span class="c">← يُنشأ تلقائياً عند أول تشغيل</span></div>
+
+  <div class="info-box info-note">
+    <span class="info-box-icon">📌</span>
+    <div><strong>مواصفات المشروع:</strong> إضافة مهمة بعنوان ووصف وأولوية، عرض القائمة مرتّبة حسب الأولوية، تعليم مهمة كمكتملة، حذف مهمة — مع تحقق من المدخلات ومعالجة استثناءات سليمة.</div>
+  </div>
+</div>
+
+<!-- ===== PROJECT ARCH ===== -->
+<div class="lesson-section" id="project-arch">
+  <span class="level-badge level-project">🏗️ مشروع التخرّج</span>
+  <div class="lesson-header">
+    <div class="lesson-num">22</div>
+    <div>
+      <h2 class="lesson-title">المشروع: البنية والنماذج</h2>
+      <p class="lesson-subtitle">Record Model · Enum · Interface · JSON Repository</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">Models/TaskItem.cs</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="kw">namespace</span> <span class="cl">TaskManagerConsole</span>.<span class="cl">Models</span>;
+
+<span class="kw">public enum</span> <span class="cl">TaskPriority</span> { <span class="cl">Low</span>, <span class="cl">Medium</span>, <span class="cl">High</span> }
+
+<span class="cm">// Record — نوع غير قابل للتعديل (Immutable)، مثالي لتمثيل بيانات ثابتة</span>
+<span class="kw">public record</span> <span class="cl">TaskItem</span>(
+    <span class="tp">int</span> <span class="pr">Id</span>,
+    <span class="tp">string</span> <span class="pr">Title</span>,
+    <span class="tp">string</span> <span class="pr">Description</span>,
+    <span class="cl">TaskPriority</span> <span class="pr">Priority</span>,
+    <span class="tp">bool</span> <span class="pr">IsDone</span> = <span class="kw">false</span>
+);</pre>
+  </div>
+  <div class="info-box info-tip">
+    <span class="info-box-icon">💡</span>
+    <div><strong>لماذا record لا class؟</strong> المهمة هنا "بيانات" أكثر من "سلوك معقّد". الـ record يعطينا مساواة بالقيمة (Value Equality) تلقائياً، وطريقة <code style="font-family:var(--font-code)">with</code> لإنشاء نسخة معدَّلة دون تغيير الأصل — ستراها في المستودع بالأسفل.</div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">Repositories/ITaskRepository.cs</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="kw">namespace</span> <span class="cl">TaskManagerConsole</span>.<span class="cl">Repositories</span>;
+
+<span class="kw">using</span> <span class="cl">TaskManagerConsole</span>.<span class="cl">Models</span>;
+
+<span class="kw">public interface</span> <span class="cl">ITaskRepository</span>
+{
+    <span class="cl">List</span>&lt;<span class="cl">TaskItem</span>&gt; <span class="fn">GetAll</span>();
+    <span class="cl">TaskItem</span>? <span class="fn">GetById</span>(<span class="tp">int</span> id);
+    <span class="tp">void</span> <span class="fn">Add</span>(<span class="cl">TaskItem</span> task);
+    <span class="tp">void</span> <span class="fn">MarkDone</span>(<span class="tp">int</span> id);
+    <span class="tp">void</span> <span class="fn">Delete</span>(<span class="tp">int</span> id);
+}</pre>
+  </div>
+  <div class="info-box info-note">
+    <span class="info-box-icon">📌</span>
+    <div>هذا الملف هو <strong>التعاقد الثابت</strong> الذي لن يتغيّر حتى عند ربط المشروع بـ EF Core لاحقاً — فقط الكلاس الذي ينفّذه سيتغيّر.</div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">Repositories/JsonTaskRepository.cs</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="kw">namespace</span> <span class="cl">TaskManagerConsole</span>.<span class="cl">Repositories</span>;
+
+<span class="kw">using</span> <span class="cl">System</span>.<span class="cl">Text</span>.<span class="cl">Json</span>;
+<span class="kw">using</span> <span class="cl">TaskManagerConsole</span>.<span class="cl">Models</span>;
+
+<span class="kw">public class</span> <span class="cl">JsonTaskRepository</span> : <span class="cl">ITaskRepository</span>
+{
+    <span class="kw">private readonly</span> <span class="tp">string</span> _path;
+    <span class="kw">private</span> <span class="cl">List</span>&lt;<span class="cl">TaskItem</span>&gt; _tasks;
+
+    <span class="kw">public</span> <span class="fn">JsonTaskRepository</span>(<span class="tp">string</span> path)
+    {
+        _path = path;
+        _tasks = <span class="cl">File</span>.<span class="fn">Exists</span>(path)
+            ? <span class="cl">JsonSerializer</span>.<span class="fn">Deserialize</span>&lt;<span class="cl">List</span>&lt;<span class="cl">TaskItem</span>&gt;&gt;(<span class="cl">File</span>.<span class="fn">ReadAllText</span>(path)) ?? <span class="kw">new</span>()
+            : <span class="kw">new</span> <span class="cl">List</span>&lt;<span class="cl">TaskItem</span>&gt;();
+    }
+
+    <span class="kw">public</span> <span class="cl">List</span>&lt;<span class="cl">TaskItem</span>&gt; <span class="fn">GetAll</span>() =&gt; _tasks;
+
+    <span class="kw">public</span> <span class="cl">TaskItem</span>? <span class="fn">GetById</span>(<span class="tp">int</span> id) =&gt;
+        _tasks.<span class="fn">FirstOrDefault</span>(t =&gt; t.<span class="pr">Id</span> == id);
+
+    <span class="kw">public void</span> <span class="fn">Add</span>(<span class="cl">TaskItem</span> task) { _tasks.<span class="fn">Add</span>(task); <span class="fn">Save</span>(); }
+
+    <span class="kw">public void</span> <span class="fn">MarkDone</span>(<span class="tp">int</span> id)
+    {
+        <span class="kw">var</span> index = _tasks.<span class="fn">FindIndex</span>(t =&gt; t.<span class="pr">Id</span> == id);
+        <span class="kw">if</span> (index &gt;= <span class="nm">0</span>)
+            _tasks[index] = _tasks[index] <span class="kw">with</span> { <span class="pr">IsDone</span> = <span class="kw">true</span> }; <span class="cm">// نسخة معدَّلة، الأصل ثابت</span>
+        <span class="fn">Save</span>();
+    }
+
+    <span class="kw">public void</span> <span class="fn">Delete</span>(<span class="tp">int</span> id) { _tasks.<span class="fn">RemoveAll</span>(t =&gt; t.<span class="pr">Id</span> == id); <span class="fn">Save</span>(); }
+
+    <span class="kw">private void</span> <span class="fn">Save</span>() =&gt;
+        <span class="cl">File</span>.<span class="fn">WriteAllText</span>(_path,
+            <span class="cl">JsonSerializer</span>.<span class="fn">Serialize</span>(_tasks, <span class="kw">new</span> <span class="cl">JsonSerializerOptions</span> { <span class="pr">WriteIndented</span> = <span class="kw">true</span> }));
+}</pre>
+  </div>
+</div>
+
+<!-- ===== PROJECT LOGIC ===== -->
+<div class="lesson-section" id="project-logic">
+  <span class="level-badge level-project">🏗️ مشروع التخرّج</span>
+  <div class="lesson-header">
+    <div class="lesson-num">23</div>
+    <div>
+      <h2 class="lesson-title">المشروع: منطق العمل وقائمة Console</h2>
+      <p class="lesson-subtitle">TaskService بالتحقق والـ LINQ، وProgram.cs بالقائمة التفاعلية</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">Services/TaskService.cs</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="kw">namespace</span> <span class="cl">TaskManagerConsole</span>.<span class="cl">Services</span>;
+
+<span class="kw">using</span> <span class="cl">TaskManagerConsole</span>.<span class="cl">Models</span>;
+<span class="kw">using</span> <span class="cl">TaskManagerConsole</span>.<span class="cl">Repositories</span>;
+
+<span class="kw">public class</span> <span class="cl">TaskService</span>
+{
+    <span class="kw">private readonly</span> <span class="cl">ITaskRepository</span> _repo;
+
+    <span class="kw">public</span> <span class="fn">TaskService</span>(<span class="cl">ITaskRepository</span> repo) =&gt; _repo = repo;
+
+    <span class="kw">public</span> <span class="cl">TaskItem</span> <span class="fn">CreateTask</span>(<span class="tp">string</span> title, <span class="tp">string</span> description, <span class="cl">TaskPriority</span> priority)
+    {
+        <span class="kw">if</span> (<span class="tp">string</span>.<span class="fn">IsNullOrWhiteSpace</span>(title) || title.<span class="pr">Length</span> &lt; <span class="nm">3</span>)
+            <span class="kw">throw new</span> <span class="cl">ArgumentException</span>(<span class="st">"العنوان يجب أن يكون 3 أحرف على الأقل"</span>);
+
+        <span class="kw">var</span> tasks = _repo.<span class="fn">GetAll</span>();
+        <span class="kw">var</span> nextId = tasks.<span class="pr">Count</span> &gt; <span class="nm">0</span> ? tasks.<span class="fn">Max</span>(t =&gt; t.<span class="pr">Id</span>) + <span class="nm">1</span> : <span class="nm">1</span>;
+
+        <span class="kw">var</span> task = <span class="kw">new</span> <span class="cl">TaskItem</span>(nextId, title, description, priority);
+        _repo.<span class="fn">Add</span>(task);
+        <span class="kw">return</span> task;
+    }
+
+    <span class="cm">// LINQ — ترتيب حسب الأولوية تنازلياً</span>
+    <span class="kw">public</span> <span class="cl">List</span>&lt;<span class="cl">TaskItem</span>&gt; <span class="fn">GetSortedByPriority</span>() =&gt;
+        _repo.<span class="fn">GetAll</span>()
+             .<span class="fn">OrderByDescending</span>(t =&gt; t.<span class="pr">Priority</span>)
+             .<span class="fn">ThenBy</span>(t =&gt; t.<span class="pr">IsDone</span>)
+             .<span class="fn">ToList</span>();
+}</pre>
+  </div>
+
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-dots"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+      <span class="code-lang">Program.cs — القائمة التفاعلية</span>
+      <button class="code-copy" onclick="copyCode(this)">نسخ</button>
+    </div>
+    <pre><span class="kw">using</span> <span class="cl">TaskManagerConsole</span>.<span class="cl">Models</span>;
+<span class="kw">using</span> <span class="cl">TaskManagerConsole</span>.<span class="cl">Repositories</span>;
+<span class="kw">using</span> <span class="cl">TaskManagerConsole</span>.<span class="cl">Services</span>;
+
+<span class="cl">ITaskRepository</span> repo = <span class="kw">new</span> <span class="cl">JsonTaskRepository</span>(<span class="st">"tasks.json"</span>);
+<span class="kw">var</span> service = <span class="kw">new</span> <span class="cl">TaskService</span>(repo);
+
+<span class="kw">while</span> (<span class="kw">true</span>)
+{
+    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"\n1) إضافة  2) عرض الكل  3) إكمال  4) حذف  0) خروج"</span>);
+    <span class="kw">var</span> choice = <span class="fn">Console</span>.<span class="fn">ReadLine</span>();
+
+    <span class="kw">try</span>
+    {
+        <span class="kw">switch</span> (choice)
+        {
+            <span class="kw">case</span> <span class="st">"1"</span>:
+                <span class="fn">Console</span>.<span class="fn">Write</span>(<span class="st">"العنوان: "</span>);
+                <span class="kw">var</span> title = <span class="fn">Console</span>.<span class="fn">ReadLine</span>() ?? <span class="st">""</span>;
+                service.<span class="fn">CreateTask</span>(title, <span class="st">""</span>, <span class="cl">TaskPriority</span>.<span class="cl">Medium</span>);
+                <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">"تمت الإضافة ✓"</span>);
+                <span class="kw">break</span>;
+
+            <span class="kw">case</span> <span class="st">"2"</span>:
+                <span class="kw">foreach</span> (<span class="kw">var</span> t <span class="kw">in</span> service.<span class="fn">GetSortedByPriority</span>())
+                    <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"[{t.Id}] {t.Title} — {t.Priority} {(t.IsDone ? "</span>✓<span class="st">" : "</span>…<span class="st">")}"</span>);
+                <span class="kw">break</span>;
+
+            <span class="kw">case</span> <span class="st">"0"</span>: <span class="kw">return</span>;
+        }
+    }
+    <span class="kw">catch</span> (<span class="cl">ArgumentException</span> ex)
+    {
+        <span class="fn">Console</span>.<span class="fn">WriteLine</span>(<span class="st">$"خطأ: {ex.Message}"</span>);
+    }
+}</pre>
+  </div>
+
+  <div class="info-box info-tip">
+    <span class="info-box-icon">💡</span>
+    <div><strong>انظر كم أصبح Program.cs بسيطاً</strong> — لأن كل المنطق الثقيل (التحقق، الترتيب، التخزين) موجود في طبقات منفصلة. هذا الفرق العملي بين "كود يعمل" و"كود قابل للنمو والاختبار" — تماماً ما تحتاجه قبل دخول عالم Backend الحقيقي.</div>
+  </div>
+</div>
+
+<!-- ===== FINAL ASSIGNMENT ===== -->
+<div class="lesson-section" id="final">
+<div class="task-box" style="border-color:rgba(245,158,11,0.35);background:linear-gradient(135deg, rgba(245,158,11,0.08), rgba(124,58,237,0.03));">
+  <div class="task-box-header">
+    <div class="task-box-icon" style="background:linear-gradient(135deg,var(--accent-gold),#d97706)">🏁</div>
+    <h4>التحدي النهائي — اختبار استقلالك الكامل</h4>
+    <span class="task-box-lv" style="color:var(--accent-gold);background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.3)">بدون أي حل جاهز</span>
+  </div>
+  <p>وسّع مشروعك بنفسك بالكامل — بدون كود جاهز هنا، فقط المواصفة. الهدف قياس صادق لما امتلكته فعلاً:</p>
+  <ul>
+    <li><strong>تعديل مهمة (Update):</strong> أضف <code>void Update(TaskItem task)</code> في الـ Interface وفي JsonTaskRepository — فكّر: كيف تستخدم <code>record with</code> هنا أيضاً؟</li>
+    <li><strong>تصنيفات (Category):</strong> أضف <code>enum TaskCategory { Work, Personal, Study }</code> كخاصية جديدة في TaskItem.</li>
+    <li><strong>فلترة بـ LINQ:</strong> أضف دالة <code>GetByCategory(TaskCategory category)</code> في TaskService تستخدم <code>.Where()</code>.</li>
+    <li><strong>إحصائيات:</strong> دالة <code>GetStats()</code> تُرجع عدد المهام المكتملة وغير المكتملة باستخدام <code>.Count()</code> من LINQ.</li>
+    <li><strong>اختبار الفهم الحقيقي:</strong> لو استبدلت JsonTaskRepository بالكامل بكلاس آخر، كم سطراً ستحتاج لتعديله في Program.cs أو TaskService؟ إن كان الجواب "صفر"، فقد نجحت في الهدف الحقيقي من هذا المشروع.</li>
+  </ul>
+  <div class="task-hint-box"><b>🔍 ابحث عن:</b>&nbsp; "C# record with expression" · "LINQ Where Count" · "C# enum as class property"</div>
+</div>
+</div>
+
+<!-- ===== QUICK REFERENCE ===== -->
+<div class="lesson-section" id="ref">
+  <span class="level-badge level-expert">★ مرجع سريع</span>
+  <div class="lesson-header">
+    <div class="lesson-num">★</div>
+    <div>
+      <h2 class="lesson-title">مرجع سريع — C# و OOP</h2>
+      <p class="lesson-subtitle">Cheatsheet مكثَّف لأكثر ما ستحتاجه يومياً</p>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th>الفئة</th><th>العنصر</th><th>الاستخدام السريع</th></tr>
+      <tr><td>🧱 OOP</td><td><code>class</code> vs <code>record</code></td><td>record لبيانات ثابتة بمساواة قيمة، class لسلوك متغيّر</td></tr>
+      <tr><td>🧱 OOP</td><td><code>interface</code></td><td>تعاقد سلوك بدون تنفيذ — أساس قابلية الاستبدال</td></tr>
+      <tr><td>🧱 OOP</td><td><code>virtual</code> / <code>override</code></td><td>السماح بإعادة تعريف سلوك في كلاس مشتق</td></tr>
+      <tr><td>🧱 OOP</td><td><code>abstract</code></td><td>كلاس لا يُنشأ مباشرة، يفرض تنفيذ أعضائه على المشتقّات</td></tr>
+      <tr><td>📦 Collections</td><td><code>List&lt;T&gt;</code></td><td>قائمة مرتّبة قابلة للتغيير</td></tr>
+      <tr><td>📦 Collections</td><td><code>Dictionary&lt;K,V&gt;</code></td><td>بحث فوري بمفتاح — الأسرع للوصول العشوائي</td></tr>
+      <tr><td>🔍 LINQ</td><td><code>.Where(x => ...)</code></td><td>تصفية بشرط</td></tr>
+      <tr><td>🔍 LINQ</td><td><code>.OrderByDescending(x => ...)</code></td><td>ترتيب تنازلي</td></tr>
+      <tr><td>🔍 LINQ</td><td><code>.FirstOrDefault(x => ...)</code></td><td>أول عنصر مطابق أو null/default</td></tr>
+      <tr><td>🔍 LINQ</td><td><code>.Select(x => ...)</code></td><td>تحويل كل عنصر لشكل جديد</td></tr>
+      <tr><td>⚡ Async</td><td><code>async Task</code></td><td>دالة غير متزامنة قابلة للانتظار والمعالجة</td></tr>
+      <tr><td>⚡ Async</td><td><code>await</code></td><td>انتظار غير حاظر للـ Thread</td></tr>
+      <tr><td>🛟 Null Safety</td><td><code>??</code></td><td>قيمة افتراضية إن كانت null</td></tr>
+      <tr><td>🛟 Null Safety</td><td><code>?.</code></td><td>استدعاء آمن — null بدل Exception</td></tr>
+      <tr><td>⚠️ Errors</td><td><code>try / catch / finally</code></td><td>التعامل مع الأخطاء بأناقة</td></tr>
+      <tr><td>⚠️ Errors</td><td><code>throw new ArgumentException()</code></td><td>رفض مدخلات غير صالحة بوضوح</td></tr>
+    </table>
+  </div>
+
+  <div class="info-box info-note" style="margin-top:1.5rem">
+    <span class="info-box-icon">🎓</span>
+    <div><strong>الخطوة التالية في رحلتك:</strong> أنت الآن جاهز فعلاً لدبلومة <strong>Backend .NET</strong> — ستتعلّم ASP.NET Core لبناء REST APIs حقيقية، Entity Framework Core للتعامل مع قواعد البيانات، وDependency Injection. ولاحظ: نفس مبدأ Repository Pattern الذي بنيته هنا بالضبط هو ما ستستخدمه هناك — فقط بدّل JSON بقاعدة بيانات حقيقية.</div>
+  </div>
+</div>
+
 <!-- END MAIN -->
     </main>
   </div>
@@ -2612,6 +3304,12 @@ function doSearch(query) {
   }
   clearHighlights(main);
   highlightText(main, query);
+
+  // Jump straight to the first match — makes the search bar a real "quick jump" tool
+  const firstMark = main.querySelector('mark');
+  if (firstMark) {
+    firstMark.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 }
 
 function highlightText(node, query) {
@@ -2644,6 +3342,18 @@ function clearHighlights(root) {
       s.parentNode && s.parentNode.replaceChild(document.createTextNode(s.textContent), s);
     }
   });
+}
+
+// Mobile TOC drawer
+const sidebarEl = document.getElementById('sidebar');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+function openDrawer() { sidebarEl.classList.add('open'); drawerOverlay.classList.add('open'); }
+function closeDrawer() { sidebarEl.classList.remove('open'); drawerOverlay.classList.remove('open'); }
+if (mobileMenuBtn) {
+  mobileMenuBtn.addEventListener('click', () => sidebarEl.classList.contains('open') ? closeDrawer() : openDrawer());
+  drawerOverlay.addEventListener('click', closeDrawer);
+  tocLinks.forEach(a => a.addEventListener('click', closeDrawer));
 }
 
 // Intersection Observer for animations
